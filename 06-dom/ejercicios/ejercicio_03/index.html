@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 03 · Retocar una tarjeta de perfil</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <main class="contenedor">
+        <h1>🪪 Retocar una tarjeta de perfil</h1>
+        <p class="descripcion">Una tarjeta a medio rellenar. JavaScript va a cambiar su texto, su HTML, sus atributos y sus datos <code>data-*</code>.</p>
+
+        <div id="perfil" class="tarjeta" data-usuario-id="42" data-plan="gratis">
+            <img id="avatar" class="avatar" src="avatar-gris.svg" alt="Avatar sin configurar">
+            <h2 id="nombre">Nombre de usuario</h2>
+            <p id="bio">Sin biografía.</p>
+            <a id="web" href="#">Sin web</a>
+        </div>
+
+        <h2>Antes y después</h2>
+        <pre id="informe" class="ticket">…</pre>
+
+        <div class="firma">Curso de JavaScript en el cliente · Realizado por Ramón Abramo</div>
+    </main>
+    <script src="app.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 08 · Tabla de notas dinámica</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <main class="contenedor">
+        <h1>📊 Tabla de notas dinámica</h1>
+        <p id="filtro" class="descripcion">…</p>
+
+        <table id="tabla" class="tabla">
+            <thead>
+                <tr><th>Alumno</th><th>Nota</th><th>Calificación</th></tr>
+            </thead>
+            <tbody id="cuerpo"></tbody>
+            <tfoot id="pie"></tfoot>
+        </table>
+
+        <p class="ayuda">💡 Probad a mostrar todos (nota mínima 0), solo los aprobados (5) y una nota imposible (11).</p>
+
+        <div class="firma">Curso de JavaScript en el cliente · Realizado por Ramón Abramo</div>
+    </main>
+    <script src="app.js"></script>
+</body>
+
+</html>

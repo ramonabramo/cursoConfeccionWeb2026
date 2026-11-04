@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 04 · Estilos: style frente a classList (Solución)</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <main class="contenedor">
+        <h1>🎨 Estilos: style frente a classList</h1>
+        <p class="descripcion">Cuatro tarjetas y una barra de progreso. Cada una se modifica de una forma distinta.</p>
+
+        <div id="tarjeta1" class="tarjeta">Tarjeta 1 · le cambiaré el fondo con <code>style</code></div>
+        <div id="tarjeta2" class="tarjeta">Tarjeta 2 · le añadiré la clase <code>destacada</code></div>
+        <div id="tarjeta3" class="tarjeta">Tarjeta 3 · la ocultaré con <code>toggle('oculta')</code></div>
+        <div id="tarjeta4" class="tarjeta borde">Tarjeta 4 · le quitaré la clase <code>borde</code></div>
+
+        <h2>Progreso del curso</h2>
+        <div class="barra"><div id="relleno" class="barra-relleno"></div></div>
+
+        <pre id="informe" class="ticket">…</pre>
+
+        <p class="ayuda">💡 Abrid la pestaña <strong>Elementos</strong> de las herramientas de desarrollo y fijaos en qué ha cambiado en el HTML de cada tarjeta.</p>
+
+        <div class="firma">Curso de JavaScript en el cliente · Realizado por Ramón Abramo</div>
+    </main>
+    <script src="app.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 400" width="900" height="400" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif">
+  <title>Crear un elemento en tres pasos</title>
+  <desc>Primero se crea el elemento con createElement, después se configura y por último se añade a un padre con append; hasta ese momento no aparece en la página.</desc>
+  <rect width="900" height="400" rx="16" fill="#ffffff"/>
+  <text x="450" y="42" text-anchor="middle" font-size="22" font-weight="700" fill="#1e293b">Crear un elemento: crear → configurar → colgar</text>
+  <text x="450" y="66" text-anchor="middle" font-size="14" fill="#64748b">Hasta el paso 3, el elemento existe en memoria… pero no se ve</text>
+
+  <defs>
+    <marker id="f" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="9" markerHeight="9" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#64748b"/></marker>
+  </defs>
+
+  <!-- paso 1 -->
+  <rect x="24" y="92" width="264" height="230" rx="14" fill="#f5f3ff" stroke="#c4b5fd"/>
+  <text x="44" y="122" font-size="15" font-weight="700" fill="#5b21b6">① Crear</text>
+  <rect x="40" y="136" width="232" height="62" rx="8" fill="#1e293b"/>
+  <text x="54" y="160" font-family="Consolas, Menlo, monospace" font-size="12.5" fill="#e2e8f0"><tspan fill="#93c5fd">const</tspan> li = document</text>
+  <text x="54" y="184" font-family="Consolas, Menlo, monospace" font-size="12.5" fill="#e2e8f0">  .createElement(<tspan fill="#86efac">'li'</tspan>);</text>
+  <rect x="96" y="226" width="120" height="44" rx="8" fill="#ffffff" stroke="#7c3aed" stroke-dasharray="5 4"/>
+  <text x="156" y="253" text-anchor="middle" font-family="Consolas, Menlo, monospace" font-size="14" fill="#5b21b6">&lt;li&gt;&lt;/li&gt;</text>
+  <text x="156" y="302" text-anchor="middle" font-size="12" fill="#475569">Vacío y fuera de la página</text>
+
+  <line x1="294" y1="208" x2="318" y2="208" stroke="#64748b" stroke-width="2.5" marker-end="url(#f)"/>
+
+  <!-- paso 2 -->
+  <rect x="324" y="92" width="264" height="230" rx="14" fill="#eff6ff" stroke="#93c5fd"/>
+  <text x="344" y="122" font-size="15" font-weight="700" fill="#1d4ed8">② Configurar</text>
+  <g font-family="Consolas, Menlo, monospace" font-size="12.5" fill="#1e293b">
+    <text x="344" y="152">li.textContent = 'Pan';</text>
+    <text x="344" y="174">li.classList.add('urgente');</text>
+    <text x="344" y="196">li.dataset.id = '7';</text>
+  </g>
+  <rect x="340" y="222" width="232" height="52" rx="8" fill="#ffffff" stroke="#2563eb" stroke-dasharray="5 4"/>
+  <text x="456" y="244" text-anchor="middle" font-family="Consolas, Menlo, monospace" font-size="12" fill="#1e40af">&lt;li class="urgente"</text>
+  <text x="456" y="262" text-anchor="middle" font-family="Consolas, Menlo, monospace" font-size="12" fill="#1e40af">    data-id="7"&gt;Pan&lt;/li&gt;</text>
+  <text x="456" y="302" text-anchor="middle" font-size="12" fill="#475569">Completo… pero todavía invisible</text>
+
+  <line x1="594" y1="208" x2="618" y2="208" stroke="#64748b" stroke-width="2.5" marker-end="url(#f)"/>
+
+  <!-- paso 3 -->
+  <rect x="624" y="92" width="252" height="230" rx="14" fill="#f0fdf4" stroke="#22c55e" stroke-width="2"/>
+  <text x="644" y="122" font-size="15" font-weight="700" fill="#15803d">③ Colgar en el árbol</text>
+  <text x="644" y="152" font-family="Consolas, Menlo, monospace" font-size="12.5" fill="#1e293b">lista.append(li);</text>
+  <rect x="660" y="174" width="180" height="104" rx="8" fill="#ffffff" stroke="#16a34a"/>
+  <text x="674" y="196" font-family="Consolas, Menlo, monospace" font-size="12" fill="#166534">&lt;ul id="lista"&gt;</text>
+  <text x="690" y="218" font-family="Consolas, Menlo, monospace" font-size="12" fill="#94a3b8">&lt;li&gt;Leche&lt;/li&gt;</text>
+  <rect x="684" y="226" width="140" height="22" rx="4" fill="#dcfce7"/>
+  <text x="690" y="242" font-family="Consolas, Menlo, monospace" font-size="12" font-weight="700" fill="#166534">&lt;li …&gt;Pan&lt;/li&gt;</text>
+  <text x="674" y="266" font-family="Consolas, Menlo, monospace" font-size="12" fill="#166534">&lt;/ul&gt;</text>
+  <text x="750" y="302" text-anchor="middle" font-size="12" font-weight="700" fill="#15803d">¡Ahora sí se ve!</text>
+
+  <!-- notas -->
+  <g font-size="13">
+    <text x="44" y="352" fill="#334155"><tspan font-family="Consolas, Menlo, monospace" fill="#1e293b">append</tspan> añade al final · <tspan font-family="Consolas, Menlo, monospace" fill="#1e293b">prepend</tspan> al principio · <tspan font-family="Consolas, Menlo, monospace" fill="#1e293b">elemento.remove()</tspan> lo quita · <tspan font-family="Consolas, Menlo, monospace" fill="#1e293b">contenedor.replaceChildren()</tspan> lo vacía</text>
+    <text x="44" y="376" fill="#334155">Si hacéis <tspan font-family="Consolas, Menlo, monospace" fill="#1e293b">append</tspan> de un elemento que ya está en la página, no se duplica: se MUEVE.</text>
+  </g>
+</svg>

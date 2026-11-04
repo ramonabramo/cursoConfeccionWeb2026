@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 01 · Explorador del árbol DOM</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <main class="contenedor">
+        <h1>🌳 Explorador del árbol DOM</h1>
+        <p class="descripcion">Una receta escrita en HTML. Vuestra misión: localizar cada pieza desde JavaScript con selectores CSS.</p>
+
+        <article id="receta" class="tarjeta">
+            <h2 class="titulo">Tortilla de patatas</h2>
+            <p class="autor">Receta de la abuela</p>
+            <ul id="ingredientes">
+                <li>Patatas</li>
+                <li class="importante">Huevos</li>
+                <li>Cebolla (opcional, ya sabéis)</li>
+                <li>Aceite de oliva</li>
+            </ul>
+            <p data-tiempo="40">Tiempo: 40 minutos</p>
+        </article>
+
+        <h2>Informe del explorador</h2>
+        <pre id="informe" class="ticket">…</pre>
+
+        <div class="firma">Curso de JavaScript en el cliente · Realizado por Ramón Abramo</div>
+    </main>
+    <script src="app.js"></script>
+</body>
+
+</html>
