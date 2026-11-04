@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 08 · Guardar y cargar la partida (Solución)</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <main class="contenedor">
+        <h1>💾 Guardar y cargar la partida</h1>
+        <p class="descripcion">Antes de guardar una partida, hay que entender cuándo una copia es una copia… y cuándo es el mismo objeto con otro nombre.</p>
+
+        <table class="tabla">
+            <thead><tr><th>Experimento</th><th>Resultado</th></tr></thead>
+            <tbody>
+                <tr><td>1. Inventario tras <code>alias.push('escudo')</code></td><td id="exp1" class="resultado">?</td></tr>
+                <tr><td>2. Inventario tras <code>copia.push('mapa')</code> (copia con spread)</td><td id="exp2" class="resultado">?</td></tr>
+                <tr><td>3. Nivel original tras cambiar el nivel de la copia superficial</td><td id="exp3" class="resultado">?</td></tr>
+                <tr><td>4. Inventario original tras tocar el inventario de la copia superficial</td><td id="exp4" class="resultado">?</td></tr>
+                <tr><td>5. Inventario original tras tocar el de la copia profunda</td><td id="exp5" class="resultado">?</td></tr>
+                <tr><td>6. <code>[1, 2] === [1, 2]</code></td><td id="exp6" class="resultado">?</td></tr>
+            </tbody>
+        </table>
+
+        <h2>Partida guardada (JSON)</h2>
+        <pre id="json" class="ticket">…</pre>
+
+        <p id="carga" class="salida salida--secundaria">…</p>
+
+        <div class="firma">Curso de JavaScript en el cliente · Realizado por Ramón Abramo</div>
+    </main>
+    <script src="app.js"></script>
+</body>
+
+</html>

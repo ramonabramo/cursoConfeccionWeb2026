@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 420" width="900" height="420" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif">
+  <title>Anatomía de un array</title>
+  <desc>Un array es una lista ordenada de valores numerados desde el índice 0; push y pop trabajan al final, unshift y shift al principio.</desc>
+  <rect width="900" height="420" rx="16" fill="#ffffff"/>
+  <text x="450" y="42" text-anchor="middle" font-size="22" font-weight="700" fill="#1e293b">Un array es una lista numerada… empezando por 0</text>
+  <text x="450" y="66" text-anchor="middle" font-family="Consolas, Menlo, monospace" font-size="14" fill="#64748b">const compra = ['pan', 'leche', 'huevos', 'fruta'];</text>
+
+  <defs>
+    <marker id="f" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#64748b"/></marker>
+  </defs>
+
+  <!-- casillas -->
+  <g font-family="Consolas, Menlo, monospace">
+    <rect x="210" y="120" width="120" height="70" rx="8" fill="#eff6ff" stroke="#2563eb" stroke-width="2"/>
+    <text x="270" y="162" text-anchor="middle" font-size="17" fill="#1e293b">'pan'</text>
+    <rect x="330" y="120" width="120" height="70" rx="8" fill="#eff6ff" stroke="#2563eb" stroke-width="2"/>
+    <text x="390" y="162" text-anchor="middle" font-size="17" fill="#1e293b">'leche'</text>
+    <rect x="450" y="120" width="120" height="70" rx="8" fill="#eff6ff" stroke="#2563eb" stroke-width="2"/>
+    <text x="510" y="162" text-anchor="middle" font-size="17" fill="#1e293b">'huevos'</text>
+    <rect x="570" y="120" width="120" height="70" rx="8" fill="#eff6ff" stroke="#2563eb" stroke-width="2"/>
+    <text x="630" y="162" text-anchor="middle" font-size="17" fill="#1e293b">'fruta'</text>
+
+    <text x="270" y="110" text-anchor="middle" font-size="15" font-weight="700" fill="#c2410c">0</text>
+    <text x="390" y="110" text-anchor="middle" font-size="15" font-weight="700" fill="#c2410c">1</text>
+    <text x="510" y="110" text-anchor="middle" font-size="15" font-weight="700" fill="#c2410c">2</text>
+    <text x="630" y="110" text-anchor="middle" font-size="15" font-weight="700" fill="#c2410c">3</text>
+  </g>
+  <text x="196" y="110" text-anchor="end" font-size="12" fill="#c2410c">índice →</text>
+
+  <!-- accesos -->
+  <g font-family="Consolas, Menlo, monospace" font-size="13">
+    <text x="270" y="214" text-anchor="middle" fill="#1e293b">compra[0]</text>
+    <text x="690" y="214" text-anchor="end" fill="#1e293b">compra[compra.length - 1]</text>
+  </g>
+  <text x="270" y="232" text-anchor="middle" font-size="12" fill="#64748b">el primero</text>
+  <text x="690" y="232" text-anchor="end" font-size="12" fill="#64748b">el último</text>
+
+  <!-- length -->
+  <path d="M210,250 L210,258 L690,258 L690,250" fill="none" stroke="#16a34a" stroke-width="2"/>
+  <text x="450" y="280" text-anchor="middle" font-family="Consolas, Menlo, monospace" font-size="14" font-weight="700" fill="#15803d">compra.length → 4</text>
+  <text x="450" y="298" text-anchor="middle" font-size="12" fill="#475569">4 elementos, pero el último índice es 3</text>
+
+  <!-- principio -->
+  <rect x="24" y="320" width="400" height="80" rx="12" fill="#f5f3ff" stroke="#c4b5fd"/>
+  <text x="44" y="346" font-size="13" font-weight="700" fill="#5b21b6">AL PRINCIPIO</text>
+  <text x="44" y="370" font-family="Consolas, Menlo, monospace" font-size="13" fill="#1e293b">compra.unshift('café')  añade</text>
+  <text x="44" y="390" font-family="Consolas, Menlo, monospace" font-size="13" fill="#1e293b">compra.shift()          quita</text>
+  <path d="M150,300 C150,250 200,170 206,160" fill="none" stroke="#7c3aed" stroke-width="2" marker-end="url(#f)"/>
+
+  <!-- final -->
+  <rect x="476" y="320" width="400" height="80" rx="12" fill="#fff7ed" stroke="#fdba74"/>
+  <text x="496" y="346" font-size="13" font-weight="700" fill="#9a3412">AL FINAL</text>
+  <text x="496" y="370" font-family="Consolas, Menlo, monospace" font-size="13" fill="#1e293b">compra.push('arroz')  añade</text>
+  <text x="496" y="390" font-family="Consolas, Menlo, monospace" font-size="13" fill="#1e293b">compra.pop()          quita</text>
+  <path d="M750,300 C750,250 700,170 694,160" fill="none" stroke="#ea580c" stroke-width="2" marker-end="url(#f)"/>
+</svg>

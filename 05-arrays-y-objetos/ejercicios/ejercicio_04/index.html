@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 04 · map, filter, reduce y sort</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <main class="contenedor">
+        <h1>🧪 map, filter, reduce y sort</h1>
+        <p class="descripcion">Seis precios. Cuatro métodos que transforman, seleccionan, resumen y ordenan… sin tocar el array original.</p>
+
+        <table class="tabla">
+            <thead><tr><th>Operación</th><th>Resultado</th></tr></thead>
+            <tbody>
+                <tr><td>Precios originales</td><td id="original" class="resultado">?</td></tr>
+                <tr><td>Con IVA (<code>map</code>)</td><td id="conIva" class="resultado">?</td></tr>
+                <tr><td>Menores de 20 € (<code>filter</code>)</td><td id="baratos" class="resultado">?</td></tr>
+                <tr><td>Total (<code>reduce</code>)</td><td id="total" class="resultado">?</td></tr>
+                <tr><td>Total con IVA de los menores de 20 € (encadenado)</td><td id="encadenado" class="resultado">?</td></tr>
+                <tr><td>Ordenados SIN comparador (<code>sort()</code>)</td><td id="ordenMal" class="resultado">?</td></tr>
+                <tr><td>Ordenados CON comparador</td><td id="ordenBien" class="resultado">?</td></tr>
+                <tr><td>Precios originales, al final</td><td id="originalFinal" class="resultado">?</td></tr>
+            </tbody>
+        </table>
+
+        <p class="ayuda">💡 Fijaos bien en la fila de <code>sort()</code> sin comparador. Hay algo que no cuadra.</p>
+
+        <div class="firma">Curso de JavaScript en el cliente · Realizado por Ramón Abramo</div>
+    </main>
+    <script src="app.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 420" width="900" height="420" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif">
+  <title>Anatomía de un objeto</title>
+  <desc>Un objeto agrupa propiedades con nombre; se accede con punto o con corchetes, y puede tener métodos.</desc>
+  <rect width="900" height="420" rx="16" fill="#ffffff"/>
+  <text x="450" y="42" text-anchor="middle" font-size="22" font-weight="700" fill="#1e293b">Un objeto es una ficha con etiquetas</text>
+  <text x="450" y="66" text-anchor="middle" font-size="14" fill="#64748b">Array: datos numerados por posición · Objeto: datos con nombre</text>
+
+  <!-- código -->
+  <rect x="24" y="90" width="420" height="300" rx="12" fill="#1e293b"/>
+  <g font-family="Consolas, Menlo, monospace" font-size="15" fill="#e2e8f0">
+    <text x="44" y="126"><tspan fill="#93c5fd">const</tspan> producto = {</text>
+    <text x="72" y="160"><tspan fill="#fde047">nombre</tspan>: <tspan fill="#fdba74">'Teclado'</tspan>,</text>
+    <text x="72" y="190"><tspan fill="#fde047">precio</tspan>: <tspan fill="#86efac">39.9</tspan>,</text>
+    <text x="72" y="220"><tspan fill="#fde047">stock</tspan>: <tspan fill="#86efac">12</tspan>,</text>
+    <text x="72" y="250"><tspan fill="#fde047">colores</tspan>: [<tspan fill="#fdba74">'negro'</tspan>, <tspan fill="#fdba74">'blanco'</tspan>],</text>
+    <text x="72" y="280"><tspan fill="#c4b5fd">conIva</tspan>() {</text>
+    <text x="100" y="310"><tspan fill="#fca5a5">return</tspan> this.precio * 1.21;</text>
+    <text x="72" y="340">}</text>
+    <text x="44" y="372">};</text>
+  </g>
+
+  <!-- etiquetas -->
+  <g font-size="13">
+    <rect x="470" y="96" width="406" height="70" rx="10" fill="#fefce8" stroke="#facc15"/>
+    <text x="486" y="122" font-weight="700" fill="#854d0e">Propiedad = clave: valor</text>
+    <text x="486" y="146" fill="#334155">La clave es el nombre; el valor, cualquier cosa:</text>
+    <text x="486" y="162" fill="#334155">número, texto, array… o incluso otro objeto.</text>
+
+    <rect x="470" y="178" width="406" height="70" rx="10" fill="#f5f3ff" stroke="#c4b5fd"/>
+    <text x="486" y="204" font-weight="700" fill="#5b21b6">Método = propiedad que es una función</text>
+    <text x="486" y="228" fill="#334155">Dentro, <tspan font-family="Consolas, Menlo, monospace">this</tspan> es el propio objeto.</text>
+    <text x="486" y="244" font-family="Consolas, Menlo, monospace" fill="#5b21b6">producto.conIva()  → 48.279</text>
+
+    <rect x="470" y="260" width="406" height="130" rx="10" fill="#eff6ff" stroke="#93c5fd"/>
+    <text x="486" y="286" font-weight="700" fill="#1d4ed8">Dos formas de leer una propiedad</text>
+    <text x="486" y="312" font-family="Consolas, Menlo, monospace" fill="#1e293b">producto.precio</text>
+    <text x="680" y="312" fill="#475569">punto: lo habitual</text>
+    <text x="486" y="338" font-family="Consolas, Menlo, monospace" fill="#1e293b">producto['precio']</text>
+    <text x="680" y="338" fill="#475569">corchetes: también</text>
+    <text x="486" y="364" font-family="Consolas, Menlo, monospace" fill="#1e293b">producto[clave]</text>
+    <text x="680" y="364" fill="#475569">corchetes con variable:</text>
+    <text x="680" y="380" fill="#475569">solo así</text>
+  </g>
+</svg>

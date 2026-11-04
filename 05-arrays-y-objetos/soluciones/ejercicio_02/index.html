@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 02 · Buscador de alumnos (Solución)</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <main class="contenedor">
+        <h1>🔎 Buscador de alumnos</h1>
+        <p class="descripcion">Dos listas paralelas: en la posición 0 de las dos está Ana y su nota, en la 1 Luis y la suya…</p>
+
+        <p id="salida" class="salida">…</p>
+
+        <table class="tabla">
+            <thead><tr><th>Pregunta</th><th>Respuesta</th></tr></thead>
+            <tbody>
+                <tr><td>Primera nota suspensa (<code>find</code>)</td><td id="primerSuspenso" class="resultado">?</td></tr>
+                <tr><td>¿De quién es? (<code>findIndex</code>)</td><td id="quienSuspende" class="resultado">?</td></tr>
+                <tr><td>¿Alguien tiene un 10? (<code>includes</code>)</td><td id="hayDiez" class="resultado">?</td></tr>
+                <tr><td>¿Todas las notas son válidas? (<code>every</code>)</td><td id="todasValidas" class="resultado">?</td></tr>
+            </tbody>
+        </table>
+
+        <p class="ayuda">💡 Probad con <code>Marta</code>, con <code>marta</code> y con alguien que no esté. ¿Por qué falla la segunda?</p>
+
+        <div class="firma">Curso de JavaScript en el cliente · Realizado por Ramón Abramo</div>
+    </main>
+    <script src="app.js"></script>
+</body>
+
+</html>
