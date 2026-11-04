@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 03 · Del script interno al fichero externo</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <main class="contenedor">
+        <h1>📦 Del script interno al fichero externo</h1>
+        <p class="descripcion">Esta página funciona, pero su JavaScript está escrito dentro del HTML. Vamos a ordenarlo.</p>
+
+        <p id="salida" class="salida">Esperando a JavaScript…</p>
+
+        <p class="ayuda">💡 Mirad el final de <code>index.html</code>: ahí está el código que tenéis que trasladar.</p>
+
+        <div class="firma">Curso de JavaScript en el cliente · Realizado por Ramón Abramo</div>
+    </main>
+    <!-- ⚠ Código JavaScript escrito DENTRO del HTML. Hay que llevarlo a app.js -->
+    <script>
+        const salida = document.querySelector('#salida');
+        const curso = 'JavaScript en el cliente';
+        console.log('Código ejecutado desde el propio HTML');
+        salida.textContent = 'Bienvenidos al curso de ' + curso;
+    </script>
+</body>
+
+</html>

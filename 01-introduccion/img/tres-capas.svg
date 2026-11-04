@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 400" width="900" height="400" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif">
+  <title>Tres capas, tres trabajos</title>
+  <desc>El mismo botón construido por capas: HTML crea el botón, CSS le da aspecto y JavaScript hace que responda al clic.</desc>
+  <rect width="900" height="400" rx="16" fill="#ffffff"/>
+  <text x="450" y="42" text-anchor="middle" font-size="22" font-weight="700" fill="#1e293b">Tres capas, tres trabajos</text>
+  <text x="450" y="66" text-anchor="middle" font-size="14" fill="#64748b">El mismo botón, construido capa a capa</text>
+
+  <defs>
+    <marker id="f" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#94a3b8"/></marker>
+  </defs>
+
+  <!-- HTML -->
+  <rect x="24" y="90" width="264" height="290" rx="12" fill="#fff7ed" stroke="#fdba74"/>
+  <text x="44" y="120" font-size="13" font-weight="700" fill="#c2410c">HTML · ESTRUCTURA</text>
+  <text x="44" y="142" font-size="13" fill="#475569">¿Qué hay en la página?</text>
+  <rect x="44" y="158" width="224" height="84" rx="8" fill="#1e293b"/>
+  <text x="58" y="186" font-family="Consolas, Menlo, monospace" font-size="12" fill="#fdba74">&lt;button id="btnComprar"&gt;</text>
+  <text x="74" y="206" font-family="Consolas, Menlo, monospace" font-size="12" fill="#e2e8f0">Comprar</text>
+  <text x="58" y="226" font-family="Consolas, Menlo, monospace" font-size="12" fill="#fdba74">&lt;/button&gt;</text>
+  <text x="44" y="276" font-size="12" fill="#64748b">Resultado en el navegador:</text>
+  <rect x="44" y="290" width="84" height="28" rx="2" fill="#efefef" stroke="#767676"/>
+  <text x="86" y="309" text-anchor="middle" font-size="13" fill="#000000">Comprar</text>
+  <text x="44" y="352" font-size="12" fill="#64748b">Existe, pero es feo y no hace nada.</text>
+
+  <line x1="292" y1="235" x2="314" y2="235" stroke="#94a3b8" stroke-width="2" marker-end="url(#f)"/>
+
+  <!-- CSS -->
+  <rect x="318" y="90" width="264" height="290" rx="12" fill="#eff6ff" stroke="#93c5fd"/>
+  <text x="338" y="120" font-size="13" font-weight="700" fill="#1d4ed8">CSS · PRESENTACIÓN</text>
+  <text x="338" y="142" font-size="13" fill="#475569">¿Cómo se ve?</text>
+  <rect x="338" y="158" width="224" height="84" rx="8" fill="#1e293b"/>
+  <text x="352" y="186" font-family="Consolas, Menlo, monospace" font-size="12" fill="#93c5fd">#btnComprar {</text>
+  <text x="368" y="206" font-family="Consolas, Menlo, monospace" font-size="12" fill="#e2e8f0">background: #2563eb;</text>
+  <text x="352" y="226" font-family="Consolas, Menlo, monospace" font-size="12" fill="#93c5fd">}</text>
+  <text x="338" y="276" font-size="12" fill="#64748b">Resultado en el navegador:</text>
+  <rect x="338" y="288" width="110" height="34" rx="8" fill="#2563eb"/>
+  <text x="393" y="310" text-anchor="middle" font-size="14" font-weight="600" fill="#ffffff">Comprar</text>
+  <text x="338" y="352" font-size="12" fill="#64748b">Bonito… pero sigue sin hacer nada.</text>
+
+  <line x1="586" y1="235" x2="608" y2="235" stroke="#94a3b8" stroke-width="2" marker-end="url(#f)"/>
+
+  <!-- JS -->
+  <rect x="612" y="90" width="264" height="290" rx="12" fill="#fefce8" stroke="#facc15"/>
+  <text x="632" y="120" font-size="13" font-weight="700" fill="#a16207">JAVASCRIPT · COMPORTAMIENTO</text>
+  <text x="632" y="142" font-size="13" fill="#475569">¿Qué pasa cuando lo uso?</text>
+  <rect x="632" y="158" width="224" height="84" rx="8" fill="#1e293b"/>
+  <text x="646" y="186" font-family="Consolas, Menlo, monospace" font-size="12" fill="#fde047">btnComprar</text>
+  <text x="646" y="206" font-family="Consolas, Menlo, monospace" font-size="12" fill="#e2e8f0">.addEventListener(</text>
+  <text x="662" y="226" font-family="Consolas, Menlo, monospace" font-size="12" fill="#e2e8f0">'click', añadir);</text>
+  <text x="632" y="276" font-size="12" fill="#64748b">Resultado en el navegador:</text>
+  <rect x="632" y="288" width="110" height="34" rx="8" fill="#2563eb"/>
+  <text x="687" y="310" text-anchor="middle" font-size="14" font-weight="600" fill="#ffffff">Comprar</text>
+  <text x="752" y="310" font-size="13" font-weight="600" fill="#15803d">✔ ¡Añadido!</text>
+  <text x="632" y="352" font-size="12" fill="#64748b">Ahora responde al usuario.</text>
+</svg>

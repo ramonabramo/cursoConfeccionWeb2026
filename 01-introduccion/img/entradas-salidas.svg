@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 380" width="900" height="380" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif">
+  <title>Canales de entrada y salida del bloque 01</title>
+  <desc>prompt recoge un dato del usuario; el programa lo procesa; el resultado sale por console.log, alert o textContent.</desc>
+  <rect width="900" height="380" rx="16" fill="#ffffff"/>
+  <text x="450" y="42" text-anchor="middle" font-size="22" font-weight="700" fill="#1e293b">Entradas → procesamiento → salidas</text>
+  <text x="450" y="66" text-anchor="middle" font-size="14" fill="#64748b">Los canales que vamos a usar en este primer bloque</text>
+
+  <defs>
+    <marker id="f" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#64748b"/></marker>
+  </defs>
+
+  <!-- Entrada -->
+  <rect x="24" y="130" width="220" height="150" rx="12" fill="#eff6ff" stroke="#93c5fd" stroke-width="1.5"/>
+  <text x="44" y="158" font-size="13" font-weight="700" fill="#1d4ed8">ENTRADA</text>
+  <text x="44" y="186" font-family="Consolas, Menlo, monospace" font-size="15" font-weight="700" fill="#1e293b">prompt()</text>
+  <text x="44" y="212" font-size="12" fill="#475569">Pregunta al usuario con</text>
+  <text x="44" y="228" font-size="12" fill="#475569">un cuadro de diálogo.</text>
+  <rect x="40" y="242" width="188" height="26" rx="6" fill="#fee2e2"/>
+  <text x="50" y="260" font-size="12" font-weight="600" fill="#b91c1c">Devuelve texto… o null</text>
+
+  <line x1="248" y1="205" x2="330" y2="205" stroke="#64748b" stroke-width="2" marker-end="url(#f)"/>
+
+  <!-- Proceso -->
+  <rect x="336" y="150" width="200" height="110" rx="12" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5"/>
+  <text x="436" y="186" text-anchor="middle" font-size="13" font-weight="700" fill="#334155">PROCESAMIENTO</text>
+  <text x="436" y="212" text-anchor="middle" font-size="12" fill="#475569">Variables, cálculos,</text>
+  <text x="436" y="228" text-anchor="middle" font-size="12" fill="#475569">unir textos…</text>
+
+  <line x1="540" y1="190" x2="612" y2="120" stroke="#64748b" stroke-width="2" marker-end="url(#f)"/>
+  <line x1="540" y1="205" x2="612" y2="205" stroke="#64748b" stroke-width="2" marker-end="url(#f)"/>
+  <line x1="540" y1="220" x2="612" y2="290" stroke="#64748b" stroke-width="2" marker-end="url(#f)"/>
+
+  <!-- Salidas -->
+  <rect x="618" y="84" width="258" height="76" rx="12" fill="#f1f5f9" stroke="#94a3b8"/>
+  <text x="634" y="110" font-family="Consolas, Menlo, monospace" font-size="14" font-weight="700" fill="#1e293b">console.log()</text>
+  <text x="634" y="132" font-size="12" fill="#475569">Para vosotros, los programadores.</text>
+  <text x="634" y="150" font-size="12" fill="#475569">El usuario no lo ve.</text>
+
+  <rect x="618" y="170" width="258" height="76" rx="12" fill="#fff7ed" stroke="#fdba74"/>
+  <text x="634" y="196" font-family="Consolas, Menlo, monospace" font-size="14" font-weight="700" fill="#1e293b">alert()</text>
+  <text x="634" y="218" font-size="12" fill="#475569">Cuadro de aviso que bloquea</text>
+  <text x="634" y="236" font-size="12" fill="#475569">la página hasta pulsar Aceptar.</text>
+
+  <rect x="618" y="256" width="258" height="96" rx="12" fill="#f0fdf4" stroke="#22c55e" stroke-width="2"/>
+  <text x="634" y="282" font-family="Consolas, Menlo, monospace" font-size="14" font-weight="700" fill="#1e293b">elemento.textContent</text>
+  <text x="634" y="304" font-size="12" fill="#475569">Escribe el resultado dentro</text>
+  <text x="634" y="322" font-size="12" fill="#475569">de la propia página.</text>
+  <text x="634" y="342" font-size="12" font-weight="700" fill="#15803d">★ La que más vamos a usar</text>
+</svg>

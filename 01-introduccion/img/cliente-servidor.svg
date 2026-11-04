@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 360" width="900" height="360" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif">
+  <title>Dónde se ejecuta JavaScript en el cliente</title>
+  <desc>El navegador pide la página al servidor, el servidor le envía los ficheros HTML, CSS y JS, y el JavaScript se ejecuta en el ordenador del usuario.</desc>
+  <rect width="900" height="360" rx="16" fill="#ffffff"/>
+  <text x="450" y="42" text-anchor="middle" font-size="22" font-weight="700" fill="#1e293b">¿Dónde se ejecuta nuestro JavaScript?</text>
+  <text x="450" y="66" text-anchor="middle" font-size="14" fill="#64748b">El servidor solo entrega los ficheros. Quien ejecuta el código es el navegador.</text>
+
+  <defs>
+    <marker id="f" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#475569"/></marker>
+  </defs>
+
+  <!-- Navegador -->
+  <rect x="24" y="96" width="330" height="240" rx="14" fill="#ecfdf5" stroke="#34d399" stroke-width="1.5"/>
+  <text x="44" y="126" font-size="15" font-weight="700" fill="#047857">💻 CLIENTE · el navegador</text>
+  <text x="44" y="146" font-size="12" fill="#475569">En el ordenador o el móvil del usuario</text>
+  <rect x="44" y="162" width="290" height="40" rx="8" fill="#ffffff" stroke="#a7f3d0"/>
+  <text x="58" y="187" font-size="13" fill="#1e293b">Pinta el HTML y aplica el CSS</text>
+  <rect x="44" y="212" width="290" height="58" rx="8" fill="#fef9c3" stroke="#facc15" stroke-width="1.5"/>
+  <text x="58" y="236" font-size="13" font-weight="700" fill="#854d0e">⚙ Motor de JavaScript</text>
+  <text x="58" y="256" font-size="12" fill="#713f12">Aquí se ejecuta app.js</text>
+  <text x="44" y="300" font-size="12" fill="#475569">Puede cambiar la página sin volver</text>
+  <text x="44" y="318" font-size="12" fill="#475569">a pedir nada al servidor.</text>
+
+  <!-- Flechas -->
+  <line x1="364" y1="170" x2="530" y2="170" stroke="#475569" stroke-width="2" marker-end="url(#f)"/>
+  <text x="447" y="160" text-anchor="middle" font-size="13" font-weight="600" fill="#1e293b">① Petición</text>
+  <text x="447" y="190" text-anchor="middle" font-size="12" fill="#64748b">«Dame index.html»</text>
+  <line x1="536" y1="256" x2="370" y2="256" stroke="#475569" stroke-width="2" marker-end="url(#f)"/>
+  <text x="453" y="246" text-anchor="middle" font-size="13" font-weight="600" fill="#1e293b">② Respuesta</text>
+  <text x="453" y="276" text-anchor="middle" font-size="12" fill="#64748b">HTML + CSS + JS</text>
+
+  <!-- Servidor -->
+  <rect x="546" y="96" width="330" height="240" rx="14" fill="#f1f5f9" stroke="#94a3b8" stroke-width="1.5"/>
+  <text x="566" y="126" font-size="15" font-weight="700" fill="#334155">🗄 SERVIDOR</text>
+  <text x="566" y="146" font-size="12" fill="#475569">Un ordenador en Internet que guarda la web</text>
+  <g font-family="Consolas, Menlo, monospace" font-size="13">
+    <rect x="566" y="166" width="140" height="32" rx="6" fill="#ffffff" stroke="#fdba74"/><text x="580" y="187" fill="#c2410c">index.html</text>
+    <rect x="566" y="206" width="140" height="32" rx="6" fill="#ffffff" stroke="#93c5fd"/><text x="580" y="227" fill="#1d4ed8">style.css</text>
+    <rect x="566" y="246" width="140" height="32" rx="6" fill="#ffffff" stroke="#facc15"/><text x="580" y="267" fill="#a16207">app.js</text>
+  </g>
+  <text x="722" y="210" font-size="12" fill="#475569">Los guarda y</text>
+  <text x="722" y="228" font-size="12" fill="#475569">los envía tal cual.</text>
+  <text x="566" y="312" font-size="12" fill="#475569">En este curso, el «servidor» puede ser</text>
+  <text x="566" y="328" font-size="12" fill="#475569">vuestra propia carpeta o Live Server.</text>
+</svg>

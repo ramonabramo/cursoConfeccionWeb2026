@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 05 · textContent frente a innerHTML (Solución)</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <main class="contenedor">
+        <h1>🔤 textContent frente a innerHTML</h1>
+        <p class="descripcion">El mismo texto, con etiquetas HTML dentro, escrito de dos formas distintas.</p>
+
+        <h2>Escrito con <code>textContent</code></h2>
+        <p id="salidaTexto" class="salida">…</p>
+
+        <h2>Escrito con <code>innerHTML</code></h2>
+        <p id="salidaHtml" class="salida salida--secundaria">…</p>
+
+        <h2>Comentario de un usuario (escrito con <code>textContent</code>)</h2>
+        <p id="salidaComentario" class="salida salida--aviso">…</p>
+
+        <p class="ayuda">💡 Comparad los dos primeros párrafos. ¿Por qué uno muestra las etiquetas y el otro no?</p>
+
+        <div class="firma">Curso de JavaScript en el cliente · Realizado por Ramón Abramo</div>
+    </main>
+    <script src="app.js"></script>
+</body>
+
+</html>
