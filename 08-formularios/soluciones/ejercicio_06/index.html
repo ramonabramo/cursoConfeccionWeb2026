@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 06 · Formulario de contacto accesible (Solución)</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <main class="contenedor">
+        <h1>♿ Formulario de contacto accesible</h1>
+        <p class="descripcion">Errores que se entienden con los ojos… y sin ellos. Probad a recorrerlo solo con el teclado.</p>
+
+        <div id="resumenErrores" class="resumen-errores" role="alert" tabindex="-1"></div>
+        <p id="exito" class="exito" aria-live="polite"></p>
+
+        <form id="contacto" novalidate>
+            <div class="campo">
+                <label for="nombre">Nombre</label>
+                <input type="text" id="nombre" name="nombre" required minlength="2" aria-describedby="error-nombre">
+                <p id="error-nombre" class="error-campo"></p>
+            </div>
+            <div class="campo">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required aria-describedby="error-email">
+                <p id="error-email" class="error-campo"></p>
+            </div>
+            <div class="campo">
+                <label for="telefono">Teléfono (9 cifras)</label>
+                <input type="tel" id="telefono" name="telefono" required pattern="[0-9]{9}" aria-describedby="error-telefono">
+                <p id="error-telefono" class="error-campo"></p>
+            </div>
+            <div class="campo">
+                <label for="mensaje">Mensaje (mínimo 20 caracteres)</label>
+                <textarea id="mensaje" name="mensaje" required minlength="20" aria-describedby="error-mensaje"></textarea>
+                <p id="error-mensaje" class="error-campo"></p>
+            </div>
+            <button type="submit" class="btn">Enviar mensaje</button>
+        </form>
+
+        <div class="firma">Curso de JavaScript en el cliente · Realizado por Ramón Abramo</div>
+    </main>
+    <script src="app.js"></script>
+</body>
+
+</html>

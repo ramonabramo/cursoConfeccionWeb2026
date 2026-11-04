@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 08 · Inscripciones a un taller (Solución)</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <main class="contenedor">
+        <h1>🎓 Inscripciones al taller de JavaScript</h1>
+        <p id="plazas" class="carrito">Plazas libres: 5 de 5</p>
+
+        <form id="inscripcion" novalidate>
+            <div class="campo">
+                <label for="nombre">Nombre y apellidos</label>
+                <input type="text" id="nombre" name="nombre" required minlength="3" aria-describedby="error-nombre">
+                <p id="error-nombre" class="error-campo"></p>
+            </div>
+            <div class="campo">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required aria-describedby="error-email">
+                <p id="error-email" class="error-campo"></p>
+            </div>
+            <fieldset>
+                <legend>Nivel</legend>
+                <label class="opcion"><input type="radio" name="nivel" value="inicial" checked> Inicial</label>
+                <label class="opcion"><input type="radio" name="nivel" value="intermedio"> Intermedio</label>
+                <label class="opcion"><input type="radio" name="nivel" value="avanzado"> Avanzado</label>
+            </fieldset>
+            <button type="submit" id="btnInscribir" class="btn">Inscribirme</button>
+        </form>
+
+        <p id="mensaje" class="exito" aria-live="polite"></p>
+
+        <h2>Inscritos</h2>
+        <table class="tabla">
+            <thead><tr><th>Nombre</th><th>Email</th><th>Nivel</th><th></th></tr></thead>
+            <tbody id="cuerpoTabla"></tbody>
+        </table>
+
+        <div class="firma">Curso de JavaScript en el cliente · Realizado por Ramón Abramo</div>
+    </main>
+    <script src="app.js"></script>
+</body>
+
+</html>

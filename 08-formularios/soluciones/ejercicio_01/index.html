@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 01 · Pedido en la pizzería: leer cada control (Solución)</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <main class="contenedor">
+        <h1>🍕 Pedido en la pizzería</h1>
+        <p class="descripcion">Seis tipos de control distintos. Cada uno se lee a su manera.</p>
+
+        <form id="pedido">
+            <div class="campo">
+                <label for="nombre">Nombre</label>
+                <input type="text" id="nombre" name="nombre" value="Lucía">
+            </div>
+            <div class="campo">
+                <label for="cantidad">Cantidad de pizzas</label>
+                <input type="number" id="cantidad" name="cantidad" value="2">
+            </div>
+            <div class="campo">
+                <label for="tamano">Tamaño</label>
+                <select id="tamano" name="tamano">
+                    <option value="mediana">Mediana · 9 €</option>
+                    <option value="familiar" selected>Familiar · 14 €</option>
+                </select>
+            </div>
+            <div class="campo">
+                <label class="opcion"><input type="checkbox" id="extraQueso" name="extraQueso"> Extra de queso (+1,50 € por pizza)</label>
+            </div>
+            <fieldset>
+                <legend>Entrega</legend>
+                <label class="opcion"><input type="radio" name="entrega" value="recoger" checked> Recoger en tienda</label>
+                <label class="opcion"><input type="radio" name="entrega" value="domicilio"> A domicilio (+3 €)</label>
+            </fieldset>
+            <div class="campo">
+                <label for="notas">Notas</label>
+                <textarea id="notas" name="notas" placeholder="Sin cebolla, por favor…"></textarea>
+            </div>
+            <button type="submit" class="btn">Hacer pedido</button>
+        </form>
+
+        <pre id="resumen" class="ticket">Rellena el formulario y pulsa «Hacer pedido».</pre>
+
+        <div class="firma">Curso de JavaScript en el cliente · Realizado por Ramón Abramo</div>
+    </main>
+    <script src="app.js"></script>
+</body>
+
+</html>

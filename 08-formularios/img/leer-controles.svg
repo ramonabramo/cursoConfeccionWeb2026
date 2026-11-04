@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 442" width="900" height="442" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif">
+  <title>Cómo leer cada tipo de control</title>
+  <desc>Tabla con cada tipo de control de formulario, la propiedad que se lee y el tipo de valor que devuelve.</desc>
+  <rect width="900" height="442" rx="16" fill="#ffffff"/>
+  <text x="450" y="42" text-anchor="middle" font-size="22" font-weight="700" fill="#1e293b">¿Cómo leo cada control?</text>
+  <text x="450" y="66" text-anchor="middle" font-size="14" fill="#64748b">Casi todos se leen con .value… y casi todo lo que devuelve es TEXTO</text>
+
+  <rect x="24" y="86" width="852" height="40" rx="8" fill="#1e293b"/>
+  <g font-size="13.5" font-weight="700" fill="#ffffff">
+    <text x="44" y="111">Control</text><text x="300" y="111">Cómo se lee</text><text x="560" y="111">Devuelve</text><text x="720" y="111">Ejemplo</text>
+  </g>
+
+  <g font-size="13">
+    <rect x="24" y="128" width="852" height="38" fill="#f8fafc"/>
+    <text x="44" y="152" fill="#1e293b">✏️ Texto, email, textarea</text>
+    <text x="300" y="152" font-family="Consolas, Menlo, monospace" fill="#1d4ed8">campo.value</text>
+    <text x="560" y="152" fill="#c2410c">texto</text>
+    <text x="720" y="152" font-family="Consolas, Menlo, monospace" fill="#475569">'Lucía'</text>
+
+    <rect x="24" y="168" width="852" height="38" fill="#ffffff"/>
+    <text x="44" y="192" fill="#1e293b">🔢 Número</text>
+    <text x="300" y="192" font-family="Consolas, Menlo, monospace" fill="#1d4ed8">Number(campo.value)</text>
+    <text x="560" y="192" fill="#15803d">número (si convertís)</text>
+    <text x="720" y="192" font-family="Consolas, Menlo, monospace" fill="#475569">28</text>
+
+    <rect x="24" y="208" width="852" height="38" fill="#f8fafc"/>
+    <text x="44" y="232" fill="#1e293b">🔽 Select</text>
+    <text x="300" y="232" font-family="Consolas, Menlo, monospace" fill="#1d4ed8">select.value</text>
+    <text x="560" y="232" fill="#c2410c">texto (su value)</text>
+    <text x="720" y="232" font-family="Consolas, Menlo, monospace" fill="#475569">'madrid'</text>
+
+    <rect x="24" y="248" width="852" height="38" fill="#ffffff"/>
+    <text x="44" y="272" fill="#1e293b">☑️ Checkbox (una)</text>
+    <text x="300" y="272" font-family="Consolas, Menlo, monospace" fill="#1d4ed8">casilla.checked</text>
+    <text x="560" y="272" fill="#7c3aed">booleano</text>
+    <text x="720" y="272" font-family="Consolas, Menlo, monospace" fill="#475569">true</text>
+
+    <rect x="24" y="288" width="852" height="50" fill="#f8fafc"/>
+    <text x="44" y="312" fill="#1e293b">🔘 Radio (grupo)</text>
+    <text x="300" y="312" font-family="Consolas, Menlo, monospace" fill="#1d4ed8">form.querySelector(</text>
+    <text x="300" y="326" font-family="Consolas, Menlo, monospace" font-size="11.5" fill="#1d4ed8">  '[name="envio"]:checked').value</text>
+    <text x="560" y="312" fill="#c2410c">texto, si hay alguno</text>
+    <text x="560" y="326" font-size="11.5" fill="#c2410c">marcado (si no: null)</text>
+    <text x="720" y="312" font-family="Consolas, Menlo, monospace" fill="#475569">'urgente'</text>
+
+    <rect x="24" y="340" width="852" height="38" fill="#ffffff"/>
+    <text x="44" y="364" fill="#1e293b">📦 Todo el formulario</text>
+    <text x="300" y="364" font-family="Consolas, Menlo, monospace" fill="#1d4ed8">new FormData(form)</text>
+    <text x="560" y="364" fill="#c2410c">pares name → valor</text>
+    <text x="720" y="364" font-family="Consolas, Menlo, monospace" fill="#475569">.get('email')</text>
+  </g>
+
+  <rect x="24" y="390" width="852" height="38" rx="8" fill="#fef9c3" stroke="#ca8a04"/>
+  <text x="44" y="414" font-size="13" fill="#713f12">💡 Para FormData y los grupos de radio, cada control necesita su atributo <tspan font-family="Consolas, Menlo, monospace" font-weight="700">name</tspan>. Sin name, el control no existe para el formulario.</text>
+</svg>

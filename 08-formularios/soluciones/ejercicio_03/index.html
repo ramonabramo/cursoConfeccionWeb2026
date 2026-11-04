@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 03 · Validación nativa del navegador (Solución)</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <main class="contenedor">
+        <h1>🛡️ Validación nativa del navegador</h1>
+        <p class="descripcion">Sin escribir ni una línea de validación en JavaScript: solo con atributos HTML.</p>
+
+        <form id="registro">
+            <div class="campo">
+                <label for="nombre">Nombre (mínimo 2 letras)</label>
+                <input type="text" id="nombre" name="nombre" required minlength="2">
+            </div>
+            <div class="campo">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="campo">
+                <label for="edad">Edad (de 18 a 99)</label>
+                <input type="number" id="edad" name="edad" required min="18" max="99">
+            </div>
+            <div class="campo">
+                <label for="cp">Código postal (5 cifras)</label>
+                <input type="text" id="cp" name="cp" inputmode="numeric" required pattern="[0-9]{5}">
+            </div>
+            <div class="campo">
+                <label class="opcion"><input type="checkbox" id="acepto" name="acepto" required> Acepto las condiciones</label>
+            </div>
+            <button type="submit" class="btn">Registrarme</button>
+        </form>
+
+        <p id="exito" class="exito"></p>
+
+        <p class="ayuda">💡 Intentad enviar el formulario vacío. Después, con un email sin @ o con una edad de 15. ¿Quién os avisa?</p>
+
+        <div class="firma">Curso de JavaScript en el cliente · Realizado por Ramón Abramo</div>
+    </main>
+    <script src="app.js"></script>
+</body>
+
+</html>

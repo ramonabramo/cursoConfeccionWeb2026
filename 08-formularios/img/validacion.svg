@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 430" width="900" height="430" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif">
+  <title>Atributos de validación y ValidityState</title>
+  <desc>Cada atributo de validación de HTML activa una propiedad de validity cuando no se cumple; JavaScript puede leerlas y añadir reglas propias con setCustomValidity.</desc>
+  <rect width="900" height="430" rx="16" fill="#ffffff"/>
+  <text x="450" y="42" text-anchor="middle" font-size="22" font-weight="700" fill="#1e293b">Cada regla HTML tiene su chivato en validity</text>
+  <text x="450" y="66" text-anchor="middle" font-size="14" fill="#64748b">El atributo pone la regla · campo.validity dice cuál se ha incumplido</text>
+
+  <rect x="24" y="86" width="852" height="40" rx="8" fill="#1e293b"/>
+  <g font-size="13.5" font-weight="700" fill="#ffffff">
+    <text x="44" y="111">Atributo en el HTML</text><text x="330" y="111">Si no se cumple…</text><text x="600" y="111">Mensaje que podéis mostrar</text>
+  </g>
+
+  <g font-size="13">
+    <rect x="24" y="128" width="852" height="36" fill="#f8fafc"/>
+    <text x="44" y="151" font-family="Consolas, Menlo, monospace" fill="#1e293b">required</text>
+    <text x="330" y="151" font-family="Consolas, Menlo, monospace" fill="#b91c1c">validity.valueMissing</text>
+    <text x="600" y="151" fill="#334155">Este campo es obligatorio</text>
+
+    <rect x="24" y="166" width="852" height="36" fill="#ffffff"/>
+    <text x="44" y="189" font-family="Consolas, Menlo, monospace" fill="#1e293b">type="email"</text>
+    <text x="330" y="189" font-family="Consolas, Menlo, monospace" fill="#b91c1c">validity.typeMismatch</text>
+    <text x="600" y="189" fill="#334155">Escribe un email válido</text>
+
+    <rect x="24" y="204" width="852" height="36" fill="#f8fafc"/>
+    <text x="44" y="227" font-family="Consolas, Menlo, monospace" fill="#1e293b">minlength="3"</text>
+    <text x="330" y="227" font-family="Consolas, Menlo, monospace" fill="#b91c1c">validity.tooShort</text>
+    <text x="600" y="227" fill="#334155">Mínimo 3 caracteres</text>
+
+    <rect x="24" y="242" width="852" height="36" fill="#ffffff"/>
+    <text x="44" y="265" font-family="Consolas, Menlo, monospace" fill="#1e293b">min="18"  max="99"</text>
+    <text x="330" y="265" font-family="Consolas, Menlo, monospace" fill="#b91c1c">rangeUnderflow / rangeOverflow</text>
+    <text x="600" y="265" fill="#334155">Debe estar entre 18 y 99</text>
+
+    <rect x="24" y="280" width="852" height="36" fill="#f8fafc"/>
+    <text x="44" y="303" font-family="Consolas, Menlo, monospace" fill="#1e293b">pattern="[0-9]{5}"</text>
+    <text x="330" y="303" font-family="Consolas, Menlo, monospace" fill="#b91c1c">validity.patternMismatch</text>
+    <text x="600" y="303" fill="#334155">5 cifras, sin letras</text>
+
+    <rect x="24" y="318" width="852" height="36" fill="#f5f3ff"/>
+    <text x="44" y="341" font-family="Consolas, Menlo, monospace" fill="#5b21b6">setCustomValidity('…')</text>
+    <text x="330" y="341" font-family="Consolas, Menlo, monospace" fill="#5b21b6">validity.customError</text>
+    <text x="600" y="341" fill="#334155">Vuestra regla: «no coinciden»…</text>
+  </g>
+
+  <rect x="24" y="366" width="414" height="50" rx="10" fill="#f0fdf4" stroke="#86efac"/>
+  <text x="40" y="388" font-size="12.5" fill="#166534"><tspan font-family="Consolas, Menlo, monospace" font-weight="700">validity.valid</tspan> es true si no falla ninguna.</text>
+  <text x="40" y="406" font-size="12.5" fill="#166534"><tspan font-family="Consolas, Menlo, monospace" font-weight="700">form.checkValidity()</tspan> lo comprueba en todos.</text>
+  <rect x="462" y="366" width="414" height="50" rx="10" fill="#fff7ed" stroke="#fdba74"/>
+  <text x="478" y="388" font-size="12.5" fill="#9a3412"><tspan font-family="Consolas, Menlo, monospace" font-weight="700">&lt;form novalidate&gt;</tspan> apaga los avisos del</text>
+  <text x="478" y="406" font-size="12.5" fill="#9a3412">navegador, pero las reglas siguen funcionando.</text>
+</svg>

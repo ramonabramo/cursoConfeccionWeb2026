@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 05 · Contraseñas: reglas propias con setCustomValidity</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <main class="contenedor">
+        <h1>🔐 Crear una contraseña</h1>
+        <p class="descripcion">Las reglas de una contraseña segura no caben en un atributo HTML. Las vais a programar vosotros.</p>
+
+        <form id="registro" novalidate>
+            <div class="campo">
+                <label for="usuario">Usuario</label>
+                <input type="text" id="usuario" name="usuario" required>
+            </div>
+            <div class="campo">
+                <label for="clave">Contraseña</label>
+                <input type="password" id="clave" name="clave" required minlength="8" autocomplete="new-password">
+                <ul id="requisitos" class="requisitos">
+                    <li data-regla="longitud">Al menos 8 caracteres</li>
+                    <li data-regla="mayuscula">Al menos una mayúscula</li>
+                    <li data-regla="numero">Al menos un número</li>
+                </ul>
+            </div>
+            <div class="campo">
+                <label for="repetir">Repite la contraseña</label>
+                <input type="password" id="repetir" name="repetir" required autocomplete="new-password">
+            </div>
+            <button type="submit" class="btn">Crear cuenta</button>
+        </form>
+
+        <p id="exito" class="exito"></p>
+
+        <div class="firma">Curso de JavaScript en el cliente · Realizado por Ramón Abramo</div>
+    </main>
+    <script src="app.js"></script>
+</body>
+
+</html>

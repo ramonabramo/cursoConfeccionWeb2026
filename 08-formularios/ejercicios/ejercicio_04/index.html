@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 04 · Mensajes de error propios con la API de validación</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <main class="contenedor">
+        <h1>💬 Mensajes de error propios</h1>
+        <p class="descripcion">Las mismas reglas del ejercicio 03, pero los mensajes los escribís vosotros y aparecen debajo de cada campo.</p>
+
+        <form id="registro" novalidate>
+            <div class="campo">
+                <label for="nombre">Nombre</label>
+                <input type="text" id="nombre" name="nombre" required minlength="2" aria-describedby="error-nombre">
+                <p id="error-nombre" class="error-campo"></p>
+            </div>
+            <div class="campo">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required aria-describedby="error-email">
+                <p id="error-email" class="error-campo"></p>
+            </div>
+            <div class="campo">
+                <label for="edad">Edad</label>
+                <input type="number" id="edad" name="edad" required min="18" max="99" aria-describedby="error-edad">
+                <p id="error-edad" class="error-campo"></p>
+            </div>
+            <div class="campo">
+                <label for="cp">Código postal</label>
+                <input type="text" id="cp" name="cp" inputmode="numeric" required pattern="[0-9]{5}" aria-describedby="error-cp">
+                <p id="error-cp" class="error-campo"></p>
+            </div>
+            <button type="submit" class="btn">Registrarme</button>
+        </form>
+
+        <p id="exito" class="exito"></p>
+
+        <div class="firma">Curso de JavaScript en el cliente · Realizado por Ramón Abramo</div>
+    </main>
+    <script src="app.js"></script>
+</body>
+
+</html>

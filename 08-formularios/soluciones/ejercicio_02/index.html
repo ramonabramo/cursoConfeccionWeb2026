@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 02 · FormData: el formulario entero de una vez (Solución)</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <main class="contenedor">
+        <h1>📦 FormData</h1>
+        <p class="descripcion">Inscripción a un taller. Esta vez no vais a leer los campos uno a uno.</p>
+
+        <form id="inscripcion">
+            <div class="campo">
+                <label for="nombre">Nombre</label>
+                <input type="text" id="nombre" name="nombre" value="Lucía">
+            </div>
+            <div class="campo">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" value="lucia@ejemplo.com">
+            </div>
+            <div class="campo">
+                <label for="taller">Taller</label>
+                <select id="taller" name="taller">
+                    <option value="javascript">JavaScript</option>
+                    <option value="css">CSS avanzado</option>
+                    <option value="accesibilidad">Accesibilidad web</option>
+                </select>
+            </div>
+            <fieldset>
+                <legend>Intereses (marca los que quieras)</legend>
+                <label class="opcion"><input type="checkbox" name="intereses" value="frontend" checked> Front-end</label>
+                <label class="opcion"><input type="checkbox" name="intereses" value="backend"> Back-end</label>
+                <label class="opcion"><input type="checkbox" name="intereses" value="diseño" checked> Diseño</label>
+            </fieldset>
+            <fieldset>
+                <legend>Modalidad</legend>
+                <label class="opcion"><input type="radio" name="modalidad" value="presencial" checked> Presencial</label>
+                <label class="opcion"><input type="radio" name="modalidad" value="online"> Online</label>
+            </fieldset>
+            <button type="submit" class="btn">Inscribirme</button>
+        </form>
+
+        <h2>Con <code>get</code> y <code>getAll</code></h2>
+        <pre id="salidaGet" class="ticket">…</pre>
+
+        <h2>Con <code>Object.fromEntries</code></h2>
+        <pre id="salidaObjeto" class="ticket">…</pre>
+
+        <div class="firma">Curso de JavaScript en el cliente · Realizado por Ramón Abramo</div>
+    </main>
+    <script src="app.js"></script>
+</body>
+
+</html>
