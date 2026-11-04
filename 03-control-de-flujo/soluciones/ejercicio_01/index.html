@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 01 · Calificador de notas (Solución)</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <main class="contenedor">
+        <h1>📝 Calificador de notas</h1>
+        <p class="descripcion">Introduce una nota del 0 al 10 y el programa te dirá su calificación.</p>
+
+        <p id="salida" class="salida">Esperando la nota…</p>
+
+        <table class="tabla">
+            <thead><tr><th>Nota</th><th>Calificación</th></tr></thead>
+            <tbody>
+                <tr><td>de 0 a menos de 5</td><td>Suspenso</td></tr>
+                <tr><td>de 5 a menos de 6</td><td>Aprobado</td></tr>
+                <tr><td>de 6 a menos de 7</td><td>Bien</td></tr>
+                <tr><td>de 7 a menos de 9</td><td>Notable</td></tr>
+                <tr><td>de 9 a 10</td><td>Sobresaliente</td></tr>
+            </tbody>
+        </table>
+
+        <p class="ayuda">💡 Probad 7.5, 5, 9, 10, 12, -1 y una palabra. Los tres últimos son trampas.</p>
+
+        <div class="firma">Curso de JavaScript en el cliente · Realizado por Ramón Abramo</div>
+    </main>
+    <script src="app.js"></script>
+</body>
+
+</html>

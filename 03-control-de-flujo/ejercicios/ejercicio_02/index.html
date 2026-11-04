@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 02 · Control de acceso al concierto</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <main class="contenedor">
+        <h1>🎟️ Control de acceso al concierto</h1>
+        <p class="descripcion">Normas de la puerta: hace falta entrada. Además, hay que tener 18 años, o al menos 16 si vienes con una persona adulta.</p>
+
+        <table class="tabla">
+            <thead><tr><th>Dato</th><th>Valor</th></tr></thead>
+            <tbody>
+                <tr><td>Edad</td><td id="datoEdad" class="resultado">?</td></tr>
+                <tr><td>¿Tiene entrada?</td><td id="datoEntrada" class="resultado">?</td></tr>
+                <tr><td>¿Viene con una persona adulta?</td><td id="datoAcompanado" class="resultado">?</td></tr>
+                <tr><td>¿Es mayor de edad?</td><td id="datoMayor" class="resultado">?</td></tr>
+                <tr><td>¿Puede entrar?</td><td id="datoPuedeEntrar" class="resultado">?</td></tr>
+            </tbody>
+        </table>
+
+        <p id="salida" class="salida">…</p>
+
+        <p class="ayuda">💡 <code>confirm()</code> muestra un cuadro con Aceptar y Cancelar. Aceptar devuelve <code>true</code> y Cancelar, <code>false</code>.</p>
+
+        <div class="firma">Curso de JavaScript en el cliente · Realizado por Ramón Abramo</div>
+    </main>
+    <script src="app.js"></script>
+</body>
+
+</html>

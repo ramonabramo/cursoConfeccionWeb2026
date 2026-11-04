@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 07 · Estadísticas hasta el cero (Solución)</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <main class="contenedor">
+        <h1>📊 Estadísticas hasta el cero</h1>
+        <p class="descripcion">Introduce números uno a uno. Cuando escribas 0, el programa te dará las estadísticas.</p>
+
+        <table class="tabla">
+            <thead><tr><th>Estadística</th><th>Valor</th></tr></thead>
+            <tbody>
+                <tr><td>Números introducidos</td><td id="resCantidad" class="resultado">?</td></tr>
+                <tr><td>Suma</td><td id="resSuma" class="resultado">?</td></tr>
+                <tr><td>Media</td><td id="resMedia" class="resultado">?</td></tr>
+                <tr><td>Mayor</td><td id="resMayor" class="resultado">?</td></tr>
+                <tr><td>Respuestas no válidas</td><td id="resInvalidos" class="resultado">?</td></tr>
+            </tbody>
+        </table>
+
+        <p id="salida" class="salida">…</p>
+
+        <p class="ayuda">💡 Probad: 4, hola, 10, -2 y 0. Después recargad y escribid 0 directamente.</p>
+
+        <div class="firma">Curso de JavaScript en el cliente · Realizado por Ramón Abramo</div>
+    </main>
+    <script src="app.js"></script>
+</body>
+
+</html>
