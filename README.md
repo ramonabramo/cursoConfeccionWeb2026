@@ -1,6 +1,6 @@
 # Curso de JavaScript en el cliente · Confección Web 2026
 
-Buenas, soy Ramón Abramo, profesor con más de 25 años de experiencia docente. En este repositorio os voy a acompañar paso a paso en el aprendizaje de **JavaScript para páginas web**: el JavaScript que se ejecuta en el navegador, el que hace que una página deje de ser un cartel bonito y empiece a responder cuando alguien la toca.
+Buenas, soy Ramón Abramo, profesor con más de 25 años de experiencia docente. En este repositorio os voy a acompañar paso a paso en el aprendizaje de **JavaScript para páginas web**: el JavaScript que se ejecuta en el navegador, el que hace que una página deje de ser un cartel bonito y empiece a responder cuando alguien la toca [1].
 
 Aquí tenéis la teoría de cada bloque, ejercicios para practicar y sus soluciones explicadas. Todo está pensado para que podáis estudiarlo a vuestro ritmo, pero también para usarlo en clase conmigo.
 
@@ -42,14 +42,14 @@ Necesitáis manejaros con **HTML y CSS básicos**: saber qué es una etiqueta, u
 
 ### Herramientas
 
-1. **Un navegador moderno**: Chrome, Edge o Firefox. Os servirá para ver la página y, sobre todo, para usar las **herramientas de desarrollo** (las abrís con `F12`). La pestaña **Consola** va a ser vuestra mejor amiga durante todo el curso.
+1. **Un navegador moderno**: Chrome, Edge o Firefox. Os servirá para ver la página y, sobre todo, para usar las **herramientas de desarrollo** (las abrís con `F12`). La pestaña **Consola** va a ser vuestra mejor amiga durante todo el curso [2].
 2. **Visual Studio Code** como editor.
 3. La extensión **Live Server** de VS Code (opcional pero muy recomendable). Recarga la página sola cada vez que guardáis.
 
 No tenéis que instalar nada más. Ni Node.js, ni frameworks, ni compiladores. Abrís el `index.html` en el navegador y listo.
 
 > [!NOTE]
-> A partir del bloque 12, cuando trabajemos con módulos (`import` / `export`), el navegador ya no os dejará abrir el fichero con doble clic. Ahí sí necesitaréis Live Server. Os lo explico con calma cuando lleguemos.
+> A partir del bloque 12, cuando trabajemos con módulos (`import` / `export`), el navegador ya no os dejará abrir el fichero con doble clic. Ahí sí necesitaréis Live Server. Os lo explico con calma cuando lleguemos [3].
 
 ---
 
@@ -139,10 +139,10 @@ En los primeros ejercicios todavía no usamos eventos, así que el programa se e
 ## 6. Buenas prácticas que vais a ver en todo el curso
 
 - Uso `const` por defecto y `let` solo cuando el valor tiene que cambiar. `var` no aparece en ningún ejercicio.
-- Comparo siempre con `===` y `!==`.
-- Convierto lo que llega de un `input` con `Number()` antes de hacer cuentas. Un `input` siempre devuelve texto, y `"2" + "2"` da `"22"`. Ahí suele estar el lío.
+- Comparo siempre con `===` y `!==`, que comprueban también el tipo [4].
+- Convierto lo que llega de un `input` con `Number()` antes de hacer cuentas. Un `input` siempre devuelve texto [5], y `"2" + "2"` da `"22"`. Ahí suele estar el lío.
 - Pongo nombres que se entienden: `precioTotal`, no `pt`; `btnEnviar`, no `b1`.
-- Coloco el `<script>` al final del `<body>` o con `defer`, para que el HTML exista cuando JavaScript lo busca.
+- Coloco el `<script>` al final del `<body>` o con `defer`, para que el HTML exista cuando JavaScript lo busca [6].
 - Separo la estructura (HTML), el estilo (CSS) y el comportamiento (JS) en sus propios ficheros.
 
 ---
@@ -171,4 +171,9 @@ El detalle de cada bloque, con objetivos y contenidos, lo tenéis en **[TEMARIO.
 
 ### Fuentes y Documentación Oficial
 
-La documentación de referencia del curso es MDN Web Docs para las API del navegador y la especificación ECMAScript para el lenguaje. Los enlaces directos a cada apartado se incluirán en este documento cuando haya podido comprobarlos uno a uno.
+1. [Introducción — Guía de JavaScript (MDN Web Docs)](https://developer.mozilla.org/es/docs/Web/JavaScript/Guide/Introduction)
+2. [What are browser developer tools? (MDN Web Docs)](https://developer.mozilla.org/en-US/docs/Learn_web_development/Howto/Tools_and_setup/What_are_browser_developer_tools)
+3. [Módulos JavaScript (MDN Web Docs)](https://developer.mozilla.org/es/docs/Web/JavaScript/Guide/Modules)
+4. [Expresiones y operadores — Operadores de comparación (MDN Web Docs)](https://developer.mozilla.org/es/docs/Web/JavaScript/Guide/Expressions_and_operators)
+5. [HTMLInputElement: value property (MDN Web Docs)](https://developer.mozilla.org/en-US/docs/Web/API/HTMLInputElement/value)
+6. [`<script>` HTML script element — atributo `defer` (MDN Web Docs)](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/script)

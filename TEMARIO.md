@@ -48,6 +48,8 @@ flowchart LR
 - Primeras salidas: `console.log()`, `alert()` y `textContent`.
 - Primera entrada: `prompt()`.
 
+📖 Documentación oficial: [1] [2] [3]
+
 **Al terminar:** sabréis crear un `index.html` con su `app.js`, enlazarlos bien y leer un error en la consola sin entrar en pánico.
 
 ---
@@ -68,6 +70,8 @@ flowchart LR
 - Conversión de tipos: `Number()`, `String()`, `parseInt()`, `parseFloat()` y el caso de `NaN`.
 - Comparaciones: `==` frente a `===`.
 - El objeto `Math` y el redondeo con `toFixed()`.
+
+📖 Documentación oficial: [4] [5]
 
 **Al terminar:** sabréis pedir datos, convertirlos al tipo correcto, hacer cálculos y mostrar el resultado bien formateado.
 
@@ -91,6 +95,8 @@ flowchart LR
 - Control del bucle con `break` y `continue`.
 - Cómo evitar un bucle infinito (y qué hacer si se os cuela uno).
 
+📖 Documentación oficial: [6] [7]
+
 **Al terminar:** sabréis resolver problemas que dependen de condiciones y que exigen repetir operaciones, como calcular notas, tablas de multiplicar o sumar series de números.
 
 ---
@@ -111,6 +117,8 @@ flowchart LR
 - *Hoisting*: qué se puede usar antes de declararse y qué no.
 - Funciones como valores: pasar una función a otra (*callbacks*).
 - Introducción a los *closures*.
+
+📖 Documentación oficial: [8] [9]
 
 **Al terminar:** sabréis escribir funciones pequeñas que hacen una sola cosa bien, y reutilizarlas en lugar de copiar y pegar código.
 
@@ -136,6 +144,8 @@ flowchart LR
 - Valores frente a referencias: por qué copiar un array no es tan simple como parece.
 - JSON: `JSON.stringify()` y `JSON.parse()`.
 
+📖 Documentación oficial: [10] [11]
+
 **Al terminar:** sabréis modelar datos reales (una lista de productos, un listado de alumnos) y filtrarlos, ordenarlos o calcular totales sobre ellos.
 
 ---
@@ -159,6 +169,8 @@ flowchart LR
 - Crear y eliminar elementos: `createElement`, `append`, `prepend`, `remove`.
 - Pintar listas en la página a partir de un array.
 
+📖 Documentación oficial: [12] [13]
+
 **Al terminar:** sabréis construir partes de la página desde JavaScript, como una lista de tarjetas generada a partir de datos.
 
 ---
@@ -181,6 +193,8 @@ flowchart LR
 - Propagación de eventos: fase de burbuja y `stopPropagation()`.
 - Delegación de eventos: un solo escuchador para muchos elementos.
 
+📖 Documentación oficial: [14] [15]
+
 **Al terminar:** sabréis montar interfaces que reaccionan al ratón y al teclado, como pestañas, contadores, galerías o juegos sencillos.
 
 ---
@@ -201,6 +215,8 @@ flowchart LR
 - Validación personalizada con JavaScript.
 - Mostrar errores al usuario de forma clara y accesible.
 - Limpiar y reiniciar un formulario.
+
+📖 Documentación oficial: [16] [17]
 
 **Al terminar:** sabréis construir formularios que no dejan pasar datos incorrectos y que explican al usuario qué debe corregir.
 
@@ -223,6 +239,8 @@ flowchart LR
 - Qué no debéis guardar nunca en el navegador.
 - Proyecto guiado: lista de tareas que persiste.
 
+📖 Documentación oficial: [18] [19]
+
 **Al terminar:** sabréis hacer aplicaciones pequeñas que conservan sus datos, como una lista de tareas, unas preferencias de tema o un carrito.
 
 ---
@@ -243,6 +261,8 @@ flowchart LR
 - `async` y `await`.
 - Gestión de errores con `try...catch`.
 
+📖 Documentación oficial: [20] [21]
+
 **Al terminar:** sabréis crear relojes, cuentas atrás y animaciones con temporizadores, y estaréis preparados para pedir datos a un servidor.
 
 ---
@@ -262,6 +282,8 @@ flowchart LR
 - Pintar en el DOM los datos recibidos.
 - Enviar datos con `POST`.
 - Qué es CORS y por qué a veces el navegador bloquea una petición.
+
+📖 Documentación oficial: [22]
 
 **Al terminar:** sabréis consumir una API pública y construir con ella un buscador o un listado dinámico.
 
@@ -284,6 +306,8 @@ flowchart LR
 - Propiedades privadas con `#`, *getters* y *setters*.
 - Separar responsabilidades: datos, lógica y vista.
 - Depuración con *breakpoints* en las herramientas de desarrollo.
+
+📖 Documentación oficial: [23] [24]
 
 **Al terminar:** sabréis repartir una aplicación en varios ficheros con una responsabilidad clara cada uno.
 
@@ -312,4 +336,27 @@ En la carpeta encontraréis el enunciado completo, los criterios de evaluación 
 
 ### Fuentes y Documentación Oficial
 
-La documentación de referencia del temario es MDN Web Docs para las API del navegador (DOM, eventos, formularios, Web Storage, Fetch) y la especificación ECMAScript para el lenguaje. Los enlaces directos a cada apartado se incluirán en este documento cuando haya podido comprobarlos uno a uno.
+1. [Introducción — Guía de JavaScript (MDN Web Docs)](https://developer.mozilla.org/es/docs/Web/JavaScript/Guide/Introduction)
+2. [`<script>` HTML script element (MDN Web Docs)](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/script)
+3. [What are browser developer tools? (MDN Web Docs)](https://developer.mozilla.org/en-US/docs/Learn_web_development/Howto/Tools_and_setup/What_are_browser_developer_tools)
+4. [Gramática y tipos (MDN Web Docs)](https://developer.mozilla.org/es/docs/Web/JavaScript/Guide/Grammar_and_types)
+5. [Expresiones y operadores (MDN Web Docs)](https://developer.mozilla.org/es/docs/Web/JavaScript/Guide/Expressions_and_operators)
+6. [Control de flujo y manejo de errores (MDN Web Docs)](https://developer.mozilla.org/es/docs/Web/JavaScript/Guide/Control_flow_and_error_handling)
+7. [Bucles e iteración (MDN Web Docs)](https://developer.mozilla.org/es/docs/Web/JavaScript/Guide/Loops_and_iteration)
+8. [Funciones (MDN Web Docs)](https://developer.mozilla.org/es/docs/Web/JavaScript/Guide/Functions)
+9. [Closures (MDN Web Docs)](https://developer.mozilla.org/es/docs/Web/JavaScript/Guide/Closures)
+10. [Colecciones indexadas (MDN Web Docs)](https://developer.mozilla.org/es/docs/Web/JavaScript/Guide/Indexed_collections)
+11. [Trabajando con objetos (MDN Web Docs)](https://developer.mozilla.org/es/docs/Web/JavaScript/Guide/Working_with_objects)
+12. [Modelo de Objetos del Documento (DOM) (MDN Web Docs)](https://developer.mozilla.org/es/docs/Web/API/Document_Object_Model)
+13. [Element: innerHTML property (MDN Web Docs)](https://developer.mozilla.org/en-US/docs/Web/API/Element/innerHTML)
+14. [EventTarget.addEventListener() (MDN Web Docs)](https://developer.mozilla.org/es/docs/Web/API/EventTarget/addEventListener)
+15. [Eventos del DOM (MDN Web Docs)](https://developer.mozilla.org/es/docs/Web/API/Document_Object_Model/Events)
+16. [Client-side form validation (MDN Web Docs)](https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Forms/Form_validation)
+17. [Using HTML form validation and the Constraint Validation API (MDN Web Docs)](https://developer.mozilla.org/en-US/docs/Web/HTML/Guides/Constraint_validation)
+18. [API de almacenamiento web (MDN Web Docs)](https://developer.mozilla.org/es/docs/Web/API/Web_Storage_API)
+19. [Window: localStorage property (MDN Web Docs)](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage)
+20. [JavaScript execution model (MDN Web Docs)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Execution_model)
+21. [Usar promesas (MDN Web Docs)](https://developer.mozilla.org/es/docs/Web/JavaScript/Guide/Using_promises)
+22. [Uso de Fetch (MDN Web Docs)](https://developer.mozilla.org/es/docs/Web/API/Fetch_API/Using_Fetch)
+23. [Módulos JavaScript (MDN Web Docs)](https://developer.mozilla.org/es/docs/Web/JavaScript/Guide/Modules)
+24. [Clases (MDN Web Docs)](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Classes)
