@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 03 · Saludos con valores por defecto</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <main class="contenedor">
+        <h1>🌍 Saludos con valores por defecto</h1>
+        <p class="descripcion">Una sola función que saluda en cinco idiomas… aunque no le digáis ni el nombre ni el idioma.</p>
+
+        <table class="tabla">
+            <thead><tr><th>Llamada</th><th>Resultado</th></tr></thead>
+            <tbody>
+                <tr><td><code>saludar('Lucía', 'en')</code></td><td id="llamada1" class="resultado">?</td></tr>
+                <tr><td><code>saludar('Lucía')</code></td><td id="llamada2" class="resultado">?</td></tr>
+                <tr><td><code>saludar()</code></td><td id="llamada3" class="resultado">?</td></tr>
+                <tr><td><code>saludar(undefined, 'fr')</code></td><td id="llamada4" class="resultado">?</td></tr>
+                <tr><td><code>saludar(null, 'it')</code></td><td id="llamada5" class="resultado">?</td></tr>
+                <tr><td><code>saludar('Lucía', 'de')</code></td><td id="llamada6" class="resultado">?</td></tr>
+            </tbody>
+        </table>
+
+        <p class="ayuda">💡 Antes de ejecutar, apostad qué saldrá en las filas 4 y 5. Una de las dos os va a sorprender.</p>
+
+        <div class="firma">Curso de JavaScript en el cliente · Realizado por Ramón Abramo</div>
+    </main>
+    <script src="app.js"></script>
+</body>
+
+</html>

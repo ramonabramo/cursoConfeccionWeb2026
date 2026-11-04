@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 07 · Fábrica de contadores (Solución)</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <main class="contenedor">
+        <h1>🏭 Fábrica de contadores</h1>
+        <p class="descripcion">Una función que fabrica funciones. Cada contador fabricado recuerda su propia cuenta.</p>
+
+        <table class="tabla">
+            <thead><tr><th>Llamada</th><th>Resultado</th></tr></thead>
+            <tbody>
+                <tr><td><code>visitas()</code> · 1.ª vez</td><td id="visitas1" class="resultado">?</td></tr>
+                <tr><td><code>visitas()</code> · 2.ª vez</td><td id="visitas2" class="resultado">?</td></tr>
+                <tr><td><code>visitas()</code> · 3.ª vez</td><td id="visitas3" class="resultado">?</td></tr>
+                <tr><td><code>puntos()</code> · 1.ª vez</td><td id="puntos1" class="resultado">?</td></tr>
+                <tr><td><code>puntos()</code> · 2.ª vez</td><td id="puntos2" class="resultado">?</td></tr>
+                <tr><td><code>visitas()</code> · 4.ª vez</td><td id="visitas4" class="resultado">?</td></tr>
+            </tbody>
+        </table>
+
+        <table class="tabla">
+            <thead><tr><th>Multiplicador fabricado</th><th>Con 7</th></tr></thead>
+            <tbody>
+                <tr><td><code>doble(7)</code></td><td id="doble" class="resultado">?</td></tr>
+                <tr><td><code>triple(7)</code></td><td id="triple" class="resultado">?</td></tr>
+            </tbody>
+        </table>
+
+        <p class="ayuda">💡 Fijaos en la última fila de la primera tabla: ¿el contador de visitas ha notado que entre medias se ha usado el de puntos?</p>
+
+        <div class="firma">Curso de JavaScript en el cliente · Realizado por Ramón Abramo</div>
+    </main>
+    <script src="app.js"></script>
+</body>
+
+</html>

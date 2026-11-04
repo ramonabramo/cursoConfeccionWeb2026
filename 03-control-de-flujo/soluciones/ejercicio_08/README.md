@@ -4,7 +4,7 @@
 
 ## Qué pedía el ejercicio
 
-Contar del 1 al límite sustituyendo los múltiplos de 3 por «Fizz», los de 5 por «Buzz» y los de ambos por «FizzBuzz», y contar cuántas veces aparece cada palabra. Es un clásico de las entrevistas de programación, y junta todo lo del bloque en pocas líneas.
+Contar del 1 al límite sustituyendo los múltiplos de 3 por «Fizz», los de 5 por «Buzz» y los de ambos por «FizzBuzz», y contar cuántas veces aparece cada palabra. Es un clásico de las entrevistas de programación, y junta todo lo del bloque en pocas líneas: un bucle `for` que recorre del 1 al límite [3], el operador resto y una escalera de condiciones.
 
 ## La solución paso a paso
 

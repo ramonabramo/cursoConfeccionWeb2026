@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 08 · Planificador de estudio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <main class="contenedor">
+        <h1>📚 Planificador de estudio</h1>
+        <p class="descripcion">¿Cuántas horas tenéis que estudiar cada día para llegar a vuestro objetivo semanal?</p>
+
+        <p id="salida" class="salida">…</p>
+
+        <table class="tabla">
+            <thead><tr><th>Dato</th><th>Valor</th></tr></thead>
+            <tbody>
+                <tr><td>Horas a la semana</td><td id="resHoras" class="resultado">?</td></tr>
+                <tr><td>Días de estudio</td><td id="resDias" class="resultado">?</td></tr>
+                <tr><td>Cada día</td><td id="resPorDia" class="resultado">?</td></tr>
+                <tr><td>Si estudiáis 25 min y descansáis 5</td><td id="resBloques" class="resultado">?</td></tr>
+            </tbody>
+        </table>
+
+        <p class="ayuda">💡 Probad respuestas no válidas: una palabra, un 0 en los días o 200 horas. El programa os volverá a preguntar.</p>
+
+        <div class="firma">Curso de JavaScript en el cliente · Realizado por Ramón Abramo</div>
+    </main>
+    <script src="app.js"></script>
+</body>
+
+</html>

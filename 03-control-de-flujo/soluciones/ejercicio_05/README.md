@@ -22,7 +22,7 @@ Un `for` tiene tres partes separadas por punto y coma [1]:
 | Condición | `i <= 10` | Antes de cada vuelta. Si es `false`, el bucle termina |
 | Actualización | `i++` | Al final de cada vuelta |
 
-Lo tenéis dibujado, vuelta a vuelta, en la [infografía de la teoría](../../img/anatomia-for.svg). Usamos `for` cuando **sabemos cuántas vueltas** hay que dar: aquí, diez.
+Lo tenéis dibujado, vuelta a vuelta, en la [infografía de la teoría](../../img/anatomia-for.svg). Usamos `for` cuando **sabemos cuántas vueltas** hay que dar: aquí, diez [2].
 
 ### 2. El cuerpo: usar el contador
 

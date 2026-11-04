@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 02 · Precio de la entrada de cine (Solución)</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <main class="contenedor">
+        <h1>🎬 Precio de la entrada de cine</h1>
+        <p class="descripcion">Menores de 4 años: gratis. 65 o más: 4 €. Miércoles, día del espectador: 5 €. Resto: 8 €.</p>
+
+        <p id="salida" class="salida">…</p>
+
+        <h2>Pruebas automáticas de la función</h2>
+        <table class="tabla">
+            <thead><tr><th>Edad</th><th>Día</th><th>Precio</th></tr></thead>
+            <tbody>
+                <tr><td><code>3</code></td><td><code>'lunes'</code></td><td id="prueba1" class="resultado">?</td></tr>
+                <tr><td><code>70</code></td><td><code>'miércoles'</code></td><td id="prueba2" class="resultado">?</td></tr>
+                <tr><td><code>30</code></td><td><code>'miércoles'</code></td><td id="prueba3" class="resultado">?</td></tr>
+                <tr><td><code>30</code></td><td><code>'sábado'</code></td><td id="prueba4" class="resultado">?</td></tr>
+                <tr><td><code>-5</code></td><td><code>'lunes'</code></td><td id="prueba5" class="resultado">?</td></tr>
+            </tbody>
+        </table>
+
+        <p class="ayuda">💡 Una función bien hecha se puede probar con muchos casos sin tocar su código.</p>
+
+        <div class="firma">Curso de JavaScript en el cliente · Realizado por Ramón Abramo</div>
+    </main>
+    <script src="app.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 01 · Conversor de temperaturas</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <main class="contenedor">
+        <h1>🌡️ Conversor de temperaturas</h1>
+        <p class="descripcion">Dos funciones, escritas una vez y usadas muchas veces.</p>
+
+        <p id="salida" class="salida">…</p>
+
+        <table class="tabla">
+            <thead><tr><th>Celsius</th><th>Fahrenheit</th><th>De vuelta a Celsius</th></tr></thead>
+            <tbody>
+                <tr><td><code>0</code></td><td id="f0" class="resultado">?</td><td id="c0" class="resultado">?</td></tr>
+                <tr><td><code>100</code></td><td id="f100" class="resultado">?</td><td id="c100" class="resultado">?</td></tr>
+                <tr><td><code>-40</code></td><td id="fMenos40" class="resultado">?</td><td id="cMenos40" class="resultado">?</td></tr>
+            </tbody>
+        </table>
+
+        <p class="ayuda">💡 Fórmulas: °F = °C × 9 / 5 + 32  ·  °C = (°F − 32) × 5 / 9</p>
+
+        <div class="firma">Curso de JavaScript en el cliente · Realizado por Ramón Abramo</div>
+    </main>
+    <script src="app.js"></script>
+</body>
+
+</html>

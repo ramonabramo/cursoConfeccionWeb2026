@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 06 · Calculadora con callbacks (Solución)</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <main class="contenedor">
+        <h1>🧩 Calculadora con callbacks</h1>
+        <p id="datos" class="descripcion">Una sola función, <code>operar()</code>, que hace cualquier operación… según la función que le paséis.</p>
+
+        <table class="tabla">
+            <thead><tr><th>Callback que se pasa</th><th>Resultado</th></tr></thead>
+            <tbody>
+                <tr><td><code>sumar</code></td><td id="resSumar" class="resultado">?</td></tr>
+                <tr><td><code>restar</code></td><td id="resRestar" class="resultado">?</td></tr>
+                <tr><td><code>multiplicar</code></td><td id="resMultiplicar" class="resultado">?</td></tr>
+                <tr><td><code>dividir</code></td><td id="resDividir" class="resultado">?</td></tr>
+                <tr><td>Flecha anónima: <code>(x, y) =&gt; x ** y</code></td><td id="resPotencia" class="resultado">?</td></tr>
+                <tr><td>Flecha anónima: la media de los dos</td><td id="resMedia" class="resultado">?</td></tr>
+            </tbody>
+        </table>
+
+        <p class="ayuda">💡 Fijaos: la función <code>operar()</code> nunca cambia. Lo que cambia es el callback.</p>
+
+        <div class="firma">Curso de JavaScript en el cliente · Realizado por Ramón Abramo</div>
+    </main>
+    <script src="app.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 460" width="900" height="460" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif">
+  <title>Ámbito global, de función y de bloque</title>
+  <desc>Tres cajas anidadas: desde dentro se ve lo de fuera, pero desde fuera no se ve lo de dentro.</desc>
+  <rect width="900" height="460" rx="16" fill="#ffffff"/>
+  <text x="450" y="42" text-anchor="middle" font-size="22" font-weight="700" fill="#1e293b">El ámbito: quién ve a quién</text>
+  <text x="450" y="66" text-anchor="middle" font-size="14" fill="#64748b">Como cristales tintados: desde dentro se ve hacia fuera; desde fuera, no se ve lo de dentro</text>
+
+  <defs>
+    <marker id="v" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#16a34a"/></marker>
+    <marker id="r" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#dc2626"/></marker>
+  </defs>
+
+  <!-- global -->
+  <rect x="24" y="86" width="560" height="356" rx="16" fill="#eff6ff" stroke="#3b82f6" stroke-width="2"/>
+  <text x="44" y="114" font-size="14" font-weight="700" fill="#1d4ed8">ÁMBITO GLOBAL</text>
+  <text x="44" y="138" font-family="Consolas, Menlo, monospace" font-size="14" fill="#1e293b">const IVA = 0.21;</text>
+
+  <!-- función -->
+  <rect x="54" y="156" width="500" height="266" rx="14" fill="#f0fdf4" stroke="#22c55e" stroke-width="2"/>
+  <text x="74" y="182" font-size="14" font-weight="700" fill="#15803d">ÁMBITO DE FUNCIÓN</text>
+  <text x="74" y="206" font-family="Consolas, Menlo, monospace" font-size="14" fill="#1e293b">function calcular(precio) {</text>
+  <text x="96" y="230" font-family="Consolas, Menlo, monospace" font-size="14" fill="#1e293b">const total = precio * (1 + IVA);</text>
+
+  <!-- bloque -->
+  <rect x="84" y="246" width="440" height="128" rx="12" fill="#fefce8" stroke="#eab308" stroke-width="2"/>
+  <text x="104" y="272" font-size="14" font-weight="700" fill="#a16207">ÁMBITO DE BLOQUE { }</text>
+  <text x="104" y="296" font-family="Consolas, Menlo, monospace" font-size="14" fill="#1e293b">if (total &gt; 100) {</text>
+  <text x="126" y="320" font-family="Consolas, Menlo, monospace" font-size="14" fill="#1e293b">const regalo = 'taza';</text>
+  <text x="126" y="344" font-family="Consolas, Menlo, monospace" font-size="14" fill="#1e293b">console.log(IVA, total, regalo);</text>
+  <text x="104" y="364" font-family="Consolas, Menlo, monospace" font-size="14" fill="#1e293b">}</text>
+  <text x="74" y="404" font-family="Consolas, Menlo, monospace" font-size="14" fill="#1e293b">}</text>
+
+  <!-- explicaciones -->
+  <g font-size="13">
+    <rect x="606" y="96" width="270" height="104" rx="12" fill="#f0fdf4" stroke="#86efac"/>
+    <text x="622" y="122" font-weight="700" fill="#15803d">✔ Desde dentro se ve fuera</text>
+    <text x="622" y="146" fill="#334155">Dentro del if se pueden usar</text>
+    <text x="622" y="166" fill="#334155">regalo, total e IVA.</text>
+    <text x="622" y="186" fill="#334155">JavaScript busca hacia fuera.</text>
+
+    <rect x="606" y="214" width="270" height="124" rx="12" fill="#fef2f2" stroke="#fca5a5"/>
+    <text x="622" y="240" font-weight="700" fill="#b91c1c">✘ Desde fuera no se ve dentro</text>
+    <text x="622" y="264" fill="#334155">Fuera del if, regalo no existe.</text>
+    <text x="622" y="284" fill="#334155">Fuera de la función, total</text>
+    <text x="622" y="304" fill="#334155">y precio no existen:</text>
+    <text x="622" y="326" font-family="Consolas, Menlo, monospace" font-size="12" fill="#b91c1c">ReferenceError</text>
+
+    <rect x="606" y="352" width="270" height="70" rx="12" fill="#f8fafc" stroke="#cbd5e1"/>
+    <text x="622" y="378" fill="#334155">Regla del curso: declarad cada</text>
+    <text x="622" y="398" fill="#334155">variable en el ámbito más pequeño</text>
+    <text x="622" y="416" fill="#334155">donde la necesitéis.</text>
+  </g>
+</svg>

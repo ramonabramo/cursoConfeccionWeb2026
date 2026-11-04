@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 05 · Detective del ámbito</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <main class="contenedor">
+        <h1>🕵️ Detective del ámbito</h1>
+        <p class="descripcion">Tres variables con el mismo nombre en tres sitios distintos. ¿Cuál ve cada parte del programa?</p>
+
+        <table class="tabla">
+            <thead><tr><th>Dónde se lee</th><th>Valor de <code>lugar</code></th></tr></thead>
+            <tbody>
+                <tr><td>Dentro del bloque <code>if</code></td><td id="enBloque" class="resultado">?</td></tr>
+                <tr><td>Dentro de la función, fuera del <code>if</code></td><td id="enFuncion" class="resultado">?</td></tr>
+                <tr><td>Fuera de todo (ámbito global)</td><td id="enGlobal" class="resultado">?</td></tr>
+            </tbody>
+        </table>
+
+        <table class="tabla">
+            <thead><tr><th>Pregunta</th><th>Respuesta</th></tr></thead>
+            <tbody>
+                <tr><td><code>llamadas</code> después de 3 llamadas</td><td id="llamadasFinal" class="resultado">?</td></tr>
+                <tr><td><code>typeof secreto</code> fuera de la función</td><td id="tipoSecreto" class="resultado">?</td></tr>
+            </tbody>
+        </table>
+
+        <p class="ayuda">💡 Leed el código de <code>app.js</code> y apuntad vuestras predicciones ANTES de completar el ejercicio.</p>
+
+        <div class="firma">Curso de JavaScript en el cliente · Realizado por Ramón Abramo</div>
+    </main>
+    <script src="app.js"></script>
+</body>
+
+</html>
