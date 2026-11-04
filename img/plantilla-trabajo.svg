@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 420" width="900" height="420" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif">
+  <title>Plantilla de trabajo de cada ejercicio</title>
+  <desc>El programa principal prepara constantes al DOM y escuchadores; cuando el usuario provoca un evento se ejecutan entradas, procesamiento y salidas, y la página cambia.</desc>
+
+  <rect width="900" height="420" rx="16" fill="#ffffff"/>
+  <text x="450" y="42" text-anchor="middle" font-size="22" font-weight="700" fill="#1e293b">La plantilla de trabajo de cada app.js</text>
+  <text x="450" y="66" text-anchor="middle" font-size="14" fill="#64748b">Siempre el mismo orden: primero preparo, después espero, y cuando el usuario actúa, respondo</text>
+
+  <defs>
+    <marker id="f" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#64748b"/>
+    </marker>
+  </defs>
+
+  <!-- Zona: se ejecuta al cargar -->
+  <rect x="24" y="90" width="852" height="120" rx="12" fill="#f1f5f9" stroke="#cbd5e1" stroke-dasharray="6 4"/>
+  <text x="44" y="114" font-size="12" font-weight="700" fill="#475569">SE EJECUTA UNA VEZ, AL CARGAR LA PÁGINA</text>
+
+  <g font-size="13">
+    <rect x="44" y="128" width="250" height="66" rx="10" fill="#ffffff" stroke="#334155" stroke-width="1.5"/>
+    <text x="60" y="153" font-weight="700" fill="#334155">① Programa principal</text>
+    <text x="60" y="176" font-family="Consolas, Menlo, monospace" font-size="11.5" fill="#475569">const IVA = 0.21; let total = 0;</text>
+
+    <rect x="325" y="128" width="250" height="66" rx="10" fill="#ffffff" stroke="#2563eb" stroke-width="1.5"/>
+    <text x="341" y="153" font-weight="700" fill="#2563eb">② Constantes al DOM</text>
+    <text x="341" y="176" font-family="Consolas, Menlo, monospace" font-size="11.5" fill="#475569">document.querySelector('#btn')</text>
+
+    <rect x="606" y="128" width="250" height="66" rx="10" fill="#ffffff" stroke="#7c3aed" stroke-width="1.5"/>
+    <text x="622" y="153" font-weight="700" fill="#7c3aed">③ Escuchadores</text>
+    <text x="622" y="176" font-family="Consolas, Menlo, monospace" font-size="11.5" fill="#475569">btn.addEventListener('click', …)</text>
+  </g>
+  <line x1="294" y1="161" x2="321" y2="161" stroke="#64748b" stroke-width="2" marker-end="url(#f)"/>
+  <line x1="575" y1="161" x2="602" y2="161" stroke="#64748b" stroke-width="2" marker-end="url(#f)"/>
+
+  <!-- Evento -->
+  <path d="M731,210 L731,240" stroke="#64748b" stroke-width="2" fill="none" marker-end="url(#f)"/>
+  <rect x="611" y="244" width="240" height="40" rx="20" fill="#fef3c7" stroke="#d97706" stroke-width="1.5"/>
+  <text x="731" y="269" text-anchor="middle" font-size="13" font-weight="700" fill="#92400e">El usuario hace clic, escribe…</text>
+
+  <!-- Zona: se ejecuta en cada evento -->
+  <rect x="24" y="300" width="852" height="100" rx="12" fill="#ecfdf5" stroke="#a7f3d0" stroke-dasharray="6 4"/>
+  <text x="44" y="322" font-size="12" font-weight="700" fill="#047857">SE EJECUTA CADA VEZ QUE OCURRE EL EVENTO</text>
+  <line x1="731" y1="284" x2="731" y2="330" stroke="#64748b" stroke-width="2" marker-end="url(#f)"/>
+
+  <g font-size="13">
+    <rect x="606" y="334" width="250" height="52" rx="10" fill="#ffffff" stroke="#059669" stroke-width="1.5"/>
+    <text x="622" y="356" font-weight="700" fill="#059669">④ Entradas</text>
+    <text x="622" y="376" font-size="12" fill="#475569">leo .value y lo convierto</text>
+
+    <rect x="325" y="334" width="250" height="52" rx="10" fill="#ffffff" stroke="#059669" stroke-width="1.5"/>
+    <text x="341" y="356" font-weight="700" fill="#059669">⑤ Procesamiento</text>
+    <text x="341" y="376" font-size="12" fill="#475569">calculo, decido, recorro</text>
+
+    <rect x="44" y="334" width="250" height="52" rx="10" fill="#ffffff" stroke="#059669" stroke-width="1.5"/>
+    <text x="60" y="356" font-weight="700" fill="#059669">⑥ Salidas</text>
+    <text x="60" y="376" font-size="12" fill="#475569">pinto el resultado en la página</text>
+  </g>
+  <line x1="606" y1="360" x2="579" y2="360" stroke="#64748b" stroke-width="2" marker-end="url(#f)"/>
+  <line x1="325" y1="360" x2="298" y2="360" stroke="#64748b" stroke-width="2" marker-end="url(#f)"/>
+</svg>

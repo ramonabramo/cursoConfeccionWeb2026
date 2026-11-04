@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 560" width="900" height="560" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif">
+  <title>Mapa del curso de JavaScript en el cliente</title>
+  <desc>Los 13 bloques del curso agrupados en cuatro fases: el lenguaje, la página interactiva, datos y red, y código profesional.</desc>
+
+  <rect width="900" height="560" rx="16" fill="#ffffff"/>
+
+  <text x="450" y="44" text-anchor="middle" font-size="24" font-weight="700" fill="#1e293b">Mapa del curso · JavaScript en el cliente</text>
+  <text x="450" y="70" text-anchor="middle" font-size="14" fill="#64748b">13 bloques · 4 fases · de la primera línea de código al proyecto final</text>
+
+  <defs>
+    <marker id="flecha" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#94a3b8"/>
+    </marker>
+  </defs>
+
+  <!-- FASE 1 -->
+  <rect x="24" y="96" width="852" height="96" rx="12" fill="#eff6ff" stroke="#bfdbfe"/>
+  <text x="44" y="130" font-size="13" font-weight="700" fill="#1d4ed8">FASE 1</text>
+  <text x="44" y="150" font-size="14" font-weight="600" fill="#1e3a8a">El lenguaje</text>
+  <text x="44" y="168" font-size="11" fill="#475569">bloques 01 – 05</text>
+  <g font-size="13" text-anchor="middle">
+    <rect x="170" y="112" width="128" height="64" rx="10" fill="#ffffff" stroke="#2563eb" stroke-width="1.5"/>
+    <text x="234" y="138" font-weight="700" fill="#2563eb">01</text><text x="234" y="158" fill="#1e293b">Introducción</text>
+    <rect x="312" y="112" width="128" height="64" rx="10" fill="#ffffff" stroke="#2563eb" stroke-width="1.5"/>
+    <text x="376" y="138" font-weight="700" fill="#2563eb">02</text><text x="376" y="158" fill="#1e293b">Fundamentos</text>
+    <rect x="454" y="112" width="128" height="64" rx="10" fill="#ffffff" stroke="#2563eb" stroke-width="1.5"/>
+    <text x="518" y="138" font-weight="700" fill="#2563eb">03</text><text x="518" y="158" fill="#1e293b">Control de flujo</text>
+    <rect x="596" y="112" width="128" height="64" rx="10" fill="#ffffff" stroke="#2563eb" stroke-width="1.5"/>
+    <text x="660" y="138" font-weight="700" fill="#2563eb">04</text><text x="660" y="158" fill="#1e293b">Funciones</text>
+    <rect x="738" y="112" width="128" height="64" rx="10" fill="#ffffff" stroke="#2563eb" stroke-width="1.5"/>
+    <text x="802" y="138" font-weight="700" fill="#2563eb">05</text><text x="802" y="158" fill="#1e293b">Arrays y objetos</text>
+  </g>
+
+  <path d="M802,192 C802,206 640,206 640,214" fill="none" stroke="#94a3b8" stroke-width="2" marker-end="url(#flecha)"/>
+
+  <!-- FASE 2 -->
+  <rect x="24" y="214" width="852" height="96" rx="12" fill="#ecfdf5" stroke="#a7f3d0"/>
+  <text x="44" y="248" font-size="13" font-weight="700" fill="#047857">FASE 2</text>
+  <text x="44" y="268" font-size="14" font-weight="600" fill="#065f46">La página interactiva</text>
+  <text x="44" y="286" font-size="11" fill="#475569">bloques 06 – 08</text>
+  <g font-size="13" text-anchor="middle">
+    <rect x="312" y="230" width="128" height="64" rx="10" fill="#ffffff" stroke="#059669" stroke-width="1.5"/>
+    <text x="376" y="256" font-weight="700" fill="#059669">06</text><text x="376" y="276" fill="#1e293b">El DOM</text>
+    <rect x="454" y="230" width="128" height="64" rx="10" fill="#ffffff" stroke="#059669" stroke-width="1.5"/>
+    <text x="518" y="256" font-weight="700" fill="#059669">07</text><text x="518" y="276" fill="#1e293b">Eventos</text>
+    <rect x="596" y="230" width="128" height="64" rx="10" fill="#ffffff" stroke="#059669" stroke-width="1.5"/>
+    <text x="660" y="256" font-weight="700" fill="#059669">08</text><text x="660" y="276" fill="#1e293b">Formularios</text>
+  </g>
+
+  <path d="M660,310 C660,324 500,324 500,332" fill="none" stroke="#94a3b8" stroke-width="2" marker-end="url(#flecha)"/>
+
+  <!-- FASE 3 -->
+  <rect x="24" y="332" width="852" height="96" rx="12" fill="#fff7ed" stroke="#fed7aa"/>
+  <text x="44" y="366" font-size="13" font-weight="700" fill="#c2410c">FASE 3</text>
+  <text x="44" y="386" font-size="14" font-weight="600" fill="#9a3412">Datos y red</text>
+  <text x="44" y="404" font-size="11" fill="#475569">bloques 09 – 11</text>
+  <g font-size="13" text-anchor="middle">
+    <rect x="312" y="348" width="128" height="64" rx="10" fill="#ffffff" stroke="#ea580c" stroke-width="1.5"/>
+    <text x="376" y="374" font-weight="700" fill="#ea580c">09</text><text x="376" y="394" fill="#1e293b">Almacenamiento</text>
+    <rect x="454" y="348" width="128" height="64" rx="10" fill="#ffffff" stroke="#ea580c" stroke-width="1.5"/>
+    <text x="518" y="374" font-weight="700" fill="#ea580c">10</text><text x="518" y="394" fill="#1e293b">Asincronía</text>
+    <rect x="596" y="348" width="128" height="64" rx="10" fill="#ffffff" stroke="#ea580c" stroke-width="1.5"/>
+    <text x="660" y="374" font-weight="700" fill="#ea580c">11</text><text x="660" y="394" fill="#1e293b">Fetch y APIs</text>
+  </g>
+
+  <path d="M660,428 C660,442 500,442 500,450" fill="none" stroke="#94a3b8" stroke-width="2" marker-end="url(#flecha)"/>
+
+  <!-- FASE 4 -->
+  <rect x="24" y="450" width="852" height="96" rx="12" fill="#f5f3ff" stroke="#ddd6fe"/>
+  <text x="44" y="484" font-size="13" font-weight="700" fill="#6d28d9">FASE 4</text>
+  <text x="44" y="504" font-size="14" font-weight="600" fill="#5b21b6">Código profesional</text>
+  <text x="44" y="522" font-size="11" fill="#475569">bloques 12 – 13</text>
+  <g font-size="13" text-anchor="middle">
+    <rect x="383" y="466" width="128" height="64" rx="10" fill="#ffffff" stroke="#7c3aed" stroke-width="1.5"/>
+    <text x="447" y="492" font-weight="700" fill="#7c3aed">12</text><text x="447" y="512" fill="#1e293b">Módulos y clases</text>
+    <rect x="525" y="466" width="128" height="64" rx="10" fill="#7c3aed" stroke="#7c3aed" stroke-width="1.5"/>
+    <text x="589" y="492" font-weight="700" fill="#ffffff">13</text><text x="589" y="512" fill="#ffffff">Proyecto final</text>
+  </g>
+</svg>
