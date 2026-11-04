@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 07 · Lista de tareas con delegación</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <main class="contenedor">
+        <h1>📋 Lista de tareas</h1>
+        <p class="descripcion">Añadid tareas con el botón o con Enter. Clic en una tarea para marcarla como hecha; ✕ para borrarla.</p>
+
+        <div class="fila-controles">
+            <input type="text" id="nuevaTarea" placeholder="Nueva tarea…">
+            <button id="btnAnadir" class="btn">Añadir</button>
+        </div>
+
+        <ul id="lista" class="lista"></ul>
+        <p id="resumen" class="salida salida--secundaria">…</p>
+
+        <div class="firma">Curso de JavaScript en el cliente · Realizado por Ramón Abramo</div>
+    </main>
+    <script src="app.js"></script>
+</body>
+
+</html>

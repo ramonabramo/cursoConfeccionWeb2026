@@ -216,6 +216,11 @@ code {
   margin: 12px 0;
 }
 
+/* un mensaje dentro de la rejilla ocupa todas las columnas */
+.rejilla > p {
+  grid-column: 1 / -1;
+}
+
 .tarjeta-producto {
   padding: 14px;
   background-color: #f8fafc;

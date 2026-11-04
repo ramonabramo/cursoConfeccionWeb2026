@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 470" width="900" height="470" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif">
+  <title>El ciclo de un evento</title>
+  <desc>El programa prepara los escuchadores y espera; cuando el usuario actúa, el navegador crea un objeto event y llama a la función, que ejecuta entradas, procesamiento y salidas; después se vuelve a esperar.</desc>
+  <rect width="900" height="470" rx="16" fill="#ffffff"/>
+  <text x="450" y="42" text-anchor="middle" font-size="22" font-weight="700" fill="#1e293b">Programar con eventos: preparar, esperar, responder</text>
+  <text x="450" y="66" text-anchor="middle" font-size="14" fill="#64748b">El programa ya no se ejecuta de arriba abajo y termina: se queda escuchando</text>
+
+  <defs>
+    <marker id="f" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#64748b"/></marker>
+  </defs>
+
+  <!-- preparar -->
+  <rect x="24" y="92" width="260" height="168" rx="14" fill="#f1f5f9" stroke="#94a3b8"/>
+  <text x="44" y="120" font-size="13" font-weight="700" fill="#334155">① AL CARGAR (una vez)</text>
+  <rect x="40" y="134" width="228" height="112" rx="8" fill="#1e293b"/>
+  <g font-family="Consolas, Menlo, monospace" font-size="12" fill="#e2e8f0">
+    <text x="52" y="156"><tspan fill="#94a3b8">// constantes al DOM</tspan></text>
+    <text x="52" y="174"><tspan fill="#93c5fd">const</tspan> btn = document</text>
+    <text x="52" y="190">  .querySelector(<tspan fill="#86efac">'#btn'</tspan>);</text>
+    <text x="52" y="212"><tspan fill="#94a3b8">// escuchadores</tspan></text>
+    <text x="52" y="230">btn.addEventListener(<tspan fill="#86efac">'click'</tspan>, …);</text>
+  </g>
+
+  <!-- esperar -->
+  <line x1="290" y1="176" x2="350" y2="176" stroke="#64748b" stroke-width="2.5" marker-end="url(#f)"/>
+  <rect x="356" y="128" width="188" height="96" rx="48" fill="#fef9c3" stroke="#ca8a04" stroke-width="2"/>
+  <text x="450" y="168" text-anchor="middle" font-size="15" font-weight="700" fill="#854d0e">② Esperar…</text>
+  <text x="450" y="190" text-anchor="middle" font-size="12" fill="#854d0e">la página está quieta</text>
+  <text x="450" y="206" text-anchor="middle" font-size="12" fill="#854d0e">hasta que pase algo</text>
+
+  <!-- usuario -->
+  <line x1="550" y1="176" x2="610" y2="176" stroke="#64748b" stroke-width="2.5" marker-end="url(#f)"/>
+  <rect x="616" y="92" width="260" height="168" rx="14" fill="#fff7ed" stroke="#fdba74"/>
+  <text x="636" y="120" font-size="13" font-weight="700" fill="#9a3412">③ EL USUARIO ACTÚA</text>
+  <text x="636" y="148" font-size="13" fill="#334155">🖱️ hace clic · ⌨️ pulsa una tecla</text>
+  <text x="636" y="168" font-size="13" fill="#334155">✏️ escribe en un campo…</text>
+  <text x="636" y="198" font-size="13" fill="#334155">El navegador crea un objeto</text>
+  <text x="636" y="216" font-size="13" fill="#334155"><tspan font-family="Consolas, Menlo, monospace" font-weight="700" fill="#9a3412">event</tspan> con los detalles y llama</text>
+  <text x="636" y="234" font-size="13" fill="#334155">a vuestra función.</text>
+
+  <!-- responder -->
+  <path d="M746,264 L746,300" stroke="#64748b" stroke-width="2.5" fill="none" marker-end="url(#f)"/>
+  <rect x="24" y="306" width="852" height="140" rx="14" fill="#f0fdf4" stroke="#22c55e" stroke-width="2"/>
+  <text x="44" y="334" font-size="13" font-weight="700" fill="#15803d">④ LA FUNCIÓN RESPONDE (cada vez que ocurre el evento)</text>
+  <rect x="40" y="348" width="380" height="84" rx="8" fill="#1e293b"/>
+  <g font-family="Consolas, Menlo, monospace" font-size="12" fill="#e2e8f0">
+    <text x="52" y="368">btn.addEventListener(<tspan fill="#86efac">'click'</tspan>, (<tspan fill="#fdba74">e</tspan>) =&gt; {</text>
+    <text x="68" y="386"><tspan fill="#94a3b8">// entradas → procesamiento → salidas</tspan></text>
+    <text x="68" y="404">salida.textContent = …;</text>
+    <text x="52" y="422">});</text>
+  </g>
+  <g font-size="13">
+    <rect x="446" y="352" width="120" height="40" rx="8" fill="#ffffff" stroke="#16a34a"/><text x="506" y="377" text-anchor="middle" font-weight="700" fill="#166534">entradas</text>
+    <text x="580" y="377" fill="#64748b">→</text>
+    <rect x="598" y="352" width="140" height="40" rx="8" fill="#ffffff" stroke="#16a34a"/><text x="668" y="377" text-anchor="middle" font-weight="700" fill="#166534">procesamiento</text>
+    <text x="752" y="377" fill="#64748b">→</text>
+    <rect x="770" y="352" width="90" height="40" rx="8" fill="#ffffff" stroke="#16a34a"/><text x="815" y="377" text-anchor="middle" font-weight="700" fill="#166534">salidas</text>
+    <text x="446" y="420" fill="#334155">…y vuelta al paso ② a esperar el siguiente evento.</text>
+  </g>
+</svg>

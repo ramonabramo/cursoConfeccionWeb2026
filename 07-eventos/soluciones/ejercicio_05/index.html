@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 05 · Campos que ayudan: focus, blur y preventDefault (Solución)</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <main class="contenedor">
+        <h1>🧭 Campos que ayudan</h1>
+        <p class="descripcion">Cada campo muestra su ayuda al entrar en él. El teléfono solo admite números. Y el enlace pide confirmación antes de salir.</p>
+
+        <div class="campo">
+            <label for="nombre">Nombre</label>
+            <input type="text" id="nombre">
+            <p class="ayuda-campo">Tal como aparece en tu DNI.</p>
+        </div>
+
+        <div class="campo">
+            <label for="telefono">Teléfono</label>
+            <input type="text" id="telefono">
+            <p class="ayuda-campo">Solo números: el resto de teclas se ignoran.</p>
+        </div>
+
+        <div class="campo">
+            <label for="cp">Código postal</label>
+            <input type="text" id="cp">
+            <p class="ayuda-campo">5 cifras.</p>
+        </div>
+
+        <p id="estado" class="salida">…</p>
+
+        <p><a id="enlaceSalir" href="https://developer.mozilla.org/es/">Ir a la documentación de MDN</a></p>
+        <p id="estadoEnlace" class="descripcion"></p>
+
+        <div class="firma">Curso de JavaScript en el cliente · Realizado por Ramón Abramo</div>
+    </main>
+    <script src="app.js"></script>
+</body>
+
+</html>

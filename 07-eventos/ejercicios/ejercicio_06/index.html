@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 06 · Propagación: ¿quién se entera del clic?</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <main class="contenedor">
+        <h1>🫧 ¿Quién se entera del clic?</h1>
+        <p class="descripcion">Tres elementos, uno dentro de otro, y los tres escuchan <code>click</code>. Haced clic en distintos sitios y mirad el registro.</p>
+
+        <div id="abuelo" class="zona">
+            abuelo
+            <div id="padre" class="zona">
+                padre
+                <div class="botonera">
+                    <button id="hijo" class="btn">hijo (botón)</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="botonera">
+            <label><input type="checkbox" id="parar"> Detener la propagación en el botón</label>
+            <button id="limpiar" class="btn btn--secundario">Limpiar registro</button>
+        </div>
+
+        <ol id="registro" class="lista"></ol>
+
+        <div class="firma">Curso de JavaScript en el cliente · Realizado por Ramón Abramo</div>
+    </main>
+    <script src="app.js"></script>
+</body>
+
+</html>

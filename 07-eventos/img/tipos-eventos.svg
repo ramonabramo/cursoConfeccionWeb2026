@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 400" width="900" height="400" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif">
+  <title>Los eventos más habituales</title>
+  <desc>Eventos de ratón, de teclado y de formulario, con el momento en que se disparan.</desc>
+  <rect width="900" height="400" rx="16" fill="#ffffff"/>
+  <text x="450" y="42" text-anchor="middle" font-size="22" font-weight="700" fill="#1e293b">Los eventos que más vais a usar</text>
+  <text x="450" y="66" text-anchor="middle" font-size="14" fill="#64748b">El nombre del evento es el primer argumento de addEventListener</text>
+
+  <!-- ratón -->
+  <rect x="24" y="88" width="270" height="292" rx="14" fill="#eff6ff" stroke="#93c5fd"/>
+  <text x="44" y="120" font-size="16" font-weight="700" fill="#1d4ed8">🖱️ Ratón</text>
+  <g font-size="13">
+    <text x="44" y="158" font-family="Consolas, Menlo, monospace" font-weight="700" fill="#1e293b">'click'</text><text x="44" y="176" fill="#475569">pulsar y soltar</text>
+    <text x="44" y="210" font-family="Consolas, Menlo, monospace" font-weight="700" fill="#1e293b">'dblclick'</text><text x="44" y="228" fill="#475569">doble clic</text>
+    <text x="44" y="262" font-family="Consolas, Menlo, monospace" font-weight="700" fill="#1e293b">'mouseover'</text><text x="44" y="280" fill="#475569">el puntero entra en el elemento</text>
+    <text x="44" y="314" font-family="Consolas, Menlo, monospace" font-weight="700" fill="#1e293b">'mouseout'</text><text x="44" y="332" fill="#475569">el puntero sale</text>
+  </g>
+
+  <!-- teclado -->
+  <rect x="314" y="88" width="270" height="292" rx="14" fill="#f5f3ff" stroke="#c4b5fd"/>
+  <text x="334" y="120" font-size="16" font-weight="700" fill="#5b21b6">⌨️ Teclado</text>
+  <g font-size="13">
+    <text x="334" y="158" font-family="Consolas, Menlo, monospace" font-weight="700" fill="#1e293b">'keydown'</text><text x="334" y="176" fill="#475569">se pulsa una tecla</text>
+    <text x="334" y="210" font-family="Consolas, Menlo, monospace" font-weight="700" fill="#1e293b">'keyup'</text><text x="334" y="228" fill="#475569">se suelta</text>
+    <text x="334" y="270" fill="#334155">¿Qué tecla? →</text>
+    <text x="334" y="290" font-family="Consolas, Menlo, monospace" fill="#5b21b6">e.key</text><text x="390" y="290" fill="#475569">'a', 'Enter', 'Escape'…</text>
+    <text x="334" y="314" font-family="Consolas, Menlo, monospace" fill="#5b21b6">e.ctrlKey</text><text x="420" y="314" fill="#475569">¿Ctrl pulsado?</text>
+    <text x="334" y="350" fill="#475569">Se escuchan en un campo</text>
+    <text x="334" y="368" fill="#475569">o en todo el document.</text>
+  </g>
+
+  <!-- formulario -->
+  <rect x="604" y="88" width="272" height="292" rx="14" fill="#f0fdf4" stroke="#86efac"/>
+  <text x="624" y="120" font-size="16" font-weight="700" fill="#15803d">✏️ Campos de formulario</text>
+  <g font-size="13">
+    <text x="624" y="158" font-family="Consolas, Menlo, monospace" font-weight="700" fill="#1e293b">'input'</text><text x="624" y="176" fill="#475569">cambia el valor: con cada letra</text>
+    <text x="624" y="210" font-family="Consolas, Menlo, monospace" font-weight="700" fill="#1e293b">'change'</text><text x="624" y="228" fill="#475569">cambio confirmado: al elegir en un</text>
+    <text x="624" y="246" fill="#475569">select o al salir del campo</text>
+    <text x="624" y="280" font-family="Consolas, Menlo, monospace" font-weight="700" fill="#1e293b">'focus'</text><text x="624" y="298" fill="#475569">el campo recibe el foco</text>
+    <text x="624" y="332" font-family="Consolas, Menlo, monospace" font-weight="700" fill="#1e293b">'blur'</text><text x="624" y="350" fill="#475569">el campo pierde el foco</text>
+  </g>
+</svg>

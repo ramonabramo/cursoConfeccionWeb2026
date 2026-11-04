@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 02 · Conversor en tiempo real</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <main class="contenedor">
+        <h1>🌡️ Conversor en tiempo real</h1>
+        <p class="descripcion">Sin botón de «Calcular»: el resultado cambia mientras escribís.</p>
+
+        <div class="campo">
+            <label for="celsius">Temperatura en °C</label>
+            <input type="number" id="celsius" placeholder="Por ejemplo, 25">
+        </div>
+
+        <div class="campo">
+            <label for="decimales">Decimales del resultado</label>
+            <select id="decimales">
+                <option value="0">Sin decimales</option>
+                <option value="1" selected>1 decimal</option>
+                <option value="2">2 decimales</option>
+            </select>
+        </div>
+
+        <p id="resultado" class="salida">Escribe una temperatura.</p>
+
+        <div class="firma">Curso de JavaScript en el cliente · Realizado por Ramón Abramo</div>
+    </main>
+    <script src="app.js"></script>
+</body>
+
+</html>

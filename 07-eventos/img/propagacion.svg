@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 420" width="900" height="420" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif">
+  <title>Propagación de eventos: la burbuja</title>
+  <desc>Al hacer clic en un botón dentro de un li dentro de un ul, el evento se dispara en el botón y sube por sus antepasados; target es siempre el botón y currentTarget el elemento que escucha en cada momento.</desc>
+  <rect width="900" height="420" rx="16" fill="#ffffff"/>
+  <text x="450" y="42" text-anchor="middle" font-size="22" font-weight="700" fill="#1e293b">La burbuja: el evento sube por el árbol</text>
+  <text x="450" y="66" text-anchor="middle" font-size="14" fill="#64748b">Un clic en el botón también es un clic en el li, en el ul, en el body…</text>
+
+  <defs>
+    <marker id="u" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#ea580c"/></marker>
+  </defs>
+
+  <!-- cajas anidadas -->
+  <rect x="24" y="92" width="440" height="304" rx="14" fill="#eff6ff" stroke="#3b82f6" stroke-width="2"/>
+  <text x="44" y="120" font-family="Consolas, Menlo, monospace" font-size="15" font-weight="700" fill="#1d4ed8">&lt;ul&gt;</text>
+  <rect x="60" y="138" width="368" height="200" rx="12" fill="#f0fdf4" stroke="#22c55e" stroke-width="2"/>
+  <text x="80" y="166" font-family="Consolas, Menlo, monospace" font-size="15" font-weight="700" fill="#15803d">&lt;li&gt;</text>
+  <text x="80" y="190" font-size="13" fill="#334155">Comprar pan</text>
+  <rect x="96" y="214" width="160" height="56" rx="10" fill="#fef9c3" stroke="#ca8a04" stroke-width="2.5"/>
+  <text x="176" y="248" text-anchor="middle" font-family="Consolas, Menlo, monospace" font-size="15" font-weight="700" fill="#854d0e">&lt;button&gt;</text>
+  <text x="176" y="296" text-anchor="middle" font-size="22">👆</text>
+
+  <!-- flechas de subida -->
+  <path d="M290,242 C330,242 330,166 300,166" fill="none" stroke="#ea580c" stroke-width="2.5" marker-end="url(#u)"/>
+  <path d="M432,200 C458,180 458,130 412,116" fill="none" stroke="#ea580c" stroke-width="2.5" marker-end="url(#u)"/>
+  <text x="340" y="210" font-size="12" font-weight="700" fill="#c2410c">sube</text>
+  <text x="412" y="150" font-size="12" font-weight="700" fill="#c2410c">sube</text>
+
+  <!-- tabla -->
+  <rect x="496" y="92" width="380" height="200" rx="14" fill="#f8fafc" stroke="#cbd5e1"/>
+  <text x="516" y="118" font-size="13" font-weight="700" fill="#334155">Si los tres escuchan 'click':</text>
+  <g font-size="12.5">
+    <text x="516" y="146" font-weight="700" fill="#475569">Se ejecuta en</text>
+    <text x="640" y="146" font-weight="700" fill="#475569">e.target</text>
+    <text x="760" y="146" font-weight="700" fill="#475569">e.currentTarget</text>
+    <line x1="516" y1="154" x2="860" y2="154" stroke="#cbd5e1"/>
+    <text x="516" y="178" fill="#854d0e">1. button</text><text x="640" y="178" font-family="Consolas, Menlo, monospace" fill="#1e293b">button</text><text x="760" y="178" font-family="Consolas, Menlo, monospace" fill="#1e293b">button</text>
+    <text x="516" y="204" fill="#15803d">2. li</text><text x="640" y="204" font-family="Consolas, Menlo, monospace" fill="#1e293b">button</text><text x="760" y="204" font-family="Consolas, Menlo, monospace" fill="#1e293b">li</text>
+    <text x="516" y="230" fill="#1d4ed8">3. ul</text><text x="640" y="230" font-family="Consolas, Menlo, monospace" fill="#1e293b">button</text><text x="760" y="230" font-family="Consolas, Menlo, monospace" fill="#1e293b">ul</text>
+  </g>
+  <text x="516" y="262" font-size="12" fill="#475569">target: dónde se hizo clic (no cambia).</text>
+  <text x="516" y="280" font-size="12" fill="#475569">currentTarget: quién está escuchando ahora.</text>
+
+  <rect x="496" y="306" width="380" height="90" rx="14" fill="#fef2f2" stroke="#fca5a5"/>
+  <text x="516" y="332" font-family="Consolas, Menlo, monospace" font-size="14" font-weight="700" fill="#b91c1c">e.stopPropagation()</text>
+  <text x="516" y="356" font-size="12.5" fill="#334155">Si el botón lo llama, la burbuja se para ahí:</text>
+  <text x="516" y="376" font-size="12.5" fill="#334155">ni el li ni el ul se enteran del clic.</text>
+</svg>

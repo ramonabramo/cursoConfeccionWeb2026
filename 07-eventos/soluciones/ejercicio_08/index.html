@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 08 · Catálogo interactivo (Solución)</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <main class="contenedor">
+        <h1>🛍️ Catálogo interactivo</h1>
+        <p id="carrito" class="carrito">🛒 0 productos · 0.00 €</p>
+
+        <div id="filtros" class="botonera">
+            <button class="btn activo" data-categoria="todas">Todas</button>
+            <button class="btn" data-categoria="periféricos">Periféricos</button>
+            <button class="btn" data-categoria="monitores">Monitores</button>
+            <button class="btn" data-categoria="audio">Audio</button>
+        </div>
+
+        <div class="fila-controles">
+            <input type="search" id="buscar" placeholder="Buscar por nombre…">
+            <select id="orden">
+                <option value="nombre">Nombre (A-Z)</option>
+                <option value="precio-asc">Precio: menor a mayor</option>
+                <option value="precio-desc">Precio: mayor a menor</option>
+            </select>
+        </div>
+
+        <p id="resumen" class="descripcion">…</p>
+        <div id="catalogo" class="rejilla"></div>
+
+        <div class="firma">Curso de JavaScript en el cliente · Realizado por Ramón Abramo</div>
+    </main>
+    <script src="app.js"></script>
+</body>
+
+</html>
