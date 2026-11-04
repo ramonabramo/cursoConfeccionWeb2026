@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 02 · Detective de tipos (Solución)</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <main class="contenedor">
+        <h1>🔍 Detective de tipos</h1>
+        <p class="descripcion">Ocho variables, ocho valores. ¿De qué tipo es cada uno? Preguntádselo a <code>typeof</code>.</p>
+
+        <table class="tabla">
+            <thead>
+                <tr><th>Variable</th><th>Valor</th><th>typeof</th></tr>
+            </thead>
+            <tbody>
+                <tr><td><code>texto</code></td><td><code>'Hola'</code></td><td id="tipoTexto" class="resultado">?</td></tr>
+                <tr><td><code>numero</code></td><td><code>42</code></td><td id="tipoNumero" class="resultado">?</td></tr>
+                <tr><td><code>decimal</code></td><td><code>3.14</code></td><td id="tipoDecimal" class="resultado">?</td></tr>
+                <tr><td><code>numeroEnTexto</code></td><td><code>'42'</code></td><td id="tipoNumeroEnTexto" class="resultado">?</td></tr>
+                <tr><td><code>verdadero</code></td><td><code>true</code></td><td id="tipoVerdadero" class="resultado">?</td></tr>
+                <tr><td><code>sinValor</code></td><td><code>(declarada sin valor)</code></td><td id="tipoSinValor" class="resultado">?</td></tr>
+                <tr><td><code>vacio</code></td><td><code>null</code></td><td id="tipoVacio" class="resultado">?</td></tr>
+                <tr><td><code>noEsNumero</code></td><td><code>NaN</code></td><td id="tipoNoEsNumero" class="resultado">?</td></tr>
+            </tbody>
+        </table>
+
+        <p class="ayuda">💡 Antes de ejecutar, apuntad en un papel qué tipo creéis que tiene cada valor. Después comparad. Hay al menos dos sorpresas.</p>
+
+        <div class="firma">Curso de JavaScript en el cliente · Realizado por Ramón Abramo</div>
+    </main>
+    <script src="app.js"></script>
+</body>
+
+</html>

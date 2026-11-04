@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 360" width="900" height="360" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif">
+  <title>Los tipos primitivos y typeof</title>
+  <desc>Cinco tipos primitivos con un ejemplo y lo que devuelve typeof para cada uno, incluida la rareza de typeof null.</desc>
+  <rect width="900" height="360" rx="16" fill="#ffffff"/>
+  <text x="450" y="42" text-anchor="middle" font-size="22" font-weight="700" fill="#1e293b">Los tipos primitivos que vais a usar</text>
+  <text x="450" y="66" text-anchor="middle" font-size="14" fill="#64748b">Y lo que responde typeof cuando le preguntáis por cada uno</text>
+
+  <g font-size="13">
+    <!-- string -->
+    <rect x="24" y="92" width="160" height="200" rx="12" fill="#fff7ed" stroke="#fdba74"/>
+    <text x="104" y="124" text-anchor="middle" font-size="16" font-weight="700" fill="#c2410c">string</text>
+    <text x="104" y="144" text-anchor="middle" fill="#475569">Texto</text>
+    <text x="104" y="190" text-anchor="middle" font-family="Consolas, Menlo, monospace" font-size="15" fill="#1e293b">'Hola'</text>
+    <text x="104" y="212" text-anchor="middle" font-family="Consolas, Menlo, monospace" font-size="15" fill="#1e293b">"42"</text>
+    <rect x="40" y="246" width="128" height="30" rx="6" fill="#ffffff" stroke="#fdba74"/>
+    <text x="104" y="266" text-anchor="middle" font-family="Consolas, Menlo, monospace" fill="#c2410c">"string"</text>
+
+    <!-- number -->
+    <rect x="196" y="92" width="160" height="200" rx="12" fill="#eff6ff" stroke="#93c5fd"/>
+    <text x="276" y="124" text-anchor="middle" font-size="16" font-weight="700" fill="#1d4ed8">number</text>
+    <text x="276" y="144" text-anchor="middle" fill="#475569">Números</text>
+    <text x="276" y="190" text-anchor="middle" font-family="Consolas, Menlo, monospace" font-size="15" fill="#1e293b">42   3.14</text>
+    <text x="276" y="212" text-anchor="middle" font-family="Consolas, Menlo, monospace" font-size="15" fill="#1e293b">-7   NaN</text>
+    <rect x="212" y="246" width="128" height="30" rx="6" fill="#ffffff" stroke="#93c5fd"/>
+    <text x="276" y="266" text-anchor="middle" font-family="Consolas, Menlo, monospace" fill="#1d4ed8">"number"</text>
+
+    <!-- boolean -->
+    <rect x="368" y="92" width="160" height="200" rx="12" fill="#f0fdf4" stroke="#86efac"/>
+    <text x="448" y="124" text-anchor="middle" font-size="16" font-weight="700" fill="#15803d">boolean</text>
+    <text x="448" y="144" text-anchor="middle" fill="#475569">Sí / no</text>
+    <text x="448" y="190" text-anchor="middle" font-family="Consolas, Menlo, monospace" font-size="15" fill="#1e293b">true</text>
+    <text x="448" y="212" text-anchor="middle" font-family="Consolas, Menlo, monospace" font-size="15" fill="#1e293b">false</text>
+    <rect x="384" y="246" width="128" height="30" rx="6" fill="#ffffff" stroke="#86efac"/>
+    <text x="448" y="266" text-anchor="middle" font-family="Consolas, Menlo, monospace" fill="#15803d">"boolean"</text>
+
+    <!-- undefined -->
+    <rect x="540" y="92" width="160" height="200" rx="12" fill="#f5f3ff" stroke="#c4b5fd"/>
+    <text x="620" y="124" text-anchor="middle" font-size="16" font-weight="700" fill="#6d28d9">undefined</text>
+    <text x="620" y="144" text-anchor="middle" fill="#475569">Aún sin valor</text>
+    <text x="620" y="190" text-anchor="middle" font-family="Consolas, Menlo, monospace" font-size="15" fill="#1e293b">let x;</text>
+    <text x="620" y="212" text-anchor="middle" font-family="Consolas, Menlo, monospace" font-size="15" fill="#1e293b">undefined</text>
+    <rect x="556" y="246" width="128" height="30" rx="6" fill="#ffffff" stroke="#c4b5fd"/>
+    <text x="620" y="266" text-anchor="middle" font-family="Consolas, Menlo, monospace" fill="#6d28d9">"undefined"</text>
+
+    <!-- null -->
+    <rect x="712" y="92" width="164" height="200" rx="12" fill="#fef2f2" stroke="#fca5a5"/>
+    <text x="794" y="124" text-anchor="middle" font-size="16" font-weight="700" fill="#b91c1c">null</text>
+    <text x="794" y="144" text-anchor="middle" fill="#475569">Vacío a propósito</text>
+    <text x="794" y="190" text-anchor="middle" font-family="Consolas, Menlo, monospace" font-size="15" fill="#1e293b">null</text>
+    <rect x="730" y="246" width="128" height="30" rx="6" fill="#ffffff" stroke="#fca5a5"/>
+    <text x="794" y="266" text-anchor="middle" font-family="Consolas, Menlo, monospace" fill="#b91c1c">"object" ⚠</text>
+  </g>
+
+  <text x="450" y="322" text-anchor="middle" font-size="13" fill="#475569">⚠ typeof null devuelve "object". Es una rareza histórica del lenguaje: null NO es un objeto.</text>
+  <text x="450" y="342" text-anchor="middle" font-size="12" fill="#94a3b8">Existen otros dos primitivos, bigint y symbol, que no necesitaremos en este curso.</text>
+</svg>

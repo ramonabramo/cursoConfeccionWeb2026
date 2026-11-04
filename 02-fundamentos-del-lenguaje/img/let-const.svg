@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 400" width="900" height="400" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif">
+  <title>let, const y var</title>
+  <desc>let es una caja con etiqueta cuyo contenido se puede cambiar; const es una caja con candado que no se puede reasignar; var queda fuera del curso.</desc>
+  <rect width="900" height="400" rx="16" fill="#ffffff"/>
+  <text x="450" y="42" text-anchor="middle" font-size="22" font-weight="700" fill="#1e293b">Una variable es una caja con etiqueta</text>
+  <text x="450" y="66" text-anchor="middle" font-size="14" fill="#64748b">La etiqueta es el nombre. Lo de dentro, el valor.</text>
+
+  <!-- LET -->
+  <rect x="24" y="90" width="300" height="290" rx="14" fill="#eff6ff" stroke="#93c5fd"/>
+  <text x="44" y="122" font-family="Consolas, Menlo, monospace" font-size="20" font-weight="700" fill="#1d4ed8">let</text>
+  <text x="44" y="144" font-size="13" fill="#475569">El valor puede cambiar</text>
+  <!-- caja abierta -->
+  <path d="M84,196 L84,262 L234,262 L234,196" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+  <path d="M84,196 L64,176 M234,196 L254,176" stroke="#2563eb" stroke-width="2"/>
+  <rect x="112" y="226" width="94" height="24" rx="5" fill="#ffffff" stroke="#93c5fd"/>
+  <text x="159" y="243" text-anchor="middle" font-size="13" font-weight="700" fill="#1e293b">puntos</text>
+  <text x="159" y="212" text-anchor="middle" font-family="Consolas, Menlo, monospace" font-size="16" font-weight="700" fill="#1d4ed8">10 → 25</text>
+  <g font-family="Consolas, Menlo, monospace" font-size="13">
+    <text x="44" y="300" fill="#1e293b">let puntos = 10;</text>
+    <text x="44" y="322" fill="#1e293b">puntos = 25;</text>
+    <text x="166" y="322" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" fill="#15803d">✔ permitido</text>
+  </g>
+  <text x="44" y="358" font-size="12" fill="#475569">Contadores, acumuladores, datos que cambian</text>
+
+  <!-- CONST -->
+  <rect x="300" y="90" width="300" height="290" rx="14" fill="#f0fdf4" stroke="#86efac" transform="translate(36,0)"/>
+  <text x="356" y="122" font-family="Consolas, Menlo, monospace" font-size="20" font-weight="700" fill="#15803d">const</text>
+  <text x="356" y="144" font-size="13" fill="#475569">No se puede reasignar</text>
+  <rect x="396" y="182" width="150" height="80" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/>
+  <rect x="424" y="226" width="94" height="24" rx="5" fill="#ffffff" stroke="#86efac"/>
+  <text x="471" y="243" text-anchor="middle" font-size="13" font-weight="700" fill="#1e293b">IVA</text>
+  <text x="471" y="212" text-anchor="middle" font-family="Consolas, Menlo, monospace" font-size="16" font-weight="700" fill="#15803d">0.21</text>
+  <!-- candado -->
+  <path d="M532,176 L532,166 A12,12 0 0 1 556,166 L556,176" fill="none" stroke="#a16207" stroke-width="3"/>
+  <rect x="526" y="174" width="36" height="28" rx="4" fill="#facc15" stroke="#a16207" stroke-width="2"/>
+  <g font-family="Consolas, Menlo, monospace" font-size="13">
+    <text x="356" y="300" fill="#1e293b">const IVA = 0.21;</text>
+    <text x="356" y="322" fill="#1e293b">IVA = 0.10;</text>
+    <text x="458" y="322" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" fill="#b91c1c">✘ TypeError</text>
+  </g>
+  <text x="356" y="358" font-size="12" fill="#475569">La opción por defecto. Usadla siempre que podáis.</text>
+
+  <!-- VAR -->
+  <rect x="660" y="90" width="216" height="290" rx="14" fill="#f8fafc" stroke="#cbd5e1"/>
+  <text x="680" y="122" font-family="Consolas, Menlo, monospace" font-size="20" font-weight="700" fill="#94a3b8" text-decoration="line-through">var</text>
+  <text x="680" y="144" font-size="13" fill="#475569">La forma antigua</text>
+  <circle cx="768" cy="218" r="40" fill="none" stroke="#dc2626" stroke-width="4"/>
+  <line x1="740" y1="246" x2="796" y2="190" stroke="#dc2626" stroke-width="4"/>
+  <text x="680" y="296" font-size="12" fill="#475569">No respeta los bloques { }</text>
+  <text x="680" y="316" font-size="12" fill="#475569">y se puede usar antes de</text>
+  <text x="680" y="336" font-size="12" fill="#475569">declararla. Fuente de líos.</text>
+  <text x="680" y="362" font-size="12" font-weight="700" fill="#b91c1c">No aparece en el curso</text>
+</svg>

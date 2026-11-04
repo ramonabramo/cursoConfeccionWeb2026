@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 380" width="900" height="380" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif">
+  <title>Convertir texto en número</title>
+  <desc>Tabla que compara Number, parseInt y parseFloat con varios textos de entrada.</desc>
+  <rect width="900" height="380" rx="16" fill="#ffffff"/>
+  <text x="450" y="42" text-anchor="middle" font-size="22" font-weight="700" fill="#1e293b">De texto a número: tres herramientas</text>
+  <text x="450" y="66" text-anchor="middle" font-size="14" fill="#64748b">El mismo texto de entrada, tres resultados distintos</text>
+
+  <!-- cabecera -->
+  <rect x="24" y="86" width="852" height="44" rx="8" fill="#1e293b"/>
+  <g font-size="14" font-weight="700" fill="#ffffff" text-anchor="middle">
+    <text x="130" y="114">Texto de entrada</text>
+    <text x="350" y="114" font-family="Consolas, Menlo, monospace">Number()</text>
+    <text x="560" y="114" font-family="Consolas, Menlo, monospace">parseInt()</text>
+    <text x="770" y="114" font-family="Consolas, Menlo, monospace">parseFloat()</text>
+  </g>
+  <g font-size="12" fill="#cbd5e1" text-anchor="middle">
+  </g>
+
+  <g font-family="Consolas, Menlo, monospace" font-size="15" text-anchor="middle">
+    <rect x="24" y="134" width="852" height="40" fill="#f8fafc"/>
+    <text x="130" y="160" fill="#c2410c">'42'</text>
+    <text x="350" y="160" fill="#15803d">42</text><text x="560" y="160" fill="#15803d">42</text><text x="770" y="160" fill="#15803d">42</text>
+
+    <rect x="24" y="176" width="852" height="40" fill="#ffffff"/>
+    <text x="130" y="202" fill="#c2410c">'3.75'</text>
+    <text x="350" y="202" fill="#15803d">3.75</text><text x="560" y="202" fill="#a16207">3</text><text x="770" y="202" fill="#15803d">3.75</text>
+
+    <rect x="24" y="218" width="852" height="40" fill="#f8fafc"/>
+    <text x="130" y="244" fill="#c2410c">'42px'</text>
+    <text x="350" y="244" fill="#b91c1c">NaN</text><text x="560" y="244" fill="#15803d">42</text><text x="770" y="244" fill="#15803d">42</text>
+
+    <rect x="24" y="260" width="852" height="40" fill="#ffffff"/>
+    <text x="130" y="286" fill="#c2410c">''</text>
+    <text x="350" y="286" fill="#a16207">0</text><text x="560" y="286" fill="#b91c1c">NaN</text><text x="770" y="286" fill="#b91c1c">NaN</text>
+
+    <rect x="24" y="302" width="852" height="40" fill="#f8fafc"/>
+    <text x="130" y="328" fill="#c2410c">'hola'</text>
+    <text x="350" y="328" fill="#b91c1c">NaN</text><text x="560" y="328" fill="#b91c1c">NaN</text><text x="770" y="328" fill="#b91c1c">NaN</text>
+  </g>
+
+  <text x="350" y="364" text-anchor="middle" font-size="12" fill="#475569">Estricto: todo o nada</text>
+  <text x="560" y="364" text-anchor="middle" font-size="12" fill="#475569">Lee lo que puede · enteros</text>
+  <text x="770" y="364" text-anchor="middle" font-size="12" fill="#475569">Lee lo que puede · decimales</text>
+</svg>

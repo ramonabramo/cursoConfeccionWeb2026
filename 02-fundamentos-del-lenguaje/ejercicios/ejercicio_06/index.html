@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 06 · Laboratorio de conversiones</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <main class="contenedor">
+        <h1>⚗️ Laboratorio de conversiones</h1>
+        <p id="entrada" class="descripcion">Escribe un texto y verás cómo lo convierte cada función.</p>
+
+        <table class="tabla">
+            <thead>
+                <tr><th>Conversión</th><th>Resultado</th><th>typeof</th></tr>
+            </thead>
+            <tbody>
+                <tr><td><code>Number(texto)</code></td><td id="resNumber" class="resultado">?</td><td id="tipoNumber">?</td></tr>
+                <tr><td><code>parseInt(texto, 10)</code></td><td id="resParseInt" class="resultado">?</td><td id="tipoParseInt">?</td></tr>
+                <tr><td><code>parseFloat(texto)</code></td><td id="resParseFloat" class="resultado">?</td><td id="tipoParseFloat">?</td></tr>
+                <tr><td><code>String(42) + 1</code></td><td id="resString" class="resultado">?</td><td id="tipoString">?</td></tr>
+            </tbody>
+        </table>
+
+        <p class="ayuda">💡 Probad estos textos, uno cada vez: <code>42</code>, <code>3.75</code>, <code>42.5px</code>, <code>px42</code> y un texto vacío.</p>
+
+        <div class="firma">Curso de JavaScript en el cliente · Realizado por Ramón Abramo</div>
+    </main>
+    <script src="app.js"></script>
+</body>
+
+</html>

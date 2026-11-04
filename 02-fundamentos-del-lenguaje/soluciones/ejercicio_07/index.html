@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 07 · == frente a === (Solución)</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <main class="contenedor">
+        <h1>⚖️ <code>==</code> frente a <code>===</code></h1>
+        <p class="descripcion">Seis parejas de valores. ¿Son iguales? Depende de a quién le preguntéis.</p>
+
+        <table class="tabla">
+            <thead>
+                <tr><th>Pareja</th><th>==</th><th>===</th></tr>
+            </thead>
+            <tbody>
+                <tr><td><code>5</code> y <code>'5'</code></td><td id="debil1" class="resultado">?</td><td id="estricta1" class="resultado">?</td></tr>
+                <tr><td><code>0</code> y <code>''</code></td><td id="debil2" class="resultado">?</td><td id="estricta2" class="resultado">?</td></tr>
+                <tr><td><code>0</code> y <code>false</code></td><td id="debil3" class="resultado">?</td><td id="estricta3" class="resultado">?</td></tr>
+                <tr><td><code>null</code> y <code>undefined</code></td><td id="debil4" class="resultado">?</td><td id="estricta4" class="resultado">?</td></tr>
+                <tr><td><code>'1'</code> y <code>true</code></td><td id="debil5" class="resultado">?</td><td id="estricta5" class="resultado">?</td></tr>
+                <tr><td><code>NaN</code> y <code>NaN</code></td><td id="debil6" class="resultado">?</td><td id="estricta6" class="resultado">?</td></tr>
+            </tbody>
+        </table>
+
+        <p class="ayuda">💡 Antes de ejecutar, apostad: ¿cuántas parejas dan <code>true</code> con <code>==</code>? Hay una que da <code>false</code> con los dos… y es la más rara.</p>
+
+        <div class="firma">Curso de JavaScript en el cliente · Realizado por Ramón Abramo</div>
+    </main>
+    <script src="app.js"></script>
+</body>
+
+</html>
