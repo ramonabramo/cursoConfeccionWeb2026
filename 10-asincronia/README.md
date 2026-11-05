@@ -153,10 +153,12 @@ function consultarStock(producto) {
 
 ```javascript
 consultarStock('teclado')
-    .then((stock) => mostrar(stock))          // si se cumple [10]
-    .catch((error) => mostrarError(error))    // si se rechaza [11]
-    .finally(() => ocultarCargando());        // siempre [12]
+    .then((stock) => mostrar(stock))          // si se cumple
+    .catch((error) => mostrarError(error))    // si se rechaza
+    .finally(() => ocultarCargando());        // siempre
 ```
+
+`then` recibe la función que se ejecuta si la promesa se cumple [10]; `catch`, la que se ejecuta si se rechaza [11]; y `finally`, la que se ejecuta en los dos casos, ideal para limpiar: quitar un «Cargando…», reactivar un botón [12].
 
 Y como `then` devuelve una promesa nueva [10], las tareas se **encadenan en vertical**, sin pirámide:
 
