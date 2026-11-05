@@ -48,7 +48,7 @@ Necesitáis una API que se pueda usar desde el navegador, es decir, que envíe l
 | **Robustez** | 2 | Validación en el formulario y en el modelo; mensajes de error comprensibles; estados de carga, vacío y error; carga segura de `localStorage` |
 | **Accesibilidad y usabilidad** | 1,5 | Se puede usar solo con el teclado; etiquetas en todos los controles; foco en el primer error; avisos con `aria-live` |
 | **Calidad del código** | 1 | Nombres que se entienden; la plantilla de comentarios del curso; ningún error en la consola |
-| **Documentación** | 0,5 | Un `README.md` del proyecto (ver apartado 6) |
+| **Documentación** | 0,5 | Un `README.md` del proyecto (ver apartado 7) |
 
 > [!WARNING]
 > Los seis requisitos obligatorios son imprescindibles. Si falta alguno, el proyecto no es apto, aunque el resto esté muy bien.
@@ -113,7 +113,26 @@ Fijaos en el orden: primero el **modelo**, que no depende de nada y se puede pro
 
 ---
 
-## 6. Qué hay que entregar
+<!-- ampliación -->
+## 6. Ideas de proyecto con lo que ya sabéis
+
+Si os cuesta elegir tema, aquí tenéis algunas ideas, con la pieza del curso que más os va a hacer falta en cada una y de dónde podrían salir los datos remotos. Todas cumplen los seis requisitos si se plantean bien.
+
+| Proyecto | Lo que más vais a practicar | Datos de la API |
+| --- | --- | --- |
+| 🎬 **Reserva de butacas** de un cine | Una rejilla generada con el DOM, selección con el ratón y el teclado, un formulario de reserva | Las películas, como publicaciones (`/posts`) |
+| 🛒 **Tienda con carrito y favoritos** | Filtros y búsqueda, el carrito en `localStorage`, el patrón estado → renderizar | Los productos, como fotos (`/photos`) |
+| 🎧 **Lista de reproducción** | Ordenar, arrastrar el orden con botones, temporizadores para simular la reproducción | Las canciones, como álbumes (`/albums`) |
+| 📖 **Recetario** | Formularios con campos que aparecen (ingredientes), validación, búsqueda | Las recetas, como publicaciones con comentarios (`/posts`, `/comments`) |
+| 💸 **Gastos del mes** | Fechas y `Intl` para los importes, totales con `reduce`, una barra de progreso del presupuesto | Gastos de ejemplo, como tareas (`/todos`) |
+| 🧠 **Juego de preguntas** | Grupos de opciones, temporizador por pregunta, récord guardado | Las preguntas, en un JSON vuestro servido con Live Server |
+| 📅 **Agenda de contactos** | Validación de email y teléfono, edición en línea, ordenar por nombre | Los contactos, como usuarios (`/users`) |
+
+JSONPlaceholder tiene usuarios, publicaciones, comentarios, álbumes, fotos y tareas [2]. Con un poco de imaginación, casi cualquier tema encaja en alguno de esos recursos. Y recordad la regla de la fase 6: traducid sus datos al formato de vuestra aplicación, para que el resto del código no dependa de la API.
+
+---
+
+## 7. Qué hay que entregar
 
 Una carpeta con este contenido:
 
@@ -130,7 +149,7 @@ El `README.md` del proyecto no tiene que ser largo, pero sí responder a cuatro 
 
 ---
 
-## 7. Lista de comprobación antes de entregar
+## 8. Lista de comprobación antes de entregar
 
 **Requisitos**
 

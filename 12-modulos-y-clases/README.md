@@ -216,7 +216,40 @@ Y el método, que vale más que cualquier herramienta: **sabed qué debería sal
 
 ---
 
-## 7. La plantilla de trabajo con módulos
+<!-- ampliación -->
+## 7. Componentes: una clase que controla un trozo de página
+
+Cuando una misma pieza aparece varias veces en una página (dos grupos de pestañas, tres temporizadores, varios carruseles), lo natural es escribir **una clase** y crear una instancia por cada pieza [7]. Es lo que en el mundo de los frameworks se llama un **componente**:
+
+```javascript
+class Contador {
+    #valor = 0;
+    #salida;
+
+    constructor(raiz) {                              // el trozo de página que controla
+        this.#salida = raiz.querySelector('.valor');
+        const boton = raiz.querySelector('button');
+        boton.addEventListener('click', () => this.sumar());   // flecha: this sigue siendo el contador
+    }
+
+    sumar() {
+        this.#valor++;
+        this.#salida.textContent = this.#valor;
+    }
+}
+
+document.querySelectorAll('.contador').forEach((raiz) => new Contador(raiz));
+```
+
+Tres reglas que hacen que un componente funcione bien:
+
+1. **Busca dentro de su raíz**, con `raiz.querySelector`, nunca con `document.querySelector`. Así dos instancias no se pisan.
+2. **Guarda su estado en campos privados**, para que cada instancia tenga el suyo.
+3. **Usa funciones flecha en los escuchadores.** Una función normal usada como escuchador recibe como `this` el elemento del evento [9]; una flecha no tiene `this` propio y usa el de fuera [22], que aquí es la instancia.
+
+---
+
+## 8. La plantilla de trabajo con módulos
 
 A partir de ahora, una aplicación mediana queda así:
 
@@ -270,7 +303,7 @@ actualizar();
 
 ---
 
-## 8. Ejercicios
+## 9. Ejercicios
 
 | Nº | Ejercicio | Qué practicáis | Solución |
 | --- | --- | --- | --- |
@@ -282,6 +315,8 @@ actualizar();
 | 06 | [Modelo, vista y controlador](ejercicios/ejercicio_06/) | Separar responsabilidades en tres módulos | [Ver](soluciones/ejercicio_06/) |
 | 07 | [Depuración: cuatro fallos escondidos](ejercicios/ejercicio_07/) | Puntos de interrupción, paso a paso, `debugger` | [Ver](soluciones/ejercicio_07/) |
 | 08 | [Proyecto: mi biblioteca con clases y módulos](ejercicios/ejercicio_08/) | Todo el bloque, con `toJSON` y `localStorage` | [Ver](soluciones/ejercicio_08/) |
+| 09 | [Pestañas reutilizables](ejercicios/ejercicio_09/) | Una clase como componente, dos instancias independientes, `raiz.querySelector` | [Ver](soluciones/ejercicio_09/) |
+| 10 | [Temporizadores independientes](ejercicios/ejercicio_10/) | Privados con `setInterval`, `this` en las flechas, contador `static` | [Ver](soluciones/ejercicio_10/) |
 
 El 07 no os lo saltéis aunque parezca el más sencillo. Aprender a depurar os ahorrará más horas que cualquier otra cosa de este curso, y el proyecto final del bloque 13 os lo va a pedir.
 
@@ -312,3 +347,4 @@ El 07 no os lo saltéis aunque parezca el más sencillo. Aprender a depurar os a
 19. [Error (MDN Web Docs)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error)
 20. [JavaScript debugging and error handling (MDN Web Docs)](https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/Debugging_JavaScript)
 21. [debugger (MDN Web Docs)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/debugger)
+22. [Arrow function expressions (MDN Web Docs)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions)

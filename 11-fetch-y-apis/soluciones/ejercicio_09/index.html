@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 09 · Constructor de URLs (Solución)</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <main class="contenedor">
+        <h1>🔗 Constructor de URLs</h1>
+        <p class="descripcion">Rellenad la búsqueda y veréis la dirección exacta que se pediría a la API, bien codificada.</p>
+
+        <form id="formUrl">
+            <div class="campo">
+                <label for="texto">Texto a buscar</label>
+                <input type="text" id="texto" name="texto" value="café & tostadas en Cádiz">
+            </div>
+            <div class="campo">
+                <label for="categoria">Categoría</label>
+                <select id="categoria" name="categoria">
+                    <option value="">Todas</option>
+                    <option value="desayunos">Desayunos</option>
+                    <option value="postres">Postres</option>
+                </select>
+            </div>
+            <div class="campo">
+                <label for="pagina">Página</label>
+                <input type="number" id="pagina" name="pagina" min="1" value="1">
+            </div>
+        </form>
+        <p class="descripcion">Con <code>URLSearchParams</code>:</p>
+        <p id="urlBien" class="salida">…</p>
+        <p class="descripcion">Pegando el texto a mano en la plantilla:</p>
+        <p id="urlMal" class="salida salida--aviso">…</p>
+
+        <h2>Leer una dirección</h2>
+        <div class="campo">
+            <label for="direccion">Pegad una URL</label>
+            <input type="url" id="direccion" value="https://tienda.com/catalogo?categoria=audio&orden=precio&pagina=3">
+        </div>
+        <ul id="parametros" class="lista"></ul>
+
+        <div class="firma">Curso de JavaScript en el cliente · Realizado por Ramón Abramo</div>
+    </main>
+    <script src="app.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 09 · Pestañas reutilizables</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <main class="contenedor">
+        <h1>🧩 Pestañas reutilizables</h1>
+        <p class="descripcion">Dos grupos de pestañas en la misma página, controlados por la misma clase. Cada uno va por su cuenta.</p>
+
+        <div class="componente" data-pestanas>
+            <div class="pestanas" role="tablist" aria-label="Lenguajes">
+                <button class="pestana" role="tab">HTML</button>
+                <button class="pestana" role="tab">CSS</button>
+                <button class="pestana" role="tab">JavaScript</button>
+            </div>
+            <div class="panel" role="tabpanel"><p>La estructura de la página.</p></div>
+            <div class="panel" role="tabpanel"><p>El aspecto de la página.</p></div>
+            <div class="panel" role="tabpanel"><p>El comportamiento de la página.</p></div>
+        </div>
+
+        <div class="componente" data-pestanas>
+            <div class="pestanas" role="tablist" aria-label="Herramientas">
+                <button class="pestana" role="tab">Editor</button>
+                <button class="pestana" role="tab">Navegador</button>
+            </div>
+            <div class="panel" role="tabpanel"><p>Visual Studio Code con Live Server.</p></div>
+            <div class="panel" role="tabpanel"><p>Chrome o Firefox, con las herramientas de desarrollo.</p></div>
+        </div>
+
+        <p id="estado" class="salida" aria-live="polite">…</p>
+
+        <div class="firma">Curso de JavaScript en el cliente · Realizado por Ramón Abramo</div>
+    </main>
+    <script src="app.js"></script>
+</body>
+
+</html>

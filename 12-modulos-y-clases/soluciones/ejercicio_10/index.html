@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 10 · Temporizadores independientes (Solución)</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <main class="contenedor">
+        <h1>⏱️ Temporizadores independientes</h1>
+        <p class="descripcion">Tres temporizadores creados con la misma clase. Cada uno cuenta su tiempo y se para por su cuenta.</p>
+
+        <div class="temporizadores">
+            <div class="temporizador" data-nombre="Pasta">
+                <h2>🍝 Pasta</h2>
+                <p class="tiempo">00:00</p>
+                <div class="botonera"><button class="btn" data-accion="alternar">Iniciar</button><button class="btn btn--secundario" data-accion="reiniciar">Reiniciar</button></div>
+            </div>
+            <div class="temporizador" data-nombre="Huevos">
+                <h2>🥚 Huevos</h2>
+                <p class="tiempo">00:00</p>
+                <div class="botonera"><button class="btn" data-accion="alternar">Iniciar</button><button class="btn btn--secundario" data-accion="reiniciar">Reiniciar</button></div>
+            </div>
+            <div class="temporizador" data-nombre="Té">
+                <h2>🍵 Té</h2>
+                <p class="tiempo">00:00</p>
+                <div class="botonera"><button class="btn" data-accion="alternar">Iniciar</button><button class="btn btn--secundario" data-accion="reiniciar">Reiniciar</button></div>
+            </div>
+        </div>
+        <p id="resumen" class="salida" aria-live="polite">…</p>
+
+        <div class="firma">Curso de JavaScript en el cliente · Realizado por Ramón Abramo</div>
+    </main>
+    <script src="app.js"></script>
+</body>
+
+</html>

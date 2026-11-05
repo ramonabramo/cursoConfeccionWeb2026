@@ -218,7 +218,60 @@ Es lo mismo que visteis en el bloque 10, ahora con peticiones de verdad. Si una 
 
 ---
 
-## 8. La plantilla de trabajo con `fetch`
+<!-- ampliación -->
+## 8. Construir URLs: `URL` y `URLSearchParams`
+
+Las peticiones a una API llevan a menudo **parámetros** detrás del `?`: `…/posts?userId=3&_limit=5`. Escribirlos a mano con plantillas de texto funciona… hasta que un valor lleva espacios, tildes o un `&`. Para eso existen `URL` y `URLSearchParams` [20] [21]:
+
+```javascript
+const url = new URL('https://api.ejemplo.com/buscar');
+url.searchParams.set('q', 'café con leche');   // añade o sustituye
+url.searchParams.set('pagina', 2);
+url.toString();   // 'https://api.ejemplo.com/buscar?q=caf%C3%A9+con+leche&pagina=2'
+
+await fetch(url);  // fetch acepta un objeto URL
+```
+
+`searchParams` es un `URLSearchParams` que se ocupa de **codificar** cada valor [22]: el espacio se convierte en `+` y la `é`, en `%C3%A9`, como exige el formato de las URL [21]. También sirve al revés, para **leer** los parámetros de una dirección:
+
+```javascript
+const direccion = new URL('https://tienda.com/catalogo?categoria=audio&orden=precio');
+direccion.searchParams.get('categoria');     // 'audio'
+for (const [nombre, valor] of direccion.searchParams) { … }
+```
+
+Si la dirección no es válida, `new URL()` lanza un `TypeError` [20]: metedlo en un `try` cuando venga del usuario.
+
+---
+
+## 9. Cancelar una petición: `AbortController`
+
+Imaginad un buscador que pide resultados al servidor con cada tecla. El usuario escribe «ma», luego «mad»… y la respuesta de «ma» llega **después** que la de «mad». La página acaba mostrando resultados de una búsqueda vieja. La solución es **cancelar** la petición anterior cuando empieza una nueva [23]:
+
+```javascript
+let controlador = null;
+
+async function buscar(texto) {
+    controlador?.abort();                     // cancela la anterior, si había
+    controlador = new AbortController();
+    try {
+        const respuesta = await fetch(url, { signal: controlador.signal });
+        …
+    } catch (error) {
+        if (error.name === 'AbortError') return;   // la cancelé yo: no es un fallo
+        mostrarError(error);
+    }
+}
+```
+
+Cada `AbortController` tiene una **señal** (`signal`) que se pasa a `fetch` [24]. Al llamar a `abort()`, la petición se interrumpe y su promesa se rechaza con un `AbortError` [25] [6]. Ese error no hay que enseñárselo al usuario: lo habéis provocado vosotros.
+
+> [!NOTE]
+> `controlador?.abort()` usa el **encadenamiento opcional**: si `controlador` es `null` (la primera vez), no hace nada en lugar de dar error. Equivale a `if (controlador) controlador.abort();`.
+
+---
+
+## 10. La plantilla de trabajo con `fetch`
 
 La plantilla de siempre, con la carga de datos dentro de una función `async` que gestiona los cuatro estados:
 
@@ -267,7 +320,7 @@ boton.addEventListener('click', cargar);
 
 ---
 
-## 9. Ejercicios
+## 11. Ejercicios
 
 | Nº | Ejercicio | Qué practicáis | Solución |
 | --- | --- | --- | --- |
@@ -279,6 +332,8 @@ boton.addEventListener('click', cargar);
 | 06 | [Una API pública: usuarios y publicaciones](ejercicios/ejercicio_06/) | Pedir a otro origen, datos anidados, parámetros en la URL | [Ver](soluciones/ejercicio_06/) |
 | 07 | [Enviar datos con POST](ejercicios/ejercicio_07/) | `method`, `headers`, `body` y `JSON.stringify` | [Ver](soluciones/ejercicio_07/) |
 | 08 | [Tareas de la API con favoritos](ejercicios/ejercicio_08/) | `Promise.all`, filtros, búsqueda y favoritos en `localStorage` | [Ver](soluciones/ejercicio_08/) |
+| 09 | [Constructor de URLs](ejercicios/ejercicio_09/) | `URL`, `searchParams.set`, codificación, leer los parámetros de una dirección | [Ver](soluciones/ejercicio_09/) |
+| 10 | [Un buscador que cancela](ejercicios/ejercicio_10/) | `AbortController`, `signal`, `AbortError`, respuestas que llegan desordenadas | [Ver](soluciones/ejercicio_10/) |
 
 Los ejercicios 01 a 05 piden ficheros JSON de su propia carpeta. Del 06 al 08 se conectan a JSONPlaceholder, una API pública y gratuita para practicar, así que necesitáis conexión a Internet. Y una prueba que os recomiendo: en el 02, abrid la pestaña **Red** de las herramientas de desarrollo y mirad cada petición. Ver el `404` en rojo con vuestros propios ojos se olvida mucho más tarde que leerlo aquí.
 
@@ -307,3 +362,9 @@ Los ejercicios 01 a 05 piden ficheros JSON de su propia carpeta. Del 06 al 08 se
 17. [POST request method (MDN Web Docs)](https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Methods/POST)
 18. [Content-Type header (MDN Web Docs)](https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Content-Type)
 19. [Promise.all() (MDN Web Docs)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/all)
+20. [URL (MDN Web Docs)](https://developer.mozilla.org/en-US/docs/Web/API/URL)
+21. [URLSearchParams (MDN Web Docs)](https://developer.mozilla.org/en-US/docs/Web/API/URLSearchParams)
+22. [URL: searchParams property (MDN Web Docs)](https://developer.mozilla.org/en-US/docs/Web/API/URL/searchParams)
+23. [AbortController (MDN Web Docs)](https://developer.mozilla.org/en-US/docs/Web/API/AbortController)
+24. [AbortSignal (MDN Web Docs)](https://developer.mozilla.org/en-US/docs/Web/API/AbortSignal)
+25. [AbortController: abort() method (MDN Web Docs)](https://developer.mozilla.org/en-US/docs/Web/API/AbortController/abort)

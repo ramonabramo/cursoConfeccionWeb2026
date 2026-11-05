@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 10 · Un buscador que cancela</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <main class="contenedor">
+        <p class="aviso-servidor">🖥️ Abrid esta página con <strong>Live Server</strong>. Con doble clic en el fichero, <code>fetch</code> no puede leer los datos.</p>
+                <h1>🛑 Un buscador que cancela</h1>
+                <p class="descripcion">Cada tecla lanza una búsqueda que tarda un tiempo al azar, como en una red lenta. La búsqueda anterior se cancela para que nunca gane una respuesta vieja.</p>
+
+                <div class="campo">
+                    <label for="buscar">País</label>
+                    <input type="search" id="buscar" autocomplete="off" placeholder="Probad a escribir «ma» rápido">
+                </div>
+                <label class="opcion"><input type="checkbox" id="sinCancelar"> Desactivar la cancelación (para ver el problema)</label>
+
+                <p id="estado" class="salida" aria-live="polite">…</p>
+                <ul id="resultados" class="lista"></ul>
+                <ol id="registro" class="lista"></ol>
+
+        <div class="firma">Curso de JavaScript en el cliente · Realizado por Ramón Abramo</div>
+    </main>
+    <script src="app.js"></script>
+</body>
+
+</html>
