@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "texto": "Leed el mensaje de error entero antes de tocar nada: casi siempre dice dónde está el problema."
+  },
+  {
+    "id": 2,
+    "texto": "Poned nombres que se entiendan. Dentro de un mes, vosotros seréis los primeros en agradecerlo."
+  },
+  {
+    "id": 3,
+    "texto": "Una función, una tarea. Si necesitáis la palabra «y» para describirla, son dos funciones."
+  },
+  {
+    "id": 4,
+    "texto": "Convertid lo que escribe el usuario antes de hacer cuentas: llega siempre como texto."
+  },
+  {
+    "id": 5,
+    "texto": "Con la consola abierta se programa el doble de rápido. Tenedla siempre a la vista."
+  },
+  {
+    "id": 6,
+    "texto": "Antes de un bucle, preguntaos qué hará que termine."
+  }
+]

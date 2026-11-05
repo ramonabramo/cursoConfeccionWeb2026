@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 08 · Tareas de la API con favoritos (Solución)</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <main class="contenedor">
+        <h1>📋 Tareas de la API con favoritos</h1>
+        <p class="aviso-servidor">🖥️ Abrid esta página con <strong>Live Server</strong>. Con doble clic en el fichero, <code>fetch</code> no puede leer los datos.</p>
+
+        <div class="fila-controles">
+            <select id="usuario" aria-label="Usuario" disabled><option>Cargando usuarios…</option></select>
+            <input type="search" id="buscar" placeholder="Buscar tarea…" aria-label="Buscar tarea">
+        </div>
+
+        <div id="filtros" class="botonera">
+            <button class="btn activo" data-filtro="todas">Todas</button>
+            <button class="btn" data-filtro="pendientes">Pendientes</button>
+            <button class="btn" data-filtro="completadas">Completadas</button>
+            <button class="btn" data-filtro="favoritas">⭐ Favoritas</button>
+        </div>
+
+        <p id="estado" class="descripcion" aria-live="polite">…</p>
+        <ul id="tareas" class="lista"></ul>
+
+        <p class="ayuda">💡 Las estrellas se guardan en el navegador: cambiad de usuario, recargad… y siguen ahí.</p>
+
+        <div class="firma">Curso de JavaScript en el cliente · Realizado por Ramón Abramo</div>
+    </main>
+    <script src="app.js"></script>
+</body>
+
+</html>

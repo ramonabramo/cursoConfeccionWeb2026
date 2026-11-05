@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 05 · Estados de carga, errores y reintentos (Solución)</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <main class="contenedor">
+        <h1>📰 Tablón de noticias</h1>
+        <p class="aviso-servidor">🖥️ Abrid esta página con <strong>Live Server</strong>. Con doble clic en el fichero, <code>fetch</code> no puede leer los datos.</p>
+        <p class="descripcion">Elegid un escenario y pulsad «Cargar». Cada uno pone a prueba un estado distinto de la interfaz.</p>
+
+        <div class="fila-controles">
+            <select id="escenario" aria-label="Escenario">
+                <option value="normal">Todo bien</option>
+                <option value="lento">Conexión lenta (2 s)</option>
+                <option value="vacio">Sin noticias</option>
+                <option value="roto">Fichero JSON roto</option>
+                <option value="404">Fichero que no existe</option>
+            </select>
+            <button id="btnCargar" class="btn">Cargar</button>
+        </div>
+
+        <p id="estado" class="salida" aria-live="polite">Elige un escenario.</p>
+        <div class="botonera"><button id="btnReintentar" class="btn btn--secundario" hidden>Reintentar</button></div>
+        <ul id="noticias" class="lista"></ul>
+
+        <div class="firma">Curso de JavaScript en el cliente · Realizado por Ramón Abramo</div>
+    </main>
+    <script src="app.js"></script>
+</body>
+
+</html>

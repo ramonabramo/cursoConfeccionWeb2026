@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 02 · respuesta.ok y los códigos de estado (Solución)</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <main class="contenedor">
+        <h1>🚦 respuesta.ok y los códigos de estado</h1>
+        <p class="aviso-servidor">🖥️ Abrid esta página con <strong>Live Server</strong>. Con doble clic en el fichero, <code>fetch</code> no puede leer los datos.</p>
+        <p class="descripcion">Tres peticiones: una que funciona, una a un fichero que no existe y una a un servidor imposible. ¿En cuáles «falla» fetch?</p>
+
+        <div class="botonera">
+            <button class="btn" data-url="consejos.json">consejos.json</button>
+            <button class="btn" data-url="no-existe.json">no-existe.json</button>
+            <button class="btn" data-url="https://servidor-inexistente.invalid/datos.json">Servidor inexistente</button>
+        </div>
+
+        <table class="tabla">
+            <thead><tr><th>Dato</th><th>Valor</th></tr></thead>
+            <tbody>
+                <tr><td>URL pedida</td><td id="resUrl" class="resultado">—</td></tr>
+                <tr><td>¿fetch rechazó la promesa?</td><td id="resRechazo" class="resultado">—</td></tr>
+                <tr><td><code>respuesta.status</code></td><td id="resStatus" class="resultado">—</td></tr>
+                <tr><td><code>respuesta.statusText</code></td><td id="resStatusText" class="resultado">—</td></tr>
+                <tr><td><code>respuesta.ok</code></td><td id="resOk" class="resultado">—</td></tr>
+                <tr><td>Conclusión</td><td id="resConclusion">—</td></tr>
+            </tbody>
+        </table>
+
+        <div class="firma">Curso de JavaScript en el cliente · Realizado por Ramón Abramo</div>
+    </main>
+    <script src="app.js"></script>
+</body>
+
+</html>

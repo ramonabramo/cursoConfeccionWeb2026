@@ -1,0 +1,22 @@
+[
+  {
+    "id": 1,
+    "titulo": "Abierta la inscripción al taller de JavaScript",
+    "resumen": "Cinco plazas, nivel inicial. Se recomienda haber terminado el bloque 08."
+  },
+  {
+    "id": 2,
+    "titulo": "Nueva sala de ordenadores en la segunda planta",
+    "resumen": "Veinte equipos con VS Code y Live Server ya instalados."
+  },
+  {
+    "id": 3,
+    "titulo": "Horario de tutorías del trimestre",
+    "resumen": "Martes y jueves por la tarde, con cita previa."
+  },
+  {
+    "id": 4,
+    "titulo": "Concurso de minijuegos con JavaScript",
+    "resumen": "Entrega del proyecto final del curso hasta el último viernes del mes."
+  }
+]

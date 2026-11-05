@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 07 · Enviar datos con POST</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <main class="contenedor">
+        <h1>✉️ Publicar con POST</h1>
+        <p class="aviso-servidor">🖥️ Abrid esta página con <strong>Live Server</strong>. Con doble clic en el fichero, <code>fetch</code> no puede leer los datos.</p>
+        <p class="descripcion">Esta vez no pedimos datos: los enviamos. JSONPlaceholder responde como si guardara la publicación… aunque en realidad no la guarda.</p>
+
+        <form id="formPublicar" novalidate>
+            <div class="campo">
+                <label for="titulo">Título</label>
+                <input type="text" id="titulo" name="titulo" required minlength="3">
+            </div>
+            <div class="campo">
+                <label for="cuerpo">Texto</label>
+                <textarea id="cuerpo" name="cuerpo" required minlength="10"></textarea>
+            </div>
+            <button type="submit" id="btnPublicar" class="btn">Publicar</button>
+        </form>
+
+        <p id="estado" class="salida" aria-live="polite">…</p>
+
+        <h2>Respuesta del servidor</h2>
+        <pre id="respuesta" class="ticket">…</pre>
+
+        <div class="firma">Curso de JavaScript en el cliente · Realizado por Ramón Abramo</div>
+    </main>
+    <script src="app.js"></script>
+</body>
+
+</html>

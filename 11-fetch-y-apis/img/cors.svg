@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 420" width="900" height="420" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif">
+  <title>Origen y CORS</title>
+  <desc>Un origen es protocolo, dominio y puerto. Abrir la página como fichero local hace fallar fetch; servirla con Live Server funciona; pedir a otro origen solo funciona si el servidor lo autoriza con una cabecera CORS.</desc>
+  <rect width="900" height="420" rx="16" fill="#ffffff"/>
+  <text x="450" y="42" text-anchor="middle" font-size="22" font-weight="700" fill="#1e293b">El origen y CORS: ¿quién puede pedir qué?</text>
+  <text x="450" y="66" text-anchor="middle" font-size="14" fill="#64748b">El navegador protege al usuario: no deja que cualquier página lea datos de cualquier sitio</text>
+
+  <!-- origen -->
+  <rect x="24" y="86" width="852" height="80" rx="12" fill="#f8fafc" stroke="#cbd5e1"/>
+  <text x="44" y="112" font-size="13" font-weight="700" fill="#334155">ORIGEN = protocolo + dominio + puerto</text>
+  <g font-family="Consolas, Menlo, monospace" font-size="17" font-weight="700">
+    <text x="44" y="148"><tspan fill="#1d4ed8">http</tspan><tspan fill="#94a3b8">://</tspan><tspan fill="#15803d">127.0.0.1</tspan><tspan fill="#94a3b8">:</tspan><tspan fill="#c2410c">5500</tspan><tspan fill="#94a3b8">/ejercicio_01/index.html</tspan></text>
+  </g>
+  <text x="620" y="140" font-size="12" fill="#475569">Si cambia cualquiera de las tres</text>
+  <text x="620" y="156" font-size="12" fill="#475569">partes, es otro origen.</text>
+
+  <!-- tres casos -->
+  <g font-size="12.5">
+    <rect x="24" y="182" width="270" height="220" rx="14" fill="#fef2f2" stroke="#dc2626" stroke-width="2"/>
+    <text x="44" y="210" font-size="14" font-weight="700" fill="#b91c1c">✘ Doble clic en el fichero</text>
+    <text x="44" y="234" font-family="Consolas, Menlo, monospace" fill="#1e293b">file:///C:/curso/…</text>
+    <text x="44" y="262" fill="#334155">fetch('datos.json') falla:</text>
+    <text x="44" y="280" font-family="Consolas, Menlo, monospace" fill="#b91c1c">TypeError: Failed to fetch</text>
+    <text x="44" y="310" fill="#334155">Los navegadores no tratan las</text>
+    <text x="44" y="328" fill="#334155">peticiones a ficheros locales</text>
+    <text x="44" y="346" fill="#334155">como peticiones HTTP.</text>
+    <text x="44" y="380" font-weight="700" fill="#b91c1c">En este bloque, siempre Live Server.</text>
+
+    <rect x="314" y="182" width="270" height="220" rx="14" fill="#f0fdf4" stroke="#16a34a" stroke-width="2"/>
+    <text x="334" y="210" font-size="14" font-weight="700" fill="#15803d">✔ Live Server, mismo origen</text>
+    <text x="334" y="234" font-family="Consolas, Menlo, monospace" fill="#1e293b">http://127.0.0.1:5500</text>
+    <text x="334" y="262" fill="#334155">fetch('datos.json') pide al</text>
+    <text x="334" y="280" fill="#334155">mismo servidor que sirvió la</text>
+    <text x="334" y="298" fill="#334155">página: siempre permitido.</text>
+    <text x="334" y="380" font-weight="700" fill="#15803d">Ejercicios 01 a 05</text>
+
+    <rect x="604" y="182" width="272" height="220" rx="14" fill="#eff6ff" stroke="#2563eb" stroke-width="2"/>
+    <text x="624" y="210" font-size="14" font-weight="700" fill="#1d4ed8">✔ Otro origen, si lo autoriza</text>
+    <text x="624" y="234" font-family="Consolas, Menlo, monospace" fill="#1e293b">https://jsonplaceholder…</text>
+    <text x="624" y="262" fill="#334155">Solo funciona si el SERVIDOR</text>
+    <text x="624" y="280" fill="#334155">responde con la cabecera</text>
+    <text x="624" y="300" font-family="Consolas, Menlo, monospace" font-size="11.5" fill="#1d4ed8">Access-Control-Allow-Origin</text>
+    <text x="624" y="328" fill="#334155">Las API pensadas para usarse</text>
+    <text x="624" y="346" fill="#334155">desde el navegador la incluyen;</text>
+    <text x="624" y="364" fill="#334155">si falta, vuestro código no la salta.</text>
+    <text x="624" y="390" font-weight="700" fill="#1d4ed8">Ejercicios 06 a 08</text>
+  </g>
+</svg>

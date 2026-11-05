@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 01 · Mi primer fetch: leer un JSON (Solución)</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <main class="contenedor">
+        <h1>📬 Mi primer fetch</h1>
+        <p class="aviso-servidor">🖥️ Abrid esta página con <strong>Live Server</strong>. Con doble clic en el fichero, <code>fetch</code> no puede leer los datos.</p>
+        <p class="descripcion">Los consejos no están en el código: están en el fichero <code>consejos.json</code>, y JavaScript los pide cuando hacen falta.</p>
+
+        <button id="btnConsejo" class="btn">Dame un consejo</button>
+
+        <p id="consejo" class="salida" aria-live="polite">…</p>
+        <p id="info" class="descripcion"></p>
+
+        <p class="ayuda">💡 Abrid la pestaña <strong>Red</strong> (<em>Network</em>) de las herramientas de desarrollo y pulsad el botón: veréis aparecer la petición a <code>consejos.json</code>.</p>
+
+        <div class="firma">Curso de JavaScript en el cliente · Realizado por Ramón Abramo</div>
+    </main>
+    <script src="app.js"></script>
+</body>
+
+</html>

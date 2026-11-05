@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 360" width="900" height="360" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif">
+  <title>Los cuatro estados de una interfaz que carga datos</title>
+  <desc>Mientras se piden datos, la interfaz debe mostrar un estado de carga; después, los datos, un aviso de que no hay resultados o un error con opción de reintentar.</desc>
+  <rect width="900" height="360" rx="16" fill="#ffffff"/>
+  <text x="450" y="42" text-anchor="middle" font-size="22" font-weight="700" fill="#1e293b">Cuatro estados que el usuario debe ver</text>
+  <text x="450" y="66" text-anchor="middle" font-size="14" fill="#64748b">Una pantalla en blanco no dice nada. Cada estado necesita su propio mensaje.</text>
+
+  <defs>
+    <marker id="f" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#64748b"/></marker>
+  </defs>
+
+  <!-- cargando -->
+  <rect x="24" y="96" width="200" height="200" rx="14" fill="#fefce8" stroke="#ca8a04" stroke-width="2"/>
+  <text x="124" y="126" text-anchor="middle" font-size="14" font-weight="700" fill="#854d0e">⏳ Cargando</text>
+  <rect x="44" y="146" width="160" height="16" rx="4" fill="#fde68a"/>
+  <rect x="44" y="172" width="120" height="16" rx="4" fill="#fde68a"/>
+  <rect x="44" y="198" width="140" height="16" rx="4" fill="#fde68a"/>
+  <text x="124" y="244" text-anchor="middle" font-size="12" fill="#713f12">Mensaje o esqueleto.</text>
+  <text x="124" y="262" text-anchor="middle" font-size="12" fill="#713f12">Botón desactivado.</text>
+
+  <line x1="228" y1="150" x2="262" y2="120" stroke="#64748b" stroke-width="2" marker-end="url(#f)"/>
+  <line x1="228" y1="196" x2="262" y2="196" stroke="#64748b" stroke-width="2" marker-end="url(#f)"/>
+  <line x1="228" y1="242" x2="262" y2="272" stroke="#64748b" stroke-width="2" marker-end="url(#f)"/>
+
+  <!-- éxito -->
+  <rect x="268" y="82" width="290" height="80" rx="12" fill="#f0fdf4" stroke="#16a34a" stroke-width="2"/>
+  <text x="284" y="108" font-size="14" font-weight="700" fill="#15803d">✔ Datos</text>
+  <text x="284" y="130" font-size="12.5" fill="#334155">Se pintan con renderizar(datos).</text>
+  <text x="284" y="148" font-size="12.5" fill="#334155">«Mostrando 10 usuarios».</text>
+
+  <!-- vacío -->
+  <rect x="268" y="170" width="290" height="58" rx="12" fill="#f8fafc" stroke="#94a3b8" stroke-width="2"/>
+  <text x="284" y="194" font-size="14" font-weight="700" fill="#334155">📭 Vacío</text>
+  <text x="284" y="214" font-size="12.5" fill="#334155">Todo fue bien… pero no hay resultados.</text>
+
+  <!-- error -->
+  <rect x="268" y="236" width="290" height="80" rx="12" fill="#fef2f2" stroke="#dc2626" stroke-width="2"/>
+  <text x="284" y="262" font-size="14" font-weight="700" fill="#b91c1c">✘ Error</text>
+  <text x="284" y="284" font-size="12.5" fill="#334155">Qué ha fallado, en lenguaje humano,</text>
+  <text x="284" y="302" font-size="12.5" fill="#334155">y un botón para <tspan font-weight="700">Reintentar</tspan>.</text>
+
+  <!-- código -->
+  <rect x="582" y="82" width="294" height="234" rx="12" fill="#1e293b"/>
+  <g font-family="Consolas, Menlo, monospace" font-size="12" fill="#e2e8f0">
+    <text x="596" y="106"><tspan fill="#c4b5fd">async function</tspan> cargar() {</text>
+    <text x="610" y="128">mostrar(<tspan fill="#86efac">'cargando'</tspan>);</text>
+    <text x="610" y="148"><tspan fill="#c4b5fd">try</tspan> {</text>
+    <text x="624" y="168"><tspan fill="#93c5fd">const</tspan> d = <tspan fill="#fde047">await</tspan> pedir();</text>
+    <text x="624" y="188"><tspan fill="#c4b5fd">if</tspan> (d.length === 0) {</text>
+    <text x="638" y="208">mostrar(<tspan fill="#86efac">'vacio'</tspan>);</text>
+    <text x="624" y="228">} <tspan fill="#c4b5fd">else</tspan> {</text>
+    <text x="638" y="248">renderizar(d);</text>
+    <text x="624" y="268">}</text>
+    <text x="610" y="288">} <tspan fill="#c4b5fd">catch</tspan> (e) { mostrar(<tspan fill="#86efac">'error'</tspan>); }</text>
+    <text x="596" y="306">}</text>
+  </g>
+  <text x="450" y="344" text-anchor="middle" font-size="13" fill="#334155">Con <tspan font-family="Consolas, Menlo, monospace">aria-live="polite"</tspan> en la zona de estado, los lectores de pantalla también se enteran de cada cambio.</text>
+</svg>

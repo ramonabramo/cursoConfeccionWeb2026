@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 04 · Buscador de países (Solución)</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <main class="contenedor">
+        <h1>🌍 Buscador de países</h1>
+        <p class="aviso-servidor">🖥️ Abrid esta página con <strong>Live Server</strong>. Con doble clic en el fichero, <code>fetch</code> no puede leer los datos.</p>
+
+        <div class="fila-controles">
+            <input type="search" id="buscar" placeholder="Busca un país o su capital…" aria-label="Buscar">
+            <select id="continente" aria-label="Continente">
+                <option value="todos">Todos los continentes</option>
+                <option value="Europa">Europa</option>
+                <option value="América">América</option>
+                <option value="Asia">Asia</option>
+                <option value="África">África</option>
+                <option value="Oceanía">Oceanía</option>
+            </select>
+        </div>
+
+        <p id="estado" class="descripcion" aria-live="polite">…</p>
+        <ul id="resultados" class="lista"></ul>
+
+        <p class="ayuda">💡 Probad a escribir sin tildes: <code>japon</code>, <code>bogota</code>… ¿Los encuentra?</p>
+
+        <div class="firma">Curso de JavaScript en el cliente · Realizado por Ramón Abramo</div>
+    </main>
+    <script src="app.js"></script>
+</body>
+
+</html>

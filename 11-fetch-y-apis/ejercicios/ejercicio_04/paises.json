@@ -1,0 +1,134 @@
+[
+  {
+    "nombre": "España",
+    "capital": "Madrid",
+    "continente": "Europa",
+    "bandera": "🇪🇸"
+  },
+  {
+    "nombre": "Francia",
+    "capital": "París",
+    "continente": "Europa",
+    "bandera": "🇫🇷"
+  },
+  {
+    "nombre": "Portugal",
+    "capital": "Lisboa",
+    "continente": "Europa",
+    "bandera": "🇵🇹"
+  },
+  {
+    "nombre": "Italia",
+    "capital": "Roma",
+    "continente": "Europa",
+    "bandera": "🇮🇹"
+  },
+  {
+    "nombre": "Alemania",
+    "capital": "Berlín",
+    "continente": "Europa",
+    "bandera": "🇩🇪"
+  },
+  {
+    "nombre": "Reino Unido",
+    "capital": "Londres",
+    "continente": "Europa",
+    "bandera": "🇬🇧"
+  },
+  {
+    "nombre": "Irlanda",
+    "capital": "Dublín",
+    "continente": "Europa",
+    "bandera": "🇮🇪"
+  },
+  {
+    "nombre": "Grecia",
+    "capital": "Atenas",
+    "continente": "Europa",
+    "bandera": "🇬🇷"
+  },
+  {
+    "nombre": "México",
+    "capital": "Ciudad de México",
+    "continente": "América",
+    "bandera": "🇲🇽"
+  },
+  {
+    "nombre": "Argentina",
+    "capital": "Buenos Aires",
+    "continente": "América",
+    "bandera": "🇦🇷"
+  },
+  {
+    "nombre": "Chile",
+    "capital": "Santiago",
+    "continente": "América",
+    "bandera": "🇨🇱"
+  },
+  {
+    "nombre": "Colombia",
+    "capital": "Bogotá",
+    "continente": "América",
+    "bandera": "🇨🇴"
+  },
+  {
+    "nombre": "Perú",
+    "capital": "Lima",
+    "continente": "América",
+    "bandera": "🇵🇪"
+  },
+  {
+    "nombre": "Canadá",
+    "capital": "Ottawa",
+    "continente": "América",
+    "bandera": "🇨🇦"
+  },
+  {
+    "nombre": "Estados Unidos",
+    "capital": "Washington D. C.",
+    "continente": "América",
+    "bandera": "🇺🇸"
+  },
+  {
+    "nombre": "Brasil",
+    "capital": "Brasilia",
+    "continente": "América",
+    "bandera": "🇧🇷"
+  },
+  {
+    "nombre": "Japón",
+    "capital": "Tokio",
+    "continente": "Asia",
+    "bandera": "🇯🇵"
+  },
+  {
+    "nombre": "India",
+    "capital": "Nueva Delhi",
+    "continente": "Asia",
+    "bandera": "🇮🇳"
+  },
+  {
+    "nombre": "China",
+    "capital": "Pekín",
+    "continente": "Asia",
+    "bandera": "🇨🇳"
+  },
+  {
+    "nombre": "Marruecos",
+    "capital": "Rabat",
+    "continente": "África",
+    "bandera": "🇲🇦"
+  },
+  {
+    "nombre": "Egipto",
+    "capital": "El Cairo",
+    "continente": "África",
+    "bandera": "🇪🇬"
+  },
+  {
+    "nombre": "Australia",
+    "capital": "Canberra",
+    "continente": "Oceanía",
+    "bandera": "🇦🇺"
+  }
+]

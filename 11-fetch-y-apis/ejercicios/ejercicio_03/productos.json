@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "nombre": "Teclado mecánico",
+    "categoria": "periféricos",
+    "precio": 59.9,
+    "stock": 12
+  },
+  {
+    "id": 2,
+    "nombre": "Ratón inalámbrico",
+    "categoria": "periféricos",
+    "precio": 24.5,
+    "stock": 0
+  },
+  {
+    "id": 3,
+    "nombre": "Monitor 27\"",
+    "categoria": "monitores",
+    "precio": 219,
+    "stock": 4
+  },
+  {
+    "id": 4,
+    "nombre": "Auriculares",
+    "categoria": "audio",
+    "precio": 45,
+    "stock": 20
+  },
+  {
+    "id": 5,
+    "nombre": "Webcam HD",
+    "categoria": "periféricos",
+    "precio": 79,
+    "stock": 3
+  },
+  {
+    "id": 6,
+    "nombre": "Altavoces",
+    "categoria": "audio",
+    "precio": 32.99,
+    "stock": 7
+  }
+]

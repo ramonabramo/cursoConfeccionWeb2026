@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 420" width="900" height="420" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif">
+  <title>Los pasos de fetch</title>
+  <desc>fetch devuelve una promesa de una respuesta; hay que comprobar response.ok, leer el cuerpo con response.json, que es otra promesa, y usar los datos; un fallo de red rechaza la promesa, pero un 404 no.</desc>
+  <rect width="900" height="420" rx="16" fill="#ffffff"/>
+  <text x="450" y="42" text-anchor="middle" font-size="22" font-weight="700" fill="#1e293b">fetch en cuatro pasos (y dos awaits)</text>
+  <text x="450" y="66" text-anchor="middle" font-size="14" fill="#64748b">Primero llega la respuesta; después, por separado, su contenido</text>
+
+  <defs>
+    <marker id="f" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#64748b"/></marker>
+    <marker id="r" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#dc2626"/></marker>
+  </defs>
+
+  <g font-size="12.5">
+    <rect x="24" y="92" width="196" height="120" rx="12" fill="#eff6ff" stroke="#3b82f6" stroke-width="2"/>
+    <text x="40" y="118" font-weight="700" fill="#1d4ed8">① Pedir</text>
+    <text x="40" y="144" font-family="Consolas, Menlo, monospace" fill="#1e293b">const respuesta =</text>
+    <text x="40" y="162" font-family="Consolas, Menlo, monospace" fill="#1e293b">  <tspan fill="#a16207" font-weight="700">await</tspan> fetch(url);</text>
+    <text x="40" y="192" fill="#475569">Llega el «sobre»: el</text>
+    <text x="40" y="208" fill="#475569">código y las cabeceras</text>
+
+    <rect x="244" y="92" width="196" height="120" rx="12" fill="#fff7ed" stroke="#ea580c" stroke-width="2"/>
+    <text x="260" y="118" font-weight="700" fill="#c2410c">② Comprobar</text>
+    <text x="260" y="144" font-family="Consolas, Menlo, monospace" fill="#1e293b">if (!respuesta.ok) {</text>
+    <text x="260" y="162" font-family="Consolas, Menlo, monospace" fill="#1e293b">  throw new Error(…);</text>
+    <text x="260" y="180" font-family="Consolas, Menlo, monospace" fill="#1e293b">}</text>
+    <text x="260" y="204" fill="#475569">¿200-299? Si no, error</text>
+
+    <rect x="464" y="92" width="196" height="120" rx="12" fill="#f5f3ff" stroke="#7c3aed" stroke-width="2"/>
+    <text x="480" y="118" font-weight="700" fill="#6d28d9">③ Leer el contenido</text>
+    <text x="480" y="144" font-family="Consolas, Menlo, monospace" fill="#1e293b">const datos =</text>
+    <text x="480" y="162" font-family="Consolas, Menlo, monospace" fill="#1e293b">  <tspan fill="#a16207" font-weight="700">await</tspan> respuesta</text>
+    <text x="480" y="180" font-family="Consolas, Menlo, monospace" fill="#1e293b">    .json();</text>
+    <text x="480" y="204" fill="#475569">Abre el sobre: JSON → JS</text>
+
+    <rect x="684" y="92" width="192" height="120" rx="12" fill="#f0fdf4" stroke="#16a34a" stroke-width="2"/>
+    <text x="700" y="118" font-weight="700" fill="#15803d">④ Usar</text>
+    <text x="700" y="144" font-family="Consolas, Menlo, monospace" fill="#1e293b">renderizar(datos);</text>
+    <text x="700" y="180" fill="#475569">Un array u objeto</text>
+    <text x="700" y="196" fill="#475569">normal de JavaScript</text>
+  </g>
+  <line x1="222" y1="152" x2="240" y2="152" stroke="#64748b" stroke-width="2" marker-end="url(#f)"/>
+  <line x1="442" y1="152" x2="460" y2="152" stroke="#64748b" stroke-width="2" marker-end="url(#f)"/>
+  <line x1="662" y1="152" x2="680" y2="152" stroke="#64748b" stroke-width="2" marker-end="url(#f)"/>
+
+  <!-- errores -->
+  <rect x="24" y="240" width="852" height="160" rx="14" fill="#fef2f2" stroke="#fca5a5"/>
+  <text x="44" y="268" font-size="14" font-weight="700" fill="#b91c1c">Todo dentro de try…catch: hay tres formas de fallar</text>
+  <g font-size="13">
+    <text x="44" y="300" font-weight="700" fill="#1e293b">Sin conexión, CORS, URL imposible</text>
+    <text x="330" y="300" fill="#334155">→ <tspan font-family="Consolas, Menlo, monospace">fetch</tspan> RECHAZA la promesa (TypeError)</text>
+    <text x="44" y="330" font-weight="700" fill="#1e293b">404, 500…</text>
+    <text x="330" y="330" fill="#b91c1c" font-weight="700">→ fetch NO rechaza: respuesta.ok es false. ¡Comprobadlo vosotros!</text>
+    <text x="44" y="360" font-weight="700" fill="#1e293b">El contenido no es JSON válido</text>
+    <text x="330" y="360" fill="#334155">→ <tspan font-family="Consolas, Menlo, monospace">respuesta.json()</tspan> rechaza (SyntaxError)</text>
+  </g>
+  <text x="44" y="388" font-size="12.5" fill="#475569">En los tres casos, el error acaba en el catch y podéis enseñar un mensaje claro y un botón de «Reintentar».</text>
+</svg>

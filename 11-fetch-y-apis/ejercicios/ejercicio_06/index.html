@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 06 · Una API pública: usuarios y publicaciones</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <main class="contenedor">
+        <h1>👥 Usuarios y publicaciones</h1>
+        <p class="aviso-servidor">🖥️ Abrid esta página con <strong>Live Server</strong>. Con doble clic en el fichero, <code>fetch</code> no puede leer los datos.</p>
+        <p class="descripcion">Datos de <strong>JSONPlaceholder</strong>, una API pública y gratuita para practicar. Pulsad en un usuario para ver sus publicaciones.</p>
+
+        <p id="estadoUsuarios" class="descripcion" aria-live="polite">…</p>
+        <div id="usuarios" class="rejilla"></div>
+
+        <h2 id="tituloPublicaciones">Publicaciones</h2>
+        <p id="estadoPublicaciones" class="descripcion" aria-live="polite">Elige un usuario.</p>
+        <ol id="publicaciones" class="lista"></ol>
+
+        <div class="firma">Curso de JavaScript en el cliente · Realizado por Ramón Abramo</div>
+    </main>
+    <script src="app.js"></script>
+</body>
+
+</html>
