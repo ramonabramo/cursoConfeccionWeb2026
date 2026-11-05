@@ -33,15 +33,15 @@ La Web Storage API ofrece dos almacenes de pares **clave → valor**: `localStor
 Los dos almacenes tienen exactamente los mismos métodos [4]:
 
 ```javascript
-localStorage.setItem('tema', 'oscuro');   // guardar o sobrescribir [5]
-localStorage.getItem('tema');             // leer: 'oscuro', o null si no existe [6]
-localStorage.removeItem('tema');          // borrar una clave [7]
-localStorage.clear();                     // borrar TODO el almacén [8]
-localStorage.length;                      // cuántas claves hay [9]
-localStorage.key(0);                      // el nombre de la clave en la posición 0 [10]
+localStorage.setItem('tema', 'oscuro');   // guardar o sobrescribir
+localStorage.getItem('tema');             // leer: 'oscuro', o null si no existe
+localStorage.removeItem('tema');          // borrar una clave
+localStorage.clear();                     // borrar TODO el almacén
+localStorage.length;                      // cuántas claves hay
+localStorage.key(0);                      // el nombre de la clave en la posición 0
 ```
 
-Grabaos el `null` de `getItem`: es vuestra forma de saber si había algo guardado.
+Cada uno tiene su página en la documentación: `setItem` [5], `getItem` [6], `removeItem` [7], `clear` [8], `length` [9] y `key` [10]. Grabaos el `null` de `getItem`: es vuestra forma de saber si había algo guardado.
 
 ### 1.2. El almacén es del origen, no de la página
 
@@ -136,7 +136,7 @@ formulario.addEventListener('submit', (e) => {
 });
 ```
 
-Guardad **el estado completo** cada vez, no solo lo que ha cambiado: es más sencillo y el almacén nunca se desincroniza de lo que hay en memoria.
+Guardad **el estado completo** cada vez, y no únicamente lo que ha cambiado: es más sencillo y el almacén nunca se desincroniza de lo que hay en memoria.
 
 ---
 

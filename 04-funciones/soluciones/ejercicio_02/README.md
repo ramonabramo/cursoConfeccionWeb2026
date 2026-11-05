@@ -64,7 +64,7 @@ const textoEdad = prompt('¿Qué edad tienes?', '30');
 const edad = textoEdad === null || textoEdad.trim() === '' ? NaN : Number(textoEdad);
 ```
 
-Si escribís `Number(prompt(…))` como hasta ahora y el usuario pulsa Cancelar, `prompt` devuelve `null`… y `Number(null)` vale `0`, no `NaN` [4]. Lo mismo pasa con un texto vacío: `Number('')` es `0`. En este ejercicio sería grave, porque una edad 0 significa entrada gratis. Por eso leo primero el texto y, si es `null` o está vacío, lo convierto en `NaN` a propósito, para que la validación de la función lo rechace.
+Si escribís `Number(prompt(…))` como hasta ahora y el usuario pulsa Cancelar, `prompt` devuelve `null`… y `Number(null)` vale `0`, no `NaN` [3]. Lo mismo pasa con un texto vacío: `Number('')` es `0`. En este ejercicio sería grave, porque una edad 0 significa entrada gratis. Por eso leo primero el texto y, si es `null` o está vacío, lo convierto en `NaN` a propósito, para que la validación de la función lo rechace.
 
 ### 7. El día
 
@@ -72,7 +72,7 @@ Si escribís `Number(prompt(…))` como hasta ahora y el usuario pulsa Cancelar,
 const dia = (prompt('¿Qué día vas al cine?', 'miércoles') || '').trim();
 ```
 
-Si el usuario cancela, `prompt` devuelve `null`, y `null.trim()` daría error. `prompt(…) || ''` aprovecha que `null` es *falsy*: `||` devuelve el primer operando si es *truthy* y, si no, el segundo [3]. Así, si `prompt` devuelve `null`, se usa `''`. Es la versión corta de lo que hicisteis con un `if` en el bloque 03.
+Si el usuario cancela, `prompt` devuelve `null`, y `null.trim()` daría error. `prompt(…) || ''` aprovecha que `null` es *falsy*: `||` devuelve el primer operando si es *truthy* y, si no, el segundo [4]. Así, si `prompt` devuelve `null`, se usa `''`. Es la versión corta de lo que hicisteis con un `if` en el bloque 03.
 
 ## Las pruebas
 
@@ -88,5 +88,5 @@ Si el usuario cancela, `prompt` devuelve `null`, y `null.trim()` daría error. `
 
 1. [return (MDN Web Docs)](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Statements/return)
 2. [Number.isNaN() (MDN Web Docs)](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Number/isNaN)
-3. [Operador lógico OR (||) (MDN Web Docs)](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Operators/Logical_OR)
-4. [Number — Number coercion (MDN Web Docs)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)
+3. [Number — Number coercion (MDN Web Docs)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)
+4. [Operador lógico OR (||) (MDN Web Docs)](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Operators/Logical_OR)

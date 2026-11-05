@@ -95,7 +95,7 @@ Os propongo este orden. Sin saltaros pasos.
 1. **Leed la teoría** del `README.md` del bloque. Mirad las infografías con calma. Están ahí para que veáis de un vistazo lo que el texto cuenta en varios párrafos.
 2. **Abrid el ejercicio** en la carpeta `ejercicios/`. Leed el enunciado que aparece al principio del `app.js`.
 3. **Resolvedlo vosotros**, siguiendo los pasos marcados y con la consola abierta.
-4. **Solo después**, comparad con la carpeta `soluciones/`. Leed el `README.md` de la solución, que os explica el porqué de cada decisión, no solo el código.
+4. **Solo después**, comparad con la carpeta `soluciones/`. Leed el `README.md` de la solución, que os explica el porqué de cada decisión, y no únicamente el código.
 
 Pero ojo aquí. Si abrís la solución a los dos minutos de atascaros, el ejercicio deja de serviros. Atascarse forma parte del aprendizaje. Dadle una vuelta, revisad la consola, releed la teoría… y si aun así no sale, entonces sí, mirad la solución y volved a intentarlo sin ella.
 

@@ -10,7 +10,7 @@ Un formulario de contacto cuyos errores se entiendan bien tanto mirando la panta
 
 ## Las cuatro piezas de un error accesible
 
-### 1. Texto, no solo color
+### 1. El color no basta: hace falta texto
 
 Cada error tiene un mensaje escrito que dice **qué está mal y cómo arreglarlo**: «Escribe al menos 20 caracteres (llevas 12)». El borde rojo ayuda, pero no basta: no todo el mundo distingue los colores. La guía de validación de MDN insiste en que los mensajes sean claros y digan cómo corregir el problema [1].
 

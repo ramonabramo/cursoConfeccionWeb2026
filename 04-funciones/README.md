@@ -259,7 +259,85 @@ No os agobiéis si no lo veis del todo a la primera. Con quedaros con la idea de
 
 ---
 
-## 10. La plantilla de trabajo en este bloque
+<!-- ampliación -->
+## 10. Parámetros *rest*: tantos argumentos como queráis
+
+A veces no sabéis cuántos datos va a recibir una función: la suma de unos gastos, la media de unas notas… Si el **último** parámetro lleva tres puntos delante, recoge todos los argumentos que sobren en un **array de verdad** [11]:
+
+```javascript
+function sumar(...numeros) {
+    return numeros.reduce((total, n) => total + n, 0);
+}
+
+sumar(5, 10);          // 15
+sumar(1, 2, 3, 4);     // 10
+sumar();               // 0: numeros es un array vacío
+
+function registrar(concepto, ...importes) {   // los primeros, con nombre; el resto, al array
+    return `${concepto}: ${importes.length} importes`;
+}
+```
+
+Dos reglas: solo puede haber **un** parámetro *rest*, y tiene que ser el **último** [11]. Son los mismos tres puntos que el *spread* del bloque 05, pero al revés: aquí **recogen**, allí despliegan.
+
+---
+
+## 11. La pila de llamadas
+
+Cuando una función llama a otra, JavaScript tiene que acordarse de **dónde iba** para volver después. Lo hace con la **pila de llamadas** (*call stack*): cada llamada se apila encima de la anterior y, al terminar, se quita y el programa continúa donde estaba [12].
+
+```javascript
+function preparar() { return hervir() + ' y servir'; }
+function hervir() { return 'Hervir el agua'; }
+
+preparar();
+// pila:  preparar()  →  preparar() + hervir()  →  preparar()  →  (vacía)
+```
+
+La última que entra es la primera que sale, como una pila de platos. Dos consecuencias prácticas:
+
+- Cuando la consola muestra un error, debajo aparece la pila: la lista de funciones que se estaban ejecutando, de la más reciente a la más antigua. Leedla de arriba abajo para saber **quién llamó a quién**.
+- La pila tiene un tamaño máximo. Si una función se llama a sí misma sin parar, la llena y salta un `RangeError: Maximum call stack size exceeded`.
+
+---
+
+## 12. Recursividad: funciones que se llaman a sí mismas
+
+Una función **recursiva** se llama a sí misma para resolver un problema a partir de otro más pequeño del mismo tipo [13]. Siempre tiene dos partes:
+
+```javascript
+function factorial(n) {
+    if (n <= 1) {
+        return 1;                 // CASO BASE: aquí se para
+    }
+    return n * factorial(n - 1);  // CASO RECURSIVO: el mismo problema, más pequeño
+}
+
+factorial(4);   // 4 * 3 * 2 * 1 = 24
+```
+
+Sin caso base, la función no se detiene nunca y llena la pila de llamadas [13]. Antes de escribir una función recursiva, preguntaos siempre: **¿cuándo se para?** y **¿cada llamada se acerca a ese momento?**
+
+Para la mayoría de los problemas del curso, un bucle es más sencillo. La recursividad brilla con estructuras que contienen estructuras del mismo tipo, como las carpetas dentro de carpetas o el árbol del DOM del bloque 06.
+
+---
+
+## 13. Funciones que se ejecutan solas: IIFE
+
+Una IIFE (*Immediately Invoked Function Expression*) es una función que se ejecuta **en el mismo momento en que se define** [14]:
+
+```javascript
+(() => {
+    const secreto = 42;          // solo existe aquí dentro
+    console.log('Me ejecuto una vez, al cargar');
+})();
+```
+
+Los primeros paréntesis convierten la función en una expresión; los últimos, `()`, la llaman. Su utilidad es crear un **ámbito propio**: lo que se declara dentro no se mezcla con el resto del programa. Antes de que existieran los módulos (bloque 12), era la forma habitual de aislar un trozo de código. Hoy la veréis sobre todo en código antiguo, pero conviene reconocerla.
+
+---
+
+## 14. La plantilla de trabajo en este bloque
 
 La sección de estructura del programa principal estrena un apartado: **las funciones**, declaradas al principio.
 
@@ -290,13 +368,13 @@ salida.textContent = `Total: ${formatearEuros(total)}`;
 ```
 
 > [!WARNING]
-> Una trampa que aparece en el ejercicio 02: si el usuario pulsa Cancelar, `prompt()` devuelve `null`… y `Number(null)` vale `0`, no `NaN`. Lo mismo ocurre con un texto vacío [11]. Si un 0 puede colarse como dato válido, leed primero el texto y comprobad si es `null` o está vacío antes de convertir.
+> Una trampa que aparece en el ejercicio 02: si el usuario pulsa Cancelar, `prompt()` devuelve `null`… y `Number(null)` vale `0`, no `NaN`. Lo mismo ocurre con un texto vacío [15]. Si un 0 puede colarse como dato válido, leed primero el texto y comprobad si es `null` o está vacío antes de convertir.
 
 En el bloque 07, cuando lleguen los eventos, las funciones serán las que se ejecuten al pulsar un botón. Todo lo que aprendáis aquí se aprovecha allí directamente.
 
 ---
 
-## 11. Ejercicios
+## 15. Ejercicios
 
 | Nº | Ejercicio | Qué practicáis | Solución |
 | --- | --- | --- | --- |
@@ -308,6 +386,12 @@ En el bloque 07, cuando lleguen los eventos, las funciones serán las que se eje
 | 06 | [Calculadora con callbacks](ejercicios/ejercicio_06/) | Funciones como argumento, *callbacks* anónimos | [Ver](soluciones/ejercicio_06/) |
 | 07 | [Fábrica de contadores](ejercicios/ejercicio_07/) | Funciones que devuelven funciones, *closures*, datos privados | [Ver](soluciones/ejercicio_07/) |
 | 08 | [Planificador de estudio](ejercicios/ejercicio_08/) | Dividir un programa en funciones pequeñas, validar con bucle, funciones puras | [Ver](soluciones/ejercicio_08/) |
+| 09 | [Calculadora de gastos con *rest*](ejercicios/ejercicio_09/) | `...gastos`, un array de verdad, validar antes de sumar | [Ver](soluciones/ejercicio_09/) |
+| 10 | [La pila de llamadas, paso a paso](ejercicios/ejercicio_10/) | Funciones que llaman a funciones, el orden de entrada y salida | [Ver](soluciones/ejercicio_10/) |
+| 11 | [Mi propio `filter`](ejercicios/ejercicio_11/) | Funciones de orden superior, un callback que decide | [Ver](soluciones/ejercicio_11/) |
+| 12 | [Un monedero con saldo privado](ejercicios/ejercicio_12/) | *Closure*, un objeto con métodos, datos que nadie puede tocar | [Ver](soluciones/ejercicio_12/) |
+| 13 | [Recursividad: factorial y cuenta atrás](ejercicios/ejercicio_13/) | Caso base, caso recursivo, la pila al límite | [Ver](soluciones/ejercicio_13/) |
+| 14 | [Un marcador aislado con IIFE](ejercicios/ejercicio_14/) | IIFE, ámbito propio, qué queda fuera | [Ver](soluciones/ejercicio_14/) |
 
 El ejercicio 08 cierra la fase 1 del curso: junta variables, condiciones, bucles y funciones en un programa completo. Si os sale sin mirar la solución, estáis preparados para el bloque 05.
 
@@ -327,4 +411,8 @@ El ejercicio 08 cierra la fase 1 del curso: junta variables, condiciones, bucles
 8. [Scope (MDN Web Docs)](https://developer.mozilla.org/en-US/docs/Glossary/Scope)
 9. [Función Callback (MDN Web Docs)](https://developer.mozilla.org/es/docs/Glossary/Callback_function)
 10. [Closures (MDN Web Docs)](https://developer.mozilla.org/es/docs/Web/JavaScript/Guide/Closures)
-11. [Number — Number coercion (MDN Web Docs)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)
+11. [Rest parameters (MDN Web Docs)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Rest_parameters)
+12. [Call stack (MDN Glossary) (MDN Web Docs)](https://developer.mozilla.org/en-US/docs/Glossary/Call_stack)
+13. [Recursion (MDN Glossary) (MDN Web Docs)](https://developer.mozilla.org/en-US/docs/Glossary/Recursion)
+14. [IIFE (MDN Glossary) (MDN Web Docs)](https://developer.mozilla.org/en-US/docs/Glossary/IIFE)
+15. [Number — Number coercion (MDN Web Docs)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 14 · Un marcador aislado con IIFE (Solución)</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <main class="contenedor">
+        <h1>🧊 Un marcador aislado con IIFE</h1>
+        <p class="descripcion">Un trozo de código que se ejecuta solo y no deja rastro fuera.</p>
+
+        <p id="marcador" class="salida">…</p>
+        <table class="tabla">
+            <thead><tr><th>Desde fuera de la IIFE</th><th>Resultado</th></tr></thead>
+            <tbody>
+                <tr><td><code>typeof puntos</code></td><td id="resPuntos" class="resultado">?</td></tr>
+                <tr><td><code>typeof sumar</code></td><td id="resSumar" class="resultado">?</td></tr>
+                <tr><td><code>marcadorPublico.ver()</code></td><td id="resPublico" class="resultado">?</td></tr>
+            </tbody>
+        </table>
+
+        <div class="firma">Curso de JavaScript en el cliente · Realizado por Ramón Abramo</div>
+    </main>
+    <script src="app.js"></script>
+</body>
+
+</html>

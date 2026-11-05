@@ -87,12 +87,14 @@ Además, la `NodeList` de `querySelectorAll` es **estática**: una foto del mome
 Desde un elemento podéis llegar a sus vecinos sin volver a buscar:
 
 ```javascript
-lista.children              // sus elementos hijos [6]
+lista.children              // sus elementos hijos
 lista.children.length       // cuántos tiene
 lista.children[0]           // el primero
-item.parentElement          // su elemento padre [7]
-item.tagName                // 'LI' (en mayúsculas en documentos HTML) [8]
+item.parentElement          // su elemento padre
+item.tagName                // 'LI' (en mayúsculas en documentos HTML)
 ```
+
+`children` da los elementos hijos [6]; `parentElement`, el padre [7], y `tagName`, el nombre de la etiqueta, que en los documentos HTML se devuelve en mayúsculas [8].
 
 ---
 
@@ -118,10 +120,12 @@ bio.innerHTML = 'Desarrolladora <strong>front-end</strong>';        // HTML
 ### 5.1. Cualquier atributo
 
 ```javascript
-avatar.getAttribute('src');                    // leer: el valor, o null si no existe [11]
-avatar.setAttribute('src', 'nueva.svg');       // cambiar o crear [12]
+avatar.getAttribute('src');                    // leer: el valor, o null si no existe
+avatar.setAttribute('src', 'nueva.svg');       // cambiar o crear
 celda.setAttribute('colspan', '3');
 ```
+
+`getAttribute` lee el valor de un atributo, o devuelve `null` si no existe [11]; `setAttribute` lo cambia, o lo crea si no estaba [12].
 
 ### 5.2. Atributos `data-*`
 
@@ -154,14 +158,14 @@ En el bloque 07 os serán imprescindibles: guardaréis el `id` de cada producto 
 // classList: añadir y quitar clases definidas en el CSS  ★ por defecto
 tarjeta.classList.add('destacada');
 tarjeta.classList.remove('borde');
-tarjeta.classList.toggle('oculta');       // pone o quita; devuelve true si al final la tiene [14]
+tarjeta.classList.toggle('oculta');       // pone o quita; devuelve true si al final la tiene
 tarjeta.classList.contains('oculta');     // true / false
 
 // style: estilos en línea, para valores calculados al momento
 barra.style.width = `${porcentaje}%`;
 ```
 
-`classList` gestiona la lista de clases del elemento [15]; `style` da acceso a sus estilos **en línea**, con las propiedades CSS escritas en *camelCase*: `backgroundColor`, `fontSize` [16].
+`classList` gestiona la lista de clases del elemento [14], y su método `toggle` la pone si no está y la quita si está, y devuelve `true` si al final la tiene [15]; `style` da acceso a sus estilos **en línea**, con las propiedades CSS escritas en *camelCase*: `backgroundColor`, `fontSize` [16].
 
 Mi regla: **`classList` por defecto**. El diseño se queda en el CSS y JavaScript solo decide qué clase toca. `style`, solo cuando el valor no se puede saber de antemano, como la anchura de una barra de progreso.
 
@@ -174,13 +178,13 @@ Mi regla: **`classList` por defecto**. El diseño se queda en el CSS y JavaScrip
 ![Crear un elemento](img/crear-elementos.svg)
 
 ```javascript
-const li = document.createElement('li');   // 1. crear [17]
+const li = document.createElement('li');   // 1. crear
 li.textContent = 'Pan';                    // 2. configurar
 li.classList.add('urgente');
-lista.append(li);                          // 3. colgar: al final [18]
+lista.append(li);                          // 3. colgar: al final
 ```
 
-Hasta el paso 3, el elemento existe en memoria pero **no se ve**. Si un elemento creado no aparece, comprobad lo primero que lo habéis colgado.
+`createElement` crea el elemento [17] y `append` lo cuelga al final de su padre [18]. Hasta el paso 3, el elemento existe en memoria pero **no se ve**. Si un elemento creado no aparece, comprobad lo primero que lo habéis colgado.
 
 ### 7.2. Añadir, quitar y vaciar
 
@@ -247,7 +251,57 @@ renderizar(productos.filter((p) => p.precio < 100));
 
 ---
 
-## 9. La plantilla de trabajo en este bloque
+<!-- ampliación -->
+## 9. Recorrer colecciones del DOM: patrones habituales
+
+`querySelectorAll` devuelve una `NodeList` con todos los elementos que encajan [4]. Con ella hay tres patrones que vais a repetir constantemente:
+
+| Patrón | Cómo | Ejemplo |
+| --- | --- | --- |
+| **Aplicar a todos** | `forEach` sobre la `NodeList` | Añadir una clase a todas las filas |
+| **Aplicar según la posición** | `for` con el índice `i` | Colorear las filas pares (`i % 2 === 0`) |
+| **Filtrar y actuar** | `Array.from(lista).filter(…)` | Ocultar las tarjetas que no cumplen un criterio |
+
+```javascript
+// ocultar las tarjetas que superan un precio
+const tarjetas = document.querySelectorAll('.tarjeta-producto');
+tarjetas.forEach((tarjeta) => {
+    tarjeta.hidden = Number(tarjeta.dataset.precio) > maximo;
+});
+```
+
+La propiedad `hidden` oculta un elemento igual que el atributo HTML `hidden` [23]: es la forma más sencilla de mostrar y ocultar sin escribir CSS. Y `classList.toggle(clase, condición)` añade o quita una clase según la condición sea verdadera o falsa [14], ideal para marcar elementos en un recorrido.
+
+---
+
+## 10. SVG desde JavaScript
+
+Los dibujos SVG también forman parte del DOM: cada círculo, rectángulo o línea es un elemento con sus atributos [24]. Se seleccionan igual que el resto y sus atributos se cambian con `setAttribute` [12]:
+
+```html
+<svg viewBox="0 0 200 200" width="200" height="200">
+    <circle id="circulo" cx="100" cy="100" r="40" fill="tomato" />
+</svg>
+```
+
+```javascript
+const circulo = document.querySelector('#circulo');
+circulo.setAttribute('r', 70);           // radio
+circulo.setAttribute('fill', 'teal');    // color de relleno
+```
+
+| Atributo de `<circle>` | Qué es |
+| --- | --- |
+| `cx`, `cy` | El centro, en las unidades del `viewBox` |
+| `r` | El radio |
+| `fill` | El color de relleno |
+| `stroke`, `stroke-width` | El color y el grosor del borde |
+
+Con SVG, los números **no llevan unidades**: se miden en el sistema de coordenadas que define el `viewBox`. Es la diferencia con `style.width` del bloque 01, que sí necesitaba `px`.
+
+---
+
+## 11. La plantilla de trabajo en este bloque
 
 La sección de **constantes al DOM** crece: ahora guarda los contenedores donde se van a pintar los datos. Y las **funciones** de crear y renderizar se colocan al principio, con las demás.
 
@@ -284,7 +338,7 @@ Todavía falta una pieza: que el programa reaccione cuando el usuario hace algo.
 
 ---
 
-## 10. Ejercicios
+## 12. Ejercicios
 
 | Nº | Ejercicio | Qué practicáis | Solución |
 | --- | --- | --- | --- |
@@ -296,6 +350,10 @@ Todavía falta una pieza: que el programa reaccione cuando el usuario hace algo.
 | 06 | [Tarjetas de producto desde datos](ejercicios/ejercicio_06/) | Patrón `crearTarjeta` + `renderizar`, `replaceChildren`, caso vacío | [Ver](soluciones/ejercicio_06/) |
 | 07 | [Clasificación: mover y eliminar](ejercicios/ejercicio_07/) | `remove()`, `append` que mueve, ordenar elementos existentes | [Ver](soluciones/ejercicio_07/) |
 | 08 | [Tabla de notas dinámica](ejercicios/ejercicio_08/) | Generar filas de tabla, clases según el valor, `colspan`, fila de resumen | [Ver](soluciones/ejercicio_08/) |
+| 09 | [Una tabla de clasificación en cebra](ejercicios/ejercicio_09/) | `for` con índice sobre una `NodeList`, `i % 2`, `classList.toggle` | [Ver](soluciones/ejercicio_09/) |
+| 10 | [Un círculo SVG a medida](ejercicios/ejercicio_10/) | `setAttribute` en SVG, atributos sin unidades | [Ver](soluciones/ejercicio_10/) |
+| 11 | [Escaparate con presupuesto](ejercicios/ejercicio_11/) | `dataset`, `Array.from` con `filter`, `hidden` | [Ver](soluciones/ejercicio_11/) |
+| 12 | [Un índice automático](ejercicios/ejercicio_12/) | Leer los títulos de la página y generar enlaces con `createElement` | [Ver](soluciones/ejercicio_12/) |
 
 El ejercicio 06 es el que más vais a reutilizar: su patrón aparecerá en casi todo lo que queda de curso.
 
@@ -318,8 +376,8 @@ El ejercicio 06 es el que más vais a reutilizar: su patrón aparecerá en casi 
 11. [Element: getAttribute() method (MDN Web Docs)](https://developer.mozilla.org/en-US/docs/Web/API/Element/getAttribute)
 12. [Element: setAttribute() method (MDN Web Docs)](https://developer.mozilla.org/en-US/docs/Web/API/Element/setAttribute)
 13. [HTMLElement: dataset property (MDN Web Docs)](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/dataset)
-14. [DOMTokenList: toggle() method (MDN Web Docs)](https://developer.mozilla.org/en-US/docs/Web/API/DOMTokenList/toggle)
-15. [Element: classList property (MDN Web Docs)](https://developer.mozilla.org/en-US/docs/Web/API/Element/classList)
+14. [Element: classList property (MDN Web Docs)](https://developer.mozilla.org/en-US/docs/Web/API/Element/classList)
+15. [DOMTokenList: toggle() method (MDN Web Docs)](https://developer.mozilla.org/en-US/docs/Web/API/DOMTokenList/toggle)
 16. [HTMLElement: style property (MDN Web Docs)](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/style)
 17. [Document: createElement() method (MDN Web Docs)](https://developer.mozilla.org/en-US/docs/Web/API/Document/createElement)
 18. [Element: append() method (MDN Web Docs)](https://developer.mozilla.org/en-US/docs/Web/API/Element/append)
@@ -327,3 +385,5 @@ El ejercicio 06 es el que más vais a reutilizar: su patrón aparecerá en casi 
 20. [Element: remove() method (MDN Web Docs)](https://developer.mozilla.org/en-US/docs/Web/API/Element/remove)
 21. [Element: replaceChildren() method (MDN Web Docs)](https://developer.mozilla.org/en-US/docs/Web/API/Element/replaceChildren)
 22. [Node: appendChild() method (MDN Web Docs)](https://developer.mozilla.org/en-US/docs/Web/API/Node/appendChild)
+23. [HTMLElement: hidden property (MDN Web Docs)](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/hidden)
+24. [<circle> (SVG) (MDN Web Docs)](https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Element/circle)

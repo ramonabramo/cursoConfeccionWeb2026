@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 10 · Un círculo SVG a medida (Solución)</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <main class="contenedor">
+        <h1>⭕ Un círculo SVG a medida</h1>
+        <p class="descripcion">Elegid radio, relleno y borde. El dibujo cambia y se calculan sus medidas.</p>
+
+        <svg class="lienzo" viewBox="0 0 220 220" width="220" height="220" role="img" aria-label="Círculo">
+            <circle id="circulo" cx="110" cy="110" r="40" fill="#cbd5e1" stroke="#334155" stroke-width="2" />
+        </svg>
+
+        <p id="salida" class="salida">…</p>
+
+        <div class="firma">Curso de JavaScript en el cliente · Realizado por Ramón Abramo</div>
+    </main>
+    <script src="app.js"></script>
+</body>
+
+</html>

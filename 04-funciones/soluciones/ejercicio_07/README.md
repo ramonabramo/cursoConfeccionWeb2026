@@ -18,7 +18,7 @@ function crearContador(inicio = 0, paso = 1) {
 }
 ```
 
-`crearContador` no cuenta nada. Lo que hace es **fabricar** un contador y devolverlo. Sus parámetros tienen valores por defecto, como en el ejercicio 03 [2]: sin argumentos, empieza en 0 y sube de 1 en 1. Como visteis en el ejercicio 06, las funciones son valores, así que se pueden devolver con `return` igual que un número.
+`crearContador` no cuenta nada. Lo que hace es **fabricar** un contador y devolverlo. Sus parámetros tienen valores por defecto, como en el ejercicio 03 [1]: sin argumentos, empieza en 0 y sube de 1 en 1. Como visteis en el ejercicio 06, las funciones son valores, así que se pueden devolver con `return` igual que un número.
 
 ```javascript
 const visitas = crearContador();
@@ -30,7 +30,7 @@ Después de esta línea, `visitas` es una función. Cada vez que la llamáis, `v
 
 Aquí viene lo interesante. Cuando `crearContador` termina, su variable local `valor` debería desaparecer, como cualquier variable local. Pero la función flecha que hemos devuelto **sigue usándola**. Y JavaScript la conserva mientras alguien la necesite.
 
-Una función junto con las variables del lugar donde se creó forma lo que se llama un *closure* [1]. Dicho de forma más llana: la función se lleva consigo una mochila con las variables que tenía a mano al nacer.
+Una función junto con las variables del lugar donde se creó forma lo que se llama un *closure* [2]. Dicho de forma más llana: la función se lleva consigo una mochila con las variables que tenía a mano al nacer.
 
 ## Cada contador, su propia mochila
 
@@ -67,5 +67,5 @@ Aquí la mochila contiene el parámetro `factor`. `doble` recuerda un 2; `triple
 
 ### Fuentes y Documentación Oficial
 
-1. [Closures (MDN Web Docs)](https://developer.mozilla.org/es/docs/Web/JavaScript/Guide/Closures)
-2. [Default parameters (MDN Web Docs)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Default_parameters)
+1. [Default parameters (MDN Web Docs)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Default_parameters)
+2. [Closures (MDN Web Docs)](https://developer.mozilla.org/es/docs/Web/JavaScript/Guide/Closures)

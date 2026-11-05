@@ -26,7 +26,7 @@ function estaEntre(valor, minimo, maximo) {
 }
 ```
 
-`Number.isNaN()` descarta lo que no es un número [2]. Y fijaos: no hace falta un `if` que devuelva `true` o `false`, porque la propia condición **ya es** un booleano, así que la devuelvo directamente. Las funciones que responden a una pregunta de sí o no suelen empezar por `es`, `esta` o `tiene`.
+`Number.isNaN()` descarta lo que no es un número [1]. Y fijaos: no hace falta un `if` que devuelva `true` o `false`, porque la propia condición **ya es** un booleano, así que la devuelvo directamente. Las funciones que responden a una pregunta de sí o no suelen empezar por `es`, `esta` o `tiene`.
 
 ### 2. `pedirNumero`: un bucle dentro de una función
 
@@ -44,7 +44,7 @@ while (true) {
 }
 ```
 
-`while (true)` parece un bucle infinito, y lo sería… si no fuera porque `return` termina la función, y con ella el bucle [1]. Hay dos salidas: cancelar o escribir un valor válido. Mientras no pase ninguna de las dos, la función vuelve a preguntar, ahora con un aviso.
+`while (true)` parece un bucle infinito, y lo sería… si no fuera porque `return` termina la función, y con ella el bucle [2]. Hay dos salidas: cancelar o escribir un valor válido. Mientras no pase ninguna de las dos, la función vuelve a preguntar, ahora con un aviso.
 
 Fijaos en que `pedirNumero` **usa** `estaEntre`. Las funciones se apoyan unas en otras.
 
@@ -81,6 +81,6 @@ A las funciones así se las llama **puras**. Son las más fáciles de probar y d
 
 ### Fuentes y Documentación Oficial
 
-1. [return (MDN Web Docs)](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Statements/return)
-2. [Number.isNaN() (MDN Web Docs)](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Number/isNaN)
+1. [Number.isNaN() (MDN Web Docs)](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Number/isNaN)
+2. [return (MDN Web Docs)](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Statements/return)
 3. [Math (MDN Web Docs)](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Math)

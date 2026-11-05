@@ -202,11 +202,11 @@ producto.precio          // leer con punto
 producto['precio']       // leer con corchetes
 producto[clave]          // corchetes con una variable: la única forma
 producto.stock = 12;     // añadir (si no existía) o modificar
-delete producto.colores; // borrar [24]
+delete producto.colores; // borrar
 producto.peso            // undefined: no existe, pero no da error
 ```
 
-Usad el punto siempre que podáis. Los corchetes, cuando el nombre de la propiedad está dentro de una variable.
+Para borrar una propiedad se usa el operador `delete` [24]. Usad el punto siempre que podáis. Los corchetes, cuando el nombre de la propiedad está dentro de una variable.
 
 ### 6.2. Recorrer un objeto
 
@@ -346,7 +346,44 @@ En JSON las claves van **siempre entre comillas dobles** y no puede haber métod
 
 ---
 
-## 11. La plantilla de trabajo en este bloque
+<!-- ampliación -->
+## 11. Objetos que no se pueden cambiar: `Object.freeze`
+
+`const` impide que una variable apunte a otro objeto, pero no impide cambiar el objeto por dentro. Cuando queréis un objeto **de solo lectura** (una configuración, unas tarifas, unos textos fijos), usad `Object.freeze` [33]:
+
+```javascript
+const TARIFAS = Object.freeze({ normal: 8, reducida: 5 });
+
+TARIFAS.normal = 1;        // se ignora (en un módulo, TypeError)
+TARIFAS.vip = 20;          // tampoco: no se pueden añadir propiedades
+delete TARIFAS.reducida;   // ni borrarlas
+Object.isFrozen(TARIFAS);  // true
+```
+
+En un script normal, los intentos de cambiarlo se ignoran **sin avisar**; en modo estricto (por ejemplo, dentro de un módulo del bloque 12) lanzan un `TypeError` [33]. Podéis comprobar si un objeto está congelado con `Object.isFrozen` [34].
+
+> [!WARNING]
+> La congelación es **superficial**: si una propiedad es otro objeto o un array, ese interior sí se puede cambiar [33]. `Object.freeze({ dias: ['lunes'] }).dias.push('martes')` funciona.
+
+---
+
+## 12. Elegir el bucle adecuado
+
+Ya conocéis cinco formas de repetir. Todas pueden resolver casi cualquier recorrido, pero cada una encaja mejor en un caso:
+
+| Bucle | Os da | Se usa para | ¿`break`? |
+| --- | --- | --- | --- |
+| `for (let i = 0; …)` | El índice `i` | Necesitáis la posición, recorrer al revés o de dos en dos | Sí |
+| `while (condición)` | Solo la condición | No sabéis cuántas vueltas: hasta encontrar algo | Sí |
+| `for...of` | Cada **valor** [35] | Recorrer un array (o un texto) sin necesitar el índice | Sí |
+| `for...in` | Cada **nombre de propiedad** [36] | Recorrer las propiedades de un objeto | Sí |
+| `forEach` | Valor e índice | Recorrer un array de principio a fin, aplicando algo a cada elemento | **No** |
+
+Dos avisos: `for...in` es para **objetos**, no para arrays (os da las posiciones como textos, `'0'`, `'1'`…), y `forEach` no se puede interrumpir: si necesitáis parar al encontrar algo, usad `for...of` con `break`, o `find`.
+
+---
+
+## 13. La plantilla de trabajo en este bloque
 
 La estructura del programa principal se llena ahora con los **datos** con los que va a trabajar el programa. El procesamiento se apoya en los métodos de arrays:
 
@@ -379,7 +416,7 @@ En el bloque 06 dejaréis de mostrar los resultados como un texto unido con `joi
 
 ---
 
-## 12. Ejercicios
+## 14. Ejercicios
 
 | Nº | Ejercicio | Qué practicáis | Solución |
 | --- | --- | --- | --- |
@@ -391,6 +428,10 @@ En el bloque 06 dejaréis de mostrar los resultados como un texto unido con `joi
 | 06 | [Catálogo de una tienda](ejercicios/ejercicio_06/) | Arrays de objetos: filtrar, buscar, totalizar y ordenar por propiedad | [Ver](soluciones/ejercicio_06/) |
 | 07 | [Desestructuración y spread](ejercicios/ejercicio_07/) | Sacar datos de objetos y arrays, unir arrays y objetos | [Ver](soluciones/ejercicio_07/) |
 | 08 | [Guardar y cargar la partida](ejercicios/ejercicio_08/) | Referencias, copias superficiales y profundas, JSON | [Ver](soluciones/ejercicio_08/) |
+| 09 | [La cola de la consulta](ejercicios/ejercicio_09/) | `push`, `shift`, `unshift`: una cola con urgencias | [Ver](soluciones/ejercicio_09/) |
+| 10 | [Ficha técnica con `for...in`](ejercicios/ejercicio_10/) | Recorrer las propiedades de un objeto y construir una tabla | [Ver](soluciones/ejercicio_10/) |
+| 11 | [Una configuración congelada](ejercicios/ejercicio_11/) | `Object.freeze`, `Object.isFrozen`, congelación superficial | [Ver](soluciones/ejercicio_11/) |
+| 12 | [El mismo reto con cinco bucles](ejercicios/ejercicio_12/) | `for`, `while`, `for...of`, `forEach` y `for...in` con el mismo inventario | [Ver](soluciones/ejercicio_12/) |
 
 El ejercicio 06 es el más importante del bloque. Si lo resolvéis sin mirar la solución, tenéis lo necesario para trabajar con datos reales.
 
@@ -432,3 +473,7 @@ El ejercicio 06 es el más importante del bloque. Si lo resolvéis sin mirar la 
 30. [Window: structuredClone() method (MDN Web Docs)](https://developer.mozilla.org/en-US/docs/Web/API/Window/structuredClone)
 31. [JSON.stringify() (MDN Web Docs)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify)
 32. [JSON.parse() (MDN Web Docs)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/parse)
+33. [Object.freeze() (MDN Web Docs)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/freeze)
+34. [Object.isFrozen() (MDN Web Docs)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/isFrozen)
+35. [for...of (MDN Web Docs)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...of)
+36. [for...in (MDN Web Docs)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...in)

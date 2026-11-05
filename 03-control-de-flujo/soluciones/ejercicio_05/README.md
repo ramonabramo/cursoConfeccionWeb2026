@@ -32,7 +32,7 @@ tabla += `${numero} × ${i} = ${resultado}\n`;
 suma += resultado;
 ```
 
-Dentro del bucle, `i` vale 1 en la primera vuelta, 2 en la segunda… hasta 10. Ese contador no solo sirve para contar vueltas: lo uso como dato.
+Dentro del bucle, `i` vale 1 en la primera vuelta, 2 en la segunda… hasta 10. Ese contador sirve para algo más que contar vueltas: lo uso como dato.
 
 Fijaos también en que `resultado` se declara con `const` **dentro** del bucle. En cada vuelta se crea una constante nueva, así que no hay problema por reasignarla.
 

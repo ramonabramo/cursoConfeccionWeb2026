@@ -63,28 +63,28 @@ Dos reglas que os ahorrarán muchos disgustos:
 ![Cómo leer cada control](img/leer-controles.svg)
 
 ```javascript
-campoNombre.value                                        // texto [3]
+campoNombre.value                                        // texto
 Number(campoCantidad.value)                              // número (convertido)
 selectTamano.value                                       // value de la opción elegida
-casillaQueso.checked                                     // true / false [4]
-formulario.querySelector('[name="entrega"]:checked').value   // radio marcado [5]
+casillaQueso.checked                                     // true / false
+formulario.querySelector('[name="entrega"]:checked').value   // radio marcado
 ```
 
-Recordad la regla de siempre: `value` es **texto**, incluso en un `<input type="number">`.
+`value` da el contenido de un campo [3]; `checked` dice si una casilla está marcada [4], y el selector `:checked` encuentra el botón de opción elegido en un grupo [5]. Recordad la regla de siempre: `value` es **texto**, incluso en un `<input type="number">`.
 
 ### 3.2. Todo el formulario: `FormData`
 
 ```javascript
 const datos = new FormData(formulario);
 
-datos.get('nombre');          // el valor de un campo, o null [6]
+datos.get('nombre');          // el valor de un campo, o null
 datos.get('modalidad');       // el radio marcado, sin querySelector
-datos.getAll('intereses');    // array con TODAS las casillas marcadas con ese name [7]
+datos.getAll('intereses');    // array con TODAS las casillas marcadas con ese name
 
-const objeto = Object.fromEntries(datos);   // un objeto normal [8]
+const objeto = Object.fromEntries(datos);   // un objeto normal
 ```
 
-`FormData` recoge todos los campos como pares **name → valor** [9]. Es la forma más cómoda de leer un formulario completo. Un aviso con `Object.fromEntries`: si varios campos comparten `name`, como un grupo de casillas, en el objeto solo queda uno. Para esos, usad `getAll`.
+`FormData` recoge todos los campos como pares **name → valor** [9]. `get` devuelve el valor de un campo, o `null` si no existe [6]; `getAll`, un array con todos los valores de los campos que comparten `name` [7]; y `Object.fromEntries` convierte los pares en un objeto normal [8]. Es la forma más cómoda de leer un formulario completo. Un aviso con `Object.fromEntries`: si varios campos comparten `name`, como un grupo de casillas, en el objeto solo queda uno. Para esos, usad `getAll`.
 
 ---
 
@@ -167,7 +167,7 @@ repetir.setCustomValidity(coinciden ? '' : 'Las contraseñas no coinciden.');
 
 Un error accesible tiene cuatro ingredientes:
 
-1. **Un texto que explica qué falla y cómo arreglarlo.** No solo un borde rojo: no todo el mundo distingue los colores.
+1. **Un texto que explica qué falla y cómo arreglarlo.** Un borde rojo no basta: no todo el mundo distingue los colores.
 2. **`aria-invalid="true"`** en el campo, que anuncia a la tecnología de apoyo que su valor no es válido [23]. Ponedlo solo después de validar, nunca al cargar la página.
 3. **`aria-describedby`**, que enlaza el campo con el párrafo del error [24]. El lector de pantalla lo leerá al llegar al campo.
 4. **El foco donde está el problema.** Tras un envío fallido, llevad el foco al primer error o a un resumen de errores con `focus()` [25].

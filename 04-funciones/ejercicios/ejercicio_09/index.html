@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 09 · Calculadora de gastos con rest</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <main class="contenedor">
+        <h1>🧾 Calculadora de gastos con <em>rest</em></h1>
+        <p class="descripcion">Una sola función que acepta tantos gastos como le pasen.</p>
+
+        <table class="tabla">
+            <thead><tr><th>Llamada</th><th>Resultado</th></tr></thead>
+            <tbody>
+                <tr><td><code>resumirGastos('Viaje', 120, 45.5, 30)</code></td><td id="res1" class="resultado">?</td></tr>
+                <tr><td><code>resumirGastos('Comida', 12.4)</code></td><td id="res2" class="resultado">?</td></tr>
+                <tr><td><code>resumirGastos('Nada')</code></td><td id="res3" class="resultado">?</td></tr>
+                <tr><td><code>resumirGastos('Error', 10, -5, 'abc')</code></td><td id="res4" class="resultado">?</td></tr>
+            </tbody>
+        </table>
+
+        <div class="firma">Curso de JavaScript en el cliente · Realizado por Ramón Abramo</div>
+    </main>
+    <script src="app.js"></script>
+</body>
+
+</html>

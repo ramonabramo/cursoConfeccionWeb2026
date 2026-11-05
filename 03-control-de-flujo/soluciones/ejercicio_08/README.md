@@ -4,13 +4,13 @@
 
 ## Qué pedía el ejercicio
 
-Contar del 1 al límite sustituyendo los múltiplos de 3 por «Fizz», los de 5 por «Buzz» y los de ambos por «FizzBuzz», y contar cuántas veces aparece cada palabra. Es un clásico de las entrevistas de programación, y junta todo lo del bloque en pocas líneas: un bucle `for` que recorre del 1 al límite [3], el operador resto y una escalera de condiciones.
+Contar del 1 al límite sustituyendo los múltiplos de 3 por «Fizz», los de 5 por «Buzz» y los de ambos por «FizzBuzz», y contar cuántas veces aparece cada palabra. Es un clásico de las entrevistas de programación, y junta todo lo del bloque en pocas líneas: un bucle `for` que recorre del 1 al límite [1], el operador resto y una escalera de condiciones.
 
 ## La solución paso a paso
 
 ### 1. Detectar múltiplos con `%`
 
-Un número es múltiplo de otro si al dividirlos **no sobra nada**. El operador resto, que conocéis del bloque 02, devuelve justo lo que sobra [1]:
+Un número es múltiplo de otro si al dividirlos **no sobra nada**. El operador resto, que conocéis del bloque 02, devuelve justo lo que sobra [2]:
 
 ```javascript
 9 % 3 === 0    // true:  9 es múltiplo de 3
@@ -31,7 +31,7 @@ if (i % 3 === 0 && i % 5 === 0) {
 }
 ```
 
-Aquí está la trampa del ejercicio. ¿Qué pasa con el 15 si empiezo por `i % 3 === 0`? Se cumple, entra, escribe «Fizz»… y como en una escalera de `else if` solo se ejecuta el primer bloque que encaja [2], nunca llega a comprobar el caso «FizzBuzz».
+Aquí está la trampa del ejercicio. ¿Qué pasa con el 15 si empiezo por `i % 3 === 0`? Se cumple, entra, escribe «Fizz»… y como en una escalera de `else if` solo se ejecuta el primer bloque que encaja [3], nunca llega a comprobar el caso «FizzBuzz».
 
 La regla general: **en una escalera, el caso más específico va primero**. «Múltiplo de 3 y de 5» es más específico que «múltiplo de 3», así que va antes. Es lo mismo que pasaba con las notas del ejercicio 01.
 
@@ -62,6 +62,6 @@ Cada rama del `if` actualiza su propio contador. Como solo se ejecuta una rama p
 
 ### Fuentes y Documentación Oficial
 
-1. [Resto (%) (MDN Web Docs)](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Operators/Remainder)
-2. [if...else (MDN Web Docs)](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Statements/if...else)
-3. [for (MDN Web Docs)](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Statements/for)
+1. [for (MDN Web Docs)](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Statements/for)
+2. [Resto (%) (MDN Web Docs)](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Operators/Remainder)
+3. [if...else (MDN Web Docs)](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Statements/if...else)
