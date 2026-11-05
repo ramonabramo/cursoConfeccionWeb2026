@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 10 · Cuestionario con nota (Solución)</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <main class="contenedor">
+        <h1>🧠 Cuestionario con nota</h1>
+        <p class="descripcion">Cuatro preguntas sobre el curso. Al corregir, cada una os dice si la habéis acertado.</p>
+
+        <form id="cuestionario">
+            <fieldset class="pregunta" data-pregunta="p1">
+                <legend>1. ¿Qué devuelve <code>prompt()</code> si se pulsa Cancelar?</legend>
+                <label class="opcion"><input type="radio" name="p1" value="a"> <code>''</code></label>
+                <label class="opcion"><input type="radio" name="p1" value="b"> <code>null</code></label>
+                <label class="opcion"><input type="radio" name="p1" value="c"> <code>undefined</code></label>
+                <p class="correccion" aria-live="polite"></p>
+            </fieldset>
+            <fieldset class="pregunta" data-pregunta="p2">
+                <legend>2. ¿Qué tipo tiene siempre <code>input.value</code>?</legend>
+                <label class="opcion"><input type="radio" name="p2" value="a"> Texto</label>
+                <label class="opcion"><input type="radio" name="p2" value="b"> Número</label>
+                <label class="opcion"><input type="radio" name="p2" value="c"> Depende del <code>type</code></label>
+                <p class="correccion" aria-live="polite"></p>
+            </fieldset>
+            <fieldset class="pregunta" data-pregunta="p3">
+                <legend>3. ¿Qué método evita que el formulario recargue la página?</legend>
+                <label class="opcion"><input type="radio" name="p3" value="a"> <code>stopPropagation()</code></label>
+                <label class="opcion"><input type="radio" name="p3" value="b"> <code>reset()</code></label>
+                <label class="opcion"><input type="radio" name="p3" value="c"> <code>preventDefault()</code></label>
+                <p class="correccion" aria-live="polite"></p>
+            </fieldset>
+            <fieldset class="pregunta" data-pregunta="p4">
+                <legend>4. ¿Qué atributo hace obligatorio un campo?</legend>
+                <label class="opcion"><input type="radio" name="p4" value="a"> <code>required</code></label>
+                <label class="opcion"><input type="radio" name="p4" value="b"> <code>novalidate</code></label>
+                <label class="opcion"><input type="radio" name="p4" value="c"> <code>pattern</code></label>
+                <p class="correccion" aria-live="polite"></p>
+            </fieldset>
+            <div class="botonera">
+                <button class="btn">Corregir</button>
+                <button type="button" id="btnOtraVez" class="btn btn--secundario">Volver a empezar</button>
+            </div>
+        </form>
+
+        <p id="nota" class="salida" aria-live="polite">…</p>
+
+        <div class="firma">Curso de JavaScript en el cliente · Realizado por Ramón Abramo</div>
+    </main>
+    <script src="app.js"></script>
+</body>
+
+</html>

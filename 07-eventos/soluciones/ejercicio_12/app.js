@@ -1,0 +1,58 @@
+/* ==============================================================================
+   EJERCICIO 12 · Valoración con estrellas (SOLUCIÓN)
+
+   OBJETIVO:
+   Combinar mouseenter, mouseleave y click para una valoración con
+   estrellas: vista previa al pasar el ratón, valor fijo al pulsar y vuelta
+   al valor fijo al salir.
+
+   PASOS A REALIZAR:
+   1. Declarar let valoracion = 0 y una función pintar(n) que enciende
+      (clase encendida) las n primeras estrellas y apaga las demás.
+   2. En cada estrella, escuchar mouseenter → pintar(su data-valor), y click
+      → guardar valoracion y escribir el texto: Tu valoración: 4 de 5 ⭐.
+   3. Escuchar mouseleave en el contenedor #estrellas → pintar(valoracion):
+      si se sale sin pulsar, vuelve la valoración guardada.
+   4. Mostrar un texto distinto para cada valor (1: Muy mala … 5:
+      Excelente).
+   ============================================================================== */
+
+// estructura del programa principal
+const TEXTOS = ['Sin valorar', 'Muy mala', 'Mala', 'Normal', 'Buena', 'Excelente'];
+let valoracion = 0;
+
+// funciones
+function pintar(n) {
+    estrellas.forEach((estrella, i) => {
+        estrella.classList.toggle('encendida', i < n);   // las n primeras
+    });
+}
+
+// constantes al DOM que queremos escuchar
+const contenedor = document.querySelector('#estrellas');
+const estrellas = contenedor.querySelectorAll('.estrella-btn');
+const texto = document.querySelector('#texto');
+
+// colocar escuchadores de eventos
+estrellas.forEach((estrella) => {
+    const valor = Number(estrella.dataset.valor);
+
+    estrella.addEventListener('mouseenter', () => {
+        pintar(valor);                      // vista previa
+    });
+
+    estrella.addEventListener('click', () => {
+        valoracion = valor;                 // se queda fija
+        estrella.setAttribute('aria-pressed', 'true');
+        estrellas.forEach((otra) => {
+            if (otra !== estrella) otra.setAttribute('aria-pressed', 'false');
+        });
+        texto.textContent = `Tu valoración: ${valoracion} de 5 ⭐ · ${TEXTOS[valoracion]}`;
+        pintar(valoracion);
+    });
+});
+
+// al salir del grupo entero, vuelve la valoración guardada
+contenedor.addEventListener('mouseleave', () => {
+    pintar(valoracion);
+});

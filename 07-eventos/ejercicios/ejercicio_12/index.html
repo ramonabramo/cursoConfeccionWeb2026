@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 12 · Valoración con estrellas</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <main class="contenedor">
+        <h1>⭐ Valoración con estrellas</h1>
+        <p class="descripcion">Al pasar el ratón, las estrellas muestran una vista previa. Al hacer clic, la valoración se queda fija.</p>
+
+        <div id="estrellas" class="estrellas" role="group" aria-label="Valoración">
+            <button class="estrella-btn" data-valor="1" aria-label="1 estrella">★</button>
+            <button class="estrella-btn" data-valor="2" aria-label="2 estrellas">★</button>
+            <button class="estrella-btn" data-valor="3" aria-label="3 estrellas">★</button>
+            <button class="estrella-btn" data-valor="4" aria-label="4 estrellas">★</button>
+            <button class="estrella-btn" data-valor="5" aria-label="5 estrellas">★</button>
+        </div>
+        <p id="texto" class="salida" aria-live="polite">Sin valorar</p>
+
+        <div class="firma">Curso de JavaScript en el cliente · Realizado por Ramón Abramo</div>
+    </main>
+    <script src="app.js"></script>
+</body>
+
+</html>

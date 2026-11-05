@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 10 · Seleccionar con Ctrl y Mayús (Solución)</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <main class="contenedor">
+        <h1>📂 Seleccionar con Ctrl y Mayús</h1>
+        <p class="descripcion">Como en el explorador de archivos: clic selecciona uno, <kbd>Ctrl</kbd>+clic (<kbd>⌘</kbd>+clic en Mac) añade o quita, y <kbd>Mayús</kbd>+clic selecciona un rango.</p>
+
+        <ul id="archivos" class="archivos">
+            <li data-indice="0">📄 apuntes-bloque-01.pdf</li>
+            <li data-indice="1">📄 apuntes-bloque-02.pdf</li>
+            <li data-indice="2">🖼️ esquema-dom.png</li>
+            <li data-indice="3">📊 notas-trimestre.xlsx</li>
+            <li data-indice="4">🎬 clase-grabada.mp4</li>
+            <li data-indice="5">📄 proyecto-final.pdf</li>
+            <li data-indice="6">🗜️ ejercicios.zip</li>
+        </ul>
+
+        <p id="resumen" class="salida" aria-live="polite">Ningún archivo seleccionado</p>
+
+        <div class="firma">Curso de JavaScript en el cliente · Realizado por Ramón Abramo</div>
+    </main>
+    <script src="app.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 09 · Coordenadas del ratón (Solución)</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <main class="contenedor">
+        <h1>🖱️ Coordenadas del ratón</h1>
+        <p class="descripcion">Moved el ratón por la zona y haced clic. La página os dice dónde estáis, medido de dos formas.</p>
+
+        <div id="zona" class="zona-raton">
+            <div class="linea vertical"></div>
+            <div class="linea horizontal"></div>
+            <div id="punto" class="punto" hidden></div>
+        </div>
+
+        <p id="posicion" class="salida">Moved el ratón por la zona…</p>
+        <p id="clic" class="salida salida--secundaria" aria-live="polite">…</p>
+
+        <div class="firma">Curso de JavaScript en el cliente · Realizado por Ramón Abramo</div>
+    </main>
+    <script src="app.js"></script>
+</body>
+
+</html>

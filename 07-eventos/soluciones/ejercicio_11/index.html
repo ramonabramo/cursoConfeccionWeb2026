@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 11 · Pestañas (Solución)</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <main class="contenedor">
+        <h1>🗂️ Pestañas</h1>
+        <p class="descripcion">Tres pestañas, un solo panel visible. Al pulsar una, se activa ella y se desactivan las demás.</p>
+
+        <div id="pestanas" class="pestanas" role="tablist" aria-label="Información del curso">
+            <button class="pestana" role="tab" id="pestana-temario" aria-controls="panel-temario" aria-selected="true">📚 Temario</button>
+            <button class="pestana" role="tab" id="pestana-horario" aria-controls="panel-horario" aria-selected="false">🕒 Horario</button>
+            <button class="pestana" role="tab" id="pestana-evaluacion" aria-controls="panel-evaluacion" aria-selected="false">📝 Evaluación</button>
+        </div>
+        <section class="panel" role="tabpanel" id="panel-temario" aria-labelledby="pestana-temario">
+            <p>Trece bloques: de las variables al proyecto final.</p>
+        </section>
+        <section class="panel" role="tabpanel" id="panel-horario" aria-labelledby="pestana-horario" hidden>
+            <p>Lunes y miércoles, de 16:00 a 20:00.</p>
+        </section>
+        <section class="panel" role="tabpanel" id="panel-evaluacion" aria-labelledby="pestana-evaluacion" hidden>
+            <p>Ejercicios de cada bloque (40 %) y proyecto final (60 %).</p>
+        </section>
+
+        <div class="firma">Curso de JavaScript en el cliente · Realizado por Ramón Abramo</div>
+    </main>
+    <script src="app.js"></script>
+</body>
+
+</html>

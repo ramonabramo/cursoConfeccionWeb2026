@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 13 · Galería con visor (Solución)</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <main class="contenedor">
+        <h1>🖼️ Galería con visor</h1>
+        <p class="descripcion">Pulsad una miniatura para verla en grande. Con las flechas pasáis de una a otra; con <kbd>Esc</kbd>, cerráis.</p>
+
+        <div id="miniaturas" class="miniaturas">
+            <button class="miniatura" data-indice="0" style="background:#fde68a">🏔️</button>
+            <button class="miniatura" data-indice="1" style="background:#bfdbfe">🌊</button>
+            <button class="miniatura" data-indice="2" style="background:#bbf7d0">🌲</button>
+            <button class="miniatura" data-indice="3" style="background:#fecaca">🌋</button>
+            <button class="miniatura" data-indice="4" style="background:#e9d5ff">🌌</button>
+        </div>
+
+        <dialog id="visor" class="visor" aria-labelledby="visorTitulo">
+            <h2 id="visorTitulo">…</h2>
+            <div id="visorImagen" class="visor-imagen">…</div>
+            <p id="visorPie" class="descripcion">…</p>
+            <div class="botonera">
+                <button id="btnAnterior" class="btn btn--secundario" aria-label="Anterior">◀</button>
+                <button id="btnCerrar" class="btn">Cerrar</button>
+                <button id="btnSiguiente" class="btn btn--secundario" aria-label="Siguiente">▶</button>
+            </div>
+        </dialog>
+
+        <div class="firma">Curso de JavaScript en el cliente · Realizado por Ramón Abramo</div>
+    </main>
+    <script src="app.js"></script>
+</body>
+
+</html>

@@ -84,7 +84,7 @@ datos.getAll('intereses');    // array con TODAS las casillas marcadas con ese n
 const objeto = Object.fromEntries(datos);   // un objeto normal
 ```
 
-`FormData` recoge todos los campos como pares **name → valor** [9]. `get` devuelve el valor de un campo, o `null` si no existe [6]; `getAll`, un array con todos los valores de los campos que comparten `name` [7]; y `Object.fromEntries` convierte los pares en un objeto normal [8]. Es la forma más cómoda de leer un formulario completo. Un aviso con `Object.fromEntries`: si varios campos comparten `name`, como un grupo de casillas, en el objeto solo queda uno. Para esos, usad `getAll`.
+`FormData` recoge todos los campos como pares **name → valor** [6]. `get` devuelve el valor de un campo, o `null` si no existe [7]; `getAll`, un array con todos los valores de los campos que comparten `name` [8]; y `Object.fromEntries` convierte los pares en un objeto normal [9]. Es la forma más cómoda de leer un formulario completo. Un aviso con `Object.fromEntries`: si varios campos comparten `name`, como un grupo de casillas, en el objeto solo queda uno. Para esos, usad `getAll`.
 
 ---
 
@@ -217,7 +217,44 @@ Dos reglas:
 
 ---
 
-## 8. La plantilla de trabajo con un formulario
+<!-- ampliación -->
+## 8. Grupos de casillas: «marcar todas» y el estado indeterminado
+
+Cuando un formulario tiene una lista de casillas (intereses, permisos, productos), es muy habitual poner encima una casilla **maestra** que marca o desmarca todas. Tiene tres estados posibles:
+
+| Las casillas del grupo | La maestra |
+| --- | --- |
+| Todas marcadas | `checked = true` |
+| Ninguna marcada | `checked = false` |
+| Unas sí y otras no | `indeterminate = true` (se dibuja con una raya) |
+
+El estado **indeterminado** solo se puede poner desde JavaScript, con la propiedad `indeterminate` [28]: no existe un atributo HTML para él [29]. Es solo visual: no cambia el valor `checked` de la casilla.
+
+```javascript
+const marcadas = casillas.filter((c) => c.checked).length;
+maestra.checked = marcadas === casillas.length;
+maestra.indeterminate = marcadas > 0 && marcadas < casillas.length;
+```
+
+---
+
+## 9. Corregir un cuestionario
+
+Un cuestionario de opción múltiple es un formulario con un grupo de botones de opción por pregunta: todos los de una pregunta comparten el mismo `name`, y así solo se puede marcar uno [5]. Para corregirlo, `FormData` os da la respuesta elegida en cada pregunta con `get(name)`, o `null` si se ha dejado en blanco [7]:
+
+```javascript
+const datos = new FormData(formulario);
+PREGUNTAS.forEach((pregunta) => {
+    const elegida = datos.get(pregunta.name);      // 'b', o null si no contestó
+    const acierto = elegida === pregunta.correcta;
+});
+```
+
+Guardad las respuestas correctas en el JavaScript, no en el HTML, y dad la corrección **pregunta por pregunta**, junto a cada una: «correcta», o «la respuesta era…». Para volver a empezar, `formulario.reset()` deja todos los campos como estaban al cargar la página [27].
+
+---
+
+## 10. La plantilla de trabajo con un formulario
 
 ```javascript
 // estructura del programa principal
@@ -259,7 +296,7 @@ formulario.addEventListener('submit', (e) => {
 
 ---
 
-## 9. Ejercicios
+## 11. Ejercicios
 
 | Nº | Ejercicio | Qué practicáis | Solución |
 | --- | --- | --- | --- |
@@ -271,6 +308,8 @@ formulario.addEventListener('submit', (e) => {
 | 06 | [Formulario de contacto accesible](ejercicios/ejercicio_06/) | `aria-describedby`, resumen de errores, `aria-live`, cuándo validar | [Ver](soluciones/ejercicio_06/) |
 | 07 | [Pedido con factura](ejercicios/ejercicio_07/) | Campos que aparecen, `hidden` + `required`, total en vivo, `reset` | [Ver](soluciones/ejercicio_07/) |
 | 08 | [Inscripciones a un taller](ejercicios/ejercicio_08/) | Aplicación completa: regla de email repetido, tabla, plazas y borrado | [Ver](soluciones/ejercicio_08/) |
+| 09 | [Marcar todas las casillas](ejercicios/ejercicio_09/) | Casilla maestra, `indeterminate`, contador en vivo | [Ver](soluciones/ejercicio_09/) |
+| 10 | [Cuestionario con nota](ejercicios/ejercicio_10/) | Grupos de opciones, `FormData.get`, corrección por pregunta, `reset` | [Ver](soluciones/ejercicio_10/) |
 
 Un consejo para el 06: hacedlo una vez con el ratón y otra **solo con el teclado** (Tab, Enter y las flechas). Es la mejor forma de comprobar si vuestro formulario es de verdad accesible.
 
@@ -285,10 +324,10 @@ Un consejo para el 06: hacedlo una vez con el ratón y otra **solo con el teclad
 3. [HTMLInputElement: value property (MDN Web Docs)](https://developer.mozilla.org/en-US/docs/Web/API/HTMLInputElement/value)
 4. [HTMLInputElement: checked property (MDN Web Docs)](https://developer.mozilla.org/en-US/docs/Web/API/HTMLInputElement/checked)
 5. [`<input type="radio">` HTML attribute value (MDN Web Docs)](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/input/radio)
-6. [FormData: get() method (MDN Web Docs)](https://developer.mozilla.org/en-US/docs/Web/API/FormData/get)
-7. [FormData: getAll() method (MDN Web Docs)](https://developer.mozilla.org/en-US/docs/Web/API/FormData/getAll)
-8. [Object.fromEntries() (MDN Web Docs)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/fromEntries)
-9. [FormData (MDN Web Docs)](https://developer.mozilla.org/en-US/docs/Web/API/FormData)
+6. [FormData (MDN Web Docs)](https://developer.mozilla.org/en-US/docs/Web/API/FormData)
+7. [FormData: get() method (MDN Web Docs)](https://developer.mozilla.org/en-US/docs/Web/API/FormData/get)
+8. [FormData: getAll() method (MDN Web Docs)](https://developer.mozilla.org/en-US/docs/Web/API/FormData/getAll)
+9. [Object.fromEntries() (MDN Web Docs)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/fromEntries)
 10. [`required` HTML attribute (MDN Web Docs)](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Attributes/required)
 11. [`minlength` HTML attribute (MDN Web Docs)](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Attributes/minlength)
 12. [`<input type="email">` HTML attribute value (MDN Web Docs)](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/input/email)
@@ -307,3 +346,5 @@ Un consejo para el 06: hacedlo una vez con el ratón y otra **solo con el teclad
 25. [HTMLElement: focus() method (MDN Web Docs)](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/focus)
 26. [ARIA: aria-live attribute (MDN Web Docs)](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-live)
 27. [HTMLFormElement: reset() method (MDN Web Docs)](https://developer.mozilla.org/en-US/docs/Web/API/HTMLFormElement/reset)
+28. [HTMLInputElement: indeterminate property (MDN Web Docs)](https://developer.mozilla.org/en-US/docs/Web/API/HTMLInputElement/indeterminate)
+29. [<input type="checkbox"> (MDN Web Docs)](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/input/checkbox)

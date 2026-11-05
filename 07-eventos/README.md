@@ -112,7 +112,7 @@ Adiós, `prompt()`. A partir de ahora los datos se leen de los campos:
 ```javascript
 const campo = document.querySelector('#celsius');
 campo.addEventListener('input', () => {
-    const texto = campo.value;          // SIEMPRE texto [18]
+    const texto = campo.value;          // SIEMPRE texto
     if (texto.trim() === '') {
         return;                         // Number('') sería 0
     }
@@ -219,7 +219,56 @@ Los escuchadores **nunca tocan las tarjetas directamente**: cambian los datos y 
 
 ---
 
-## 10. La plantilla de trabajo, completa
+<!-- ampliación -->
+## 10. ¿Dónde está el ratón? Las coordenadas
+
+Los eventos de ratón traen en el objeto evento la posición del puntero, medida en píxeles desde dos referencias distintas:
+
+| Propiedad | Se mide desde… | Para qué |
+| --- | --- | --- |
+| `e.clientX`, `e.clientY` | La esquina superior izquierda de la **ventana** visible [23] | Colocar algo junto al puntero, sin importar dónde esté el elemento |
+| `e.offsetX`, `e.offsetY` | La esquina superior izquierda del **elemento** que recibe el evento [24] | Saber en qué parte de un elemento se ha pulsado |
+
+```javascript
+zona.addEventListener('click', (e) => {
+    const mitad = zona.clientWidth / 2;
+    const lado = e.offsetX < mitad ? 'izquierda' : 'derecha';
+});
+```
+
+Un detalle: `offsetX` se mide respecto al elemento **sobre el que está el puntero**, que puede ser un hijo de la zona. Si la zona tiene elementos dentro, haced que no capturen el ratón con el CSS `pointer-events: none` o calculad la posición con `clientX` menos la posición de la zona.
+
+---
+
+## 11. Teclas modificadoras
+
+Los eventos de ratón también dicen si, al pulsar, había alguna tecla modificadora apretada. Son propiedades booleanas:
+
+| Propiedad | Tecla |
+| --- | --- |
+| `e.shiftKey` | Mayúsculas [25] |
+| `e.ctrlKey` | Control [26] |
+| `e.metaKey` | ⌘ en Mac, tecla Windows en Windows [27] |
+| `e.altKey` | Alt (Opción en Mac) |
+
+Con ellas se programan los gestos que todos conocéis de los exploradores de archivos: **Ctrl+clic** (⌘+clic en Mac) añade o quita un elemento de la selección, y **Mayús+clic** selecciona todo un rango. Para que funcione en los dos sistemas, comprobad las dos: `e.ctrlKey || e.metaKey`.
+
+---
+
+## 12. `mouseenter` y `mouseleave` frente a `mouseover` y `mouseout`
+
+Los dos pares avisan de que el puntero entra y sale de un elemento, pero no se comportan igual cuando el elemento tiene hijos:
+
+| Par | ¿Burbujea? | Cuándo se dispara |
+| --- | --- | --- |
+| `mouseover` / `mouseout` | Sí | Al entrar y salir del elemento **y de cada uno de sus hijos** |
+| `mouseenter` / `mouseleave` | No [28] | Solo al entrar y salir del elemento, aunque dentro haya hijos [29] |
+
+Para efectos de «al pasar por encima» (resaltar, mostrar una vista previa, pausar un carrusel), `mouseenter` y `mouseleave` son casi siempre lo que queréis: no se disparan una y otra vez al moveros entre los hijos. `mouseover` es útil justo por lo contrario: como burbujea, permite **delegar** en un contenedor.
+
+---
+
+## 13. La plantilla de trabajo, completa
 
 Por fin la plantilla del curso aparece entera. Es la que vais a usar a partir de ahora en todos los ejercicios:
 
@@ -255,7 +304,7 @@ Lo que está fuera de los escuchadores se ejecuta **una vez**, al cargar. Lo que
 
 ---
 
-## 11. Ejercicios
+## 14. Ejercicios
 
 | Nº | Ejercicio | Qué practicáis | Solución |
 | --- | --- | --- | --- |
@@ -267,6 +316,11 @@ Lo que está fuera de los escuchadores se ejecuta **una vez**, al cargar. Lo que
 | 06 | [¿Quién se entera del clic?](ejercicios/ejercicio_06/) | Burbuja, `target` frente a `currentTarget`, `stopPropagation` | [Ver](soluciones/ejercicio_06/) |
 | 07 | [Lista de tareas con delegación](ejercicios/ejercicio_07/) | Delegación, `closest`, estado → renderizar | [Ver](soluciones/ejercicio_07/) |
 | 08 | [Catálogo interactivo](ejercicios/ejercicio_08/) | Aplicación completa: filtros, búsqueda, orden y carrito sobre un estado | [Ver](soluciones/ejercicio_08/) |
+| 09 | [Coordenadas del ratón](ejercicios/ejercicio_09/) | `clientX`/`clientY` frente a `offsetX`/`offsetY`, cuadrantes | [Ver](soluciones/ejercicio_09/) |
+| 10 | [Seleccionar con Ctrl y Mayús](ejercicios/ejercicio_10/) | `ctrlKey`, `metaKey` y `shiftKey`: selección múltiple y por rango | [Ver](soluciones/ejercicio_10/) |
+| 11 | [Pestañas](ejercicios/ejercicio_11/) | Exclusión mutua, `aria-selected`, paneles con `hidden` | [Ver](soluciones/ejercicio_11/) |
+| 12 | [Valoración con estrellas](ejercicios/ejercicio_12/) | `mouseenter`/`mouseleave` para la vista previa, `click` para fijar | [Ver](soluciones/ejercicio_12/) |
+| 13 | [Galería con visor](ejercicios/ejercicio_13/) | `<dialog>`, `showModal`, flechas del teclado, `Escape` | [Ver](soluciones/ejercicio_13/) |
 
 Los ejercicios 07 y 08 son los más importantes del curso hasta ahora. Si los entendéis bien, el resto de bloques serán añadir piezas a una estructura que ya domináis.
 
@@ -298,3 +352,10 @@ Los ejercicios 07 y 08 son los más importantes del curso hasta ahora. Si los en
 20. [Event bubbling (MDN Web Docs)](https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/Event_bubbling)
 21. [Event: stopPropagation() method (MDN Web Docs)](https://developer.mozilla.org/en-US/docs/Web/API/Event/stopPropagation)
 22. [Element: closest() method (MDN Web Docs)](https://developer.mozilla.org/en-US/docs/Web/API/Element/closest)
+23. [MouseEvent: clientX property (MDN Web Docs)](https://developer.mozilla.org/en-US/docs/Web/API/MouseEvent/clientX)
+24. [MouseEvent: offsetX property (MDN Web Docs)](https://developer.mozilla.org/en-US/docs/Web/API/MouseEvent/offsetX)
+25. [MouseEvent: shiftKey property (MDN Web Docs)](https://developer.mozilla.org/en-US/docs/Web/API/MouseEvent/shiftKey)
+26. [MouseEvent: ctrlKey property (MDN Web Docs)](https://developer.mozilla.org/en-US/docs/Web/API/MouseEvent/ctrlKey)
+27. [MouseEvent: metaKey property (MDN Web Docs)](https://developer.mozilla.org/en-US/docs/Web/API/MouseEvent/metaKey)
+28. [Element: mouseenter event (MDN Web Docs)](https://developer.mozilla.org/en-US/docs/Web/API/Element/mouseenter_event)
+29. [Element: mouseleave event (MDN Web Docs)](https://developer.mozilla.org/en-US/docs/Web/API/Element/mouseleave_event)

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 09 · Marcar todas las casillas</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <main class="contenedor">
+        <h1>☑️ Marcar todas las casillas</h1>
+        <p class="descripcion">Una casilla maestra controla el grupo, y el grupo controla a la maestra.</p>
+
+        <form id="formPermisos">
+            <fieldset>
+                <legend>Permisos de la aplicación</legend>
+                <label class="opcion maestra"><input type="checkbox" id="maestra"> Todos los permisos</label>
+                <ul class="grupo-casillas">
+                    <li><label class="opcion"><input type="checkbox" name="permiso" value="camara"> 📷 Cámara</label></li>
+                    <li><label class="opcion"><input type="checkbox" name="permiso" value="microfono"> 🎙️ Micrófono</label></li>
+                    <li><label class="opcion"><input type="checkbox" name="permiso" value="ubicacion"> 📍 Ubicación</label></li>
+                    <li><label class="opcion"><input type="checkbox" name="permiso" value="notificaciones"> 🔔 Notificaciones</label></li>
+                </ul>
+            </fieldset>
+            <button class="btn">Guardar permisos</button>
+        </form>
+
+        <p id="contador" class="salida" aria-live="polite">0 de 4 permisos</p>
+        <p id="resultado" class="salida salida--secundaria" aria-live="polite"></p>
+
+        <div class="firma">Curso de JavaScript en el cliente · Realizado por Ramón Abramo</div>
+    </main>
+    <script src="app.js"></script>
+</body>
+
+</html>
