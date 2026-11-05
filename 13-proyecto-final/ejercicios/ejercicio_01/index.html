@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyecto final · Fase 1 · El modelo: Tarea y Tablero</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <main class="contenedor">
+        <h1>✅ Mi tablero de tareas</h1>
+        <p class="aviso-servidor">🖥️ Esta página usa módulos: abridla con <strong>Live Server</strong>. Con doble clic en el fichero, el navegador bloquea los <code>.js</code> y no funciona nada.</p>
+        <p class="descripcion">Proyecto final del curso: una aplicación completa con clases, módulos, DOM, eventos, formularios, <code>localStorage</code> y <code>fetch</code>.</p>
+
+        <h2>Pruebas del modelo</h2>
+        <table class="tabla">
+            <thead><tr><th>Prueba</th><th>Resultado</th></tr></thead>
+            <tbody id="pruebas"></tbody>
+        </table>
+        <p id="resultadoPruebas" class="salida" aria-live="polite">…</p>
+
+        <h2>Contenido del tablero</h2>
+        <ul id="listado" class="lista"></ul>
+
+        <div class="firma">Curso de JavaScript en el cliente · Realizado por Ramón Abramo</div>
+    </main>
+    <script type="module" src="app.js"></script>
+</body>
+
+</html>

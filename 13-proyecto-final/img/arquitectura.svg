@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 440" width="900" height="440" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif">
+  <title>Arquitectura del proyecto</title>
+  <desc>index.html carga app.js, el controlador. app.js importa cuatro módulos: modelo.js con las clases, vista.js que pinta en el DOM, almacen.js que guarda en localStorage y api.js que pide datos a JSONPlaceholder con fetch.</desc>
+  <rect width="900" height="440" rx="16" fill="#ffffff"/>
+  <text x="450" y="42" text-anchor="middle" font-size="22" font-weight="700" fill="#1e293b">La arquitectura: cinco módulos, cada uno con su papel</text>
+  <text x="450" y="66" text-anchor="middle" font-size="14" fill="#64748b">Solo app.js conoce a todos; los demás no saben nada unos de otros</text>
+
+  <defs>
+    <marker id="f" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#475569"/></marker>
+  </defs>
+
+  <!-- index -->
+  <rect x="24" y="96" width="170" height="70" rx="12" fill="#fff7ed" stroke="#ea580c" stroke-width="2"/>
+  <text x="109" y="124" text-anchor="middle" font-size="14" font-weight="700" fill="#c2410c">📄 index.html</text>
+  <text x="109" y="146" text-anchor="middle" font-family="Consolas, Menlo, monospace" font-size="11" fill="#475569">type="module"</text>
+  <line x1="196" y1="131" x2="320" y2="131" stroke="#475569" stroke-width="2" marker-end="url(#f)"/>
+  <text x="258" y="122" text-anchor="middle" font-size="11.5" fill="#475569">carga</text>
+
+  <!-- app -->
+  <rect x="326" y="88" width="248" height="86" rx="12" fill="#eff6ff" stroke="#2563eb" stroke-width="2.5"/>
+  <text x="450" y="116" text-anchor="middle" font-size="15" font-weight="700" fill="#1d4ed8">🎛️ app.js · CONTROLADOR</text>
+  <text x="450" y="138" text-anchor="middle" font-size="12" fill="#334155">Escucha al usuario, llama al modelo</text>
+  <text x="450" y="156" text-anchor="middle" font-size="12" fill="#334155">y termina siempre en actualizar()</text>
+
+  <!-- flechas a módulos -->
+  <line x1="360" y1="176" x2="128" y2="246" stroke="#475569" stroke-width="2" marker-end="url(#f)"/>
+  <line x1="420" y1="176" x2="346" y2="246" stroke="#475569" stroke-width="2" marker-end="url(#f)"/>
+  <line x1="480" y1="176" x2="556" y2="246" stroke="#475569" stroke-width="2" marker-end="url(#f)"/>
+  <line x1="540" y1="176" x2="772" y2="246" stroke="#475569" stroke-width="2" marker-end="url(#f)"/>
+  <text x="450" y="214" text-anchor="middle" font-family="Consolas, Menlo, monospace" font-size="12" fill="#475569">import</text>
+
+  <g font-size="12">
+    <rect x="24" y="250" width="200" height="104" rx="12" fill="#f5f3ff" stroke="#7c3aed" stroke-width="2"/>
+    <text x="124" y="276" text-anchor="middle" font-size="14" font-weight="700" fill="#6d28d9">🧱 modelo.js</text>
+    <text x="124" y="298" text-anchor="middle" fill="#334155">Tarea y Tablero</text>
+    <text x="124" y="316" text-anchor="middle" fill="#334155">Reglas y validación</text>
+    <text x="124" y="334" text-anchor="middle" fill="#334155">Datos privados (#)</text>
+
+    <rect x="244" y="250" width="200" height="104" rx="12" fill="#f0fdf4" stroke="#16a34a" stroke-width="2"/>
+    <text x="344" y="276" text-anchor="middle" font-size="14" font-weight="700" fill="#15803d">🎨 vista.js</text>
+    <text x="344" y="298" text-anchor="middle" fill="#334155">Crea y pinta elementos</text>
+    <text x="344" y="316" text-anchor="middle" fill="#334155">Errores del formulario</text>
+    <text x="344" y="334" text-anchor="middle" fill="#334155">No escucha eventos</text>
+
+    <rect x="464" y="250" width="200" height="104" rx="12" fill="#fefce8" stroke="#ca8a04" stroke-width="2"/>
+    <text x="564" y="276" text-anchor="middle" font-size="14" font-weight="700" fill="#854d0e">💾 almacen.js</text>
+    <text x="564" y="298" text-anchor="middle" fill="#334155">Guardar y cargar</text>
+    <text x="564" y="316" text-anchor="middle" fill="#334155">Carga segura</text>
+    <text x="564" y="334" text-anchor="middle" fill="#334155">Tareas y preferencias</text>
+
+    <rect x="684" y="250" width="192" height="104" rx="12" fill="#fef2f2" stroke="#dc2626" stroke-width="2"/>
+    <text x="780" y="276" text-anchor="middle" font-size="14" font-weight="700" fill="#b91c1c">☁️ api.js</text>
+    <text x="780" y="298" text-anchor="middle" fill="#334155">fetch + respuesta.ok</text>
+    <text x="780" y="316" text-anchor="middle" fill="#334155">Traduce el formato</text>
+    <text x="780" y="334" text-anchor="middle" fill="#334155">de la API al propio</text>
+  </g>
+
+  <!-- exteriores -->
+  <g font-size="12" fill="#475569">
+    <line x1="344" y1="356" x2="344" y2="386" stroke="#94a3b8" stroke-width="2" stroke-dasharray="5 4"/>
+    <text x="344" y="408" text-anchor="middle">🖥️ el DOM</text>
+    <line x1="564" y1="356" x2="564" y2="386" stroke="#94a3b8" stroke-width="2" stroke-dasharray="5 4"/>
+    <text x="564" y="408" text-anchor="middle" font-family="Consolas, Menlo, monospace">localStorage</text>
+    <line x1="780" y1="356" x2="780" y2="386" stroke="#94a3b8" stroke-width="2" stroke-dasharray="5 4"/>
+    <text x="780" y="408" text-anchor="middle">JSONPlaceholder</text>
+    <text x="124" y="380" text-anchor="middle">no depende de nada:</text>
+    <text x="124" y="398" text-anchor="middle">ni DOM ni almacenamiento</text>
+  </g>
+</svg>

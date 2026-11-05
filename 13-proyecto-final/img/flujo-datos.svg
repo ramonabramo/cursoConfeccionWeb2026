@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 400" width="900" height="400" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif">
+  <title>El ciclo de una acción</title>
+  <desc>Cuando el usuario actúa, un escuchador del controlador lee la entrada y llama al modelo, que valida y cambia los datos o lanza un error. Después, actualizar guarda en localStorage y vuelve a pintar la vista, y el usuario ve el resultado.</desc>
+  <rect width="900" height="400" rx="16" fill="#ffffff"/>
+  <text x="450" y="42" text-anchor="middle" font-size="22" font-weight="700" fill="#1e293b">El ciclo de cada acción del usuario</text>
+  <text x="450" y="66" text-anchor="middle" font-size="14" fill="#64748b">Siempre el mismo camino: evento → modelo → actualizar() → pantalla</text>
+
+  <defs>
+    <marker id="f" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#475569"/></marker>
+    <marker id="r" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#dc2626"/></marker>
+  </defs>
+
+  <g font-size="12.5">
+    <rect x="24" y="96" width="180" height="120" rx="14" fill="#ecfdf5" stroke="#34d399" stroke-width="2"/>
+    <text x="114" y="124" text-anchor="middle" font-size="14" font-weight="700" fill="#047857">① El usuario</text>
+    <text x="114" y="150" text-anchor="middle" fill="#334155">marca una casilla,</text>
+    <text x="114" y="168" text-anchor="middle" fill="#334155">envía el formulario,</text>
+    <text x="114" y="186" text-anchor="middle" fill="#334155">pulsa una tecla…</text>
+
+    <rect x="248" y="96" width="190" height="120" rx="14" fill="#eff6ff" stroke="#2563eb" stroke-width="2"/>
+    <text x="343" y="124" text-anchor="middle" font-size="14" font-weight="700" fill="#1d4ed8">② El controlador</text>
+    <text x="343" y="150" text-anchor="middle" fill="#334155">un escuchador lee</text>
+    <text x="343" y="168" text-anchor="middle" fill="#334155">la entrada y llama</text>
+    <text x="343" y="186" text-anchor="middle" font-family="Consolas, Menlo, monospace" font-size="11.5" fill="#1d4ed8">tablero.agregar(…)</text>
+
+    <rect x="482" y="96" width="190" height="120" rx="14" fill="#f5f3ff" stroke="#7c3aed" stroke-width="2"/>
+    <text x="577" y="124" text-anchor="middle" font-size="14" font-weight="700" fill="#6d28d9">③ El modelo</text>
+    <text x="577" y="150" text-anchor="middle" fill="#334155">valida y cambia</text>
+    <text x="577" y="168" text-anchor="middle" fill="#334155">sus datos privados…</text>
+    <text x="577" y="186" text-anchor="middle" fill="#b91c1c">…o lanza un Error</text>
+
+    <rect x="716" y="96" width="160" height="120" rx="14" fill="#fefce8" stroke="#ca8a04" stroke-width="2"/>
+    <text x="796" y="124" text-anchor="middle" font-size="14" font-weight="700" fill="#854d0e">④ actualizar()</text>
+    <text x="796" y="150" text-anchor="middle" fill="#334155">guarda en</text>
+    <text x="796" y="168" text-anchor="middle" font-family="Consolas, Menlo, monospace" font-size="11.5" fill="#854d0e">localStorage</text>
+    <text x="796" y="186" text-anchor="middle" fill="#334155">y repinta la vista</text>
+  </g>
+
+  <line x1="206" y1="156" x2="244" y2="156" stroke="#475569" stroke-width="2" marker-end="url(#f)"/>
+  <line x1="440" y1="156" x2="478" y2="156" stroke="#475569" stroke-width="2" marker-end="url(#f)"/>
+  <line x1="674" y1="156" x2="712" y2="156" stroke="#475569" stroke-width="2" marker-end="url(#f)"/>
+
+  <!-- vuelta -->
+  <path d="M 796 218 L 796 260 L 114 260 L 114 222" fill="none" stroke="#16a34a" stroke-width="2.5" marker-end="url(#f)"/>
+  <text x="455" y="284" text-anchor="middle" font-size="13" font-weight="700" fill="#15803d">⑤ El usuario ve el resultado: la pantalla siempre refleja el estado</text>
+
+  <!-- error -->
+  <path d="M 577 218 L 577 236 L 343 236 L 343 222" fill="none" stroke="#dc2626" stroke-width="2" stroke-dasharray="6 4" marker-end="url(#r)"/>
+  <text x="460" y="230" text-anchor="middle" font-size="11.5" fill="#b91c1c">catch: mensaje en #mensaje</text>
+
+  <rect x="24" y="310" width="852" height="72" rx="12" fill="#f8fafc" stroke="#cbd5e1"/>
+  <text x="44" y="336" font-size="13" font-weight="700" fill="#334155">Por qué un solo camino</text>
+  <text x="44" y="360" font-size="12.5" fill="#334155">Si cada escuchador guardara y pintara por su cuenta, tarde o temprano uno se olvidaría. Con actualizar() como</text>
+  <text x="44" y="376" font-size="12.5" fill="#334155">único final, guardar y repintar ocurre siempre, y añadir una función nueva solo exige llamar a actualizar().</text>
+</svg>

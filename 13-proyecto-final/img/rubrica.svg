@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 400" width="900" height="400" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif">
+  <title>Criterios de evaluación</title>
+  <desc>El proyecto se evalúa sobre 10 puntos: requisitos funcionales 3, organización del código 2, robustez 2, accesibilidad y usabilidad 1,5, calidad del código 1 y documentación y presentación 0,5.</desc>
+  <rect width="900" height="400" rx="16" fill="#ffffff"/>
+  <text x="450" y="42" text-anchor="middle" font-size="22" font-weight="700" fill="#1e293b">Cómo se evalúa: 10 puntos en seis criterios</text>
+  <text x="450" y="66" text-anchor="middle" font-size="14" fill="#64748b">Que funcione es lo primero, pero no lo único: también cuenta cómo está hecho</text>
+
+  <!-- escala: 1 punto = 150 px -->
+  <g font-size="13">
+    <text x="24" y="112" font-weight="700" fill="#1e293b">Requisitos funcionales</text>
+    <rect x="290" y="96" width="450" height="24" rx="6" fill="#2563eb"/>
+    <text x="752" y="113" font-weight="700" fill="#1d4ed8">3 puntos</text>
+    <text x="24" y="130" font-size="11.5" fill="#64748b">Los seis obligatorios, funcionando</text>
+
+    <text x="24" y="166" font-weight="700" fill="#1e293b">Organización del código</text>
+    <rect x="290" y="150" width="300" height="24" rx="6" fill="#7c3aed"/>
+    <text x="602" y="167" font-weight="700" fill="#6d28d9">2 puntos</text>
+    <text x="24" y="184" font-size="11.5" fill="#64748b">Módulos, clases, modelo-vista-controlador</text>
+
+    <text x="24" y="220" font-weight="700" fill="#1e293b">Robustez</text>
+    <rect x="290" y="204" width="300" height="24" rx="6" fill="#dc2626"/>
+    <text x="602" y="221" font-weight="700" fill="#b91c1c">2 puntos</text>
+    <text x="24" y="238" font-size="11.5" fill="#64748b">Validación, errores, carga y datos corruptos</text>
+
+    <text x="24" y="274" font-weight="700" fill="#1e293b">Accesibilidad y usabilidad</text>
+    <rect x="290" y="258" width="225" height="24" rx="6" fill="#16a34a"/>
+    <text x="527" y="275" font-weight="700" fill="#15803d">1,5 puntos</text>
+    <text x="24" y="292" font-size="11.5" fill="#64748b">Teclado, etiquetas, foco, aria-live</text>
+
+    <text x="24" y="328" font-weight="700" fill="#1e293b">Calidad del código</text>
+    <rect x="290" y="312" width="150" height="24" rx="6" fill="#ca8a04"/>
+    <text x="452" y="329" font-weight="700" fill="#854d0e">1 punto</text>
+    <text x="24" y="346" font-size="11.5" fill="#64748b">Nombres, plantilla, consola sin errores</text>
+
+    <text x="24" y="382" font-weight="700" fill="#1e293b">Documentación</text>
+    <rect x="290" y="366" width="75" height="24" rx="6" fill="#64748b"/>
+    <text x="377" y="383" font-weight="700" fill="#334155">0,5 puntos</text>
+  </g>
+  <rect x="640" y="300" width="236" height="84" rx="12" fill="#fef2f2" stroke="#dc2626"/>
+  <text x="758" y="326" text-anchor="middle" font-size="13" font-weight="700" fill="#b91c1c">Requisito imprescindible</text>
+  <text x="758" y="348" text-anchor="middle" font-size="12" fill="#334155">Si falta alguno de los seis</text>
+  <text x="758" y="366" text-anchor="middle" font-size="12" fill="#334155">obligatorios, no es apto</text>
+</svg>

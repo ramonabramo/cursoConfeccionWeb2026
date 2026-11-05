@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 420" width="900" height="420" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif">
+  <title>Las ocho fases del proyecto</title>
+  <desc>El proyecto se construye en ocho fases: modelo, vista, eventos de ratón, formulario, persistencia, API, teclado y búsqueda, y pulido final. Cada fase parte de la solución de la anterior.</desc>
+  <rect width="900" height="420" rx="16" fill="#ffffff"/>
+  <text x="450" y="42" text-anchor="middle" font-size="22" font-weight="700" fill="#1e293b">Ocho fases: cada una parte de la anterior</text>
+  <text x="450" y="66" text-anchor="middle" font-size="14" fill="#64748b">Al final de cada fase, la aplicación funciona. Nunca está «a medias»</text>
+
+  <line x1="60" y1="120" x2="840" y2="120" stroke="#cbd5e1" stroke-width="6" stroke-linecap="round"/>
+  <line x1="60" y1="300" x2="840" y2="300" stroke="#cbd5e1" stroke-width="6" stroke-linecap="round"/>
+
+  <g font-size="12" text-anchor="middle">
+    <!-- fila 1 -->
+    <circle cx="120" cy="120" r="22" fill="#7c3aed"/><text x="120" y="126" font-size="16" font-weight="700" fill="#ffffff">1</text>
+    <text x="120" y="166" font-size="13.5" font-weight="700" fill="#1e293b">El modelo</text>
+    <text x="120" y="186" fill="#475569">Tarea y Tablero</text>
+    <text x="120" y="204" fill="#475569">9 pruebas</text>
+    <text x="120" y="222" font-family="Consolas, Menlo, monospace" font-size="11" fill="#6d28d9">modelo.js</text>
+
+    <circle cx="340" cy="120" r="22" fill="#16a34a"/><text x="340" y="126" font-size="16" font-weight="700" fill="#ffffff">2</text>
+    <text x="340" y="166" font-size="13.5" font-weight="700" fill="#1e293b">La vista</text>
+    <text x="340" y="186" fill="#475569">Pintar el tablero</text>
+    <text x="340" y="204" fill="#475569">y el resumen</text>
+    <text x="340" y="222" font-family="Consolas, Menlo, monospace" font-size="11" fill="#15803d">vista.js</text>
+
+    <circle cx="560" cy="120" r="22" fill="#2563eb"/><text x="560" y="126" font-size="16" font-weight="700" fill="#ffffff">3</text>
+    <text x="560" y="166" font-size="13.5" font-weight="700" fill="#1e293b">Ratón</text>
+    <text x="560" y="186" fill="#475569">Completar, eliminar,</text>
+    <text x="560" y="204" fill="#475569">doble clic y filtros</text>
+    <text x="560" y="222" font-family="Consolas, Menlo, monospace" font-size="11" fill="#1d4ed8">delegación</text>
+
+    <circle cx="780" cy="120" r="22" fill="#ea580c"/><text x="780" y="126" font-size="16" font-weight="700" fill="#ffffff">4</text>
+    <text x="780" y="166" font-size="13.5" font-weight="700" fill="#1e293b">Formulario</text>
+    <text x="780" y="186" fill="#475569">Validación accesible</text>
+    <text x="780" y="204" fill="#475569">y doble barrera</text>
+    <text x="780" y="222" font-family="Consolas, Menlo, monospace" font-size="11" fill="#c2410c">aria-invalid</text>
+
+    <!-- fila 2 -->
+    <circle cx="120" cy="300" r="22" fill="#ca8a04"/><text x="120" y="306" font-size="16" font-weight="700" fill="#ffffff">5</text>
+    <text x="120" y="346" font-size="13.5" font-weight="700" fill="#1e293b">Persistencia</text>
+    <text x="120" y="366" fill="#475569">Tareas y filtro</text>
+    <text x="120" y="384" fill="#475569">tras recargar</text>
+    <text x="120" y="402" font-family="Consolas, Menlo, monospace" font-size="11" fill="#854d0e">almacen.js</text>
+
+    <circle cx="340" cy="300" r="22" fill="#dc2626"/><text x="340" y="306" font-size="16" font-weight="700" fill="#ffffff">6</text>
+    <text x="340" y="346" font-size="13.5" font-weight="700" fill="#1e293b">API</text>
+    <text x="340" y="366" fill="#475569">Importar tareas</text>
+    <text x="340" y="384" fill="#475569">sin duplicados</text>
+    <text x="340" y="402" font-family="Consolas, Menlo, monospace" font-size="11" fill="#b91c1c">api.js</text>
+
+    <circle cx="560" cy="300" r="22" fill="#0891b2"/><text x="560" y="306" font-size="16" font-weight="700" fill="#ffffff">7</text>
+    <text x="560" y="346" font-size="13.5" font-weight="700" fill="#1e293b">Teclado</text>
+    <text x="560" y="366" fill="#475569">Atajos n, /, ?, Esc</text>
+    <text x="560" y="384" fill="#475569">y buscador con espera</text>
+    <text x="560" y="402" font-family="Consolas, Menlo, monospace" font-size="11" fill="#0e7490">keydown</text>
+
+    <circle cx="780" cy="300" r="22" fill="#334155"/><text x="780" y="306" font-size="16" font-weight="700" fill="#ffffff">8</text>
+    <text x="780" y="346" font-size="13.5" font-weight="700" fill="#1e293b">Pulido</text>
+    <text x="780" y="366" fill="#475569">Orden, progreso,</text>
+    <text x="780" y="384" fill="#475569">tema oscuro</text>
+    <text x="780" y="402" font-family="Consolas, Menlo, monospace" font-size="11" fill="#334155">static ordenar</text>
+  </g>
+
+  <path d="M 840 120 C 880 120, 880 250, 840 250 L 60 250 C 20 250, 20 300, 60 300" fill="none" stroke="#cbd5e1" stroke-width="3" stroke-dasharray="6 5"/>
+</svg>

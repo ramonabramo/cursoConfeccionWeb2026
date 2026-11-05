@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyecto final · Fase 6 · Importar tareas de una API</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <main class="contenedor">
+        <h1>✅ Mi tablero de tareas</h1>
+        <p class="aviso-servidor">🖥️ Esta página usa módulos: abridla con <strong>Live Server</strong>. Con doble clic en el fichero, el navegador bloquea los <code>.js</code> y no funciona nada.</p>
+        <p class="descripcion">Proyecto final del curso: una aplicación completa con clases, módulos, DOM, eventos, formularios, <code>localStorage</code> y <code>fetch</code>.</p>
+
+        <section class="seccion" aria-labelledby="tituloNueva">
+            <h2 id="tituloNueva">Nueva tarea</h2>
+            <form id="formTarea" novalidate>
+                <div class="campo">
+                    <label for="titulo">Título</label>
+                    <input type="text" id="titulo" name="titulo" aria-describedby="error-titulo" autocomplete="off">
+                    <p id="error-titulo" class="error-campo" aria-live="polite"></p>
+                </div>
+                <fieldset id="grupoPrioridad" aria-describedby="error-prioridad">
+                    <legend>Prioridad</legend>
+                    <label class="opcion"><input type="radio" name="prioridad" value="alta"> 🔴 Alta</label>
+                    <label class="opcion"><input type="radio" name="prioridad" value="media"> 🟡 Media</label>
+                    <label class="opcion"><input type="radio" name="prioridad" value="baja"> 🟢 Baja</label>
+                    <p id="error-prioridad" class="error-campo" aria-live="polite"></p>
+                </fieldset>
+                <div class="campo">
+                    <label for="fecha">Fecha límite (opcional)</label>
+                    <input type="date" id="fecha" name="fecha" aria-describedby="error-fecha">
+                    <p id="error-fecha" class="error-campo" aria-live="polite"></p>
+                </div>
+                <button class="btn">Añadir tarea</button>
+            </form>
+        </section>
+
+        <section class="seccion" aria-labelledby="tituloApi">
+            <h2 id="tituloApi">Importar de la API</h2>
+            <div class="campo">
+                <label for="usuario">Usuario de JSONPlaceholder</label>
+                <select id="usuario" disabled>
+                    <option>Cargando…</option>
+                </select>
+            </div>
+            <div class="botonera">
+                <button id="btnImportar" class="btn" disabled>Importar sus tareas</button>
+                <button id="btnReintentarApi" class="btn btn--secundario" hidden>Reintentar</button>
+            </div>
+            <p id="estadoApi" class="descripcion" aria-live="polite">…</p>
+        </section>
+
+        <p id="mensaje" class="salida salida--aviso" aria-live="polite"></p>
+
+        <div id="filtros" class="botonera">
+            <button class="btn btn--secundario activo" data-filtro="todas" aria-pressed="true">Todas</button>
+            <button class="btn btn--secundario" data-filtro="pendientes" aria-pressed="false">Pendientes</button>
+            <button class="btn btn--secundario" data-filtro="completadas" aria-pressed="false">Completadas</button>
+            <button class="btn btn--secundario" data-filtro="vencidas" aria-pressed="false">Vencidas</button>
+        </div>
+
+        <ul id="tareas" class="lista"></ul>
+        <p id="resumen" class="salida" aria-live="polite">…</p>
+
+        <div class="firma">Curso de JavaScript en el cliente · Realizado por Ramón Abramo</div>
+    </main>
+    <script type="module" src="app.js"></script>
+</body>
+
+</html>
