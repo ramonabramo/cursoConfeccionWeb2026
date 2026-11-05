@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 06 · Un borrador que no se pierde</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <main class="contenedor">
+        <h1>📝 Un borrador que no se pierde</h1>
+        <p class="descripcion">Empezad a escribir un mensaje, cerrad la pestaña sin querer… y al volver seguirá ahí.</p>
+
+        <form id="formMensaje">
+            <div class="campo">
+                <label for="asunto">Asunto</label>
+                <input type="text" id="asunto" name="asunto">
+            </div>
+            <div class="campo">
+                <label for="mensaje">Mensaje</label>
+                <textarea id="mensaje" name="mensaje"></textarea>
+            </div>
+            <p id="estado" class="estado-guardado" aria-live="polite">…</p>
+            <div class="botonera">
+                <button type="submit" class="btn">Enviar</button>
+                <button type="button" id="btnDescartar" class="btn btn--secundario">Descartar borrador</button>
+            </div>
+        </form>
+
+        <p id="enviado" class="exito" aria-live="polite"></p>
+
+        <div class="firma">Curso de JavaScript en el cliente · Realizado por Ramón Abramo</div>
+    </main>
+    <script src="app.js"></script>
+</body>
+
+</html>

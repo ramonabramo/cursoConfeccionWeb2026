@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 04 · localStorage frente a sessionStorage (Solución)</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <main class="contenedor">
+        <h1>🔢 Dos contadores de visitas</h1>
+        <p class="descripcion">Cada vez que se carga la página, los dos contadores suben. Pero no duran lo mismo.</p>
+
+        <table class="tabla">
+            <thead><tr><th>Almacén</th><th>Visitas</th><th></th></tr></thead>
+            <tbody>
+                <tr><td><code>localStorage</code></td><td id="visitasLocal" class="resultado">?</td><td><button id="btnResetLocal" class="btn btn--secundario">Reiniciar</button></td></tr>
+                <tr><td><code>sessionStorage</code></td><td id="visitasSesion" class="resultado">?</td><td><button id="btnResetSesion" class="btn btn--secundario">Reiniciar</button></td></tr>
+            </tbody>
+        </table>
+
+        <p class="ayuda">💡 El experimento: recargad tres veces. Después abrid esta misma página en <strong>otra pestaña</strong>. Por último, cerrad todas las pestañas del ejercicio y volved a abrirlo. Apuntad qué pasa con cada contador.</p>
+
+        <div class="firma">Curso de JavaScript en el cliente · Realizado por Ramón Abramo</div>
+    </main>
+    <script src="app.js"></script>
+</body>
+
+</html>

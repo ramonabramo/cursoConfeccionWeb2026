@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 400" width="900" height="400" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif">
+  <title>Qué guardar y qué no en el navegador</title>
+  <desc>Datos adecuados para localStorage, como preferencias o borradores, frente a datos que nunca deben guardarse, como contraseñas o datos bancarios.</desc>
+  <rect width="900" height="400" rx="16" fill="#ffffff"/>
+  <text x="450" y="42" text-anchor="middle" font-size="22" font-weight="700" fill="#1e293b">¿Esto lo guardo en el navegador?</text>
+  <text x="450" y="66" text-anchor="middle" font-size="14" fill="#64748b">Pensad en localStorage como una libreta que se queda encima de la mesa del usuario</text>
+
+  <!-- sí -->
+  <rect x="24" y="88" width="414" height="230" rx="14" fill="#f0fdf4" stroke="#22c55e" stroke-width="2"/>
+  <text x="44" y="120" font-size="16" font-weight="700" fill="#15803d">✔ Sí: comodidades</text>
+  <g font-size="13.5" fill="#1e293b">
+    <text x="44" y="154">🎨 Tema claro u oscuro, tamaño de letra</text>
+    <text x="44" y="182">🌐 Idioma preferido</text>
+    <text x="44" y="210">📝 El borrador de un mensaje</text>
+    <text x="44" y="238">🛒 Los productos del carrito</text>
+    <text x="44" y="266">✅ Una lista de tareas personal</text>
+    <text x="44" y="294">🎮 La partida o la puntuación de un juego</text>
+  </g>
+
+  <!-- no -->
+  <rect x="462" y="88" width="414" height="230" rx="14" fill="#fef2f2" stroke="#dc2626" stroke-width="2"/>
+  <text x="482" y="120" font-size="16" font-weight="700" fill="#b91c1c">✘ Nunca: secretos</text>
+  <g font-size="13.5" fill="#1e293b">
+    <text x="482" y="154">🔑 Contraseñas</text>
+    <text x="482" y="182">💳 Números de tarjeta o cuentas bancarias</text>
+    <text x="482" y="210">🪪 DNI, datos médicos u otros datos sensibles</text>
+    <text x="482" y="238">🎟️ Claves de acceso a servicios</text>
+    <text x="482" y="266">🏷️ Precios «oficiales» que luego se cobran</text>
+  </g>
+
+  <rect x="24" y="330" width="852" height="56" rx="12" fill="#f8fafc" stroke="#cbd5e1"/>
+  <text x="44" y="354" font-size="13" fill="#334155">⚠ Lo que se guarda aquí NO está cifrado: lo puede leer cualquier persona que use ese navegador, y cualquier código</text>
+  <text x="44" y="374" font-size="13" fill="#334155">JavaScript que se ejecute en vuestra página. Y el usuario puede verlo, cambiarlo o borrarlo desde las herramientas de desarrollo.</text>
+</svg>

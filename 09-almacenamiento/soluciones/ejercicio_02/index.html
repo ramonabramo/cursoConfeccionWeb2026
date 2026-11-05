@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 02 · Recuerda mi nombre (Solución)</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <main class="contenedor">
+        <h1>👋 Recuerda mi nombre</h1>
+
+        <section id="zonaPregunta">
+            <p class="descripcion">Es tu primera visita. ¿Cómo te llamas?</p>
+            <form id="formNombre">
+                <div class="fila-controles">
+                    <input type="text" id="nombre" name="nombre" placeholder="Tu nombre">
+                    <button type="submit" class="btn">Recordarme</button>
+                </div>
+            </form>
+        </section>
+
+        <section id="zonaSaludo" hidden>
+            <p id="saludo" class="salida">…</p>
+            <button id="btnOlvidar" class="btn btn--secundario">Olvidarme</button>
+        </section>
+
+        <p class="ayuda">💡 Escribid vuestro nombre, recargad la página (F5) e incluso cerrad la pestaña y volved a abrirla.</p>
+
+        <div class="firma">Curso de JavaScript en el cliente · Realizado por Ramón Abramo</div>
+    </main>
+    <script src="app.js"></script>
+</body>
+
+</html>

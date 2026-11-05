@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 01 · Mi primer almacén (Solución)</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <main class="contenedor">
+        <h1>🗄️ Mi primer almacén</h1>
+        <p class="descripcion">Un pequeño laboratorio para guardar, leer y borrar pares clave → valor en <code>localStorage</code>.</p>
+
+        <div class="fila-controles">
+            <input type="text" id="clave" placeholder="Clave, por ejemplo: color">
+            <input type="text" id="valor" placeholder="Valor, por ejemplo: azul">
+        </div>
+        <div class="botonera">
+            <button id="btnGuardar" class="btn">Guardar</button>
+            <button id="btnLeer" class="btn btn--secundario">Leer</button>
+            <button id="btnBorrar" class="btn btn--secundario">Borrar esta clave</button>
+            <button id="btnVaciar" class="btn btn--peligro">Vaciar todo</button>
+        </div>
+
+        <p id="mensaje" class="salida">…</p>
+
+        <h2 id="tituloLista">Contenido del almacén</h2>
+        <ul id="lista" class="lista"></ul>
+
+        <p class="ayuda">💡 Abrid las herramientas de desarrollo → pestaña <strong>Aplicación</strong> (Chrome/Edge) o <strong>Almacenamiento</strong> (Firefox) → <em>Local Storage</em> para ver lo que se guarda.</p>
+
+        <div class="firma">Curso de JavaScript en el cliente · Realizado por Ramón Abramo</div>
+    </main>
+    <script src="app.js"></script>
+</body>
+
+</html>

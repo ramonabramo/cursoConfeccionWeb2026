@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 07 · Lista de tareas que persiste</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <main class="contenedor">
+        <h1>✅ Lista de tareas que persiste</h1>
+        <p class="descripcion">La lista del bloque 07, ahora con memoria. Recargad cuando queráis: las tareas y el filtro seguirán ahí.</p>
+
+        <form id="formTarea" class="fila-controles">
+            <input type="text" id="nuevaTarea" placeholder="Nueva tarea…" aria-label="Nueva tarea">
+            <button type="submit" class="btn">Añadir</button>
+        </form>
+
+        <div id="filtros" class="botonera">
+            <button class="btn" data-filtro="todas">Todas</button>
+            <button class="btn" data-filtro="pendientes">Pendientes</button>
+            <button class="btn" data-filtro="hechas">Hechas</button>
+            <button id="btnLimpiar" class="btn btn--secundario">Borrar completadas</button>
+        </div>
+
+        <ul id="lista" class="lista"></ul>
+        <p id="resumen" class="salida salida--secundaria">…</p>
+
+        <div class="firma">Curso de JavaScript en el cliente · Realizado por Ramón Abramo</div>
+    </main>
+    <script src="app.js"></script>
+</body>
+
+</html>

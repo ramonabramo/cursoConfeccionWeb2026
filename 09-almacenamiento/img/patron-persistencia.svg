@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 400" width="900" height="400" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif">
+  <title>El patrón de persistencia</title>
+  <desc>Al cargar la página se lee el estado guardado; cada evento cambia el estado, lo guarda y repinta la página.</desc>
+  <rect width="900" height="400" rx="16" fill="#ffffff"/>
+  <text x="450" y="42" text-anchor="middle" font-size="22" font-weight="700" fill="#1e293b">Cargar al empezar, guardar en cada cambio</text>
+  <text x="450" y="66" text-anchor="middle" font-size="14" fill="#64748b">El patrón estado → renderizar del bloque 07, con una pieza más: guardar()</text>
+
+  <defs>
+    <marker id="f" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#64748b"/></marker>
+  </defs>
+
+  <!-- arranque -->
+  <rect x="24" y="96" width="250" height="120" rx="14" fill="#f5f3ff" stroke="#a78bfa" stroke-width="2"/>
+  <text x="44" y="124" font-size="13" font-weight="700" fill="#5b21b6">① AL CARGAR LA PÁGINA</text>
+  <text x="44" y="150" font-family="Consolas, Menlo, monospace" font-size="12.5" fill="#1e293b">let tareas = cargar();</text>
+  <text x="44" y="176" font-size="12" fill="#475569">Si hay algo guardado, lo uso;</text>
+  <text x="44" y="194" font-size="12" fill="#475569">si no, empiezo con un valor inicial.</text>
+
+  <line x1="278" y1="156" x2="330" y2="156" stroke="#64748b" stroke-width="2.5" marker-end="url(#f)"/>
+
+  <!-- ciclo -->
+  <rect x="336" y="96" width="200" height="120" rx="14" fill="#fefce8" stroke="#ca8a04" stroke-width="2"/>
+  <text x="436" y="128" text-anchor="middle" font-size="14" font-weight="700" fill="#854d0e">ESTADO</text>
+  <text x="436" y="152" text-anchor="middle" font-family="Consolas, Menlo, monospace" font-size="12.5" fill="#1e293b">tareas = [ … ]</text>
+  <text x="436" y="180" text-anchor="middle" font-size="12" fill="#475569">la única fuente</text>
+  <text x="436" y="196" text-anchor="middle" font-size="12" fill="#475569">de la verdad</text>
+
+  <line x1="540" y1="156" x2="606" y2="156" stroke="#64748b" stroke-width="2.5" marker-end="url(#f)"/>
+  <text x="572" y="146" text-anchor="middle" font-size="11" fill="#64748b">pinta</text>
+
+  <rect x="612" y="96" width="264" height="120" rx="14" fill="#f0fdf4" stroke="#22c55e" stroke-width="2"/>
+  <text x="632" y="124" font-size="13" font-weight="700" fill="#15803d">② renderizar()</text>
+  <text x="632" y="150" font-size="12.5" fill="#334155">La página muestra el estado.</text>
+  <text x="632" y="174" font-size="12.5" fill="#334155">El usuario hace clic, escribe…</text>
+
+  <!-- evento -->
+  <path d="M744,220 L744,262" stroke="#64748b" stroke-width="2.5" fill="none" marker-end="url(#f)"/>
+  <rect x="24" y="268" width="852" height="116" rx="14" fill="#eff6ff" stroke="#3b82f6" stroke-width="2"/>
+  <text x="44" y="296" font-size="13" font-weight="700" fill="#1d4ed8">③ EN CADA EVENTO</text>
+  <rect x="44" y="308" width="430" height="68" rx="8" fill="#1e293b"/>
+  <g font-family="Consolas, Menlo, monospace" font-size="12.5" fill="#e2e8f0">
+    <text x="56" y="332">tareas.push(nueva);   <tspan fill="#94a3b8">// 1. cambiar el estado</tspan></text>
+    <text x="56" y="350">guardar();            <tspan fill="#94a3b8">// 2. guardarlo</tspan></text>
+    <text x="56" y="366">renderizar();         <tspan fill="#94a3b8">// 3. repintar</tspan></text>
+  </g>
+  <text x="500" y="324" font-size="12.5" fill="#334155">guardar() escribe TODO el estado en</text>
+  <text x="500" y="342" font-size="12.5" fill="#334155">localStorage con JSON.stringify.</text>
+  <text x="500" y="366" font-size="12.5" font-weight="700" fill="#1d4ed8">Recargad cuando queráis: nada se pierde.</text>
+  <path d="M480,280 C440,240 450,230 470,222" stroke="#64748b" stroke-width="2" fill="none" marker-end="url(#f)"/>
+</svg>

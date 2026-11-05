@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 03 · Preferencias de tema y tamaño de letra (Solución)</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <main class="contenedor">
+        <h1>🎨 Preferencias</h1>
+        <p class="descripcion">Elegid tema y tamaño de letra. La próxima vez que entréis, la página los recordará.</p>
+
+        <div class="campo">
+            <label for="tema">Tema</label>
+            <select id="tema">
+                <option value="claro">☀️ Claro</option>
+                <option value="oscuro">🌙 Oscuro</option>
+            </select>
+        </div>
+        <div class="campo">
+            <label for="tamano">Tamaño de letra</label>
+            <select id="tamano">
+                <option value="pequeno">Pequeño</option>
+                <option value="normal" selected>Normal</option>
+                <option value="grande">Grande</option>
+            </select>
+        </div>
+
+        <p id="estado" class="estado-guardado">…</p>
+
+        <p class="descripcion">Este párrafo es de relleno para que se note el cambio de tamaño. Probad a cambiar las opciones, recargad y fijaos en que todo sigue como lo dejasteis.</p>
+
+        <div class="firma">Curso de JavaScript en el cliente · Realizado por Ramón Abramo</div>
+    </main>
+    <script src="app.js"></script>
+</body>
+
+</html>

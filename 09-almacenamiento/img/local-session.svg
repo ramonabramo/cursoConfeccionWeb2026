@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 420" width="900" height="420" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif">
+  <title>localStorage frente a sessionStorage</title>
+  <desc>localStorage guarda los datos sin fecha de caducidad y los comparte entre pestañas del mismo origen; sessionStorage solo dura mientras la pestaña está abierta y es exclusivo de esa pestaña. Las dos usan los mismos métodos.</desc>
+  <rect width="900" height="420" rx="16" fill="#ffffff"/>
+  <text x="450" y="42" text-anchor="middle" font-size="22" font-weight="700" fill="#1e293b">Dos almacenes, la misma forma de usarlos</text>
+  <text x="450" y="66" text-anchor="middle" font-size="14" fill="#64748b">Un almacén de pares clave → valor que vive en el navegador del usuario</text>
+
+  <!-- local -->
+  <rect x="24" y="88" width="414" height="214" rx="14" fill="#eff6ff" stroke="#3b82f6" stroke-width="2"/>
+  <text x="44" y="120" font-family="Consolas, Menlo, monospace" font-size="18" font-weight="700" fill="#1d4ed8">localStorage</text>
+  <text x="44" y="144" font-size="13" font-weight="600" fill="#1e3a8a">«Recuérdalo hasta que lo borre»</text>
+  <g font-size="13" fill="#334155">
+    <text x="44" y="176">⏳ No caduca: sobrevive a recargar, cerrar</text>
+    <text x="44" y="194">    la pestaña y reiniciar el navegador</text>
+    <text x="44" y="222">🗂️ Compartido por todas las pestañas</text>
+    <text x="44" y="240">    del mismo origen</text>
+    <text x="44" y="268">🎯 Tema, idioma, carrito, lista de tareas,</text>
+    <text x="44" y="286">    progreso de un juego…</text>
+  </g>
+
+  <!-- session -->
+  <rect x="462" y="88" width="414" height="214" rx="14" fill="#fff7ed" stroke="#ea580c" stroke-width="2"/>
+  <text x="482" y="120" font-family="Consolas, Menlo, monospace" font-size="18" font-weight="700" fill="#c2410c">sessionStorage</text>
+  <text x="482" y="144" font-size="13" font-weight="600" fill="#9a3412">«Recuérdalo solo en esta pestaña»</text>
+  <g font-size="13" fill="#334155">
+    <text x="482" y="176">⏳ Dura mientras la pestaña esté abierta;</text>
+    <text x="482" y="194">    sobrevive a recargar la página</text>
+    <text x="482" y="222">🗂️ Exclusivo de esa pestaña: otra pestaña</text>
+    <text x="482" y="240">    con la misma web tiene el suyo</text>
+    <text x="482" y="268">🎯 El paso de un asistente, un filtro</text>
+    <text x="482" y="286">    temporal, datos de un solo uso…</text>
+  </g>
+
+  <!-- api -->
+  <rect x="24" y="316" width="852" height="88" rx="12" fill="#1e293b"/>
+  <text x="44" y="342" font-size="12" font-weight="700" fill="#94a3b8">LOS MISMOS MÉTODOS EN LOS DOS</text>
+  <g font-family="Consolas, Menlo, monospace" font-size="13" fill="#e2e8f0">
+    <text x="44" y="368">setItem(<tspan fill="#86efac">'tema'</tspan>, <tspan fill="#86efac">'oscuro'</tspan>)</text>
+    <text x="44" y="390">getItem(<tspan fill="#86efac">'tema'</tspan>)   <tspan fill="#94a3b8">// 'oscuro' o null</tspan></text>
+    <text x="470" y="368">removeItem(<tspan fill="#86efac">'tema'</tspan>)</text>
+    <text x="470" y="390">clear()   ·   length   ·   key(i)</text>
+  </g>
+</svg>

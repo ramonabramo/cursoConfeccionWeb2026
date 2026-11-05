@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 420" width="900" height="420" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif">
+  <title>El almacenamiento solo guarda texto</title>
+  <desc>Lo que se guarda sin convertir llega como texto, y un objeto se convierte en la cadena [object Object]; con JSON.stringify al guardar y JSON.parse al leer, los datos vuelven intactos.</desc>
+  <rect width="900" height="420" rx="16" fill="#ffffff"/>
+  <text x="450" y="42" text-anchor="middle" font-size="22" font-weight="700" fill="#1e293b">El almacén solo entiende texto</text>
+  <text x="450" y="66" text-anchor="middle" font-size="14" fill="#64748b">Todo lo que no sea texto se convierte… y no siempre como esperáis</text>
+
+  <defs>
+    <marker id="f" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#64748b"/></marker>
+  </defs>
+
+  <!-- sin JSON -->
+  <rect x="24" y="88" width="852" height="158" rx="14" fill="#fef2f2" stroke="#fca5a5"/>
+  <text x="44" y="116" font-size="14" font-weight="700" fill="#b91c1c">✘ Guardar sin convertir</text>
+  <g font-size="13">
+    <text x="44" y="146" font-weight="700" fill="#475569">Guardo</text>
+    <text x="350" y="146" font-weight="700" fill="#475569">Leo con getItem</text>
+    <text x="620" y="146" font-weight="700" fill="#475569">Problema</text>
+    <g font-family="Consolas, Menlo, monospace">
+      <text x="44" y="172" fill="#1e293b">5</text><text x="350" y="172" fill="#c2410c">'5'</text>
+      <text x="44" y="196" fill="#1e293b">false</text><text x="350" y="196" fill="#c2410c">'false'</text>
+      <text x="44" y="220" fill="#1e293b">{ nombre: 'Aria' }</text><text x="350" y="220" fill="#c2410c">'[object Object]'</text>
+    </g>
+    <text x="620" y="172" fill="#334155">'5' + 1 → '51'</text>
+    <text x="620" y="196" fill="#334155">'false' es truthy: ¡el if entra!</text>
+    <text x="620" y="220" fill="#b91c1c" font-weight="700">los datos se han perdido</text>
+  </g>
+
+  <!-- con JSON -->
+  <rect x="24" y="262" width="852" height="142" rx="14" fill="#f0fdf4" stroke="#22c55e" stroke-width="2"/>
+  <text x="44" y="290" font-size="14" font-weight="700" fill="#15803d">✔ JSON a la ida y a la vuelta</text>
+  <g font-family="Consolas, Menlo, monospace" font-size="13">
+    <rect x="44" y="306" width="180" height="40" rx="8" fill="#ffffff" stroke="#16a34a"/>
+    <text x="134" y="331" text-anchor="middle" fill="#1e293b">{ nombre: 'Aria' }</text>
+    <line x1="228" y1="326" x2="282" y2="326" stroke="#64748b" stroke-width="2" marker-end="url(#f)"/>
+    <text x="255" y="318" text-anchor="middle" font-size="11" fill="#15803d">stringify</text>
+    <rect x="288" y="306" width="250" height="40" rx="8" fill="#fef9c3" stroke="#ca8a04"/>
+    <text x="413" y="331" text-anchor="middle" fill="#854d0e">'{"nombre":"Aria"}'</text>
+    <line x1="542" y1="326" x2="596" y2="326" stroke="#64748b" stroke-width="2" marker-end="url(#f)"/>
+    <text x="569" y="318" text-anchor="middle" font-size="11" fill="#15803d">parse</text>
+    <rect x="602" y="306" width="180" height="40" rx="8" fill="#ffffff" stroke="#16a34a"/>
+    <text x="692" y="331" text-anchor="middle" fill="#1e293b">{ nombre: 'Aria' }</text>
+  </g>
+  <text x="44" y="376" font-size="12.5" fill="#334155">Guardar: <tspan font-family="Consolas, Menlo, monospace">localStorage.setItem('jugador', JSON.stringify(jugador))</tspan></text>
+  <text x="44" y="394" font-size="12.5" fill="#334155">Leer:     <tspan font-family="Consolas, Menlo, monospace">JSON.parse(localStorage.getItem('jugador'))</tspan>   ← el texto del centro es lo que veis en DevTools</text>
+</svg>

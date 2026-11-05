@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 08 · Un carrito que sobrevive</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <main class="contenedor">
+        <h1>🛒 Un carrito que sobrevive</h1>
+        <p class="descripcion">Añadid productos, cerrad la pestaña y volved. Abrid la página en dos pestañas y veréis que se sincronizan.</p>
+
+        <div id="catalogo" class="rejilla"></div>
+
+        <h2>Tu carrito</h2>
+        <ul id="carrito" class="lista"></ul>
+        <p id="total" class="carrito">Total: 0.00 €</p>
+        <div class="botonera">
+            <button id="btnVaciar" class="btn btn--peligro">Vaciar carrito</button>
+        </div>
+
+        <p class="ayuda">💡 Para poner a prueba la carga segura, id a las herramientas de desarrollo y cambiad a mano el valor de <code>curso-js:b09e08:carrito</code> por algo sin sentido, como <code>hola</code>. Después recargad.</p>
+
+        <div class="firma">Curso de JavaScript en el cliente · Realizado por Ramón Abramo</div>
+    </main>
+    <script src="app.js"></script>
+</body>
+
+</html>
