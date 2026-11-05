@@ -223,7 +223,46 @@ Las comillas invertidas están en la tecla que hay a la derecha de la `P` en el 
 
 ---
 
-## 7. La plantilla de trabajo en este bloque
+<!-- ampliación -->
+## 7. Un primer vistazo a `style`: cambiar el aspecto
+
+Hasta ahora JavaScript cambiaba **textos**. También puede cambiar el **aspecto** de un elemento, a través de su propiedad `style`, que da acceso a sus estilos en línea [17]:
+
+```javascript
+const caja = document.querySelector('#caja');
+
+caja.style.width = '200px';            // ancho
+caja.style.height = `${alto}px`;       // alto, con una plantilla de texto
+caja.style.backgroundColor = 'tomato'; // color de fondo
+```
+
+Tres detalles que conviene tener claros desde el principio:
+
+| Detalle | Por qué |
+| --- | --- |
+| Las propiedades se escriben en *camelCase* | En CSS es `background-color`; en JavaScript, `backgroundColor`, porque el guion se leería como una resta |
+| El valor es **un texto con su unidad** | `'200px'`, no `200`. Sin unidad, el navegador ignora el cambio |
+| Se aplica como estilo en línea | Equivale a escribir `style="width: 200px"` en la etiqueta: gana a las reglas del `style.css` |
+
+En el bloque 06 veréis una forma mejor de cambiar el aspecto, con clases (`classList`). Por ahora, `style` os permite ver enseguida que JavaScript también manda en el diseño.
+
+### 7.1. HTML generado con plantillas de texto
+
+Cuando lo que hay que pintar son varias etiquetas, se puede construir el HTML en un texto con comillas invertidas y asignarlo con `innerHTML` [15] [18]:
+
+```javascript
+resultado.innerHTML = `
+    <ul>
+        <li>Área: <strong>${area}</strong></li>
+        <li>Perímetro: <strong>${perimetro}</strong></li>
+    </ul>`;
+```
+
+Recordad lo que visteis en el ejercicio 05: `innerHTML` **interpreta** las etiquetas. Usadlo solo con datos que controláis vosotros, como estos números calculados; nunca con un texto que haya escrito el usuario.
+
+---
+
+## 8. La plantilla de trabajo en este bloque
 
 En este bloque los programas se ejecutan **de arriba abajo, una sola vez**, al cargar la página. Todavía no hay eventos, así que la plantilla de cada `app.js` es la versión corta:
 
@@ -248,7 +287,7 @@ En el bloque 07 aparecerán los escuchadores de eventos y la plantilla crecerá 
 
 ---
 
-## 8. Ejercicios
+## 9. Ejercicios
 
 Cada ejercicio es una carpeta independiente con `index.html`, `style.css` y `app.js`. El enunciado está al principio de `app.js`. Abrid siempre la consola antes de empezar.
 
@@ -262,6 +301,9 @@ Cada ejercicio es una carpeta independiente con `index.html`, `style.css` y `app
 | 06 | [Mi primera entrada con prompt()](ejercicios/ejercicio_06/) | `prompt()`, plantillas de texto, `document.title`, el caso `null` | [Ver](soluciones/ejercicio_06/) |
 | 07 | [prompt() siempre devuelve texto](ejercicios/ejercicio_07/) | `typeof`, `Number()`, concatenar frente a sumar, `NaN` | [Ver](soluciones/ejercicio_07/) |
 | 08 | [Caza de errores en la consola](ejercicios/ejercicio_08/) | Leer `TypeError` y `ReferenceError` y corregirlos | [Ver](soluciones/ejercicio_08/) |
+| 09 | [Rellenar una tabla con `prompt()`](ejercicios/ejercicio_09/) | Varias entradas, `textContent` en celdas, el `null` de Cancelar | [Ver](soluciones/ejercicio_09/) |
+| 10 | [Una caja a medida](ejercicios/ejercicio_10/) | `style.width`, `style.height`, `style.backgroundColor`, unidades | [Ver](soluciones/ejercicio_10/) |
+| 11 | [Rectángulo: HTML con plantillas](ejercicios/ejercicio_11/) | `Number()`, cálculos, `innerHTML` con una plantilla de varias líneas | [Ver](soluciones/ejercicio_11/) |
 
 Recordad el método: primero lo intentáis vosotros, con la consola abierta. La solución, después. Cada carpeta de solución tiene un `README.md` donde os explico el porqué de cada línea.
 
@@ -287,3 +329,5 @@ Recordad el método: primero lo intentáis vosotros, con la consola abierta. La 
 14. [Node: textContent property (MDN Web Docs)](https://developer.mozilla.org/en-US/docs/Web/API/Node/textContent)
 15. [Element: innerHTML property — Security considerations (MDN Web Docs)](https://developer.mozilla.org/en-US/docs/Web/API/Element/innerHTML)
 16. [Plantillas literales (plantillas de cadenas) (MDN Web Docs)](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Template_literals)
+17. [HTMLElement: style property (MDN Web Docs)](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/style)
+18. [Template literals (MDN Web Docs)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals)

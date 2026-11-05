@@ -271,7 +271,64 @@ total.toFixed(2)   // "47.15"
 
 ---
 
-## 8. La plantilla de trabajo en este bloque
+<!-- ampliación -->
+## 8. Trabajar con textos
+
+Los textos (`string`) no son solo para mostrarlos: traen de serie una colección de métodos para medirlos, limpiarlos y buscar dentro de ellos. Ninguno modifica el texto original: **todos devuelven uno nuevo** [22].
+
+| Método o propiedad | Qué hace | Ejemplo | Resultado |
+| --- | --- | --- | --- |
+| `.length` | Cuántos caracteres tiene [23] | `'Hola'.length` | `4` |
+| `.trim()` | Quita los espacios del principio y del final [22] | `'  Ana  '.trim()` | `'Ana'` |
+| `.toUpperCase()` | Todo en mayúsculas [24] | `'ana'.toUpperCase()` | `'ANA'` |
+| `.toLowerCase()` | Todo en minúsculas [25] | `'ANA@MAIL.COM'.toLowerCase()` | `'ana@mail.com'` |
+| `.includes(t)` | ¿Contiene ese texto? [26] | `'JavaScript'.includes('Script')` | `true` |
+| `.startsWith(t)` | ¿Empieza por ese texto? [27] | `'https://…'.startsWith('https')` | `true` |
+| `.at(i)` | El carácter de la posición `i`; con negativos, desde el final [28] | `'Hola'.at(-1)` | `'a'` |
+| `.slice(a, b)` | El trozo desde `a` hasta antes de `b` [29] | `'JavaScript'.slice(0, 4)` | `'Java'` |
+| `.replaceAll(a, b)` | Cambia todas las apariciones [30] | `'1.000.000'.replaceAll('.', '')` | `'1000000'` |
+| `.padStart(n, r)` | Rellena por la izquierda hasta `n` caracteres [31] | `'7'.padStart(2, '0')` | `'07'` |
+
+Las posiciones empiezan en **0**: en `'Hola'`, la `H` es la posición 0 y la `a`, la 3. Y las búsquedas **distinguen mayúsculas**: `'JavaScript'.includes('script')` es `false`. Cuando comparéis lo que escribe el usuario, pasadlo antes a minúsculas.
+
+### 8.1. Encadenar métodos
+
+Como cada método devuelve un texto nuevo, se pueden encadenar, de izquierda a derecha:
+
+```javascript
+const email = '   Ana.Garcia@Correo.COM  ';
+const limpio = email.trim().toLowerCase();   // 'ana.garcia@correo.com'
+```
+
+### 8.2. Poner en mayúscula la primera letra
+
+No hay un método para eso, pero se construye con tres:
+
+```javascript
+const nombre = 'aNA';
+const bonito = nombre.at(0).toUpperCase() + nombre.slice(1).toLowerCase();   // 'Ana'
+```
+
+---
+
+## 9. Intercambiar dos valores
+
+Un clásico de la programación: tenéis un valor en `a` y otro en `b`, y queréis cambiarlos de sitio. Si escribís `a = b`, el valor de `a` se pierde para siempre. Hace falta un **tercer vaso**:
+
+```javascript
+let a = 'café';
+let b = 'té';
+
+const auxiliar = a;   // 1. guardo a en un vaso vacío
+a = b;                // 2. ahora puedo machacar a
+b = auxiliar;         // 3. y recupero lo que tenía a
+```
+
+Pensad en dos vasos llenos: para intercambiar su contenido necesitáis un tercero. En el bloque 05 veréis una forma de hacerlo en una sola línea, con la desestructuración: `[a, b] = [b, a]`.
+
+---
+
+## 10. La plantilla de trabajo en este bloque
 
 Seguimos con programas lineales, igual que en el bloque 01: se ejecutan una vez, de arriba abajo. La plantilla es la misma:
 
@@ -296,7 +353,7 @@ Fijaos en cómo encaja todo lo de este bloque: `const` por defecto, nombres en *
 
 ---
 
-## 9. Ejercicios
+## 11. Ejercicios
 
 | Nº | Ejercicio | Qué practicáis | Solución |
 | --- | --- | --- | --- |
@@ -308,6 +365,10 @@ Fijaos en cómo encaja todo lo de este bloque: `const` por defecto, nombres en *
 | 06 | [Laboratorio de conversiones](ejercicios/ejercicio_06/) | `Number()`, `parseInt()`, `parseFloat()`, `String()` | [Ver](soluciones/ejercicio_06/) |
 | 07 | [== frente a ===](ejercicios/ejercicio_07/) | Igualdad débil y estricta, el caso de `NaN` | [Ver](soluciones/ejercicio_07/) |
 | 08 | [Dividir la cuenta del restaurante](ejercicios/ejercicio_08/) | `Math.ceil`, redondeo al céntimo, `Math.random()` | [Ver](soluciones/ejercicio_08/) |
+| 09 | [Laboratorio de texto](ejercicios/ejercicio_09/) | `length`, `trim`, mayúsculas, `includes`, `at`, `slice`, `replaceAll` | [Ver](soluciones/ejercicio_09/) |
+| 10 | [Datos de registro limpios](ejercicios/ejercicio_10/) | Encadenar métodos, mayúscula inicial, `padStart` | [Ver](soluciones/ejercicio_10/) |
+| 11 | [Intercambiar dos vasos](ejercicios/ejercicio_11/) | La variable auxiliar, `let` frente a `const` | [Ver](soluciones/ejercicio_11/) |
+| 12 | [Geometría del círculo y la esfera](ejercicios/ejercicio_12/) | `Math.PI`, el operador `**`, `toFixed` | [Ver](soluciones/ejercicio_12/) |
 
 Lo de siempre: consola abierta, primero vosotros y la solución después.
 
@@ -338,3 +399,13 @@ Lo de siempre: consola abierta, primero vosotros y la solución después.
 19. [Math (MDN Web Docs)](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Math)
 20. [Math.random() (MDN Web Docs)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random)
 21. [Number.prototype.toFixed() (MDN Web Docs)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/toFixed)
+22. [String.prototype.trim() (MDN Web Docs)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/trim)
+23. [String: length (MDN Web Docs)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/length)
+24. [String.prototype.toUpperCase() (MDN Web Docs)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toUpperCase)
+25. [String.prototype.toLowerCase() (MDN Web Docs)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toLowerCase)
+26. [String.prototype.includes() (MDN Web Docs)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/includes)
+27. [String.prototype.startsWith() (MDN Web Docs)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/startsWith)
+28. [String.prototype.at() (MDN Web Docs)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/at)
+29. [String.prototype.slice() (MDN Web Docs)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/slice)
+30. [String.prototype.replaceAll() (MDN Web Docs)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replaceAll)
+31. [String.prototype.padStart() (MDN Web Docs)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/padStart)

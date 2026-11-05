@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 09 · Laboratorio de texto</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <main class="contenedor">
+        <h1>🔬 Laboratorio de texto</h1>
+        <p class="descripcion">Escribid una frase y mirad todo lo que JavaScript sabe hacer con ella.</p>
+
+        <table class="tabla">
+            <thead><tr><th>Operación</th><th>Resultado</th></tr></thead>
+            <tbody>
+                <tr><td><code>texto.length</code></td><td id="resLength" class="resultado">?</td></tr>
+                <tr><td><code>texto.trim()</code></td><td id="resTrim" class="resultado">?</td></tr>
+                <tr><td><code>limpio.length</code></td><td id="resLimpioLength" class="resultado">?</td></tr>
+                <tr><td><code>limpio.toUpperCase()</code></td><td id="resMayus" class="resultado">?</td></tr>
+                <tr><td><code>limpio.toLowerCase()</code></td><td id="resMinus" class="resultado">?</td></tr>
+                <tr><td><code>¿contiene «javascript»?</code></td><td id="resIncludes" class="resultado">?</td></tr>
+                <tr><td><code>limpio.at(0)</code> y <code>limpio.at(-1)</code></td><td id="resExtremos" class="resultado">?</td></tr>
+                <tr><td><code>limpio.slice(0, 10)</code></td><td id="resSlice" class="resultado">?</td></tr>
+                <tr><td><code>limpio.replaceAll(' ', '_')</code></td><td id="resReplace" class="resultado">?</td></tr>
+            </tbody>
+        </table>
+
+        <div class="firma">Curso de JavaScript en el cliente · Realizado por Ramón Abramo</div>
+    </main>
+    <script src="app.js"></script>
+</body>
+
+</html>

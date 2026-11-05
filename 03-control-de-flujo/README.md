@@ -131,7 +131,7 @@ if (!nombre) {
 
 ## 4. El operador ternario
 
-Es un `if…else` en miniatura que **devuelve un valor** [10]:
+Es un `if…else` en miniatura que **devuelve un valor** [9]:
 
 ```javascript
 condicion ? valorSiTrue : valorSiFalse
@@ -163,7 +163,7 @@ switch (numeroDia) {
 }
 ```
 
-Lo que tenéis que saber [11]:
+Lo que tenéis que saber [10]:
 
 - Compara con **igualdad estricta** (`===`). El texto `'1'` no encaja con `case 1`.
 - `default` se ejecuta si ningún `case` coincide. Es el `else` del `switch`.
@@ -191,7 +191,7 @@ switch (numeroDia) {
 
 ## 6. Repetir: los bucles
 
-Un bucle repite un bloque de código mientras se cumpla una condición [12]. JavaScript tiene varios; en este bloque vemos los tres básicos. En los bloques 05 y 06 aparecerán `for...of` y `forEach`, pensados para recorrer listas.
+Un bucle repite un bloque de código mientras se cumpla una condición [11]. JavaScript tiene varios; en este bloque vemos los tres básicos. En los bloques 05 y 06 aparecerán `for...of` y `forEach`, pensados para recorrer listas.
 
 ### 6.1. `for`: cuando sabéis cuántas vueltas
 
@@ -203,9 +203,9 @@ for (let i = 1; i <= 10; i++) {
 }
 ```
 
-La cabecera tiene tres partes separadas por punto y coma: la inicialización, que se ejecuta una vez; la condición, que se comprueba antes de cada vuelta; y la actualización, que se ejecuta al final de cada vuelta [13].
+La cabecera tiene tres partes separadas por punto y coma: la inicialización, que se ejecuta una vez; la condición, que se comprueba antes de cada vuelta; y la actualización, que se ejecuta al final de cada vuelta [12].
 
-El contador se suele llamar `i` por tradición, pero podéis llamarlo como queráis. Y no solo sirve para contar: dentro del bucle lo podéis usar como dato.
+El contador se suele llamar `i` por tradición, pero podéis llamarlo como queráis. Y sirve para algo más que contar: dentro del bucle lo podéis usar como dato.
 
 ### 6.2. `while`: mientras se cumpla algo
 
@@ -217,7 +217,7 @@ while (!acertado) {
 }
 ```
 
-`while` comprueba la condición **antes** de cada vuelta y repite mientras sea verdadera [14]. Usadlo cuando **no sabéis cuántas vueltas** hará falta dar: hasta que el usuario acierte, hasta que escriba algo válido…
+`while` comprueba la condición **antes** de cada vuelta y repite mientras sea verdadera [13]. Usadlo cuando **no sabéis cuántas vueltas** hará falta dar: hasta que el usuario acierte, hasta que escriba algo válido…
 
 ### 6.3. `do...while`: al menos una vez
 
@@ -229,7 +229,7 @@ do {
 } while (numero !== 0);
 ```
 
-Igual que `while`, pero comprueba la condición **después** de cada vuelta. Por eso el cuerpo se ejecuta siempre al menos una vez [15]. Es la opción natural cuando primero tenéis que pedir el dato para poder decidir si seguís.
+Igual que `while`, pero comprueba la condición **después** de cada vuelta. Por eso el cuerpo se ejecuta siempre al menos una vez [14]. Es la opción natural cuando primero tenéis que pedir el dato para poder decidir si seguís.
 
 ### 6.4. ¿Cuál uso?
 
@@ -271,8 +271,8 @@ Casi todos los bucles útiles llevan alguno de estos dos patrones. Los dos se de
 
 | Instrucción | Qué hace | Analogía |
 | --- | --- | --- |
-| `break` | Termina el bucle y sigue en la línea de después [16] | Abandonar la carrera |
-| `continue` | Abandona la vuelta actual y pasa a la siguiente [17] | Saltarse una vuelta y seguir corriendo |
+| `break` | Termina el bucle y sigue en la línea de después [15] | Abandonar la carrera |
+| `continue` | Abandona la vuelta actual y pasa a la siguiente [16] | Saltarse una vuelta y seguir corriendo |
 
 ```javascript
 while (!acertado) {
@@ -293,7 +293,7 @@ while (!acertado) {
 
 ## 9. Cuidado con los bucles infinitos
 
-Un bucle cuya condición nunca llega a ser falsa no termina jamás. MDN lo dice sin rodeos: aseguraos de que la condición acabe siendo `false` [12].
+Un bucle cuya condición nunca llega a ser falsa no termina jamás. MDN lo dice sin rodeos: aseguraos de que la condición acabe siendo `false` [11].
 
 ```javascript
 let i = 1;
@@ -307,7 +307,66 @@ Si os pasa, la pestaña del navegador se quedará congelada. No es grave: cerrad
 
 ---
 
-## 10. La plantilla de trabajo en este bloque
+<!-- ampliación -->
+## 10. Condiciones anidadas o combinadas
+
+Muchas decisiones dependen de más de una condición. Hay dos formas de escribirlas:
+
+```javascript
+// ANIDADAS: un if dentro de otro
+if (edad >= 18) {
+    if (tieneEntrada) {
+        mensaje = 'Adelante';
+    }
+}
+
+// COMBINADAS: una sola condición con &&
+if (edad >= 18 && tieneEntrada) {
+    mensaje = 'Adelante';
+}
+```
+
+Las dos hacen lo mismo [17]. La combinada se lee mejor, y `&&` solo es verdadera si lo son las dos partes [18]. Usad la anidada cuando cada nivel tenga **su propio `else`**, es decir, cuando queráis dar un mensaje distinto según cuál de las condiciones falle:
+
+```javascript
+if (edad >= 18) {
+    if (tieneEntrada) {
+        mensaje = 'Adelante';
+    } else {
+        mensaje = 'Te falta la entrada';
+    }
+} else {
+    mensaje = 'Eres menor de edad';
+}
+```
+
+---
+
+## 11. Tramos: el orden de los `else if` importa
+
+Cuando un valor se clasifica por **tramos** (notas, tarifas por edad, descuentos por importe), una cadena de `else if` es la herramienta natural. JavaScript comprueba las condiciones **de arriba abajo** y se queda con la primera que se cumple [17]. Aprovechadlo:
+
+```javascript
+// de mayor a menor: cada condición ya sabe que las de arriba fallaron
+if (edad >= 65) {
+    precio = 15;          // jubilados
+} else if (edad >= 18) {
+    precio = 25;          // adultos: aquí ya sé que edad < 65
+} else if (edad >= 4) {
+    precio = 18;          // niños
+} else {
+    precio = 0;           // menores de 4 años
+}
+```
+
+Gracias al orden, no hace falta escribir `edad >= 18 && edad < 65`: si el programa llega a la segunda condición, es que la primera ha fallado. Si invertís el orden y empezáis por `edad >= 4`, **todos** los mayores de 4 años entrarían ahí, también los jubilados.
+
+> [!TIP]
+> Ordenad los tramos de un extremo al otro, sin saltar ninguno, y comprobad siempre los valores frontera: 3, 4, 17, 18, 64 y 65.
+
+---
+
+## 12. La plantilla de trabajo en este bloque
 
 Seguimos con programas lineales. La novedad es que ahora la sección de procesamiento incluye decisiones y bucles, y que **validamos los datos antes de usarlos**:
 
@@ -338,7 +397,7 @@ salida.textContent = mensaje;
 
 ---
 
-## 11. Ejercicios
+## 13. Ejercicios
 
 | Nº | Ejercicio | Qué practicáis | Solución |
 | --- | --- | --- | --- |
@@ -350,6 +409,10 @@ salida.textContent = mensaje;
 | 06 | [Adivina el número](ejercicios/ejercicio_06/) | `while`, `break`, `continue`, búsqueda binaria | [Ver](soluciones/ejercicio_06/) |
 | 07 | [Estadísticas hasta el cero](ejercicios/ejercicio_07/) | `do...while`, valor de parada, media y máximo | [Ver](soluciones/ejercicio_07/) |
 | 08 | [Fizz Buzz](ejercicios/ejercicio_08/) | `for` + `%` + escalera de `if` + contadores | [Ver](soluciones/ejercicio_08/) |
+| 09 | [El mayor de tres números](ejercicios/ejercicio_09/) | `if` anidados frente a `&&`, empates | [Ver](soluciones/ejercicio_09/) |
+| 10 | [Tarifas del parque de atracciones](ejercicios/ejercicio_10/) | Tramos con `else if`, el orden de las condiciones, valores frontera | [Ver](soluciones/ejercicio_10/) |
+| 11 | [Buenos días, buenas tardes](ejercicios/ejercicio_11/) | La hora con `getHours()`, tramos y `style` según el resultado | [Ver](soluciones/ejercicio_11/) |
+| 12 | [El PIN de tres intentos](ejercicios/ejercicio_12/) | Bucle con contador, `break` al acertar o cancelar, mensaje según cómo terminó | [Ver](soluciones/ejercicio_12/) |
 
 Con bucles, más que nunca: consola abierta y la pregunta de antes en la cabeza. ¿Qué hará que este bucle termine?
 
@@ -367,12 +430,13 @@ Con bucles, más que nunca: consola abierta y la pregunta de antes en la cabeza.
 6. [Window: confirm() method (MDN Web Docs)](https://developer.mozilla.org/en-US/docs/Web/API/Window/confirm)
 7. [Falsy (MDN Web Docs)](https://developer.mozilla.org/en-US/docs/Glossary/Falsy)
 8. [Truthy (MDN Web Docs)](https://developer.mozilla.org/es/docs/Glossary/Truthy)
-9. [String.prototype.trim() (MDN Web Docs)](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/String/trim)
-10. [Operador condicional (ternario) (MDN Web Docs)](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Operators/Conditional_operator)
-11. [switch (MDN Web Docs)](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Statements/switch)
-12. [Bucles e iteración (MDN Web Docs)](https://developer.mozilla.org/es/docs/Web/JavaScript/Guide/Loops_and_iteration)
-13. [for (MDN Web Docs)](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Statements/for)
-14. [while (MDN Web Docs)](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Statements/while)
-15. [do...while (MDN Web Docs)](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Statements/do...while)
-16. [break (MDN Web Docs)](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Statements/break)
-17. [continue (MDN Web Docs)](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Statements/continue)
+9. [Operador condicional (ternario) (MDN Web Docs)](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Operators/Conditional_operator)
+10. [switch (MDN Web Docs)](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Statements/switch)
+11. [Bucles e iteración (MDN Web Docs)](https://developer.mozilla.org/es/docs/Web/JavaScript/Guide/Loops_and_iteration)
+12. [for (MDN Web Docs)](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Statements/for)
+13. [while (MDN Web Docs)](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Statements/while)
+14. [do...while (MDN Web Docs)](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Statements/do...while)
+15. [break (MDN Web Docs)](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Statements/break)
+16. [continue (MDN Web Docs)](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Statements/continue)
+17. [if...else (MDN Web Docs)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/if...else)
+18. [Logical AND (&&) (MDN Web Docs)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Logical_AND)
