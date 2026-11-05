@@ -249,6 +249,8 @@ Todo lo de los apartados anteriores funciona igual. La única diferencia es que,
 
 ## 8. Desestructuración y *spread*
 
+![Desestructuración, resto y spread](img/desestructuracion-spread.svg)
+
 ### 8.1. Desestructuración: sacar datos
 
 Permite extraer valores de arrays o propiedades de objetos en variables, en una sola línea [27]:

@@ -233,6 +233,8 @@ Igual que `while`, pero comprueba la condición **después** de cada vuelta. Por
 
 ### 6.4. ¿Cuál uso?
 
+![for, while y do...while](img/tres-bucles.svg)
+
 ```mermaid
 flowchart TD
     A{"¿Sé cuántas vueltas<br/>hay que dar?"} -- Sí --> F["for"]

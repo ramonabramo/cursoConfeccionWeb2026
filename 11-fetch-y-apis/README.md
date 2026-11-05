@@ -175,6 +175,8 @@ Esto tiene tres consecuencias prácticas:
 
 ## 6. Pedir y enviar: `GET` y `POST`
 
+![GET frente a POST](img/get-post.svg)
+
 Si no le decís otra cosa, `fetch` hace una petición `GET`, el método para **pedir** datos sin cambiar nada en el servidor [16]. Muchas API aceptan parámetros en la URL para filtrar:
 
 ```javascript

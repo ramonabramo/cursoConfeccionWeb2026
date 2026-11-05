@@ -27,6 +27,8 @@ La solución es la **asincronía**: en lugar de esperar, se encarga la tarea al 
 
 ## 2. Temporizadores
 
+![setTimeout y setInterval](img/temporizadores.svg)
+
 ### 2.1. `setTimeout`: una vez, más tarde
 
 ```javascript
@@ -218,6 +220,8 @@ Convertir `setTimeout` en una promesa permite escribir secuencias con pausas sin
 ---
 
 ## 7. Una detrás de otra, o todas a la vez
+
+![Secuencial frente a Promise.all](img/secuencial-paralelo.svg)
 
 ```javascript
 // SECUENCIAL: cada una empieza cuando termina la anterior → suma de los tiempos

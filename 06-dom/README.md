@@ -82,6 +82,8 @@ Además, la `NodeList` de `querySelectorAll` es **estática**: una foto del mome
 
 ## 3. Moverse por el árbol
 
+![Moverse por el árbol del DOM](img/navegar-arbol.svg)
+
 Desde un elemento podéis llegar a sus vecinos sin volver a buscar:
 
 ```javascript

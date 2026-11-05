@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 440" width="900" height="440" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif">
+  <title>for, while y do...while</title>
+  <desc>for y while comprueban la condición antes de cada vuelta, así que pueden no ejecutarse nunca; do...while la comprueba después, así que el cuerpo se ejecuta al menos una vez. for se usa cuando se sabe cuántas vueltas hay que dar.</desc>
+  <rect width="900" height="440" rx="16" fill="#ffffff"/>
+  <text x="450" y="42" text-anchor="middle" font-size="22" font-weight="700" fill="#1e293b">Tres bucles: ¿cuándo se comprueba la condición?</text>
+  <text x="450" y="66" text-anchor="middle" font-size="14" fill="#64748b">La diferencia está en el orden: preguntar y luego hacer, o hacer y luego preguntar</text>
+
+  <defs>
+    <marker id="f" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#475569"/></marker>
+  </defs>
+
+  <g font-size="12.5">
+    <!-- for -->
+    <rect x="24" y="86" width="270" height="340" rx="14" fill="#eff6ff" stroke="#2563eb" stroke-width="2"/>
+    <text x="159" y="112" text-anchor="middle" font-family="Consolas, Menlo, monospace" font-size="17" font-weight="700" fill="#1d4ed8">for</text>
+    <rect x="74" y="128" width="170" height="30" rx="6" fill="#ffffff" stroke="#93c5fd"/>
+    <text x="159" y="148" text-anchor="middle" font-family="Consolas, Menlo, monospace" font-size="12">let i = 1</text>
+    <line x1="159" y1="160" x2="159" y2="176" stroke="#475569" stroke-width="2" marker-end="url(#f)"/>
+    <polygon points="159,180 224,206 159,232 94,206" fill="#fde68a" stroke="#ca8a04"/>
+    <text x="159" y="211" text-anchor="middle" font-family="Consolas, Menlo, monospace" font-size="12">i &lt;= 10 ?</text>
+    <line x1="159" y1="232" x2="159" y2="250" stroke="#475569" stroke-width="2" marker-end="url(#f)"/>
+    <text x="168" y="246" font-size="11" fill="#15803d">sí</text>
+    <rect x="74" y="254" width="170" height="30" rx="6" fill="#ffffff" stroke="#93c5fd"/>
+    <text x="159" y="274" text-anchor="middle">cuerpo</text>
+    <line x1="159" y1="286" x2="159" y2="302" stroke="#475569" stroke-width="2" marker-end="url(#f)"/>
+    <rect x="74" y="306" width="170" height="30" rx="6" fill="#ffffff" stroke="#93c5fd"/>
+    <text x="159" y="326" text-anchor="middle" font-family="Consolas, Menlo, monospace" font-size="12">i++</text>
+    <path d="M 74 321 L 50 321 L 50 206 L 90 206" fill="none" stroke="#475569" stroke-width="2" marker-end="url(#f)"/>
+    <path d="M 224 206 L 270 206 L 270 352" fill="none" stroke="#475569" stroke-width="2" marker-end="url(#f)"/>
+    <text x="230" y="196" font-size="11" fill="#b91c1c">no → fin</text>
+    <text x="159" y="384" text-anchor="middle" font-weight="700" fill="#1e293b">Sabéis cuántas vueltas</text>
+    <text x="159" y="404" text-anchor="middle" fill="#475569">contar de 1 a 10, recorrer</text>
+
+    <!-- while -->
+    <rect x="314" y="86" width="270" height="340" rx="14" fill="#fefce8" stroke="#ca8a04" stroke-width="2"/>
+    <text x="449" y="112" text-anchor="middle" font-family="Consolas, Menlo, monospace" font-size="17" font-weight="700" fill="#854d0e">while</text>
+    <polygon points="449,140 524,170 449,200 374,170" fill="#fde68a" stroke="#ca8a04"/>
+    <text x="449" y="175" text-anchor="middle" font-family="Consolas, Menlo, monospace" font-size="12">¿condición?</text>
+    <line x1="449" y1="200" x2="449" y2="226" stroke="#475569" stroke-width="2" marker-end="url(#f)"/>
+    <text x="458" y="218" font-size="11" fill="#15803d">sí</text>
+    <rect x="364" y="230" width="170" height="34" rx="6" fill="#ffffff" stroke="#fcd34d"/>
+    <text x="449" y="252" text-anchor="middle">cuerpo</text>
+    <path d="M 364 247 L 340 247 L 340 170 L 370 170" fill="none" stroke="#475569" stroke-width="2" marker-end="url(#f)"/>
+    <path d="M 524 170 L 566 170 L 566 300" fill="none" stroke="#475569" stroke-width="2" marker-end="url(#f)"/>
+    <text x="530" y="162" font-size="11" fill="#b91c1c">no → fin</text>
+    <text x="449" y="320" text-anchor="middle" font-size="12" fill="#854d0e" font-weight="700">Pregunta ANTES</text>
+    <text x="449" y="338" text-anchor="middle" font-size="12" fill="#854d0e">puede no ejecutarse nunca</text>
+    <text x="449" y="384" text-anchor="middle" font-weight="700" fill="#1e293b">No sabéis cuántas vueltas</text>
+    <text x="449" y="404" text-anchor="middle" fill="#475569">hasta que el usuario acierte</text>
+
+    <!-- do while -->
+    <rect x="604" y="86" width="272" height="340" rx="14" fill="#f0fdf4" stroke="#16a34a" stroke-width="2"/>
+    <text x="740" y="112" text-anchor="middle" font-family="Consolas, Menlo, monospace" font-size="17" font-weight="700" fill="#15803d">do...while</text>
+    <rect x="655" y="136" width="170" height="34" rx="6" fill="#ffffff" stroke="#86efac"/>
+    <text x="740" y="158" text-anchor="middle">cuerpo</text>
+    <line x1="740" y1="172" x2="740" y2="192" stroke="#475569" stroke-width="2" marker-end="url(#f)"/>
+    <polygon points="740,196 815,226 740,256 665,226" fill="#fde68a" stroke="#ca8a04"/>
+    <text x="740" y="231" text-anchor="middle" font-family="Consolas, Menlo, monospace" font-size="12">¿condición?</text>
+    <path d="M 665 226 L 630 226 L 630 153 L 651 153" fill="none" stroke="#475569" stroke-width="2" marker-end="url(#f)"/>
+    <text x="614" y="218" font-size="11" fill="#15803d">sí</text>
+    <line x1="740" y1="256" x2="740" y2="292" stroke="#475569" stroke-width="2" marker-end="url(#f)"/>
+    <text x="750" y="278" font-size="11" fill="#b91c1c">no → fin</text>
+    <text x="740" y="320" text-anchor="middle" font-size="12" fill="#15803d" font-weight="700">Pregunta DESPUÉS</text>
+    <text x="740" y="338" text-anchor="middle" font-size="12" fill="#15803d">se ejecuta al menos una vez</text>
+    <text x="740" y="384" text-anchor="middle" font-weight="700" fill="#1e293b">Primero pedir, luego decidir</text>
+    <text x="740" y="404" text-anchor="middle" fill="#475569">«escribe un número (0 = salir)»</text>
+  </g>
+</svg>

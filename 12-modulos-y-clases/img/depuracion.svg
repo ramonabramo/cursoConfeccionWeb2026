@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 430" width="900" height="430" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif">
+  <title>Depurar con un punto de interrupción</title>
+  <desc>En la pestaña Fuentes se pulsa el número de una línea para poner un punto de interrupción. Al llegar ahí, la ejecución se detiene: el panel Ámbito muestra el valor de cada variable y los botones permiten avanzar línea a línea con F10 o entrar en una función con F11.</desc>
+  <rect width="900" height="430" rx="16" fill="#ffffff"/>
+  <text x="450" y="42" text-anchor="middle" font-size="22" font-weight="700" fill="#1e293b">Depurar: detener el programa y mirar dentro</text>
+  <text x="450" y="66" text-anchor="middle" font-size="14" fill="#64748b">Herramientas de desarrollo → Fuentes (Sources) → app.js</text>
+
+  <!-- ventana -->
+  <rect x="24" y="86" width="852" height="270" rx="12" fill="#f8fafc" stroke="#cbd5e1"/>
+  <rect x="24" y="86" width="852" height="34" rx="12" fill="#e2e8f0"/>
+  <g font-size="12" fill="#334155">
+    <text x="44" y="108">Elementos</text><text x="124" y="108">Consola</text>
+    <rect x="186" y="94" width="66" height="22" rx="4" fill="#ffffff"/><text x="196" y="108" font-weight="700" fill="#1d4ed8">Fuentes</text>
+    <text x="268" y="108">Red</text><text x="310" y="108">Aplicación</text>
+  </g>
+  <!-- botones -->
+  <rect x="600" y="92" width="266" height="24" rx="4" fill="#ffffff" stroke="#cbd5e1"/>
+  <g font-size="11.5" fill="#334155">
+    <text x="610" y="109">▶ continuar</text><text x="696" y="109" font-weight="700" fill="#1d4ed8">⤼ F10</text><text x="752" y="109" font-weight="700" fill="#7c3aed">⤓ F11</text><text x="808" y="109">⤒ salir</text>
+  </g>
+
+  <!-- código -->
+  <rect x="40" y="132" width="520" height="210" rx="8" fill="#ffffff" stroke="#e2e8f0"/>
+  <g font-family="Consolas, Menlo, monospace" font-size="12.5">
+    <text x="56" y="158" fill="#94a3b8">11</text><text x="96" y="158" fill="#1e293b">function calcularMedia(notas) {</text>
+    <text x="56" y="184" fill="#94a3b8">12</text><text x="110" y="184" fill="#1e293b">let suma = 0;</text>
+    <rect x="44" y="194" width="512" height="24" fill="#dbeafe"/>
+    <circle cx="62" cy="206" r="8" fill="#2563eb"/><text x="62" y="210" text-anchor="middle" font-size="10" fill="#ffffff">13</text>
+    <text x="110" y="210" fill="#1e293b">for (let i = 0; i &lt;= notas.length; i++) {</text>
+    <text x="56" y="236" fill="#94a3b8">14</text><text x="124" y="236" fill="#1e293b">suma = suma + notas[i];</text>
+    <text x="56" y="262" fill="#94a3b8">15</text><text x="110" y="262" fill="#1e293b">}</text>
+    <text x="56" y="288" fill="#94a3b8">16</text><text x="110" y="288" fill="#1e293b">return suma / notas.length;</text>
+    <text x="56" y="314" fill="#94a3b8">17</text><text x="96" y="314" fill="#1e293b">}</text>
+  </g>
+  <text x="548" y="334" text-anchor="end" font-size="11.5" fill="#1d4ed8">⏸ Pausado en un punto de interrupción</text>
+
+  <!-- ámbito -->
+  <rect x="576" y="132" width="284" height="210" rx="8" fill="#ffffff" stroke="#e2e8f0"/>
+  <text x="590" y="156" font-size="13" font-weight="700" fill="#334155">Ámbito (Scope)</text>
+  <g font-family="Consolas, Menlo, monospace" font-size="12">
+    <text x="590" y="184" fill="#7c3aed">notas<tspan fill="#334155">: ['7', ' 4.5', ' 9', …]</tspan></text>
+    <text x="590" y="208" fill="#7c3aed">suma<tspan fill="#334155">: "07 4.5 9"</tspan></text>
+    <text x="590" y="232" fill="#7c3aed">i<tspan fill="#334155">: 3</tspan></text>
+  </g>
+  <text x="590" y="266" font-size="12" fill="#b91c1c" font-weight="700">👀 ¡Textos, no números!</text>
+  <text x="590" y="286" font-size="12" fill="#475569">Con mirar los valores, el fallo</text>
+  <text x="590" y="304" font-size="12" fill="#475569">salta a la vista.</text>
+
+  <!-- pasos -->
+  <g font-size="12.5" fill="#334155">
+    <text x="24" y="384"><tspan font-weight="700" fill="#1d4ed8">① Pulsad el número de línea</tspan> para poner el punto</text>
+    <text x="460" y="384"><tspan font-weight="700" fill="#1d4ed8">② Usad la página:</tspan> al llegar ahí, se detiene</text>
+    <text x="24" y="410"><tspan font-weight="700" fill="#1d4ed8">③ F10 / F11</tspan> para avanzar o entrar en una función</text>
+    <text x="460" y="410"><tspan font-weight="700" fill="#1d4ed8">④ Mirad el Ámbito:</tspan> o escribid <tspan font-family="Consolas, Menlo, monospace">debugger;</tspan> en el código</text>
+  </g>
+</svg>

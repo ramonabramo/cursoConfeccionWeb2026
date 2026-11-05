@@ -169,6 +169,8 @@ function cargarCarrito() {
 
 ## 5. Sincronizar pestañas: el evento `storage`
 
+![El evento storage entre pestañas](img/evento-storage.svg)
+
 Si el usuario tiene vuestra tienda abierta en dos pestañas y añade algo al carrito en una, la otra no se entera… salvo que escuche el evento `storage`:
 
 ```javascript

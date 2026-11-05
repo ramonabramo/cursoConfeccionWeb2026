@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 380" width="900" height="380" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif">
+  <title>setTimeout y setInterval</title>
+  <desc>setTimeout ejecuta la función una vez cuando pasa el tiempo; setInterval la repite en cada intervalo hasta que se detiene con clearInterval. Los dos devuelven un identificador que hay que guardar para cancelarlos.</desc>
+  <rect width="900" height="380" rx="16" fill="#ffffff"/>
+  <text x="450" y="42" text-anchor="middle" font-size="22" font-weight="700" fill="#1e293b">Temporizadores: una vez o una y otra vez</text>
+  <text x="450" y="66" text-anchor="middle" font-size="14" fill="#64748b">Los dos devuelven un identificador: guardadlo si vais a querer cancelar</text>
+
+  <defs>
+    <marker id="f" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#475569"/></marker>
+  </defs>
+
+  <!-- setTimeout -->
+  <text x="24" y="108" font-family="Consolas, Menlo, monospace" font-size="15" font-weight="700" fill="#1d4ed8">setTimeout(fn, 3000)</text>
+  <line x1="60" y1="150" x2="840" y2="150" stroke="#cbd5e1" stroke-width="4"/>
+  <line x1="840" y1="150" x2="850" y2="150" stroke="#cbd5e1" stroke-width="4" marker-end="url(#f)"/>
+  <circle cx="80" cy="150" r="8" fill="#334155"/>
+  <text x="80" y="178" text-anchor="middle" font-size="11.5" fill="#475569">ahora</text>
+  <line x1="80" y1="132" x2="470" y2="132" stroke="#93c5fd" stroke-width="2" stroke-dasharray="5 4"/>
+  <text x="275" y="124" text-anchor="middle" font-size="12" fill="#1d4ed8">espera al menos 3000 ms</text>
+  <circle cx="470" cy="150" r="13" fill="#2563eb"/>
+  <text x="470" y="155" text-anchor="middle" font-size="12" font-weight="700" fill="#ffffff">fn</text>
+  <text x="470" y="182" text-anchor="middle" font-size="12" fill="#1d4ed8" font-weight="700">una sola vez</text>
+  <text x="590" y="182" font-family="Consolas, Menlo, monospace" font-size="11.5" fill="#475569">clearTimeout(id): la cancela antes</text>
+
+  <!-- setInterval -->
+  <text x="24" y="232" font-family="Consolas, Menlo, monospace" font-size="15" font-weight="700" fill="#15803d">setInterval(fn, 1000)</text>
+  <line x1="60" y1="274" x2="840" y2="274" stroke="#cbd5e1" stroke-width="4"/>
+  <line x1="840" y1="274" x2="850" y2="274" stroke="#cbd5e1" stroke-width="4" marker-end="url(#f)"/>
+  <circle cx="80" cy="274" r="8" fill="#334155"/>
+  <g font-size="12" font-weight="700" fill="#ffffff" text-anchor="middle">
+    <circle cx="200" cy="274" r="13" fill="#16a34a"/><text x="200" y="279">fn</text>
+    <circle cx="320" cy="274" r="13" fill="#16a34a"/><text x="320" y="279">fn</text>
+    <circle cx="440" cy="274" r="13" fill="#16a34a"/><text x="440" y="279">fn</text>
+    <circle cx="560" cy="274" r="13" fill="#16a34a"/><text x="560" y="279">fn</text>
+  </g>
+  <g font-size="11" fill="#475569" text-anchor="middle">
+    <text x="200" y="302">1 s</text><text x="320" y="302">2 s</text><text x="440" y="302">3 s</text><text x="560" y="302">4 s</text>
+  </g>
+  <line x1="640" y1="252" x2="640" y2="296" stroke="#dc2626" stroke-width="4"/>
+  <text x="652" y="262" font-family="Consolas, Menlo, monospace" font-size="11.5" fill="#b91c1c">clearInterval(id)</text>
+  <text x="652" y="280" font-size="11.5" fill="#b91c1c">se detiene aquí</text>
+
+  <rect x="24" y="322" width="852" height="44" rx="10" fill="#fefce8" stroke="#fcd34d"/>
+  <text x="450" y="349" text-anchor="middle" font-size="12.5" fill="#713f12">⏱ El tiempo es un mínimo y un intervalo no es exacto: para un cronómetro, guardad <tspan font-family="Consolas, Menlo, monospace">Date.now()</tspan> al empezar y restad.</text>
+</svg>

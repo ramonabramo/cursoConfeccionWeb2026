@@ -200,6 +200,8 @@ Una prueba rápida de que el reparto está bien hecho: en el modelo no aparece `
 
 ## 6. Depuración: detener el programa y mirar
 
+![Depurar con un punto de interrupción](img/depuracion.svg)
+
 Los fallos más difíciles no dan ningún error: el programa funciona, pero el resultado está mal. Para encontrarlos, `console.log` se queda corto. Las herramientas de desarrollo permiten **detener la ejecución** en una línea y examinarlo todo en ese momento [20].
 
 | Herramienta | Qué hace |

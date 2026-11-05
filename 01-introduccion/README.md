@@ -143,6 +143,8 @@ Las dos pestañas que más vais a usar ahora mismo:
 
 ### Leer un error
 
+![Cómo leer un error de la consola](img/leer-error.svg)
+
 Un mensaje de error tiene tres partes. Acostumbraos a buscarlas siempre:
 
 ```

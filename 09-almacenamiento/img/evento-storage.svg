@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 380" width="900" height="380" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif">
+  <title>El evento storage entre pestañas</title>
+  <desc>Cuando una pestaña guarda en localStorage, el evento storage se dispara en las demás pestañas del mismo origen, no en la que ha hecho el cambio. Con e.key se sabe qué clave ha cambiado y se puede recargar y repintar.</desc>
+  <rect width="900" height="380" rx="16" fill="#ffffff"/>
+  <text x="450" y="42" text-anchor="middle" font-size="22" font-weight="700" fill="#1e293b">Sincronizar pestañas con el evento storage</text>
+  <text x="450" y="66" text-anchor="middle" font-size="14" fill="#64748b">Avisa a las OTRAS pestañas del mismo origen, nunca a la que hace el cambio</text>
+
+  <defs>
+    <marker id="f" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#475569"/></marker>
+    <marker id="v" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#16a34a"/></marker>
+  </defs>
+
+  <!-- pestaña A -->
+  <rect x="24" y="96" width="250" height="180" rx="12" fill="#eff6ff" stroke="#2563eb" stroke-width="2"/>
+  <rect x="24" y="96" width="250" height="30" rx="12" fill="#dbeafe"/>
+  <text x="40" y="117" font-size="13" font-weight="700" fill="#1d4ed8">🗂️ Pestaña A · tienda</text>
+  <text x="40" y="152" font-size="12.5" fill="#334155">El usuario pulsa «Añadir»</text>
+  <text x="40" y="180" font-family="Consolas, Menlo, monospace" font-size="11" fill="#1e293b">localStorage.setItem(</text>
+  <text x="50" y="198" font-family="Consolas, Menlo, monospace" font-size="11" fill="#1e293b">CLAVE, JSON.stringify(datos));</text>
+  <text x="40" y="232" font-size="12.5" fill="#b91c1c">✘ Aquí NO salta storage</text>
+  <text x="40" y="252" font-size="11.5" fill="#64748b">(esta pestaña ya sabe lo que ha hecho)</text>
+
+  <!-- almacén -->
+  <rect x="336" y="130" width="228" height="112" rx="12" fill="#fefce8" stroke="#ca8a04" stroke-width="2"/>
+  <text x="450" y="160" text-anchor="middle" font-size="14" font-weight="700" fill="#854d0e">💾 localStorage</text>
+  <text x="450" y="184" text-anchor="middle" font-size="12" fill="#334155">compartido por todas las</text>
+  <text x="450" y="202" text-anchor="middle" font-size="12" fill="#334155">pestañas del mismo origen</text>
+  <text x="450" y="226" text-anchor="middle" font-family="Consolas, Menlo, monospace" font-size="11" fill="#854d0e">http://127.0.0.1:5500</text>
+
+  <!-- pestaña B -->
+  <rect x="626" y="96" width="250" height="180" rx="12" fill="#f0fdf4" stroke="#16a34a" stroke-width="2"/>
+  <rect x="626" y="96" width="250" height="30" rx="12" fill="#dcfce7"/>
+  <text x="642" y="117" font-size="13" font-weight="700" fill="#15803d">🗂️ Pestaña B · tienda</text>
+  <text x="642" y="152" font-size="12.5" fill="#15803d" font-weight="700">✔ Salta storage</text>
+  <text x="642" y="180" font-family="Consolas, Menlo, monospace" font-size="11.5" fill="#1e293b">if (e.key === CLAVE) {</text>
+  <text x="656" y="198" font-family="Consolas, Menlo, monospace" font-size="11.5" fill="#1e293b">carrito = cargarCarrito();</text>
+  <text x="656" y="216" font-family="Consolas, Menlo, monospace" font-size="11.5" fill="#1e293b">renderizar();</text>
+  <text x="642" y="234" font-family="Consolas, Menlo, monospace" font-size="11.5" fill="#1e293b">}</text>
+
+  <line x1="276" y1="186" x2="330" y2="186" stroke="#475569" stroke-width="2.5" marker-end="url(#f)"/>
+  <text x="303" y="176" text-anchor="middle" font-size="11" fill="#475569">guarda</text>
+  <line x1="566" y1="186" x2="620" y2="186" stroke="#16a34a" stroke-width="2.5" marker-end="url(#v)"/>
+  <text x="593" y="176" text-anchor="middle" font-size="11" fill="#15803d">avisa</text>
+
+  <rect x="24" y="298" width="852" height="66" rx="12" fill="#f8fafc" stroke="#cbd5e1"/>
+  <text x="44" y="324" font-size="13" fill="#334155"><tspan font-weight="700">Escuchad en window:</tspan> <tspan font-family="Consolas, Menlo, monospace">window.addEventListener('storage', (e) =&gt; { … })</tspan></text>
+  <text x="44" y="348" font-size="13" fill="#334155"><tspan font-family="Consolas, Menlo, monospace" font-weight="700">e.key</tspan> dice qué clave ha cambiado: comprobadla para no reaccionar a claves de otras aplicaciones.</text>
+</svg>

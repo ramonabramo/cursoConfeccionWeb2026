@@ -235,6 +235,8 @@ Comparar dos valores devuelve siempre un `boolean`: `true` o `false`. Estos resu
 
 ## 7. El objeto `Math` y el redondeo
 
+![Redondear con Math y toFixed](img/math-redondeo.svg)
+
 `Math` es un objeto que JavaScript trae de serie con constantes y funciones matemáticas [19]:
 
 | Método | Qué hace | Ejemplo |

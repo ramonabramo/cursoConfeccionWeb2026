@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 380" width="900" height="380" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif">
+  <title>Moverse por el árbol del DOM</title>
+  <desc>Desde una lista, children da sus elementos hijos, children.length cuántos son y children[0] el primero. Desde un elemento de la lista, parentElement lleva a su padre y tagName dice qué etiqueta es, en mayúsculas.</desc>
+  <rect width="900" height="380" rx="16" fill="#ffffff"/>
+  <text x="450" y="42" text-anchor="middle" font-size="22" font-weight="700" fill="#1e293b">Moverse por el árbol sin volver a buscar</text>
+  <text x="450" y="66" text-anchor="middle" font-size="14" fill="#64748b">Desde un elemento podéis llegar a su padre y a sus hijos</text>
+
+  <defs>
+    <marker id="f" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#475569"/></marker>
+    <marker id="v" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#16a34a"/></marker>
+    <marker id="m" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#7c3aed"/></marker>
+  </defs>
+
+  <g font-family="Consolas, Menlo, monospace" font-size="14" font-weight="700">
+    <rect x="320" y="96" width="200" height="50" rx="10" fill="#eff6ff" stroke="#2563eb" stroke-width="2.5"/>
+    <text x="420" y="127" text-anchor="middle" fill="#1d4ed8">&lt;ul&gt; lista</text>
+
+    <rect x="120" y="236" width="160" height="46" rx="10" fill="#f8fafc" stroke="#94a3b8" stroke-width="2"/>
+    <text x="200" y="265" text-anchor="middle" fill="#334155">&lt;li&gt; [0]</text>
+    <rect x="340" y="236" width="160" height="46" rx="10" fill="#fefce8" stroke="#ca8a04" stroke-width="2.5"/>
+    <text x="420" y="265" text-anchor="middle" fill="#854d0e">&lt;li&gt; item</text>
+    <rect x="560" y="236" width="160" height="46" rx="10" fill="#f8fafc" stroke="#94a3b8" stroke-width="2"/>
+    <text x="640" y="265" text-anchor="middle" fill="#334155">&lt;li&gt; [2]</text>
+  </g>
+
+  <!-- hacia abajo: children -->
+  <line x1="360" y1="148" x2="220" y2="230" stroke="#16a34a" stroke-width="2.5" marker-end="url(#v)"/>
+  <line x1="420" y1="148" x2="420" y2="230" stroke="#16a34a" stroke-width="2.5" marker-end="url(#v)"/>
+  <line x1="480" y1="148" x2="620" y2="230" stroke="#16a34a" stroke-width="2.5" marker-end="url(#v)"/>
+  <!-- hacia arriba: parentElement -->
+  <path d="M 506 238 C 560 200, 560 160, 524 136" fill="none" stroke="#7c3aed" stroke-width="2.5" stroke-dasharray="6 4" marker-end="url(#m)"/>
+
+  <g font-size="13">
+    <rect x="40" y="96" width="250" height="110" rx="12" fill="#f0fdf4" stroke="#16a34a"/>
+    <text x="56" y="120" font-weight="700" fill="#15803d">⬇️ Hacia los hijos</text>
+    <text x="56" y="146" font-family="Consolas, Menlo, monospace" font-size="12.5" fill="#1e293b">lista.children</text>
+    <text x="56" y="166" font-family="Consolas, Menlo, monospace" font-size="12.5" fill="#1e293b">lista.children.length → 3</text>
+    <text x="56" y="186" font-family="Consolas, Menlo, monospace" font-size="12.5" fill="#1e293b">lista.children[0]</text>
+
+    <rect x="610" y="96" width="266" height="110" rx="12" fill="#f5f3ff" stroke="#7c3aed"/>
+    <text x="626" y="120" font-weight="700" fill="#6d28d9">⬆️ Hacia el padre</text>
+    <text x="626" y="146" font-family="Consolas, Menlo, monospace" font-size="12.5" fill="#1e293b">item.parentElement → lista</text>
+    <text x="626" y="176" font-weight="700" fill="#6d28d9">🏷️ ¿Qué etiqueta es?</text>
+    <text x="626" y="196" font-family="Consolas, Menlo, monospace" font-size="12.5" fill="#1e293b">item.tagName → 'LI'</text>
+  </g>
+
+  <text x="450" y="322" text-anchor="middle" font-size="13" fill="#334155">children solo cuenta <tspan font-weight="700">elementos</tspan> (etiquetas), no los textos ni los espacios entre ellas.</text>
+  <text x="450" y="344" text-anchor="middle" font-size="12.5" fill="#64748b">tagName se devuelve en MAYÚSCULAS en los documentos HTML: comparad con 'LI', no con 'li'.</text>
+</svg>

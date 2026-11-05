@@ -4,6 +4,8 @@ Buenas, soy Ramón Abramo, profesor con más de 25 años de experiencia docente.
 
 Aquí tenéis la teoría de cada bloque, ejercicios para practicar y sus soluciones explicadas. Todo está pensado para que podáis estudiarlo a vuestro ritmo, pero también para usarlo en clase conmigo.
 
+> 📘 **¿Preferís leerlo todo seguido, o impreso?** Tenéis la teoría completa de los trece bloques, con todas las infografías y los 104 ejercicios explicados, en un único PDF: [Manual de teoría de JavaScript en el cliente](manual/manual-teoria-javascript-en-el-cliente.pdf).
+
 ![Mapa del curso](img/mapa-curso.svg)
 
 ---
