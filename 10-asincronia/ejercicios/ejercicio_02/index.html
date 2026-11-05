@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 02 · Cronómetro con setInterval</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <main class="contenedor">
+        <h1>⏱️ Cronómetro</h1>
+
+        <p id="pantalla" class="contador">00:00.0</p>
+
+        <div class="botonera">
+            <button id="btnIniciar" class="btn">Iniciar</button>
+            <button id="btnVuelta" class="btn btn--secundario">Vuelta</button>
+            <button id="btnReiniciar" class="btn btn--peligro">Reiniciar</button>
+        </div>
+
+        <h2>Vueltas</h2>
+        <ol id="vueltas" class="lista registro-tiempo"></ol>
+
+        <p class="ayuda">💡 Probad a pulsar «Iniciar» varias veces seguidas. El cronómetro no debe ir más rápido.</p>
+
+        <div class="firma">Curso de JavaScript en el cliente · Realizado por Ramón Abramo</div>
+    </main>
+    <script src="app.js"></script>
+</body>
+
+</html>

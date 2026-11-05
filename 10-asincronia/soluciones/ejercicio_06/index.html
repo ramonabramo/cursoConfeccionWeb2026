@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 06 · Promesas que pueden fallar: then, catch y finally (Solución)</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <main class="contenedor">
+        <h1>📦 Consultar el stock</h1>
+        <p class="descripcion">Una consulta que tarda un poco y que puede fallar, como cualquier consulta a un servidor.</p>
+
+        <form id="formConsulta" class="fila-controles">
+            <input type="text" id="producto" value="teclado" aria-label="Producto">
+            <button type="submit" id="btnConsultar" class="btn">Consultar</button>
+        </form>
+
+        <p id="resultado" class="salida" aria-live="polite">…</p>
+
+        <h2>Orden de ejecución</h2>
+        <ol id="registro" class="lista registro-tiempo"></ol>
+
+        <p class="ayuda">💡 Productos que existen: <code>teclado</code>, <code>raton</code>, <code>monitor</code> y <code>auriculares</code>. Probad también con uno que no exista.</p>
+
+        <div class="firma">Curso de JavaScript en el cliente · Realizado por Ramón Abramo</div>
+    </main>
+    <script src="app.js"></script>
+</body>
+
+</html>

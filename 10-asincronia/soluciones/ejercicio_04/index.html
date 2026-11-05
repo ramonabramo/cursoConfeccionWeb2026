@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 04 · ¿En qué orden? El bucle de eventos (Solución)</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <main class="contenedor">
+        <h1>🔄 ¿En qué orden?</h1>
+        <p class="descripcion">Tres experimentos. Antes de pulsar cada botón, apostad en qué orden aparecerán los mensajes.</p>
+
+        <div class="botonera">
+            <button id="btnA" class="btn">A · setTimeout de 0 ms</button>
+            <button id="btnB" class="btn">B · Dos temporizadores</button>
+            <button id="btnC" class="btn btn--peligro">C · Bloquear 2 segundos</button>
+            <button id="btnLimpiar" class="btn btn--secundario">Limpiar</button>
+        </div>
+
+        <p>Reloj vivo: <span id="reloj" class="total">0.0 s</span></p>
+
+        <ol id="registro" class="lista registro-tiempo"></ol>
+
+        <p class="ayuda">💡 En el experimento C, fijaos en el reloj e intentad pulsar «Limpiar» mientras dura el bloqueo.</p>
+
+        <div class="firma">Curso de JavaScript en el cliente · Realizado por Ramón Abramo</div>
+    </main>
+    <script src="app.js"></script>
+</body>
+
+</html>

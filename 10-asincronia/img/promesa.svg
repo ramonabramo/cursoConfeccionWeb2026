@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 400" width="900" height="400" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif">
+  <title>Los estados de una promesa</title>
+  <desc>Una promesa empieza pendiente y termina cumplida, lo que ejecuta then, o rechazada, lo que ejecuta catch; finally se ejecuta en los dos casos.</desc>
+  <rect width="900" height="400" rx="16" fill="#ffffff"/>
+  <text x="450" y="42" text-anchor="middle" font-size="22" font-weight="700" fill="#1e293b">Una promesa: el ticket del pedido</text>
+  <text x="450" y="66" text-anchor="middle" font-size="14" fill="#64748b">Os dan un ticket ahora; el resultado llegará después… o llegará un «lo siento»</text>
+
+  <defs>
+    <marker id="v" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#16a34a"/></marker>
+    <marker id="r" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#dc2626"/></marker>
+    <marker id="g" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#64748b"/></marker>
+  </defs>
+
+  <!-- pendiente -->
+  <rect x="24" y="150" width="200" height="100" rx="50" fill="#fef9c3" stroke="#ca8a04" stroke-width="2"/>
+  <text x="124" y="190" text-anchor="middle" font-size="15" font-weight="700" fill="#854d0e">⏳ pending</text>
+  <text x="124" y="212" text-anchor="middle" font-size="12.5" fill="#713f12">pendiente</text>
+  <text x="124" y="230" text-anchor="middle" font-size="11.5" fill="#713f12">aún no se sabe</text>
+
+  <path d="M228,180 C300,130 330,120 380,120" fill="none" stroke="#16a34a" stroke-width="2.5" marker-end="url(#v)"/>
+  <text x="236" y="140" font-family="Consolas, Menlo, monospace" font-size="12" fill="#15803d">resolve(valor)</text>
+  <path d="M228,220 C300,270 330,280 380,280" fill="none" stroke="#dc2626" stroke-width="2.5" marker-end="url(#r)"/>
+  <text x="236" y="272" font-family="Consolas, Menlo, monospace" font-size="12" fill="#b91c1c">reject(error)</text>
+
+  <!-- fulfilled -->
+  <rect x="386" y="88" width="230" height="64" rx="12" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/>
+  <text x="501" y="114" text-anchor="middle" font-size="15" font-weight="700" fill="#166534">✔ fulfilled</text>
+  <text x="501" y="136" text-anchor="middle" font-size="12.5" fill="#166534">cumplida: hay resultado</text>
+  <line x1="620" y1="120" x2="660" y2="120" stroke="#16a34a" stroke-width="2" marker-end="url(#v)"/>
+  <rect x="666" y="96" width="210" height="48" rx="8" fill="#1e293b"/>
+  <text x="680" y="126" font-family="Consolas, Menlo, monospace" font-size="13" fill="#86efac">.then((valor) =&gt; …)</text>
+
+  <!-- rejected -->
+  <rect x="386" y="248" width="230" height="64" rx="12" fill="#fee2e2" stroke="#dc2626" stroke-width="2"/>
+  <text x="501" y="274" text-anchor="middle" font-size="15" font-weight="700" fill="#991b1b">✘ rejected</text>
+  <text x="501" y="296" text-anchor="middle" font-size="12.5" fill="#991b1b">rechazada: hubo un error</text>
+  <line x1="620" y1="280" x2="660" y2="280" stroke="#dc2626" stroke-width="2" marker-end="url(#r)"/>
+  <rect x="666" y="256" width="210" height="48" rx="8" fill="#1e293b"/>
+  <text x="680" y="286" font-family="Consolas, Menlo, monospace" font-size="13" fill="#fca5a5">.catch((error) =&gt; …)</text>
+
+  <!-- finally -->
+  <path d="M771,148 L771,188" stroke="#64748b" stroke-width="2" marker-end="url(#g)"/>
+  <path d="M771,252 L771,220" stroke="#64748b" stroke-width="2" marker-end="url(#g)"/>
+  <rect x="666" y="190" width="210" height="28" rx="6" fill="#f1f5f9" stroke="#94a3b8"/>
+  <text x="680" y="209" font-family="Consolas, Menlo, monospace" font-size="12.5" fill="#334155">.finally(() =&gt; …)</text>
+  <text x="656" y="208" text-anchor="end" font-size="11.5" fill="#475569">siempre (p. ej., quitar «Cargando…») →</text>
+
+  <rect x="24" y="330" width="852" height="54" rx="12" fill="#f8fafc" stroke="#cbd5e1"/>
+  <text x="44" y="354" font-size="13" fill="#334155">Una vez cumplida o rechazada, la promesa está <tspan font-weight="700">resuelta (settled)</tspan> y ya no cambia de estado.</text>
+  <text x="44" y="374" font-size="13" fill="#334155">El código que va después de crearla <tspan font-weight="700">no espera</tspan>: sigue ejecutándose. Solo esperan then, catch y finally.</text>
+</svg>

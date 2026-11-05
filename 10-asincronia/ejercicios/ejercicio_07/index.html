@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 07 · async y await: el mismo código, más claro</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <main class="contenedor">
+        <h1>✨ async y await</h1>
+        <p class="descripcion">La consulta del ejercicio 06, escrita de arriba abajo. Y una carrera: ¿qué es más rápido, consultar cuatro productos uno detrás de otro o a la vez?</p>
+
+        <form id="formConsulta" class="fila-controles">
+            <input type="text" id="producto" value="monitor" aria-label="Producto">
+            <button type="submit" class="btn">Consultar</button>
+        </form>
+        <p id="resultado" class="salida" aria-live="polite">…</p>
+
+        <h2>La carrera</h2>
+        <div class="botonera">
+            <button id="btnSecuencial" class="btn btn--secundario">Uno detrás de otro</button>
+            <button id="btnParalelo" class="btn btn--secundario">Todos a la vez</button>
+        </div>
+        <pre id="carrera" class="ticket">…</pre>
+
+        <div class="firma">Curso de JavaScript en el cliente · Realizado por Ramón Abramo</div>
+    </main>
+    <script src="app.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 03 · Cuenta atrás con barra de progreso</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <main class="contenedor">
+        <h1>⏳ Cuenta atrás</h1>
+
+        <div class="fila-controles">
+            <input type="number" id="segundos" value="10" min="1" max="600" aria-label="Segundos">
+            <div class="botonera">
+                <button id="btnEmpezar" class="btn">Empezar</button>
+                <button id="btnParar" class="btn btn--secundario" disabled>Parar</button>
+            </div>
+        </div>
+
+        <p id="pantalla" class="contador">10</p>
+        <div class="barra"><div id="relleno" class="barra-relleno"></div></div>
+
+        <p id="mensaje" class="salida" aria-live="polite">Elige los segundos y pulsa «Empezar».</p>
+
+        <div class="firma">Curso de JavaScript en el cliente · Realizado por Ramón Abramo</div>
+    </main>
+    <script src="app.js"></script>
+</body>
+
+</html>

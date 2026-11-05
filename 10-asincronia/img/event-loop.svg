@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 450" width="900" height="450" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif">
+  <title>El bucle de eventos</title>
+  <desc>El código se ejecuta en la pila de llamadas; setTimeout entrega el callback al navegador, que al cumplirse el tiempo lo deja en la cola; el bucle de eventos lo pasa a la pila solo cuando esta está vacía. Por eso el orden de salida es 1, 3, 2.</desc>
+  <rect width="900" height="450" rx="16" fill="#ffffff"/>
+  <text x="450" y="42" text-anchor="middle" font-size="22" font-weight="700" fill="#1e293b">El bucle de eventos (Event Loop)</text>
+  <text x="450" y="66" text-anchor="middle" font-size="14" fill="#64748b">¿Por qué este código escribe 1, 3, 2… aunque el temporizador sea de 0 ms?</text>
+
+  <defs>
+    <marker id="f" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#64748b"/></marker>
+  </defs>
+
+  <!-- código -->
+  <rect x="24" y="88" width="270" height="150" rx="12" fill="#1e293b"/>
+  <g font-family="Consolas, Menlo, monospace" font-size="13" fill="#e2e8f0">
+    <text x="40" y="116">console.log(<tspan fill="#86efac">'1'</tspan>);</text>
+    <text x="40" y="142">setTimeout(() =&gt; {</text>
+    <text x="56" y="162">console.log(<tspan fill="#86efac">'2'</tspan>);</text>
+    <text x="40" y="182">}, <tspan fill="#fde047">0</tspan>);</text>
+    <text x="40" y="208">console.log(<tspan fill="#86efac">'3'</tspan>);</text>
+  </g>
+  <text x="24" y="262" font-size="13" font-weight="700" fill="#334155">Consola:</text>
+  <rect x="24" y="270" width="270" height="40" rx="8" fill="#f8fafc" stroke="#cbd5e1"/>
+  <text x="40" y="296" font-family="Consolas, Menlo, monospace" font-size="16" font-weight="700" fill="#1e293b">1   3   2</text>
+
+  <!-- pila -->
+  <rect x="320" y="88" width="180" height="222" rx="12" fill="#eff6ff" stroke="#3b82f6" stroke-width="2"/>
+  <text x="410" y="114" text-anchor="middle" font-size="13" font-weight="700" fill="#1d4ed8">① PILA DE LLAMADAS</text>
+  <text x="410" y="132" text-anchor="middle" font-size="11.5" fill="#475569">lo que se ejecuta AHORA</text>
+  <rect x="340" y="150" width="140" height="30" rx="6" fill="#ffffff" stroke="#93c5fd"/><text x="410" y="170" text-anchor="middle" font-family="Consolas, Menlo, monospace" font-size="12" fill="#1e293b">log('1')</text>
+  <rect x="340" y="186" width="140" height="30" rx="6" fill="#ffffff" stroke="#93c5fd"/><text x="410" y="206" text-anchor="middle" font-family="Consolas, Menlo, monospace" font-size="12" fill="#1e293b">setTimeout(…)</text>
+  <rect x="340" y="222" width="140" height="30" rx="6" fill="#ffffff" stroke="#93c5fd"/><text x="410" y="242" text-anchor="middle" font-family="Consolas, Menlo, monospace" font-size="12" fill="#1e293b">log('3')</text>
+  <text x="410" y="286" text-anchor="middle" font-size="11.5" fill="#475569">una cosa cada vez,</text>
+  <text x="410" y="300" text-anchor="middle" font-size="11.5" fill="#475569">hasta vaciarse</text>
+
+  <!-- web apis -->
+  <rect x="540" y="88" width="336" height="110" rx="12" fill="#fff7ed" stroke="#ea580c" stroke-width="2"/>
+  <text x="708" y="114" text-anchor="middle" font-size="13" font-weight="700" fill="#c2410c">② EL NAVEGADOR (Web APIs)</text>
+  <text x="708" y="134" text-anchor="middle" font-size="11.5" fill="#475569">temporizadores, red, eventos…</text>
+  <rect x="580" y="148" width="256" height="34" rx="6" fill="#ffffff" stroke="#fdba74"/>
+  <text x="708" y="170" text-anchor="middle" font-size="12.5" fill="#1e293b">⏱️ cuenta 0 ms con el callback</text>
+  <path d="M500,200 C520,200 520,165 576,165" fill="none" stroke="#64748b" stroke-width="2" marker-end="url(#f)"/>
+  <text x="506" y="226" font-size="11" fill="#64748b">entrega</text>
+
+  <!-- cola -->
+  <rect x="540" y="222" width="336" height="88" rx="12" fill="#f5f3ff" stroke="#7c3aed" stroke-width="2"/>
+  <text x="708" y="248" text-anchor="middle" font-size="13" font-weight="700" fill="#6d28d9">③ COLA DE TAREAS</text>
+  <rect x="580" y="262" width="256" height="34" rx="6" fill="#ffffff" stroke="#c4b5fd"/>
+  <text x="708" y="284" text-anchor="middle" font-family="Consolas, Menlo, monospace" font-size="12" fill="#1e293b">() =&gt; console.log('2')</text>
+  <path d="M708,198 L708,218" stroke="#64748b" stroke-width="2" marker-end="url(#f)"/>
+
+  <!-- bucle -->
+  <line x1="576" y1="279" x2="506" y2="279" stroke="#16a34a" stroke-width="3" marker-end="url(#f)"/>
+  <rect x="24" y="340" width="852" height="96" rx="14" fill="#f0fdf4" stroke="#22c55e" stroke-width="2"/>
+  <text x="44" y="368" font-size="13" font-weight="700" fill="#15803d">④ EL BUCLE DE EVENTOS</text>
+  <text x="44" y="392" font-size="13" fill="#334155">Vigila sin parar: «¿la pila está vacía? Entonces paso a la pila la siguiente tarea de la cola».</text>
+  <text x="44" y="414" font-size="13" fill="#334155">El callback del temporizador espera su turno hasta que termina TODO el código síncrono. Por eso el «2» sale el último.</text>
+</svg>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 01 · Un aviso con retraso: setTimeout (Solución)</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <main class="contenedor">
+        <h1>⏰ Un aviso con retraso</h1>
+        <p class="descripcion">Programad un aviso para dentro de unos segundos… y fijaos en el ORDEN en que pasan las cosas.</p>
+
+        <div class="fila-controles">
+            <input type="number" id="segundos" value="3" min="1" max="30" aria-label="Segundos">
+            <div class="botonera">
+                <button id="btnProgramar" class="btn">Programar aviso</button>
+                <button id="btnCancelar" class="btn btn--secundario">Cancelar</button>
+            </div>
+        </div>
+
+        <p id="estado" class="salida">No hay ningún aviso programado.</p>
+
+        <h2>Orden de ejecución</h2>
+        <ol id="registro" class="lista registro-tiempo"></ol>
+
+        <div class="firma">Curso de JavaScript en el cliente · Realizado por Ramón Abramo</div>
+    </main>
+    <script src="app.js"></script>
+</body>
+
+</html>

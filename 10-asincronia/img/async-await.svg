@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 400" width="900" height="400" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif">
+  <title>De then a async/await</title>
+  <desc>El mismo código escrito con una cadena de then y catch, y con una función async que usa await y try, catch y finally.</desc>
+  <rect width="900" height="400" rx="16" fill="#ffffff"/>
+  <text x="450" y="42" text-anchor="middle" font-size="22" font-weight="700" fill="#1e293b">Mismas promesas, dos formas de escribirlas</text>
+  <text x="450" y="66" text-anchor="middle" font-size="14" fill="#64748b">async/await no sustituye a las promesas: es otra forma, más lineal, de usarlas</text>
+
+  <!-- then -->
+  <rect x="24" y="88" width="414" height="290" rx="14" fill="#f5f3ff" stroke="#c4b5fd"/>
+  <text x="44" y="118" font-size="15" font-weight="700" fill="#5b21b6">Con then / catch / finally</text>
+  <rect x="40" y="132" width="382" height="196" rx="8" fill="#1e293b"/>
+  <g font-family="Consolas, Menlo, monospace" font-size="12.5" fill="#e2e8f0">
+    <text x="54" y="156">salida.textContent = <tspan fill="#86efac">'Cargando…'</tspan>;</text>
+    <text x="54" y="182">consultarStock(<tspan fill="#86efac">'teclado'</tspan>)</text>
+    <text x="70" y="204">.then((stock) =&gt; {</text>
+    <text x="86" y="224">salida.textContent = stock;</text>
+    <text x="70" y="244">})</text>
+    <text x="70" y="266">.catch((error) =&gt; mostrarError(error))</text>
+    <text x="70" y="288">.finally(() =&gt; ocultarCargando());</text>
+  </g>
+  <text x="44" y="352" font-size="12.5" fill="#334155">El resultado llega «dentro» de un callback.</text>
+
+  <!-- async -->
+  <rect x="462" y="88" width="414" height="290" rx="14" fill="#f0fdf4" stroke="#22c55e" stroke-width="2"/>
+  <text x="482" y="118" font-size="15" font-weight="700" fill="#15803d">Con async / await</text>
+  <rect x="478" y="132" width="382" height="216" rx="8" fill="#1e293b"/>
+  <g font-family="Consolas, Menlo, monospace" font-size="12.5" fill="#e2e8f0">
+    <text x="492" y="156"><tspan fill="#c4b5fd">async function</tspan> mostrarStock() {</text>
+    <text x="508" y="176">salida.textContent = <tspan fill="#86efac">'Cargando…'</tspan>;</text>
+    <text x="508" y="196"><tspan fill="#c4b5fd">try</tspan> {</text>
+    <text x="524" y="216"><tspan fill="#93c5fd">const</tspan> stock = <tspan fill="#fde047">await</tspan> consultarStock(…);</text>
+    <text x="524" y="236">salida.textContent = stock;</text>
+    <text x="508" y="256">} <tspan fill="#c4b5fd">catch</tspan> (error) {</text>
+    <text x="524" y="276">mostrarError(error);</text>
+    <text x="508" y="296">} <tspan fill="#c4b5fd">finally</tspan> {</text>
+    <text x="524" y="316">ocultarCargando();</text>
+    <text x="508" y="336">} }</text>
+  </g>
+  <text x="482" y="366" font-size="12.5" fill="#334155"><tspan font-family="Consolas, Menlo, monospace" font-weight="700" fill="#a16207">await</tspan> pausa SOLO esta función; la página sigue viva.</text>
+</svg>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 08 · Juego de reflejos (Solución)</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <main class="contenedor">
+        <h1>⚡ Juego de reflejos</h1>
+        <p class="descripcion">Pulsad «Empezar». Tras la cuenta atrás, la zona se pondrá roja… y en un momento al azar, verde. ¡Haced clic en cuanto la veáis verde! Pero si pulsáis en rojo, falta.</p>
+
+        <div id="zona" class="zona-reflejos" role="button" tabindex="0">Pulsa «Empezar»</div>
+
+        <div class="botonera">
+            <button id="btnEmpezar" class="btn">Empezar</button>
+        </div>
+
+        <p id="resultado" class="salida" aria-live="polite">…</p>
+        <p id="record" class="salida salida--secundaria">Mejor marca: —</p>
+
+        <div class="firma">Curso de JavaScript en el cliente · Realizado por Ramón Abramo</div>
+    </main>
+    <script src="app.js"></script>
+</body>
+
+</html>
