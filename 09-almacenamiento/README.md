@@ -202,7 +202,30 @@ Y tened en cuenta que el usuario puede borrarlo en cualquier momento, y que en e
 
 ---
 
-## 7. La plantilla de trabajo con persistencia
+<!-- ampliación -->
+## 7. Cuando guardar falla
+
+Leer a la defensiva no basta: **guardar también puede fallar**. `setItem` lanza una excepción `QuotaExceededError` cuando el almacén se queda sin espacio [5], y el simple hecho de usar `localStorage` puede lanzar un `SecurityError` si el navegador lo tiene bloqueado, por ejemplo por la configuración de privacidad [2].
+
+Un programa robusto guarda dentro de un `try` y avisa al usuario si no ha podido:
+
+```javascript
+function guardar(clave, valor) {
+    try {
+        localStorage.setItem(clave, JSON.stringify(valor));
+        return true;
+    } catch (error) {
+        console.warn('No se ha podido guardar:', error.name);
+        return false;          // quien llama decide qué decir al usuario
+    }
+}
+```
+
+El espacio disponible depende del navegador y es limitado (del orden de unos pocos megabytes por origen). Para preferencias, carritos o listas de tareas sobra; para guardar imágenes o miles de registros, no es la herramienta adecuada.
+
+---
+
+## 8. La plantilla de trabajo con persistencia
 
 ```javascript
 // estructura del programa principal
@@ -238,7 +261,7 @@ renderizar();
 
 ---
 
-## 8. Ejercicios
+## 9. Ejercicios
 
 | Nº | Ejercicio | Qué practicáis | Solución |
 | --- | --- | --- | --- |
@@ -250,6 +273,8 @@ renderizar();
 | 06 | [Un borrador que no se pierde](ejercicios/ejercicio_06/) | Autoguardado de varios campos como un objeto JSON | [Ver](soluciones/ejercicio_06/) |
 | 07 | [Lista de tareas que persiste](ejercicios/ejercicio_07/) | El proyecto guiado: estado → guardar → renderizar | [Ver](soluciones/ejercicio_07/) |
 | 08 | [Un carrito que sobrevive](ejercicios/ejercicio_08/) | Guardar solo ids, carga segura con `try...catch`, evento `storage` | [Ver](soluciones/ejercicio_08/) |
+| 09 | [Búsquedas recientes](ejercicios/ejercicio_09/) | Un historial de 5 elementos sin duplicados, el más reciente primero | [Ver](soluciones/ejercicio_09/) |
+| 10 | [Guardar sin romperse](ejercicios/ejercicio_10/) | `try...catch` al guardar, `QuotaExceededError`, avisar al usuario | [Ver](soluciones/ejercicio_10/) |
 
 En el 08, haced el experimento de la ayuda: escribid `hola` en el valor guardado desde las herramientas de desarrollo y recargad. Si vuestra tienda sigue en pie, lo habéis hecho bien.
 

@@ -242,7 +242,86 @@ const stocks = await Promise.all(productos.map((p) => consultarStock(p)));
 
 ---
 
-## 8. La plantilla de trabajo con asincronía
+<!-- ampliación -->
+## 8. Fechas y horas: el objeto `Date`
+
+Muchos programas que trabajan con el tiempo (relojes, cuentas atrás, plazos) necesitan fechas. JavaScript las representa con objetos `Date`, que por dentro guardan un número: los **milisegundos** transcurridos desde el 1 de enero de 1970 a medianoche, en hora UTC [17].
+
+```javascript
+const ahora = new Date();                   // este instante
+const nochevieja = new Date(2026, 11, 31);  // 31 de diciembre de 2026 (¡mes 11!)
+
+ahora.getFullYear();   // 2026
+ahora.getMonth();      // 0 = enero … 11 = diciembre
+ahora.getDate();       // día del mes, de 1 a 31
+ahora.getDay();        // día de la semana: 0 = domingo … 6 = sábado
+ahora.getHours();      // 0 a 23
+ahora.getTime();       // los milisegundos desde 1970
+```
+
+La trampa más famosa: **los meses empiezan en 0** [17]. Enero es el 0 y diciembre, el 11. Y los días de la semana empiezan en domingo [18].
+
+### 8.1. Restar fechas
+
+Como por dentro son milisegundos, restar dos fechas da la distancia entre ellas [19]:
+
+```javascript
+const faltan = nochevieja.getTime() - Date.now();        // milisegundos
+const dias = Math.floor(faltan / (1000 * 60 * 60 * 24));
+```
+
+---
+
+## 9. Fechas y números para personas: `toLocale…` e `Intl`
+
+Para **mostrar** una fecha no la montéis a mano: los navegadores saben escribirla en el formato de cada idioma [20] [21]:
+
+```javascript
+const ahora = new Date();
+ahora.toLocaleDateString('es-ES');      // '5/11/2026'
+ahora.toLocaleTimeString('es-ES');      // '18:42:05'
+ahora.toLocaleDateString('es-ES', { weekday: 'long', day: 'numeric', month: 'long' });
+// 'jueves, 5 de noviembre'
+```
+
+Si vais a formatear muchas fechas con las mismas opciones, crear un formateador con `Intl.DateTimeFormat` una sola vez es más eficiente [22]:
+
+```javascript
+const formato = new Intl.DateTimeFormat('es-ES', { dateStyle: 'full', timeStyle: 'short' });
+formato.format(ahora);   // 'jueves, 5 de noviembre de 2026, 18:42'
+```
+
+Con los números pasa igual: `toLocaleString` pone los separadores de cada país y puede añadir la moneda [23] [24]:
+
+```javascript
+(1234567.891).toLocaleString('es-ES');                                  // '1.234.567,891'
+(59.9).toLocaleString('es-ES', { style: 'currency', currency: 'EUR' }); // '59,90 €'
+```
+
+---
+
+## 10. Animaciones que se pausan
+
+Un carrusel, un teletipo o una barra que avanza sola son un `setInterval` [5] que actualiza la página. Para que el usuario pueda leer con calma, lo habitual es **pausarlo al pasar el ratón por encima** y reanudarlo al salir:
+
+```javascript
+let id = null;
+function arrancar() {
+    if (id === null) id = setInterval(siguiente, 3000);   // nunca dos a la vez
+}
+function pausar() {
+    clearInterval(id);
+    id = null;
+}
+carrusel.addEventListener('mouseenter', pausar);
+carrusel.addEventListener('mouseleave', arrancar);
+```
+
+Es la regla de oro de los temporizadores del apartado 2: guardad el identificador y no arranquéis uno si ya hay otro en marcha [6]. Para quien usa el teclado, haced lo mismo con `focusin` y `focusout`.
+
+---
+
+## 11. La plantilla de trabajo con asincronía
 
 Los escuchadores pueden llamar a funciones `async`. La plantilla es la de siempre, con dos detalles: avisar al usuario mientras espera y recoger los errores.
 
@@ -282,7 +361,7 @@ En el bloque 11, `consultar` será una petición real con `fetch`. Todo lo demá
 
 ---
 
-## 9. Ejercicios
+## 12. Ejercicios
 
 | Nº | Ejercicio | Qué practicáis | Solución |
 | --- | --- | --- | --- |
@@ -294,6 +373,11 @@ En el bloque 11, `consultar` será una petición real con `fetch`. Todo lo demá
 | 06 | [Promesas que pueden fallar](ejercicios/ejercicio_06/) | `resolve`, `reject`, `then`, `catch`, `finally` | [Ver](soluciones/ejercicio_06/) |
 | 07 | [async y await](ejercicios/ejercicio_07/) | `async`, `await`, `try...catch`, secuencial frente a `Promise.all` | [Ver](soluciones/ejercicio_07/) |
 | 08 | [Juego de reflejos](ejercicios/ejercicio_08/) | `await esperar()`, temporizador cancelable, `Date.now()`, récord guardado | [Ver](soluciones/ejercicio_08/) |
+| 09 | [Eliminar con «Deshacer»](ejercicios/ejercicio_09/) | `setTimeout` que se cancela con `clearTimeout`, un aviso temporal | [Ver](soluciones/ejercicio_09/) |
+| 10 | [Reloj y fecha en vivo](ejercicios/ejercicio_10/) | `Date`, `setInterval`, `toLocaleTimeString`, `Intl.DateTimeFormat` | [Ver](soluciones/ejercicio_10/) |
+| 11 | [Cuenta atrás hasta una fecha](ejercicios/ejercicio_11/) | Restar fechas, días, horas, minutos y segundos, `padStart` | [Ver](soluciones/ejercicio_11/) |
+| 12 | [Carrusel que se pausa](ejercicios/ejercicio_12/) | `setInterval` con pausa en `mouseenter`, flechas, puntos | [Ver](soluciones/ejercicio_12/) |
+| 13 | [La máquina de escribir](ejercicios/ejercicio_13/) | `setTimeout` encadenados, cancelar al volver a empezar | [Ver](soluciones/ejercicio_13/) |
 
 En el 04, no os saltéis el experimento C. Ver la página congelada dos segundos explica mejor que cualquier párrafo por qué existe todo este bloque.
 
@@ -319,3 +403,11 @@ En el 04, no os saltéis el experimento C. Ver la página congelada dos segundos
 14. [await (MDN Web Docs)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/await)
 15. [try...catch (MDN Web Docs)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/try...catch)
 16. [Promise.all() (MDN Web Docs)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/all)
+17. [Date (MDN Web Docs)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)
+18. [Date.prototype.getDay() (MDN Web Docs)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/getDay)
+19. [Date.prototype.getTime() (MDN Web Docs)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/getTime)
+20. [Date.prototype.toLocaleDateString() (MDN Web Docs)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toLocaleDateString)
+21. [Date.prototype.toLocaleTimeString() (MDN Web Docs)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toLocaleTimeString)
+22. [Intl.DateTimeFormat (MDN Web Docs)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/DateTimeFormat)
+23. [Number.prototype.toLocaleString() (MDN Web Docs)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/toLocaleString)
+24. [Intl.NumberFormat (MDN Web Docs)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/NumberFormat)

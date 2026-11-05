@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 11 · Cuenta atrás hasta una fecha (Solución)</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <main class="contenedor">
+        <h1>⏳ Cuenta atrás hasta una fecha</h1>
+        <form id="formFecha">
+            <div class="campo">
+                <label for="destino">Fecha del evento</label>
+                <input type="date" id="destino" name="destino" required>
+            </div>
+            <button class="btn">Empezar la cuenta atrás</button>
+        </form>
+
+        <p id="titulo" class="descripcion">…</p>
+        <div class="cuenta" aria-live="off">
+            <div><strong id="dias">--</strong>días</div>
+            <div><strong id="horas">--</strong>horas</div>
+            <div><strong id="minutos">--</strong>minutos</div>
+            <div><strong id="segundos">--</strong>segundos</div>
+        </div>
+        <p id="estado" class="salida" aria-live="polite">…</p>
+
+        <div class="firma">Curso de JavaScript en el cliente · Realizado por Ramón Abramo</div>
+    </main>
+    <script src="app.js"></script>
+</body>
+
+</html>

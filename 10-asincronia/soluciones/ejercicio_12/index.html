@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 12 · Carrusel que se pausa (Solución)</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <main class="contenedor">
+        <h1>🎠 Carrusel que se pausa</h1>
+        <p class="descripcion">Los testimonios cambian solos cada tres segundos. Si pasáis el ratón por encima, se detienen para que podáis leer.</p>
+
+        <section id="carrusel" class="carrusel" aria-roledescription="carrusel" aria-label="Testimonios">
+            <button id="btnAnterior" class="btn btn--secundario flecha izq" aria-label="Anterior">◀</button>
+            <blockquote id="cita">…</blockquote>
+            <p id="autor" class="autor">…</p>
+            <button id="btnSiguiente" class="btn btn--secundario flecha der" aria-label="Siguiente">▶</button>
+        </section>
+        <div id="puntos" class="puntos"></div>
+        <p id="estado" class="ayuda" aria-live="polite">▶ En marcha</p>
+
+        <div class="firma">Curso de JavaScript en el cliente · Realizado por Ramón Abramo</div>
+    </main>
+    <script src="app.js"></script>
+</body>
+
+</html>

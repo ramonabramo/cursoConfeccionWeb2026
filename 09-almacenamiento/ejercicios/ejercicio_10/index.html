@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 10 · Guardar sin romperse</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <main class="contenedor">
+        <h1>💥 Guardar sin romperse</h1>
+        <p class="descripcion">Una nota que se guarda sola. Y un botón para llenar el almacén a propósito y ver cómo responde el programa.</p>
+
+        <div class="campo">
+            <label for="nota">Vuestra nota</label>
+            <textarea id="nota" rows="4"></textarea>
+        </div>
+        <p id="estado" class="salida" aria-live="polite">…</p>
+
+        <div class="botonera">
+            <button id="btnLlenar" class="btn btn--peligro">Intentar guardar 12 MB</button>
+        </div>
+        <p id="prueba" class="salida salida--aviso" aria-live="polite"></p>
+
+        <div class="firma">Curso de JavaScript en el cliente · Realizado por Ramón Abramo</div>
+    </main>
+    <script src="app.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 09 · Búsquedas recientes (Solución)</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <main class="contenedor">
+        <h1>🕘 Búsquedas recientes</h1>
+        <p class="descripcion">El buscador recuerda vuestras cinco últimas búsquedas, aunque cerréis la página.</p>
+
+        <form id="formBusqueda">
+            <div class="campo">
+                <label for="busqueda">Buscar</label>
+                <input type="search" id="busqueda" name="busqueda" autocomplete="off">
+            </div>
+            <button class="btn">Buscar</button>
+        </form>
+
+        <h2>Recientes</h2>
+        <ul id="recientes" class="lista"></ul>
+        <div class="botonera">
+            <button id="btnBorrar" class="btn btn--secundario">Borrar historial</button>
+        </div>
+        <p id="estado" class="salida" aria-live="polite">…</p>
+
+        <div class="firma">Curso de JavaScript en el cliente · Realizado por Ramón Abramo</div>
+    </main>
+    <script src="app.js"></script>
+</body>
+
+</html>
