@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 430" width="900" height="430" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif">
+  <title>Herencia con extends y super</title>
+  <desc>Las clases Circulo y Rectangulo extienden Figura: heredan nombre y describir, llaman al constructor de la madre con super y cada una sobrescribe area con su propia fórmula.</desc>
+  <rect width="900" height="430" rx="16" fill="#ffffff"/>
+  <text x="450" y="42" text-anchor="middle" font-size="22" font-weight="700" fill="#1e293b">Herencia: extends para heredar, super para llamar a la madre</text>
+  <text x="450" y="66" text-anchor="middle" font-size="14" fill="#64748b">Lo común se escribe una vez en la clase madre; cada hija añade o cambia lo suyo</text>
+
+  <defs>
+    <marker id="h" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="12" markerHeight="12" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#ffffff" stroke="#475569" stroke-width="1.2"/></marker>
+  </defs>
+
+  <!-- madre -->
+  <rect x="270" y="88" width="360" height="118" rx="12" fill="#f5f3ff" stroke="#7c3aed" stroke-width="2"/>
+  <text x="286" y="112" font-size="14" font-weight="700" fill="#6d28d9">Figura <tspan font-weight="400" font-size="12" fill="#475569">(clase madre)</tspan></text>
+  <g font-family="Consolas, Menlo, monospace" font-size="12" fill="#1e293b">
+    <text x="286" y="136">constructor(nombre) { this.nombre = nombre; }</text>
+    <text x="286" y="158">area() { return 0; }</text>
+    <text x="286" y="180">describir() {</text>
+    <text x="300" y="198">return `${this.nombre}: ${this.area()}`; }</text>
+  </g>
+
+  <!-- flechas de herencia -->
+  <line x1="200" y1="246" x2="380" y2="210" stroke="#475569" stroke-width="2" marker-end="url(#h)"/>
+  <line x1="700" y1="246" x2="520" y2="210" stroke="#475569" stroke-width="2" marker-end="url(#h)"/>
+  <text x="450" y="236" text-anchor="middle" font-family="Consolas, Menlo, monospace" font-size="13" font-weight="700" fill="#475569">extends</text>
+
+  <!-- hijas -->
+  <rect x="24" y="250" width="410" height="118" rx="12" fill="#eff6ff" stroke="#2563eb" stroke-width="2"/>
+  <g font-family="Consolas, Menlo, monospace" font-size="12" fill="#1e293b">
+    <text x="40" y="274"><tspan fill="#1d4ed8" font-weight="700">class Circulo extends Figura</tspan> {</text>
+    <text x="54" y="296">constructor(radio) {</text>
+    <text x="68" y="314"><tspan fill="#c2410c" font-weight="700">super('Círculo');</tspan>  <tspan fill="#64748b">// primero, la madre</tspan></text>
+    <text x="68" y="332">this.radio = radio; }</text>
+    <text x="54" y="354">area() { return Math.PI * this.radio ** 2; } }</text>
+  </g>
+
+  <rect x="466" y="250" width="410" height="118" rx="12" fill="#f0fdf4" stroke="#16a34a" stroke-width="2"/>
+  <g font-family="Consolas, Menlo, monospace" font-size="12" fill="#1e293b">
+    <text x="482" y="274"><tspan fill="#15803d" font-weight="700">class Rectangulo extends Figura</tspan> {</text>
+    <text x="496" y="296">constructor(base, altura) {</text>
+    <text x="510" y="314"><tspan fill="#c2410c" font-weight="700">super('Rectángulo');</tspan></text>
+    <text x="510" y="332">this.base = base; this.altura = altura; }</text>
+    <text x="496" y="354">area() { return this.base * this.altura; } }</text>
+  </g>
+
+  <!-- leyenda -->
+  <g font-size="12.5" fill="#334155">
+    <text x="24" y="396"><tspan font-weight="700" fill="#c2410c">super(…)</tspan> va antes de usar this en el constructor de la hija.</text>
+    <text x="24" y="416"><tspan font-weight="700">describir()</tspan> no se repite: se hereda, y llama al area() de cada figura. Eso es el <tspan font-weight="700">polimorfismo</tspan>.</text>
+  </g>
+</svg>

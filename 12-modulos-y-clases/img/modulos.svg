@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 440" width="900" height="440" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif">
+  <title>Módulos: export e import</title>
+  <desc>Un módulo exporta lo que quiere compartir; otro lo importa por su nombre. La página carga solo el módulo principal con script type="module". Los módulos necesitan un servidor, usan modo estricto, se cargan diferidos, tienen su propio ámbito y se ejecutan una sola vez.</desc>
+  <rect width="900" height="440" rx="16" fill="#ffffff"/>
+  <text x="450" y="42" text-anchor="middle" font-size="22" font-weight="700" fill="#1e293b">Módulos: cada fichero comparte solo lo que exporta</text>
+  <text x="450" y="66" text-anchor="middle" font-size="14" fill="#64748b">Lo que no se exporta se queda dentro del fichero, invisible para los demás</text>
+
+  <defs>
+    <marker id="f" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#475569"/></marker>
+  </defs>
+
+  <!-- index.html -->
+  <rect x="24" y="92" width="250" height="132" rx="12" fill="#fff7ed" stroke="#ea580c" stroke-width="2"/>
+  <text x="40" y="118" font-size="14" font-weight="700" fill="#c2410c">📄 index.html</text>
+  <rect x="40" y="132" width="218" height="46" rx="6" fill="#1e293b"/>
+  <text x="50" y="151" font-family="Consolas, Menlo, monospace" font-size="11.5" fill="#e2e8f0">&lt;script <tspan fill="#fde047">type="module"</tspan></text>
+  <text x="50" y="169" font-family="Consolas, Menlo, monospace" font-size="11.5" fill="#e2e8f0">        src="app.js"&gt;</text>
+  <text x="40" y="200" font-size="12" fill="#475569">Solo carga el módulo principal.</text>
+  <text x="40" y="216" font-size="12" fill="#475569">Él se encarga de importar el resto.</text>
+
+  <!-- app.js -->
+  <rect x="320" y="92" width="270" height="132" rx="12" fill="#eff6ff" stroke="#2563eb" stroke-width="2"/>
+  <text x="336" y="118" font-size="14" font-weight="700" fill="#1d4ed8">🧩 app.js <tspan font-weight="400" font-size="12" fill="#475569">(el que importa)</tspan></text>
+  <rect x="336" y="132" width="238" height="78" rx="6" fill="#1e293b"/>
+  <g font-family="Consolas, Menlo, monospace" font-size="11.5" fill="#e2e8f0">
+    <text x="346" y="152"><tspan fill="#c4b5fd">import</tspan> { formatearPrecio }</text>
+    <text x="346" y="170">  <tspan fill="#c4b5fd">from</tspan> <tspan fill="#86efac">'./utilidades.js'</tspan>;</text>
+    <text x="346" y="196">formatearPrecio(<tspan fill="#fdba74">12.5</tspan>);</text>
+  </g>
+
+  <!-- utilidades.js -->
+  <rect x="636" y="92" width="240" height="132" rx="12" fill="#f0fdf4" stroke="#16a34a" stroke-width="2"/>
+  <text x="652" y="118" font-size="14" font-weight="700" fill="#15803d">🧩 utilidades.js</text>
+  <rect x="652" y="132" width="208" height="78" rx="6" fill="#1e293b"/>
+  <g font-family="Consolas, Menlo, monospace" font-size="11.5" fill="#e2e8f0">
+    <text x="662" y="152"><tspan fill="#fde047">export</tspan> <tspan fill="#c4b5fd">function</tspan></text>
+    <text x="662" y="170">  formatearPrecio(n) {…}</text>
+    <text x="662" y="196"><tspan fill="#c4b5fd">function</tspan> privada() {…}</text>
+  </g>
+
+  <line x1="276" y1="158" x2="316" y2="158" stroke="#475569" stroke-width="2" marker-end="url(#f)"/>
+  <line x1="632" y1="158" x2="594" y2="158" stroke="#475569" stroke-width="2" marker-end="url(#f)"/>
+  <text x="613" y="246" text-anchor="middle" font-size="11.5" fill="#475569">import trae</text>
+  <text x="613" y="262" text-anchor="middle" font-size="11.5" fill="#475569">lo exportado</text>
+  <text x="756" y="246" text-anchor="middle" font-size="11.5" fill="#b91c1c">privada() no se exporta:</text>
+  <text x="756" y="262" text-anchor="middle" font-size="11.5" fill="#b91c1c">app.js no puede usarla</text>
+
+  <!-- reglas -->
+  <rect x="24" y="284" width="852" height="138" rx="14" fill="#f8fafc" stroke="#cbd5e1"/>
+  <text x="44" y="310" font-size="14" font-weight="700" fill="#334155">Lo que cambia al usar type="module"</text>
+  <g font-size="12.5" fill="#334155">
+    <text x="44" y="338"><tspan font-weight="700" fill="#b91c1c">🖥️ Necesitan servidor.</tspan> Con doble clic (file://) el navegador los bloquea: Live Server.</text>
+    <text x="44" y="362"><tspan font-weight="700">🔒 Modo estricto</tspan> siempre, sin escribir "use strict".</text>
+    <text x="470" y="362"><tspan font-weight="700">⏱ Diferidos:</tspan> se ejecutan cuando el HTML está listo.</text>
+    <text x="44" y="386"><tspan font-weight="700">📦 Ámbito propio:</tspan> sus variables no son globales.</text>
+    <text x="470" y="386"><tspan font-weight="700">1️⃣ Una sola vez,</tspan> aunque los importen varios ficheros.</text>
+    <text x="44" y="410" fill="#475569">En el import, la ruta empieza por ./ y lleva la extensión .js</text>
+  </g>
+</svg>

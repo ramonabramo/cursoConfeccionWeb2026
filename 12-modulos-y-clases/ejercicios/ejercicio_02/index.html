@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 02 · Formas de exportar e importar</title>
+    <link rel="stylesheet" href="style.css">
+    <script type="module" src="app.js"></script>
+</head>
+
+<body>
+    <main class="contenedor">
+        <h1>📦 Formas de exportar e importar</h1>
+        <p class="aviso-servidor">🖥️ Esta página usa módulos: abridla con <strong>Live Server</strong>. Con doble clic en el fichero, el navegador bloquea los <code>.js</code> y no funciona nada.</p>
+        <p class="descripcion">Cuatro módulos ya escritos (<code>geometria.js</code>, <code>conversor.js</code>, <code>contador.js</code> e <code>informe.js</code>) y una tabla de experimentos para ver cómo se comportan.</p>
+
+        <table class="tabla">
+            <thead><tr><th>Experimento</th><th>Resultado</th></tr></thead>
+            <tbody>
+                <tr><td><code>import { areaCirculo }</code> → área con radio 2</td><td id="resNombre" class="resultado">?</td></tr>
+                <tr><td><code>as</code> → <code>areaRect(3, 4)</code></td><td id="resAlias" class="resultado">?</td></tr>
+                <tr><td><code>import convertir</code> (por defecto) → 2 m en cm</td><td id="resDefecto" class="resultado">?</td></tr>
+                <tr><td><code>import * as geo</code> → nombres exportados</td><td id="resTodo" class="resultado">?</td></tr>
+                <tr><td>Se ejecuta una vez</td><td id="resUnaVez" class="resultado">?</td></tr>
+                <tr><td><code>this</code> en un módulo</td><td id="resThis" class="resultado">?</td></tr>
+                <tr><td>¿<code>secreto</code> es global?</td><td id="resGlobal" class="resultado">?</td></tr>
+                <tr><td><code>document.readyState</code> al ejecutarse</td><td id="resDiferido" class="resultado">?</td></tr>
+                <tr><td>Asignar <code>visitas = 99</code></td><td id="resAsignar" class="resultado">?</td></tr>
+                <tr><td>Valor de <code>visitas</code></td><td id="resVisitas" class="resultado">?</td></tr>
+            </tbody>
+        </table>
+
+        <div class="botonera">
+            <button id="btnVisita" class="btn">Sumar visita</button>
+        </div>
+        <p class="ayuda">💡 El script está en el <code>&lt;head&gt;</code>, antes que la tabla. Fijaos en la fila de <code>readyState</code>.</p>
+
+        <div class="firma">Curso de JavaScript en el cliente · Realizado por Ramón Abramo</div>
+    </main>
+</body>
+
+</html>

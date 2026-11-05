@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 05 · Encapsulación: la cuenta bancaria</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <main class="contenedor">
+        <h1>🏦 Encapsulación: la cuenta bancaria</h1>
+        <p class="descripcion">El saldo es privado: solo cambia con <strong>Ingresar</strong> y <strong>Retirar</strong>, y esos métodos ponen sus condiciones.</p>
+
+        <p id="titular" class="descripcion"></p>
+        <p id="saldo" class="saldo" aria-live="polite">0,00 €</p>
+
+        <form id="formOperacion">
+            <div class="campo">
+                <label for="cantidad">Cantidad (€)</label>
+                <input type="number" id="cantidad" name="cantidad" step="0.01">
+            </div>
+            <div class="botonera">
+                <button class="btn" data-operacion="ingresar">Ingresar</button>
+                <button class="btn btn--secundario" data-operacion="retirar">Retirar</button>
+            </div>
+        </form>
+
+        <form id="formTitular">
+            <div class="campo">
+                <label for="nuevoTitular">Cambiar titular</label>
+                <input type="text" id="nuevoTitular" name="nuevoTitular">
+            </div>
+            <button class="btn btn--secundario">Cambiar</button>
+        </form>
+
+        <p id="mensaje" class="salida salida--aviso" aria-live="polite"></p>
+
+        <h2>Movimientos</h2>
+        <ul id="movimientos" class="lista"></ul>
+
+        <div class="botonera">
+            <button id="btnTrampa" class="btn btn--peligro">Intentar hacer trampa</button>
+        </div>
+
+        <div class="firma">Curso de JavaScript en el cliente · Realizado por Ramón Abramo</div>
+    </main>
+    <script src="app.js"></script>
+</body>
+
+</html>

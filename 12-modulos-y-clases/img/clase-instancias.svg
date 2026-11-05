@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 430" width="900" height="430" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif">
+  <title>Una clase y sus instancias</title>
+  <desc>Una clase es un molde: define qué datos tiene cada objeto y qué sabe hacer. Con new se crean instancias; cada una guarda sus propios datos y todas comparten los métodos.</desc>
+  <rect width="900" height="430" rx="16" fill="#ffffff"/>
+  <text x="450" y="42" text-anchor="middle" font-size="22" font-weight="700" fill="#1e293b">Una clase es un molde; las instancias, lo que sale de él</text>
+  <text x="450" y="66" text-anchor="middle" font-size="14" fill="#64748b">Mismo molde, datos distintos: cada objeto recuerda lo suyo</text>
+
+  <defs>
+    <marker id="f" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#7c3aed"/></marker>
+  </defs>
+
+  <!-- clase -->
+  <rect x="24" y="92" width="360" height="314" rx="14" fill="#f5f3ff" stroke="#7c3aed" stroke-width="2"/>
+  <text x="44" y="120" font-size="14" font-weight="700" fill="#6d28d9">🧱 La clase (el molde)</text>
+  <rect x="44" y="134" width="320" height="200" rx="8" fill="#1e293b"/>
+  <g font-family="Consolas, Menlo, monospace" font-size="12" fill="#e2e8f0">
+    <text x="56" y="156"><tspan fill="#c4b5fd">class</tspan> <tspan fill="#fde047">Producto</tspan> {</text>
+    <text x="70" y="178"><tspan fill="#93c5fd">constructor</tspan>(nombre, precio) {</text>
+    <text x="84" y="198"><tspan fill="#f9a8d4">this</tspan>.nombre = nombre;</text>
+    <text x="84" y="218"><tspan fill="#f9a8d4">this</tspan>.precio = precio;</text>
+    <text x="84" y="238"><tspan fill="#f9a8d4">this</tspan>.unidades = <tspan fill="#fdba74">1</tspan>;</text>
+    <text x="70" y="258">}</text>
+    <text x="70" y="282">total() {</text>
+    <text x="84" y="302"><tspan fill="#c4b5fd">return</tspan> <tspan fill="#f9a8d4">this</tspan>.precio * <tspan fill="#f9a8d4">this</tspan>.unidades;</text>
+    <text x="70" y="322">}  }</text>
+  </g>
+  <text x="44" y="358" font-size="12.5" fill="#334155"><tspan font-weight="700">constructor:</tspan> se ejecuta al hacer new y prepara</text>
+  <text x="44" y="376" font-size="12.5" fill="#334155">los datos. <tspan font-weight="700">this</tspan> es el objeto que se está creando.</text>
+  <text x="44" y="394" font-size="12.5" fill="#334155"><tspan font-weight="700">Métodos:</tspan> lo que cada objeto sabe hacer.</text>
+
+  <!-- flechas new -->
+  <line x1="388" y1="170" x2="478" y2="140" stroke="#7c3aed" stroke-width="2" marker-end="url(#f)"/>
+  <line x1="388" y1="246" x2="478" y2="246" stroke="#7c3aed" stroke-width="2" marker-end="url(#f)"/>
+  <line x1="388" y1="322" x2="478" y2="352" stroke="#7c3aed" stroke-width="2" marker-end="url(#f)"/>
+  <text x="432" y="236" text-anchor="middle" font-family="Consolas, Menlo, monospace" font-size="13" font-weight="700" fill="#6d28d9">new</text>
+
+  <!-- instancias -->
+  <g font-size="12.5">
+    <rect x="484" y="96" width="392" height="88" rx="12" fill="#f0fdf4" stroke="#16a34a" stroke-width="1.5"/>
+    <text x="500" y="118" font-family="Consolas, Menlo, monospace" font-size="12" fill="#15803d">const teclado = new Producto('Teclado', 59.9);</text>
+    <text x="500" y="144" fill="#334155">nombre: <tspan font-weight="700">'Teclado'</tspan> · precio: <tspan font-weight="700">59.9</tspan> · unidades: <tspan font-weight="700">1</tspan></text>
+    <text x="500" y="168" font-family="Consolas, Menlo, monospace" font-size="12" fill="#475569">teclado.total() → 59.9</text>
+
+    <rect x="484" y="202" width="392" height="88" rx="12" fill="#eff6ff" stroke="#2563eb" stroke-width="1.5"/>
+    <text x="500" y="224" font-family="Consolas, Menlo, monospace" font-size="12" fill="#1d4ed8">const raton = new Producto('Ratón', 24.5);</text>
+    <text x="500" y="250" fill="#334155">nombre: <tspan font-weight="700">'Ratón'</tspan> · precio: <tspan font-weight="700">24.5</tspan> · unidades: <tspan font-weight="700">3</tspan></text>
+    <text x="500" y="274" font-family="Consolas, Menlo, monospace" font-size="12" fill="#475569">raton.total() → 73.5</text>
+
+    <rect x="484" y="308" width="392" height="98" rx="12" fill="#fefce8" stroke="#ca8a04" stroke-width="1.5"/>
+    <text x="500" y="332" font-weight="700" fill="#854d0e">Cada instancia tiene sus propios datos…</text>
+    <text x="500" y="354" fill="#334155">raton.unidades = 3 no cambia las del teclado.</text>
+    <text x="500" y="380" font-weight="700" fill="#854d0e">…y todas comparten los métodos.</text>
+    <text x="500" y="398" fill="#334155">total() se escribe una vez y sirve para todas.</text>
+  </g>
+</svg>

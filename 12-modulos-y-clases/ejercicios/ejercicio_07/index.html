@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 07 · Depuración: cuatro fallos escondidos</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <main class="contenedor">
+        <h1>🐞 Depuración: cuatro fallos escondidos</h1>
+        <p class="descripcion">Este programa calcula la media, los aprobados y la nota máxima de una lista de notas. No da ningún error… pero los resultados están mal.</p>
+        <p class="bug">Con <code>7, 4.5, 9, 5, 3</code> debería salir: <strong>Media: 5.70 · Aprobados: 3 de 5 · Máxima: 9</strong></p>
+
+        <form id="formNotas">
+            <div class="campo">
+                <label for="notas">Notas separadas por comas</label>
+                <input type="text" id="notas" name="notas" value="7, 4.5, 9, 5, 3">
+            </div>
+            <button class="btn">Calcular</button>
+        </form>
+
+        <p id="salida" class="salida" aria-live="polite">…</p>
+
+        <p class="ayuda">💡 F12 → pestaña <strong>Fuentes</strong> (<em>Sources</em>) → <code>app.js</code> → pulsad en el número de una línea para poner un punto de interrupción.</p>
+
+        <div class="firma">Curso de JavaScript en el cliente · Realizado por Ramón Abramo</div>
+    </main>
+    <script src="app.js"></script>
+</body>
+
+</html>

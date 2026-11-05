@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 420" width="900" height="420" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif">
+  <title>Encapsulación: privados, getters y setters</title>
+  <desc>El saldo de una cuenta es un campo privado con almohadilla: solo el código de la clase puede tocarlo. Desde fuera se lee con un getter y se modifica con métodos que validan.</desc>
+  <rect width="900" height="420" rx="16" fill="#ffffff"/>
+  <text x="450" y="42" text-anchor="middle" font-size="22" font-weight="700" fill="#1e293b">Encapsulación: los datos delicados, bajo llave</text>
+  <text x="450" y="66" text-anchor="middle" font-size="14" fill="#64748b">Desde fuera solo se usa la «ventanilla» que la clase decide abrir</text>
+
+  <defs>
+    <marker id="f" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#16a34a"/></marker>
+    <marker id="x" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#dc2626"/></marker>
+  </defs>
+
+  <!-- clase -->
+  <rect x="24" y="88" width="470" height="312" rx="14" fill="#f5f3ff" stroke="#7c3aed" stroke-width="2"/>
+  <text x="44" y="114" font-size="14" font-weight="700" fill="#6d28d9">class CuentaBancaria</text>
+
+  <rect x="44" y="128" width="200" height="96" rx="10" fill="#1e293b"/>
+  <text x="58" y="152" font-size="13" font-weight="700" fill="#fde047">🔒 Privado</text>
+  <g font-family="Consolas, Menlo, monospace" font-size="12.5" fill="#e2e8f0">
+    <text x="58" y="178">#saldo = 0;</text>
+    <text x="58" y="202">#movimientos = [];</text>
+  </g>
+
+  <rect x="264" y="128" width="210" height="252" rx="10" fill="#ffffff" stroke="#16a34a" stroke-width="2"/>
+  <text x="278" y="152" font-size="13" font-weight="700" fill="#15803d">🪟 Público</text>
+  <g font-family="Consolas, Menlo, monospace" font-size="12" fill="#1e293b">
+    <text x="278" y="180"><tspan fill="#1d4ed8" font-weight="700">get</tspan> saldo()</text>
+    <text x="292" y="198" fill="#475569">{ return this.#saldo; }</text>
+    <text x="278" y="228">ingresar(cantidad)</text>
+    <text x="278" y="252">retirar(cantidad)</text>
+    <text x="292" y="270" fill="#475569">si no hay saldo,</text>
+    <text x="292" y="288" fill="#475569">throw new Error(…)</text>
+    <text x="278" y="318"><tspan fill="#1d4ed8" font-weight="700">set</tspan> titular(nombre)</text>
+    <text x="292" y="336" fill="#475569">valida antes de</text>
+    <text x="292" y="354" fill="#475569">guardar</text>
+  </g>
+  <text x="44" y="258" font-size="12.5" fill="#334155">Solo el código de dentro</text>
+  <text x="44" y="276" font-size="12.5" fill="#334155">de la clase puede leer</text>
+  <text x="44" y="294" font-size="12.5" fill="#334155">o cambiar lo que empieza</text>
+  <text x="44" y="312" font-size="12.5" fill="#334155">por <tspan font-family="Consolas, Menlo, monospace" font-weight="700">#</tspan>.</text>
+
+  <!-- fuera -->
+  <line x1="640" y1="190" x2="480" y2="190" stroke="#16a34a" stroke-width="2" marker-end="url(#f)"/>
+  <line x1="640" y1="246" x2="480" y2="246" stroke="#16a34a" stroke-width="2" marker-end="url(#f)"/>
+  <line x1="640" y1="326" x2="500" y2="326" stroke="#dc2626" stroke-width="2" stroke-dasharray="6 4"/>
+  <line x1="500" y1="312" x2="500" y2="340" stroke="#dc2626" stroke-width="4"/>
+  <text x="570" y="316" text-anchor="middle" font-size="11.5" fill="#b91c1c">no pasa</text>
+
+  <g font-family="Consolas, Menlo, monospace" font-size="12.5">
+    <rect x="646" y="170" width="230" height="38" rx="8" fill="#f0fdf4" stroke="#16a34a"/>
+    <text x="658" y="194" fill="#15803d">cuenta.saldo  ✔ lee</text>
+    <rect x="646" y="226" width="230" height="38" rx="8" fill="#f0fdf4" stroke="#16a34a"/>
+    <text x="658" y="250" fill="#15803d">cuenta.retirar(50) ✔</text>
+    <rect x="646" y="306" width="230" height="38" rx="8" fill="#fef2f2" stroke="#dc2626"/>
+    <text x="658" y="330" fill="#b91c1c">cuenta.#saldo  ✘</text>
+  </g>
+  <text x="761" y="120" text-anchor="middle" font-size="14" font-weight="700" fill="#334155">💻 El resto del código</text>
+  <text x="761" y="142" text-anchor="middle" font-size="12" fill="#475569">(app.js, la vista, otros módulos)</text>
+  <text x="761" y="366" text-anchor="middle" font-size="12" fill="#b91c1c">SyntaxError: no se puede</text>
+  <text x="761" y="384" text-anchor="middle" font-size="12" fill="#b91c1c">ni escribir fuera de la clase</text>
+</svg>
