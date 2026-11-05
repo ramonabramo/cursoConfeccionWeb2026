@@ -360,3 +360,16 @@ En la carpeta encontraréis el enunciado completo, los criterios de evaluación 
 22. [Uso de Fetch (MDN Web Docs)](https://developer.mozilla.org/es/docs/Web/API/Fetch_API/Using_Fetch)
 23. [Módulos JavaScript (MDN Web Docs)](https://developer.mozilla.org/es/docs/Web/JavaScript/Guide/Modules)
 24. [Clases (MDN Web Docs)](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Classes)
+- Un primer vistazo a `style` y HTML generado con plantillas de texto e `innerHTML`.
+- Métodos de texto: `length`, `trim()`, `toUpperCase()`, `toLowerCase()`, `includes()`, `at()`, `slice()`, `replaceAll()` y `padStart()`.
+- Intercambiar dos valores con una variable auxiliar.
+- Condiciones anidadas frente a combinadas, y tramos ordenados con `else if`.
+- Parámetros *rest*, la pila de llamadas, la recursividad y las IIFE.
+- Objetos de solo lectura con `Object.freeze` y cómo elegir el bucle adecuado.
+- Patrones con colecciones del DOM (recorrer, filtrar y marcar) y SVG desde JavaScript.
+- Coordenadas del ratón, teclas modificadoras y la diferencia entre `mouseenter` y `mouseover`.
+- Casillas en grupo con «marcar todas» e `indeterminate`, y la corrección de cuestionarios.
+- Qué hacer cuando guardar falla: `QuotaExceededError` y `try...catch`.
+- Fechas y horas con `Date`, formato con `toLocale…` e `Intl`, y animaciones que se pausan.
+- Construir URLs con `URL` y `URLSearchParams`, y cancelar peticiones con `AbortController`.
+- Componentes: clases que controlan un trozo de página.
